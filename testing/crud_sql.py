@@ -25,12 +25,18 @@ def create_people_emails_metadata_db(db_path="/Users/yashbhoomkar/Desktop/python
 
     # Insert sample data into table_data
     table_data = [
-        ("FINANCE", "XYZ", "XYZ@gmail.com", 56, "HIGHEST", "Payroll Service"),
-        ("FINANCE", "ABC", "ABC@gmail.com", 24, "MEDIUM", "Payroll Service"),
-        ("FINANCE", "EFG", "EFG@gmail.com", 100, "LOW", "Budget Planning"),
-        ("HR", "HIJ", "HIJ@gmail.com", 108, "HIGHEST", "Recruitment"),
-        ("HR", "KLM", "KLM@gmail.com", 56, "MEDIUM", "Employee Relations"),
-        ("HR", "PQR", "PQR@gmail.com", 96, "LOW", "Employee Benefits"),
+    ("FINANCE", "Alice Johnson", "alice.johnson@financecorp.com", 45, "HIGHEST", "Payroll Management"),
+    ("FINANCE", "Bob Smith", "bob.smith@financecorp.com", 30, "MEDIUM", "Tax Compliance"),
+    ("FINANCE", "Charlie Brown", "charlie.brown@financecorp.com", 15, "LOW", "Budget Analysis"),
+    ("HR", "Diana Prince", "diana.prince@hrsolutions.com", 120, "HIGHEST", "Employee Relations"),
+    ("HR", "Eve Adams", "eve.adams@hrsolutions.com", 75, "MEDIUM", "Recruitment"),
+    ("HR", "Frank White", "frank.white@hrsolutions.com", 50, "LOW", "Training and Development"),
+    ("SOFTWARE", "Grace Hopper", "grace.hopper@techinnovators.com", 200, "HIGHEST", "Software Architecture"),
+    ("SOFTWARE", "Hank Green", "hank.green@techinnovators.com", 100, "MEDIUM", "Backend Development"),
+    ("SOFTWARE", "Ivy Lee", "ivy.lee@techinnovators.com", 60, "LOW", "Frontend Development"),
+    ("CYBERSECURITY", "Jack Ryan", "jack.ryan@securecorp.com", 150, "HIGHEST", "Incident Response"),
+    ("CYBERSECURITY", "Karen Black", "karen.black@securecorp.com", 90, "MEDIUM", "Vulnerability Assessment"),
+    ("CYBERSECURITY", "Leo King", "leo.king@securecorp.com", 40, "LOW", "Access Control Management"),
     ]
     cursor.executemany("""
         INSERT OR IGNORE INTO table_data (DEPT, NAME, EMAIL, EMAILS_FORWARDED_IN_LAST_24_DAYS, SENIORITY_LEVEL, WORK)
@@ -71,13 +77,19 @@ def create_feedback_data_db(db_path="/Users/yashbhoomkar/Desktop/pythonCodes/ema
 
     # Insert sample data into feedback_data
     feedback_data = [
-        ("XYZ@gmail.com", "Salary discrepancy issue", "The amount credited is lower than expected",
-         "{'urgency': 'MEDIUM'}", "{'urgency': 'HIGHEST'}", "[]", "[]", "[]", "[]"),
-        ("ABC@gmail.com", "Payroll service feedback", "Feedback on payroll service",
-         "{'department': 'HR'}", "{'department': 'FINANCE'}", "[]", "[]", "[]", "[]"),
-        ("HIJ@gmail.com", "Recruitment improvement", "Improve recruitment process",
-         "{'forward_to': 'PQR@gmail.com'}", "{'forward_to': 'HIJ@gmail.com'}",
-         "['PQR@gmail.com']", "[]", "['HIJ@gmail.com']", "[]"),
+    ("alice.johnson@financecorp.com", "Salary discrepancy issue", "The amount credited is lower than expected.",
+     "{'urgency': 'MEDIUM'}", "{'urgency': 'HIGHEST'}", "[]", "[]", "[]", "[]"),
+    ("bob.smith@financecorp.com", "Tax compliance feedback", "Feedback on the recent tax compliance process.",
+     "{'department': 'HR'}", "{'department': 'FINANCE'}", "[]", "[]", "[]", "[]"),
+    ("diana.prince@hrsolutions.com", "Recruitment improvement", "Suggestions to improve the recruitment process.",
+     "{'forward_to': 'eve.adams@hrsolutions.com'}", "{'forward_to': 'diana.prince@hrsolutions.com'}",
+     "['eve.adams@hrsolutions.com']", "[]", "['diana.prince@hrsolutions.com']", "[]"),
+    ("grace.hopper@techinnovators.com", "Software architecture review", "Request for a review of the new architecture design.",
+     "{'urgency': 'HIGH'}", "{'urgency': 'HIGHEST'}", "[]", "[]", "[]", "[]"),
+    ("jack.ryan@securecorp.com", "Incident response feedback", "Feedback on the recent incident response process.",
+     "{'department': 'CYBERSECURITY'}", "{'department': 'CYBERSECURITY'}", "[]", "[]", "[]", "[]"),
+    ("ivy.lee@techinnovators.com", "Frontend development issue", "Issues with the current frontend implementation.",
+     "{'urgency': 'LOW'}", "{'urgency': 'MEDIUM'}", "[]", "[]", "[]", "[]"),
     ]
     cursor.executemany("""
         INSERT OR IGNORE INTO feedback_data (EMAIL, EMAIL_SUBJECT, EMAIL_ACTUAL_TEXT, PREVIOUS_RESPONSE, EXPECTED_RESPONSE,

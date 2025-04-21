@@ -54,8 +54,8 @@ def reset_environment():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     email_extraction_folder = os.path.join(base_dir, "email_extraction")
     email_redis_store_folder = os.path.join(base_dir, "email_redis_store")
-    database_file = os.path.join(base_dir, "/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/testing/email_router.db")  # Path to the database file
-
+    database_file_1 = "/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/testing/people_emails_metadata.db"  # Path to the database file
+    database_file_2 = "/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/testing/feedback_data.db"
 
     # Folders to delete
     attachments_folder = os.path.join(email_extraction_folder, "attachments")
@@ -75,9 +75,10 @@ def reset_environment():
     delete_file(emails_with_attachments_file)
     delete_file(email_redis_store_log_file)
 
-    # Delete the database file
-    delete_database(database_file)
-
+    # Delete the database files
+    delete_database(database_file_1)
+    delete_database(database_file_2)
+    
     # Clear Redis database
     clear_redis_database()
 

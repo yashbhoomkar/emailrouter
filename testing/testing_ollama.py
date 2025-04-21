@@ -2,6 +2,34 @@ import requests
 import json
 import sqlite3
 
+def fetch_feedback_data(db_path="/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/testing/feedback_data.db"):
+    """
+    Fetch the feedback data from the feedback_data database.
+
+    Args:
+        db_path (str): The path to the SQLite database file.
+
+    Returns:
+        str: The feedback data as a formatted string.
+    """
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    # Fetch all rows from the feedback_data table
+    query = "SELECT * FROM feedback_data"
+    cursor.execute(query)
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    if rows:
+        feedback_data = ""
+        for row in rows:
+            feedback_data += f"{row[0]:<20} {row[1]:<30} {row[2]:<50} {row[3]:<30} {row[4]:<30} {row[5]:<20} {row[6]:<20} {row[7]:<20} {row[8]:<20}\n"
+        return feedback_data
+    else:
+        raise ValueError("No feedback data found in the feedback_data database.")
+
 def analyze_email(email_content, feedback_data, model="llama3.2", base_url="http://localhost:11434"):
     """
     Analyze the email to determine its urgency and department.
@@ -110,7 +138,7 @@ def finalize_routing(email_id, people_list, feedback_data, department, urgency, 
         f"The email with ID {email_id} belongs to the {department} department and has an urgency level of {urgency}.\n\n"
         f"Here is the list of people in the department:\n{json.dumps(people_list, indent=4)}\n\n"
         f"Here is the feedback database to help you improve your response:\n{feedback_data}\n\n"
-        "Decide who the email should be forwarded to, and who should be in CC and BCC.\n"
+        "Decide who the email should be forwarded to, and who should be in CC and BCC. ADD PEOPLE'S email id in cc and bcc if and only if required\n"
         "Respond strictly in the following JSON format:\n"
         "{\n"
         "    \"EMAIL_ID\": \"email_id\",\n"
@@ -163,23 +191,20 @@ def correct_json(raw_response):
         return {"error": "Invalid JSON response.", "raw_response": raw_response}
 
 if __name__ == "__main__":
-    # Sample email content with EMAIL_ID
+    # Example email content to test
     email_content = (
         "EMAIL_ID: 210\n"
-        "Subject: Urgent - Payroll Issue\n\n"
+        "Subject: General Feedback \n\n"
         "Dear HR Team,\n\n"
-        "I have noticed a discrepancy in my salary for this month. The amount credited is lower than expected. "
-        "Please look into this matter urgently and let me know if additional details are required.\n\n"
+        "I would like to provide some feedback regarding the recent changes in our HR policies. "
+        "I believe there are areas that need improvement, especially in the onboarding process.\n\n"
+        "I have attached a document with my detailed feedback.\n\n"
+        "Please let me know if you need any further information.\n\n"
         "Best regards,\nJohn Doe"
     )
 
-    # Sample feedback database
-    feedback_data = (
-        "EMAIL             EMAIL_SUBJECT                  EMAIL_ACTUAL_TEXT                          PREVIOUS_RESPONSE                     EXPECTED_RESPONSE                     PREVIOUS_RESPONSE_CC   PREVIOUS_RESPONSE_BCC   EXPECTED_RESPONSE_CC   EXPECTED_RESPONSE_BCC\n"
-        "XYZ@gmail.com     Salary discrepancy issue       The amount credited is lower than expected {'urgency': 'MEDIUM'}                {'urgency': 'HIGHEST'}                []                    []                      []                    []\n"
-        "ABC@gmail.com     Payroll service feedback       Feedback on payroll service                {'department': 'HR'}                 {'department': 'FINANCE'}             []                    []                      []                    []\n"
-        "HIJ@gmail.com     Recruitment improvement        Improve recruitment process                {'forward_to': 'PQR@gmail.com'}      {'forward_to': 'HIJ@gmail.com'}       ['PQR@gmail.com']      []                      ['HIJ@gmail.com']      []\n"
-    )
+    # Fetch feedback data from the database
+    feedback_data = fetch_feedback_data()
 
     print("Step 1: Analyzing email...")
     analysis_response = analyze_email(email_content, feedback_data)
