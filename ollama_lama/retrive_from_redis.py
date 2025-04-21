@@ -1,5 +1,10 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from testing.testing_ollama import main_export_ollama
 import redis
 import json
+
 
 def connect_to_redis(host="localhost", port=6379, db=0):
     """
@@ -40,13 +45,13 @@ def get_emails_with_status(redis_client, status="NOT_ROUTED"):
                     email_json = json.loads(email_data)
                     # Debug: Log the raw email data
                     print(f"Processing key: {key}, Raw data: {email_json}")
-                    if email_json.get("status") == status:  # Match the lowercase "status" key
+                    if email_json.get("STATUS") == status:  # Match the correct "STATUS" key
                         # Extract relevant fields for the processed email
                         processed_email = {
                             "EMAIL_ID": email_json.get("email_id", "MISSING"),
                             "SUBJECT": email_json.get("subject", "MISSING"),
                             "BODY": email_json.get("body", "MISSING"),
-                            "STATUS": email_json.get("status", "MISSING")
+                            "STATUS": email_json.get("STATUS", "MISSING")
                         }
                         emails.append(processed_email)
                 except json.JSONDecodeError as e:
@@ -74,6 +79,15 @@ def main():
         print(f"Found {len(not_routed_emails)} email(s) with status 'NOT_ROUTED':")
         for email in not_routed_emails:
             print(json.dumps(email, indent=4))  # Print the processed email
+
+            # Construct the email content to pass to main_export_ollama
+            email_content = (
+                f"EMAIL_ID: {email['EMAIL_ID']}\n"
+                f"Subject: {email['SUBJECT']}\n\n"
+                f"{email['BODY']}"
+            )
+            print(f"Passing email_content to main_export_ollama:\n{email_content}")  # Debug log
+            main_export_ollama(email_content)
     else:
         print("No emails with status 'NOT_ROUTED' found.")
 
