@@ -1,0 +1,159 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:289:b0:43a:a54e:2943 with SMTP id d9csp592794mdl;
+        Wed, 16 Apr 2025 23:09:42 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHPtJxbthpFcD7yKJ336uw2iJz8MGmARR/bei0gLmMM1/sZ9bzXlms8/Sf3urIU55DpI8a1
+X-Received: by 2002:a05:6a00:2e84:b0:736:5e6f:295b with SMTP id d2e1a72fcca58-73c26733c70mr6711849b3a.12.1744870182714;
+        Wed, 16 Apr 2025 23:09:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744870182; cv=none;
+        d=google.com; s=arc-20240605;
+        b=BuQg4OopEJg3q3+VWEz5zhQPX1aZQfPREqlQkFJa8Bu5J8T4qBdRSUKWYUXuzktnYT
+         X+rcnrjBWBv4S2ZhSb4EQOhWkgbCfnK7iRuzLNq87LkRzNTYX0Dzpff1heeImsjx7buK
+         M/smuuTF301HaY+ciT+Tn0RUn+PeWWml3I80ep9dxok6e0fwsFNUjNzchyZ4W+vLffEO
+         ZZPMHzTn07jfTtE1A5tyvWICWssmp+fsBezDMcYKv2zYNY6mBjkYQXVYTTL8U4+ACOow
+         syfZ6A0ASvtXyC+zBNhJDBrJcF9a7Gx+H37EdxJJAwDJI7qBvVsJGEcbUHV8h0etknjy
+         9zcA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:subject:content-transfer-encoding:list-unsubscribe
+         :list-unsubscribe-post:mime-version:to:date:from:message-id
+         :dkim-signature:dkim-signature;
+        bh=0/AjvVTO1UFNXOhWV+IOdX0PkJ4ilM6wu6okPccqrE8=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=A+i10uOjqKu4Zl26h5MGIWnX30WhLzGvcZARBV/CZHB1gpVFoiuQiv9RHGYosCN1s4
+         tZmJlpzodBUA0LrnUFU7/PJEvUf5qAYXB2Ezgm1lIpiEELMlwbfe9310Swtqta0/2lfN
+         zA9QXeLaO6XKSgMYzgTUc0XebLi9074pRdIYDwELSd5yfc6eYSGjRl34YtWzU3YkL0wZ
+         7HU5Uc7J+ICls3W3xqWXcgId299F5itIhP0CbmcT1N8RBuhXWDtnJmV2RICHwIZCyczh
+         y38xsevVRiQgw+eu3Y9sLPWgqYraGkom9Wk+adefgyaL9cBUF+fttBQHr+FhhFRlJk2/
+         GESA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@fossunited.org header.s=ubxdleclhii7gci6hm2akpvgsvpmzl52 header.b=WoaWNTQu;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=VfPdNo1C;
+       spf=pass (google.com: domain of 01090196425e0acf-fbb3b1c2-a11c-4c7d-86b6-4a13e2312392-000000@ap-south-1.amazonses.com designates 76.223.180.108 as permitted sender) smtp.mailfrom=01090196425e0acf-fbb3b1c2-a11c-4c7d-86b6-4a13e2312392-000000@ap-south-1.amazonses.com
+Return-Path: <01090196425e0acf-fbb3b1c2-a11c-4c7d-86b6-4a13e2312392-000000@ap-south-1.amazonses.com>
+Received: from c180-108.smtp-out.ap-south-1.amazonses.com (c180-108.smtp-out.ap-south-1.amazonses.com. [76.223.180.108])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-73bd219f885si17984162b3a.38.2025.04.16.23.09.41
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 16 Apr 2025 23:09:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01090196425e0acf-fbb3b1c2-a11c-4c7d-86b6-4a13e2312392-000000@ap-south-1.amazonses.com designates 76.223.180.108 as permitted sender) client-ip=76.223.180.108;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@fossunited.org header.s=ubxdleclhii7gci6hm2akpvgsvpmzl52 header.b=WoaWNTQu;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=VfPdNo1C;
+       spf=pass (google.com: domain of 01090196425e0acf-fbb3b1c2-a11c-4c7d-86b6-4a13e2312392-000000@ap-south-1.amazonses.com designates 76.223.180.108 as permitted sender) smtp.mailfrom=01090196425e0acf-fbb3b1c2-a11c-4c7d-86b6-4a13e2312392-000000@ap-south-1.amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ubxdleclhii7gci6hm2akpvgsvpmzl52; d=fossunited.org; t=1744870181;
+	h=Message-Id:From:Date:To:Mime-Version:List-Unsubscribe-Post:List-Unsubscribe:Content-Type:Content-Transfer-Encoding:Subject;
+	bh=+1BZIFPy6tA9etldyOkz1BOaJubdQxmCcLDoF/74PgQ=;
+	b=WoaWNTQu3QhFGR50Z7JXHHSUPlZZ2s+xa2y94EbV6MYz+SeM/WE1i+cdBFlX2tuZ
+	u4BmyxmHJqS8MOQ9p7zDg31FBBnkztsQCcuksXG8sBejV613ZaLo0/776pOeSiYZw11
+	fHdzV4CyM/9pybYUtCXD+Tx7gQc/wYxoVt+c8Gja49ajmvN3L0VHcQxXcMmX7YTg1NG
+	cmXHMFc7eoRPOw2+YKRhbPpfVw2ab/0LOpY8ktBbqV1Rk7arw0ZWAncZQa8Ib/insxM
+	TG+7EFzSN2CKYM/R1bIqUEvm2cQKuVEUdjg2fgfuoun/X1DYmXWXscOMfW1tLH3c3Bi
+	xBaljEEFLg==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zpkik46mrueu52d3326ufxxchortqmoc; d=amazonses.com; t=1744870181;
+	h=Message-Id:From:Date:To:Mime-Version:List-Unsubscribe-Post:List-Unsubscribe:Content-Type:Content-Transfer-Encoding:Subject:Feedback-ID;
+	bh=+1BZIFPy6tA9etldyOkz1BOaJubdQxmCcLDoF/74PgQ=;
+	b=VfPdNo1CCgSbnSTci5s/OLZAOYjs5B6bAdwFCZil5I7jpoSU4py+S3eU2Q8OUC7N
+	tLdAjxH/QM62iQPrtaCNFg8/DZf0suM+UJSb5GNOW30p3iklCJorQMtZ97jxp03lR2W
+	VS3/G00B+djiQNhboNaC8jKPRnJwWszPn7A2jkrQ=
+Message-ID: <01090196425e0acf-fbb3b1c2-a11c-4c7d-86b6-4a13e2312392-000000@ap-south-1.amazonses.com>
+From: IndiaFOSS 2025 <noreply-indiafoss@fossunited.org>
+Date: Thu, 17 Apr 2025 06:09:41 +0000
+X-Listmonk-Subscriber: 672141b6-ab3a-48ce-8cb9-410795f648ee
+X-Listmonk-Campaign: 079f5629-db2d-49ba-94c0-44d1911bd65c
+To: yash31204testing@gmail.com
+Mime-Version: 1.0
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <http://listmonk.fossunited.org/subscription/079f5629-db2d-49ba-94c0-44d1911bd65c/672141b6-ab3a-48ce-8cb9-410795f648ee>
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Subject: Call for Proposals is Now Open for IndiaFOSS 2025!
+Feedback-ID: ::1.ap-south-1.MKRJd5OtIB4mddFwcNJeFiTjxnS4ENgvE39j/wlVGdM=:AmazonSES
+X-SES-Outgoing: 2025.04.17-76.223.180.108
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1, minimum-scale=3D1">
+    <base target=3D"_blank">
+    <title>IndiaFOSS 2024 - Important Update</title>
+    <style>
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body style=3D"margin: 0; padding: 0; width: 100%;">
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" =
+style=3D"font-family: Inter, 'Helvetica Neue', 'Segoe UI', Helvetica, sans-=
+serif;">
+      <tr>
+        <td align=3D"center">
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" style=3D"max-width: 600px; background-color: #000000;">
+            <tr>
+              <td align=3D"center">
+                <img src=3D"https://listmonk.fossunited.org/uploads/Email-h=
+eader.png" alt=3D"IndiaFOSS 2025 Header" style=3D"display: block; margin: a=
+uto; max-width: 100%; height: auto;"/>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor=3D"#FFFFFF" style=3D"padding: 30px; color: #19273=
+4;">
+                <p><span style=3D"font-weight: 400;">Hey folks,</span></p>
+<p><span style=3D"font-weight: 400;">April is here, and so is mango season.=
+ But equally important news is that the Call for Proposals for IndiaFOSS 20=
+25 is officially open! The 5th edition of India=E2=80=99s largest and your =
+favourite Free and Open Source Event of the year :)=C2=A0</span></p>
+<p><span style=3D"font-weight: 400;">Have you been building something inter=
+esting? Hacking away on a side project? Have a story, idea, or lesson from =
+your FOSS journey? We=E2=80=99d love for you to share it with the community=
+ on the biggest platform of the year.=C2=A0</span></p>
+<p><strong>Submit your talk here: </strong><a href=3D"http://listmonk.fossu=
+nited.org/link/0d503afb-573f-4e9e-bb3f-7799b2f0e3fb/079f5629-db2d-49ba-94c0=
+-44d1911bd65c/672141b6-ab3a-48ce-8cb9-410795f648ee"><strong>https://fossuni=
+ted.org/indiafoss</strong></a></p>
+<p><span style=3D"font-weight: 400;">Whether you=E2=80=99re a first-time sp=
+eaker or a regular on the stage, this is a space for everyone. </span><stro=
+ng>If it=E2=80=99s FOSS, it fits.</strong></p>
+<p><span style=3D"font-weight: 400;">IndiaFOSS has always been about commun=
+ity, curiosity, and connection. So bring your passion, your quirks, your co=
+de, and let=E2=80=99s make something special together.</span></p>
+<p><span style=3D"font-weight: 400;">And hey, think your neighbour just mig=
+ht be a good fit for this call? Forward them the email, and help us spread =
+the word!</span></p>
+<p><span style=3D"font-weight: 400;">Cheers,<br /></span><span style=3D"fon=
+t-weight: 400;">Team IndiaFOSS 2025</span></p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td align=3D"center;">
+          <p style=3D"text-align: center; font-family: Inter, 'Helvetica Ne=
+ue', 'Segoe UI', Helvetica, sans-serif; font-size: 12px; color: #888;">
+            Don&#39;t want to receive these e-mails?
+            <a href=3D"http://listmonk.fossunited.org/subscription/079f5629=
+-db2d-49ba-94c0-44d1911bd65c/672141b6-ab3a-48ce-8cb9-410795f648ee" style=3D=
+"color: #888;">Unsubscribe</a>
+          </p>
+          <p style=3D"text-align: center; font-family: Inter, 'Helvetica Ne=
+ue', 'Segoe UI', Helvetica, sans-serif; font-size: 12px; color: #888;">
+            Powered by <a href=3D"https://listmonk.app" target=3D"_blank" s=
+tyle=3D"color: #888;">listmonk</a>
+          </p>
+        </td>
+      </tr>
+    </table>
+    <img src=3D"http://listmonk.fossunited.org/campaign/079f5629-db2d-49ba-=
+94c0-44d1911bd65c/672141b6-ab3a-48ce-8cb9-410795f648ee/px.png" alt=3D"" />
+  </body>
+</html>

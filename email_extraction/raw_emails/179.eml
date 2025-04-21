@@ -1,0 +1,1211 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:25ce:b0:43a:a54e:2943 with SMTP id d14csp2173765mdo;
+        Mon, 14 Apr 2025 13:12:47 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGj9nt0xvfvhYrEQf7zU54LNZmJ7Z8Ftm946zy1wOyYLzNIBaSPY9KlndIQz3Nx/lCGKsNh
+X-Received: by 2002:a05:6902:108f:b0:e6d:f066:405e with SMTP id 3f1490d57ef6-e704df38ba9mr23508286276.12.1744661567419;
+        Mon, 14 Apr 2025 13:12:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744661567; cv=none;
+        d=google.com; s=arc-20240605;
+        b=YQBXWER5BBzW0EB7raIZHLjWpPPGmX5TlOgf5BGkcMrVUY0nUSsW4SScUs/9/BCceR
+         aQ0cLjg3kdI5QsCucTiBWWxzDF0VkRZGvoGB5UHMXhnHdbeahkHQDcsOUJmcmpNeWsoU
+         QQssLuEMEkmyTUJDSf2etvepCnwodBxrese7LlJwkxVk9IuURrtasIMb75Iv8K/drBAi
+         eEEsFS6KlL5dUW+TA4/awFVZtCXqGRoaO5BdmmjTrpqIpZZQHq2pJZREbqCrxS3G1ITX
+         0YgFFaZVxH+ZZA0XDmNblW8nY1Xct0qNlwElaVHYZIHkV0mlM5SyUB/D9aq/T3M5PpL+
+         4gPA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:from:subject:list-unsubscribe-post:reply-to
+         :list-unsubscribe:mime-version:date:message-id:to:dkim-signature;
+        bh=ysBzUWu8rua84IFdclk68Rc4d6po8xO7qWiNXle9IvM=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=H39zGJFbAu3R1HLougSV/P61wUoV+QvmbIilF3rocatEZ1W5sZTBCleiKqNw51zeKV
+         TVYFOX7zC9zbfMOxbDSp0d+fsEaGGaEBe5cxb8pBl64WxwK2E4q60BlshLfrcyFi7FCT
+         V/Y86ornVUqwccYA5KsdDaS2PeDQlVUTTbHZeb4HaoI0o0HWdmjFR/T7JJ99aLfjG1Wv
+         fwitUmKC2YtkFnRXG6vL9BgZolRknI7xCT8nu+l5IcYViHtdZGyGF3J8Q09NML1uXbMC
+         qBzNV/FVFS5DN+2JBUnk8XXaA5CdoqL4AiVRsz9xhHDuk+iAXTnvLw6YfCG8VU0dUfB9
+         T4lg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.grammarly.com header.s=20230920 header.b="Yq/rCnV9";
+       spf=pass (google.com: domain of msprvs1=20199vyk5oh4y=bounces-280172-1538@bounces.grammarly.com designates 168.203.32.149 as permitted sender) smtp.mailfrom="msprvs1=20199vYk5Oh4Y=bounces-280172-1538@bounces.grammarly.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=grammarly.com
+Return-Path: <msprvs1=20199vYk5Oh4Y=bounces-280172-1538@bounces.grammarly.com>
+Received: from mta-203-32-149.info.grammarly.com.sparkpostmail.com (mta-203-32-149.info.grammarly.com.sparkpostmail.com. [168.203.32.149])
+        by mx.google.com with ESMTPS id 3f1490d57ef6-e70327bd92asi16917236276.207.2025.04.14.13.12.46
+        for <yash31204testing@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 14 Apr 2025 13:12:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=20199vyk5oh4y=bounces-280172-1538@bounces.grammarly.com designates 168.203.32.149 as permitted sender) client-ip=168.203.32.149;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.grammarly.com header.s=20230920 header.b="Yq/rCnV9";
+       spf=pass (google.com: domain of msprvs1=20199vyk5oh4y=bounces-280172-1538@bounces.grammarly.com designates 168.203.32.149 as permitted sender) smtp.mailfrom="msprvs1=20199vYk5Oh4Y=bounces-280172-1538@bounces.grammarly.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=grammarly.com
+Return-Path: <msprvs1=20199vYk5Oh4Y=bounces-280172-1538@bounces.grammarly.com>
+X-MSFBL: JEJ+NW+72c1S2/iiGmaQTD4CXxgPnllSiRW10BL6eC8=|eyJtZXNzYWdlX2lkIjo
+	iNjdmNDNlNmNmZDY3NGI0YzA0M2IiLCJzdWJhY2NvdW50X2lkIjoiMTUzOCIsImN
+	1c3RvbWVyX2lkIjoiMjgwMTcyIiwiciI6Inlhc2gzMTIwNHRlc3RpbmdAZ21haWw
+	uY29tIiwidGVuYW50X2lkIjoic3BjIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.grammarly.com;
+	s=20230920; t=1744661566; i=@mail.grammarly.com;
+	bh=ysBzUWu8rua84IFdclk68Rc4d6po8xO7qWiNXle9IvM=;
+	h=To:Message-ID:Date:Content-Type:List-Unsubscribe:
+	 List-Unsubscribe-Post:Subject:From:From:To:Cc:Subject;
+	b=Yq/rCnV9PkhJb9zOs7E8ixela+VGfhJYfUaaalFv/tratUXeipFBF4MU1LzEtOn9L
+	 4gJXzVN78jTVyDCxiNjrx3vSQH1K3w/oWwSvwsrsqEQIwHq0uUq0486n7pcGDZfIik
+	 usPnC0HF3e0uwCJalPSFiNjiO4siHwk+g5jl0+kxTxKVU+8dTpz0m10mSg+B37I6Wu
+	 nAjX3cUHHF8AoZLYywdQyYyPW0FGBIKmXbZOB0GeRvas/VPeIlAiogrh7cnVfI+OX1
+	 autMWjLD815+C9QSIa60UWJi0Y5rFlIxYaOhRp9qNVbrgfPnlbIoWNI69eecPcSqHB
+	 iZFbr9DkPCNfg==
+Received: from [10.90.45.41] ([10.90.45.41])
+	by i-010afefbbb1256ef3.mta1vrest.sd.prd.sparkpost (ecelerity 4.8.0.74368 r(msys-ecelerity:tags/4.8.0.17)) with REST
+	id B3/48-04018-E3C6DF76; Mon, 14 Apr 2025 20:12:46 +0000
+To: yash31204testing@gmail.com
+Message-ID: <B3.48.04018.E3C6DF76@i-010afefbbb1256ef3.mta1vrest.sd.prd.sparkpost>
+Date: Mon, 14 Apr 2025 20:12:46 +0000
+Content-Type: multipart/alternative; boundary="_----NjIKSStJa2u6Z30zy8vELA===_E2/48-04018-E3C6DF76"
+MIME-Version: 1.0
+X-Campaign-ID: 13217395
+List-Unsubscribe: <https://links.iterable.com/s/u/L3t7XGO_tBUjCSZGuKgqsAf1hnafV50VkEPPMgtsavFhGwy8DbNu8nWPY1vTTecUGARhRWha0N68edug1bVUkSl3JZwx7G_n-8krCM_XyxBVyy8HRHv2_B0TeYigeZ-dkTRl5eMOTOrfClayhtbBk9PgtCIjnD_hdJAwMPy7cjCLtQArel0sVNV16vCTSyDN-qKQJoLim9i3z9JQ/bgEOE_y5olX1LsL2fUvaKIBzJgRpnwdk/8>,<mailto:unsubscribe+13217395+17292232@unsubscribe.iterable.com>
+X-Message-ID: 49fbbe963e594da683ea06ab818feb32
+X-Feedback-ID: 17292232:13217395:87826:iterable
+Reply-To: noreply@grammarly.com
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Subject: =?utf-8?B?8J+TiiBTZWUgd2hhdCB5b3XigJl2ZSBhY2hpZXZlZCArIHNhdmUg?=
+	=?utf-8?B?NTAlIG9uIFBybyE=?=
+From: "Grammarly Insights" <hello@mail.grammarly.com>
+Feedback-ID: 17292232:13217395:87826:iterable
+
+--_----NjIKSStJa2u6Z30zy8vELA===_E2/48-04018-E3C6DF76
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Grammarly Pick up where you left off to keep earning writing badges. =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =0A=E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =0A=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =0A=E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =0A=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =0A=0A=0A=0A=0A=
+ <https://www.grammarly.com> =0A=0A=0A=0A=0A=0AApril 07 - April 13 =0A=0A=
+=0AYour Weekly Writing Update =0A=0AIt was a little quiet around here last =
+week=E2=80=94did you accidentally sign out of =0Ayour Grammarly account=3F =
+You can easily sign back in to continue tracking your =0Aachievements. =0A=
+=0A=0A=0A=0ASign In <http://grammarly.com/signin> =0A=0A=0A=0A=0A=0A=0A=0AG=
+rammarly writing streak =0A=0A0 weeks =0A=0A=0A1 =0ANext Achievement =0A=0A=
+=0A=0A=0A=0AProductivity =0ANo activity detected for last week. =0APlease m=
+ake sure you are logged in =0A<https://redirect.grammarly.com/redirect=3Fha=
+sh=3D91ae56f35b07f559f73a9ecd5ef8921c2a8bf4f1>=0A. =0A0=0Awords analyzed=0A=
+=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0AMar 23 <>30 <>Apr 06 <>1=
+3 <>=0A=0A=0A=0A=0A=0AMastery =0ANo activity detected for last week. =0APle=
+ase make sure you are logged in =0A<https://redirect.grammarly.com/redirect=
+=3Fhash=3D91ae56f35b07f559f73a9ecd5ef8921c2a8bf4f1>=0A. =0A0=0Aalerts shown=
+=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0AMar 23 <>30 <>Apr 06 =
+<>13 <>=0A=0A=0A=0A=0A=0AVocabulary =0ANo activity detected for last week.=
+=0APlease make sure you are logged in =0A<https://redirect.grammarly.com/re=
+direct=3Fhash=3D91ae56f35b07f559f73a9ecd5ef8921c2a8bf4f1>=0A. =0A0 =0A uniq=
+ue words used =0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0A=0AMar 23 =
+<>30 <>Apr 06 <>13 <>=0A=0A=0A=0A=0A=0AGet 50% Off Grammarly Pro =0ASpring =
+into action by April 16 and enjoy the fruits of productive =0Acommunication=
+. =0A=0A=0A=0AUpgrade to Pro  =0A<https://discount.grammarly.com/api/disco=
+unts/live=3Fhash=3D91ae56f35b07f559f73a9ecd5ef8921c2a8bf4f1&discount=3Deydh=
+bGlhcyc6ICd4VE9ZQ1cnLCAnY2FtcGFpZ25JZCc6ICcyMDI1MDRfNTBvZmZhbnlfbGNtX2FsbF9=
+BcHJpbFByb21vLU9EX1dTX0EnLCAnY3JlYXRpb25EYXRlJzogJzIwMjUtMDQtMTRUMTA6MTI6ND=
+YnLCAnZXhwaXJlRGF0ZSc6ICcyMDI1LTA0LTIwVDAyOjEyOjQ2JywgJ3NpZ25hdHVyZSc6ICdmZ=
+TliNzc3YTBjN2VhMTNkZmMyM2FiM2UyNjFlZjJlOGRiZGUzNmU4J30=3D>=0A=0AUpgrade to =
+Pro =0A<https://discount.grammarly.com/api/discounts/live=3Fhash=3D91ae56f3=
+5b07f559f73a9ecd5ef8921c2a8bf4f1&discount=3DeydhbGlhcyc6ICd4VE9ZQ1cnLCAnY2F=
+tcGFpZ25JZCc6ICcyMDI1MDRfNTBvZmZhbnlfbGNtX2FsbF9BcHJpbFByb21vLU9EX1dTX0EnLC=
+AnY3JlYXRpb25EYXRlJzogJzIwMjUtMDQtMTRUMTA6MTI6NDYnLCAnZXhwaXJlRGF0ZSc6ICcyM=
+DI1LTA0LTIwVDAyOjEyOjQ2JywgJ3NpZ25hdHVyZSc6ICdmZTliNzc3YTBjN2VhMTNkZmMyM2Fi=
+M2UyNjFlZjJlOGRiZGUzNmU4J30=3D>=0A =0A<https://discount.grammarly.com/api/d=
+iscounts/live=3Fhash=3D91ae56f35b07f559f73a9ecd5ef8921c2a8bf4f1&discount=3D=
+eydhbGlhcyc6ICd4VE9ZQ1cnLCAnY2FtcGFpZ25JZCc6ICcyMDI1MDRfNTBvZmZhbnlfbGNtX2F=
+sbF9BcHJpbFByb21vLU9EX1dTX0EnLCAnY3JlYXRpb25EYXRlJzogJzIwMjUtMDQtMTRUMTA6MT=
+I6NDYnLCAnZXhwaXJlRGF0ZSc6ICcyMDI1LTA0LTIwVDAyOjEyOjQ2JywgJ3NpZ25hdHVyZSc6I=
+CdmZTliNzc3YTBjN2VhMTNkZmMyM2FiM2UyNjFlZjJlOGRiZGUzNmU4J30=3D>=0A=0A=0A=0A=
+=0A=0A=0A=0A=0A=0A=0A23 Brainstorming Tools to Spark Creativity and Organiz=
+e Ideas =0A<https://www.grammarly.com/blog/writing-process/brainstorming-to=
+ols/>=0ALearn More =E2=86=92 =0A<https://www.grammarly.com/blog/writing-pro=
+cess/brainstorming-tools/>=0A=0A=0A=0A=0A=0ADecoding AI Language: Common Wo=
+rds and Phrases in AI-Generated Content =0A<https://www.grammarly.com/blog/=
+ai/common-ai-words/>=0ALearn More =E2=86=92 <https://www.grammarly.com/blog=
+/ai/common-ai-words/>=0A=0A=0A=0A=0A=0AIs ChatGPT Plagiarism=3F How to Use =
+AI Responsibly and Avoid Plagiarism in Your =0AWriting <https://www.grammar=
+ly.com/blog/ai/is-chatgpt-plagiarism/>=0ALearn More =E2=86=92 <https://www.=
+grammarly.com/blog/ai/is-chatgpt-plagiarism/>=0A=0A=0A=0A=0A=0A=0A=0AGet Mo=
+re From Grammarly=0A=0A Fully protect yourself from writing mistakes=0A by =
+activating all 5 Grammarly features. =0A=0A=0A=0A=0A Browser Extension =0A=
+=0A=0A=0AMobile Keyboard =0AActivate <https://www.grammarly.com/mobile> =0A=
+=0A=0A Grammarly for Your Desktop =0A=0A=0A=0APremium Suggestions=0AActivat=
+e =0A<https://redirect.grammarly.com/redirect=3Fhash=3D91ae56f35b07f559f73a=
+9ecd5ef8921c2a8bf4f1&upgrade=3D1>=0A=0A=0AFree Suggestions =0A=0A=0A=0A=0A=
+=0A=0A=0A <http://www.facebook.com/grammarly>  <https://www.instagram.com/g=
+rammarly/>  =0A<http://www.linkedin.com/company/grammarly>  <http://twitter=
+.com/grammarly> =0A=0A=0AView Web Version =0A<https://click.grammarly.com/=
+s/vb/qK-5sifK3rBt2jFxAcFWz1GmX9LuTYDyk5IwJIqUedSH0_C8UhMCc16X8vgzB5Cvr_WG-c=
+phE7n8_ddJhXswWSIMp6gYrfVffAqI011g9fxCqfSG-6Ew9HmTVHA_N8P-HhLxXiYh6PfOqiCIC=
+op6PAOOMfvoqCVuLnqnsQ/pr0wtyo9WVLwjENSJYf5c6cUzANB4kaP/8>=0A =E2=80=A2Email=
+ Preferences =0A<https://redirect.grammarly.com/redirect=3Fmail_profile_pre=
+ferences=3D1&profileToken=3DeydlbWFpbCc6ICd5YXNoMzEyMDR0ZXN0aW5nQGdtYWlsLmN=
+vbScsICdzaWduYXR1cmUnOiAnNDI5NjI3NWViOTQ3OGI3YmYyZjM4ODM3OTYwM2JlMmQ2NjgxYT=
+g5MSd9>=0A =E2=80=A2Unsubscribe =0A<https://click.grammarly.com/s/eh/rHXrVf=
+UzTxy3N882ns5QsyToKhNy3ggHl5Rs81utrmdGoki8O3NjVJmO0jBfennZMA2Uc4Yy7L7sLufIf=
+oDX_dP4BgcIgLbwyaKJ8jg41BTInoXYFzf3lopS5RwOn70_TqLyjt9JRzBuFCvqmFYneFbBEo3t=
+0mX7O3LmiURRd5pqu9im1YFy4OV5kDUSkzGUkr54zMHJ48wGnH83KEr1lO9j9T9F4AgcUiJpJ7U=
+iokToYCktUuKgl_Eec0u5nGZ1et4HBI51vqUGO7ARHc-1HfGKHCdULcLvL6xKKnIjMW_v-GFf1H=
+0AryeF_vqGh_ZWQYie_emN_31yHinxdmKpjeHhcnKPZMeTrnrWui7insr95ya0RgIeNsKxamivp=
+MY1N2jfrzuWydTRhBJlO-f4FN_eGfK6scGxtsZLaS-PP1AdnfTvrOUZLEkGtTkrtgMszbqB6ZfO=
+mHDvPWI12s0jluZV7ZVmE1ka_VtfnuN994OJra4/kkFtA_QC3iVRo3jY5Wm57FPNDs4yF4-K/8>=
+=0A=0A We hope you enjoy monitoring your weekly writing trends. But if you =
+no longer =0Awish to receive Grammarly Insights emails, you may change your=
+ preferences by =0Aclicking the link above. =0A=0A=C2=A9 2025 Grammarly, In=
+c., 548 Market St. #35410, San Francisco, CA 94104
+--_----NjIKSStJa2u6Z30zy8vELA===_E2/48-04018-E3C6DF76
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!-- Changes for SL, PH, NarrCopy, and Images --> <!-- Numbers are 1 throug=
+h 8 --> <!-- Number are 1 through 24 --> <!-- Grammarly Business Content --=
+> <!-- Module Toggles these accept y or n as values. Snippets require y val=
+ue to display --> <!-- if premiumPromo is y, always set upsellBanner to n -=
+-> <!-- URL DEFINITIONS Unsubscribe/Preferences FOOTER DISCLOSURES RENEWAL =
+DEFINITIONS FIRST NAME SNIPPETS Default USER NAME --> <!-- Footer disclosur=
+e language --> <!--Links --> <!-- Assigning of preProCTAURL --> <!DOCTYPE H=
+TML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/h=
+tml4/loose.dtd"> <html lang=3D"en" xmlns:v=3D"urn:schemas-microsoft-com:vml=
+" xmlns:o=3D"urn:schemas-microsoft-com:office:office" style=3D"-webkit-text=
+-size-adjust: none; -webkit-font-smoothing: antialiased;"> <head> <!--[if g=
+te mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>9=
+6</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]--> <meta ht=
+tp-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"> <meta nam=
+e=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"> <meta na=
+me=3D"format-detection" content=3D"telephone=3Dno"> <meta name=3D"format-de=
+tection" content=3D"date=3Dno"> <meta name=3D"format-detection" content=3D"=
+address=3Dno"> <meta name=3D"format-detection" content=3D"email=3Dno"> <met=
+a http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <meta name=3D"x-app=
+le-disable-message-reformatting"> <meta name=3D"format-detection" content=
+=3D"date=3Dno"> <meta name=3D"=E2=80=9Crobots=E2=80=9D" content=3D"=E2=80=
+=9Cnoindex=E2=80=9D"> <title>Grammarly</title> <!--[if mso]><style type=3D"=
+text/css">body,table,td,h1,h2,h3,a,span{font-family:Helvetica,Arial,sans-se=
+rif!important}</style><![endif]--> <style type=3D"text/css">u+#body a{color=
+:#4c7af1;text-decoration:none;font-size:inherit;font-family:inherit;font-we=
+ight:inherit;line-height:inherit}@media only screen and (max-width:480px){d=
+iv>u+#body .stylingblock-content-wrapper.camarker-inner{padding:0 16px!impo=
+rtant}div>u+#body .stylingblock-content-wrapper.camarker-inner table{min-wi=
+dth:100%!important}}</style> <style type=3D"text/css">a[x-apple-data-detect=
+ors]{color:#4c7af1!important;text-decoration:none!important;font-size:inher=
+it!important;font-family:inherit!important;font-weight:inherit!important;li=
+ne-height:inherit!important}<style type=3D"text/css">ReadMsgBody{width:100%=
+}.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.E=
+xternalClass td,.ExternalClass div{line-height:100%}body{-webkit-text-size-=
+adjust:100%;-ms-text-size-adjust:100%;margin:0 auto!important}html{-webkit-=
+text-size-adjust:none;-webkit-font-smoothing:antialiased}a{outline:0}img{di=
+splay:block;outline:0}a img{border:0}td{mso-line-height-rule:exactly}table =
+td{border-collapse:collapse}@-ms-viewport{width:device-width}</style> <styl=
+e type=3D"text/css">}h1{font-family:Helvetica,Arial,sans-serif;font-weight:=
+700;font-size:32px;line-height:48px;color:#1c1c1c}h2{font-family:Helvetica,=
+Arial,sans-serif;font-weight:700;font-size:24px;line-height:32px;color:#1c1=
+c1c}h3{font-family:Helvetica,Arial,sans-serif;font-weight:700;font-size:18p=
+x;line-height:24px;color:#1c1c1c}td,p,li{font-family:Helvetica,Arial,sans-s=
+erif;font-weight:normal;font-size:16px;line-height:24px;color:#545454}a{fon=
+t-family:Helvetica,Arial,sans-serif;font-weight:400;font-size:16px;line-hei=
+ght:24px;color:#027e6f;text-decoration:none}.cta{font-family:Helvetica,Aria=
+l,sans-serif;font-weight:400;font-size:18px;line-height:24px;color:#fff}sup=
+,sub{vertical-align:baseline;position:relative;top:-0.4em}</style> <style t=
+ype=3D"text/css">@media only screen and (max-width:480px){.container{width:=
+100%!important}.footer{width:auto!important;margin-left:0}.mobile-hidden{di=
+splay:none!important}.logo{display:block!important;padding:0!important}img{=
+max-width:100%!important;height:auto!important;max-height:auto!important}.h=
+eader img{max-width:100%!important;height:auto!important;max-height:auto!im=
+portant}.photo img{width:100%!important;max-width:100%!important;height:aut=
+o!important}.drop{display:block!important;width:100%!important;float:left;c=
+lear:both}.footerlogo{display:block!important;width:100%!important;padding-=
+top:15px;float:left;clear:both}.nav4,.nav5,.nav6{display:none!important}.ta=
+bleBlock{width:100%!important}.responsive-td{width:100%!important;display:b=
+lock!important;padding:0!important}.fluid,.fluid-centered{width:100%!import=
+ant;max-width:100%!important;height:auto!important;margin-left:auto!importa=
+nt;margin-right:auto!important}.fluid-centered{margin-left:auto!important;m=
+argin-right:auto!important}.w100P{width:100%!important}.w80P{width:80%!impo=
+rtant}.w60P{width:60%!important}.w50P{width:50%!important}.w40{width:40%!im=
+portant}.mob-header{width:80px!important}.w95{width:95%!important}.mh6{max-=
+height:6px!important}.font8{font-size:8px!important}.font9{font-size:9px!im=
+portant}.font10{font-size:10px!important}.font12{font-size:14px!important}.=
+font15{font-size:14px!important}.lh12{line-height:14px!important}.lh24{line=
+-height:24px!important}.new-record-resize{width:70px!important;height:auto!=
+important}.W100P{width:100%!important;height:auto!important}.width{width:31=
+8px!important}.W300{width:300px!important}.paddingsides{padding:0 5px 0 5px=
+!important}.padd-left-15{padding-left:15px!important}.padd-top{padding-top:=
+30px!important}.font25{font-size:18px!important;vertical-align:middle!impor=
+tant}.font34{font-size:34px!important}.font55{font-size:40px!important;vert=
+ical-align:bottom!important}.img-width{width:150px!important}.mob-btn-size{=
+width:50px!important;height:22px!important;padding-top:5px!important}.img50=
+P{width:50px!important}.img75P{width:75px!important}.img15P{width:15px!impo=
+rtant}.mob-right-graph{width:45%!important}.mob-left-graph{width:55%!import=
+ant;padding-left:10px!important}.talignC{text-align:center!important}.show{=
+display:block!important;max-height:none!important;overflow:visible!importan=
+t;line-height:normal!important}.showTable{display:inline-block!important}.h=
+10{height:10px!important;line-height:10px!important;font-size:10px!importan=
+t}.h5{height:5px!important;line-height:5px!important;font-size:5px!importan=
+t}.fvw{font-size:3.5vw!important}.fvw2{font-size:2.6vw!important;width:100%=
+!important;padding:5px 3px!important;background-color:#2ac9a3!important}.w8=
+0P{width:80%!important;height:auto!important}.fvwa{font-size:3.0vw!importan=
+t;line-height:130%!important}.fvwb{font-size:4.5vw!important;line-height:14=
+0%!important}table .stylingblock-content-wrapper{border:none!important}*{-w=
+ebkit-text-size-adjust:none;-ms-text-size-adjust:none;-webkit-font-smoothin=
+g:antialiased}.height{height:auto!important}.hide{display:none!important}.s=
+tack{display:block!important;width:100%!important}.textC{text-align:center!=
+important}.marginCenter table{margin:0 auto!important}.show{display:block!i=
+mportant;max-height:none!important;overflow:visible!important;line-height:n=
+ormal!important}.showTable{display:inline-block!important}.LogoMobilePaddin=
+g{padding-left:16px!important}.MobileCTAPadding{padding-right:20px!importan=
+t}.MobileTableWidth{width:91%!important}.w24{width:24px!important}.w56{widt=
+h:56px!important}.w80{width:80px!important}.w104{width:104px!important}.hw6=
+4{width:64px!important;height:64px!important}.hw44{width:64px!important;hei=
+ght:64px!important}.hw158{width:158px!important;height:158px!important}.dir=
+LTR{direction:ltr!important}}</style> <style type=3D"text/css">a{color:#4c7=
+af1}td .darkBody{background-color:#000001!important}.lightimage{display:non=
+e!important}.darkimageWrapper,.darkimage{display:block!important}.darkModeB=
+G{background-color:#323342!important}.DarkHeader{background-color:#f0f2fc!i=
+mportant}.darkModeDarkCopy{color:#000001!important}.darkModeLink{color:#4c7=
+af1!important;font-weight:bold!important}[data-ogsc] .darkBody{background-c=
+olor:#000001!important}[data-ogsc] .lightimage{display:none!important}[data=
+-ogsc] .darkimageWrapper,[data-ogsc] .darkimage{display:block!important}[da=
+ta-ogsc] .lightimage{display:none!important}[data-ogsc] .darkimageWrapper,[=
+data-ogsc] .darkimage{display:block!important}</style> </head> <body id=3D"=
+body" bgcolor=3D"#F5F5F5" style=3D"-webkit-text-size-adjust: none; -ms-text=
+-size-adjust: none; -webkit-font-smoothing: antialiased; padding: 0; margin=
+: 0 auto !important;">=0D=0A<div style=3D"color:transparent;visibility:hidd=
+en;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;margin:0px;pad=
+ding:0px;border-width:0px!important;display:none!important;line-height:0px!=
+important;"><img border=3D"0" width=3D"1" height=3D"1" src=3D"http://tracks=
+p.grammarly.com/q/qSbQzmJVJOaRD0M7NBUOlQ~~/AARGbBA~/kVcrHzE07at8wCSn4zI_YgC=
+0XJZgXFO8LoZ4p5iA7zk2d5oRa1unHrjUdAPcaG4ERntA6Hg2WYo_YtfWONhJOA~~" alt=3D""=
+/></div>=0D=0A<span style=3D"color:transparent;visibility:hidden;display:no=
+ne;opacity:0;height:0;width:0;font-size:0;">Pick up where you left off to k=
+eep earning writing badges.</span><img src=3D"https://click.grammarly.com/s=
+/eo/qt1psTyi8fbLQyy4peOrYv1YcvuVOFrx2uk4OVFn7b_LzA3SRMQxTZ_KsszbE8zMBnKZ7Jg=
+PbpgDOqUqA2u8UUuN4MHHWy0gzOSei_ZMIUORmg4Swdz_EmP_gAjTY5FpSWOsKlDmeb62kZHfsA=
+FAKbVWD9FgqMOJLIHldWmXtPf9ABn_VuKBFj8C9WeFXWVZnPy_-7Y47WiGhp1qm4L7CvOvCrTXu=
+YCjeQV4/NyL6vj-2JXayeIz4ISWZQApcM_Tag9Lf/8" style=3D"border:0;width:1px;hei=
+ght:1px;border-width:0px!important;display:none!important;line-height:0!imp=
+ortant;" width=3D"1" height=3D"1"/><div style=3D"display: none; max-height:=
+ 0px; overflow: hidden;"> &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp; </d=
+iv> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"center=
+" width=3D"100%" bgcolor=3D"#F5F5F5"> <tr> <td align=3D"center" valign=3D"t=
+op" style=3D"mso-line-height-rule: exactly; font-family: Helvetica, Arial, =
+sans-serif; font-weight: normal; font-size: 16px; line-height: 24px; color:=
+ #545454; border-collapse: collapse;"> <table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" align=3D"center" width=3D"600" bgcolor=3D"#F5F5F5" clas=
+s=3D"container" style=3D"margin:0 auto;"> <tr> <td valign=3D"top" style=3D"=
+mso-line-height-rule: exactly; font-family: Helvetica, Arial, sans-serif; f=
+ont-weight: normal; font-size: 16px; line-height: 24px; color: #545454; bor=
+der-collapse: collapse;"> <!-- BAU Header Module --> <table cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#FFFFFF" width=3D"100%"> <tr> =
+<td bgcolor=3D"#F5F5F5" height=3D"20" style=3D"line-height:20px;font-size:2=
+0px;">&nbsp;</td> </tr> <tr> <td align=3D"center" bgcolor=3D"#F5F5F5"> <tab=
+le width=3D"100%" bgcolor=3D"#F5F5F5" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" align=3D"center" class=3D"w95"> <tr> <td align=3D"left" valign=
+=3D"top" style=3D"text-align:left"><a alias=3D"logo" href=3D"https://click.=
+grammarly.com/s/c/RnepWh0EGtdJ6WX02DuZAuQlLlhkMxleLHjByNUv5TnS3DtML5X2HNwju=
+8hozEaJlXnyLHWaNxK7mtOxTMMI7k1f--LKAWHD2xPeEUxS4HZYWO3rVdNU3vrxnD1BWxc507eA=
+kHMW2gvq0rfYfDItQsKqVIcGzEoZTuoIp3-LEszq055cQRfnJd_wgaS0UyDphbHLRpqWEto12uC=
+UXTtuojGJVT0KibtHtbi_lTam4fkIL8PER1zQ1d9u1ODPdlRhjZ7t3AZXVce-zlZmkAC4NDMSXO=
+cGahLY-Rvo0Vnh8x453qmya_sIrCZsd0fmHphTNtwQmwoRu3v7UovxDpVjrQTTZI4KrG13LoUy4=
+J0IfgkbYsmO3bAMoXdMxQLrBDX9IDCYAkeRFaXtcRboUjXnFeIAdeWFmTodMwg6tHK4FrVkliMs=
+ci0G64Oc/auIEsQ2GPg_oVgxpTAhxW0w4LKakfA4d/8" target=3D"_blank"><img class=
+=3D"height img-width" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/u=
+sers/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008=
+c5feabcd187/Grammarly%20Primary%20Lockup_Light%20BG.png" width=3D"157" heig=
+ht=3D"34" style=3D"width:157px;height:34px;max-width:237px;font-family:Helv=
+etica, arial, sans-serif;font-size:24px;line-height:40px;" alt=3D"Grammarly=
+" aria-label=3D"Grammarly Logo" border=3D"0"></a> </td> <td align=3D"right"=
+ valign=3D"center" style=3D"font-family:Helvetica, arial, sans-serif;font-s=
+ize:14px;line-height:21px;color:#28B473;"></td> </tr> </table> </td> </tr> =
+<tr> <td bgcolor=3D"#F5F5F5" height=3D"20" style=3D"line-height:20px;font-s=
+ize:20px;">&nbsp;</td> </tr> </table> <table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" bgcolor=3D"#FFFFFF" width=3D"100%" class=3D"w95" align=
+=3D"center"> <tr> <td bgcolor=3D"#ffffff" height=3D"30" style=3D"line-heigh=
+t:30px;font-size:30px;">&nbsp;</td> </tr> <tr> <tr> <td bgcolor=3D"#ffffff"=
+ height=3D"8" style=3D"line-height:8px;font-size:8px;">&nbsp;</td> </tr> <t=
+d align=3D"center" style=3D"color:#1C1C1C;font-family:Helvetica,Arial,sans-=
+serif;font-size:14px;line-height:150%;font-weight:400;" class=3D"w95"> <tab=
+le cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D=
+"w95"> <tr> <td width=3D"100%" align=3D"center" style=3D"color:#1C1C1C;font=
+-family:Helvetica,Arial,sans-serif;font-size:14px;line-height:150%;font-wei=
+ght:400;text-align:center;">April 07 - April 13</td> </tr> </table> </td> <=
+/tr> <tr> <td align=3D"center"> <table cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" class=3D"w95"> <tr> <td bgcolor=3D"#ffffff" height=3D"5" style=
+=3D"line-height:5px;font-size:5px;">&nbsp;</td> </tr> <tr> <td width=3D"700=
+" align=3D"center" style=3D"color:#027E6F;font-family:Helvetica,Arial,sans-=
+serif;font-size:29px;line-height:38px;font-weight:550;">Your Weekly Writing=
+ Update</td> </tr> <tr> <td bgcolor=3D"#ffffff" height=3D"10" style=3D"line=
+-height:10px;font-size:10px;">&nbsp;</td> </tr> <tr> <td width=3D"480" alig=
+n=3D"center" style=3D"color:#1C1C1C;font-family:Helvetica,Arial,sans-serif;=
+font-size:15px;line-height:150%;font-weight:400;padding-left:42px;padding-r=
+ight:42px;">It was a little quiet around here last week=E2=80=94did you acc=
+identally sign out of your Grammarly account=3F You can easily sign back in=
+ to continue tracking your achievements.</td> </tr> <tr> <td align=3D"cente=
+r" valign=3D"top"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" w=
+idth=3D"100%"> <!--Above Spacer | Adjust numbers to adjust spacer height-->=
+ <tr> <td height=3D"10" style=3D"line-height:10px;font-size:10px;height:10p=
+x;">&nbsp;</td> </tr> <!--Button--> <tr> <td align=3D"center" valign=3D"top=
+" class=3D"w95"> <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"10" role=3D"presentation"><tr><td align=3D"center"><table border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation"><tr><td cl=
+ass=3D"innertd buttonblock" bgcolor=3D"#027E6F" style=3D" border-radius: 5p=
+x; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #=
+027E6F;"><a target=3D"_blank" style=3D" font-size: 14px; font-family: Helve=
+tica, Arial,sans-serif; font-weight: 700; line-height: 32px; color: #FFFFFF=
+; text-align: center; text-decoration: none; display: block; background-col=
+or: #027E6F; border: 1px solid #027E6F; padding: 8px 32px; border-radius: 5=
+px; -moz-border-radius: 5px; -webkit-border-radius: 5px;" href=3D"https://c=
+lick.grammarly.com/s/c/781V6DFqPItZwBxjoAddAmpUMms03TPj1u4dtaHE9U9rtbBll6s_=
+f4uJC5pXjYhFBQN7ZKCWw4kQYUgH7GpF4k8HDGZldoYGmd_35EUg-QdalZlVd_0dbFAKH32MgbN=
+FFPfZzBT4Gq6CicvWXMNFlLgEEItPGuQFU1k0GWZ4rc1DltGVB_rlDu5_qFko867LiL3XgGZCKF=
+q26RLafRApJZJOpULZ8m1TA4YEe50IHRpc6eX9Awm71D3JZ_JroDhV-QwHw-4IC82lcWG-SZhkH=
+LBIQsHZuKZuflUqXAZwPw2WpK3h7eXoAZMXHW5wVeBreZsvRDtK9ztOPbKcym5R82vac3D_ISQR=
+iHCTGpr0duXnmyyzHo5iewm2Wk05ZE1vlRvSxchDbOWJWkc7EEo5zO6lafJQlHJLRq0-g-_ZD5m=
+DrmCXp2RlKFxXgNc/Oz6XvXDamSjk7nY-exm6GROwYXw3JYpQ/8" title=3D"" alias=3D"" =
+data-linkto=3D"http://grammarly.com/signin">Sign In</a></td></tr></table></=
+td></tr></table> </td> </tr> <tr> <td bgcolor=3D"#ffffff" height=3D"40" sty=
+le=3D"line-height:40px;font-size:40px;">&nbsp;</td> </tr> </table> </td> </=
+tr> </table> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td bgcolor=3D"#F5F5F5" height=3D"20" style=3D"line-height:20=
+px; font-size:20px;">&nbsp;</td></tr></table> <table cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" width=3D"100%"> <tr> <td align=3D"center" valign=
+=3D"top"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"=
+w95" bgcolor=3D"#FFFFFF" width=3D"100%"> <tr><td bgcolor=3D"#ffffff" height=
+=3D"20" style=3D"line-height:20px;font-size:20px;">&nbsp;</td> </tr> <tr> <=
+td align=3D"center" class=3D"w95"> <table cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" class=3D"w95" style=3D"font-family:Helvetica,Arial,sans-ser=
+if;font-size:15px;line-height:150%;font-weight:normal;"> <tr> <td width=3D"=
+30" class=3D"hide"></td> <td valign=3D"middle" align=3D"left" width=3D"280"=
+ height=3D"45"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"> <t=
+r> <td colspan=3D"3" bgcolor=3D"#ffffff" height=3D"10" style=3D"line-height=
+:10px;font-size:10px;">&nbsp;</td> </tr> <tr> <td valign=3D"top" style=3D"c=
+olor:#1C1C1C;font-family:Helvetica,Arial,sans-serif;font-size:16px;text-tra=
+nsform:uppercase;line-height:normal;font-weight:700;">Grammarly writing str=
+eak</td> <td width=3D"20"></td> </tr> <tr> <td colspan=3D"3" bgcolor=3D"#ff=
+ffff" height=3D"10" style=3D"line-height:10px;font-size:10px;">&nbsp;</td> =
+</tr> <tr> <td colspan=3D"3" style=3D"color:#027E6F;font-family:Helvetica,A=
+rial,sans-serif;font-size:24px;line-height:150%;font-weight:400;"><strong>0=
+ weeks</strong></td> </tr> </table> </td> <td width=3D"80"></td> <td valign=
+=3D"middle" style=3D"border-left:#F5F5F5 1px solid;" width=3D"200" align=3D=
+"middle"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"> <tr> <td=
+ valign=3D"middle" align=3D"center" height=3D"65" class=3D"padd-left-15"> <=
+table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"> <tr> <td background=
+=3D"https://image.send.grammarly.com/lib/fe8f12747760017576/m/3/Next+Badge+=
+50x45+1x.png" bgcolor=3D"#ffffff" width=3D"50" height=3D"45" valign=3D"top"=
+> <div align=3D"center"> <table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"100%"> <tr> <td height=3D"45" valign=3D"middle" align=3D"ce=
+nter" style=3D"color:#1C1C1C;font-family:Helvetica,Arial,sans-serif;font-si=
+ze:18px;line-height:normal;font-weight:700;">1</td> </tr> </table> </div> <=
+/td> </tr> </table> </td> </tr> <tr> <td class=3D"font9" align=3D"center" s=
+tyle=3D"color:#1C1C1C;font-family:Helvetica,Arial,sans-serif;font-size:12px=
+;line-height:normal;font-weight:normal;">Next Achievement</td> </tr> </tabl=
+e> </td> </tr> </table> </td> </tr> <tr><td bgcolor=3D"#ffffff" height=3D"2=
+0" style=3D"line-height:20px;font-size:20px;">&nbsp;</td> </tr> </table> </=
+td> </tr> </table> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+width=3D"100%"><tr><td bgcolor=3D"#F5F5F5" height=3D"20" style=3D"line-heig=
+ht:20px;font-size:20px;">&nbsp;</td></tr> <tr><td> <table cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"w95" align=3D"cente=
+r"> <tr> <td class=3D"mob-left-graph" valign=3D"middle" align=3D"center" bg=
+color=3D"#FFFFFF" width=3D"342"> <table cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" align=3D"left"> <tr> <td width=3D"30" class=3D"hide"></td> <t=
+d align=3D"left" style=3D"color:#1C1C1C;font-family:,Helvetica,Arial,sans-s=
+erif;font-size:14px;line-height:150%;font-weight:bold; padding-top:30px;"> =
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"95%"> <tr>=
+ <td align=3D"left" valign=3D"top" style=3D"color:#1C1C1C;font-family:Helve=
+tica,Arial,sans-serif;font-size:24px;line-height:150%;font-weight:bold; let=
+ter-spacing:-1px;">Productivity</td> </tr> </table> </td> </tr> <tr> <td wi=
+dth=3D"30" class=3D"hide"></td> <td align=3D"left" style=3D"color:#1C1C1C;f=
+ont-family:Helvetica,Arial,sans-serif;font-size:16px;line-height:150%;font-=
+weight:normal;">No activity detected for last week. <br>Please make sure yo=
+u are <a href=3D"https://click.grammarly.com/s/c/RzHP1VhRBDbX4APagt4wF1qloS=
+8ZqAXuWVHEajRhlQ1X0nssdO4rk0vdJzkZLayi9D67mA9ZeV9OqC68nSwq92jN5RiKDxC8MKMSj=
+V4rc3zb6rEkb02B-epmvbYPYfQ-BzzLtHbNBF41xmD_wawkvyNff2K97SEcciVW1MwbtxEVcGP7=
+Ri7HBn68luISM3wkSiSMwCqfrLeyBR89z74ac1C8mtVo2YTpNmQo71hydIy_EWWPES1BgLl9FmM=
+lGAglUOXBuzfZRSp5LFWo4SKs6RZB-NyRF-tKf3NcMO5kOPANZ7z9qHZuJDxDyUex0AvoAOM-HI=
+IT_1MzCE8DqPSkweqN17OZHUDOceYsiT4pNCPgWZvFkq6H71WSPbDRWuNpP3IE4lLAiYuAkvqIj=
+4gRxmComnpr-5ZdoUeOuY9gtYUtqCx9HZsPRXR4v-E7-hD-hQDLLRpkFXD8NVW7pKMTXDVy5ftc=
+surO3arh3MxEDgU4AD1zliGcdczxs52-wiwjWT0fRZF9/FuWbnkDi4T29EdvfGsuSrxkXs7IuFH=
+7v/8" style=3D"color: #027E6F; text-decoration:none; white-space: nowrap" c=
+lass=3D"hover">logged in</a>.</td> </tr> </table> </td> <td class=3D"mob-ri=
+ght-graph" valign=3D"middle" align=3D"right" bgcolor=3D"#027E6F" width=3D"2=
+08" height=3D"210"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+class=3D"w95"><tr><td align=3D"right" style=3D"color:#FDFDFD;font-family:He=
+lvetica,Arial,sans-serif;font-size:24px;line-height:normal;font-weight:bold=
+;padding-top:20px;">0</td></tr><tr><td align=3D"right" style=3D"color:#FDFD=
+FD;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:normal=
+;font-weight:normal;">words analyzed</td></tr><tr><td colspan=3D"3" bgcolor=
+=3D"#027E6F" height=3D"37" style=3D"line-height:37px;font-size:37px;">&nbsp=
+;</td></tr> <!--Productivity Bar Graph num2 Intervals num3 Intervals num4 I=
+ntervals --> <tr><td valign=3D"bottom" width=3D"160" align=3D"right" style=
+=3D"color:#FDFDFD;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:=
+15px;line-height:normal;font-weight:normal;"><table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0"><tr><td align=3D"right" valign=3D"bottom" bgcolor=
+=3D"#027E6F" width=3D"100%" height=3D"40"><table cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" align=3D"right"><tr><td align=3D"right" valign=3D"bo=
+ttom"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"righ=
+t"><tr><td width=3D"2"></td><td valign=3D"bottom"><table cellspacing=3D"0" =
+cellpadding=3D"0" border=3D"0" width=3D"10" align=3D"left"><tr><td valign=
+=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" style=3D"line-height:40px;fon=
+t-size:40px;">&nbsp;</td></tr><tr><td valign=3D"bottom" bgcolor=3D"#FFFFFF"=
+ height=3D"0" style=3D"line-height:0px;font-size:0px;">&nbsp;</td></tr></ta=
+ble></td><td width=3D"30"></td><td valign=3D"bottom"><table cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0" width=3D"10" align=3D"left"><tr><td valig=
+n=3D"bottom" bgcolor=3D"#027E6F" height=3D"0" style=3D"line-height:0px;font=
+-size:0px;">&nbsp;</td></tr><tr><td valign=3D"bottom" bgcolor=3D"#FFFFFF" h=
+eight=3D"40" style=3D"line-height:40px;font-size:40px;">&nbsp;</td></tr></t=
+able></td><td width=3D"30"></td><td valign=3D"bottom"><table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" width=3D"10" align=3D"left"><tr><td vali=
+gn=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" style=3D"line-height:40px;f=
+ont-size:40px;">&nbsp;</td></tr><tr><td valign=3D"bottom" bgcolor=3D"#FFFFF=
+F" height=3D"0" style=3D"line-height:0px;font-size:0px;">&nbsp;</td></tr></=
+table></td><td width=3D"30"></td><td valign=3D"bottom"><table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" align=3D"left"><tr><td v=
+align=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" style=3D"line-height:40p=
+x;font-size:40px;">&nbsp;</td></tr><tr><td valign=3D"bottom" bgcolor=3D"#FF=
+FFFF" height=3D"0" style=3D"line-height:0px;font-size:0px;">&nbsp;</td></tr=
+></table></td></tr></table></td></tr><tr><td width=3D"100%" bgcolor=3D"#FFF=
+FFF" height=3D"1" style=3D"line-height:1px;font-size:1px;">&nbsp;</td></tr>=
+</table></td></tr><tr><td align=3D"right" valign=3D"bottom"><table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td bgcolor=3D"=
+#027E6F" height=3D"10" style=3D"line-height:10px;font-size:10px;">&nbsp;</t=
+d></tr></table></td></tr><tr><td width=3D"160" align=3D"right" valign=3D"bo=
+ttom"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%=
+"><tr><td width=3D"5"></td><td valign=3D"bottom" align=3D"right" style=3D"c=
+olor:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size:8px;line-heig=
+ht:150%;font-weight:normal;text-transform: uppercase;letter-spacing:0.3px;"=
+ aria-label=3D"Mar 23 0 words analyzed"><a rel=3D"nofollow" style=3D'text-d=
+ecoration:none; color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-s=
+ize:8px;line-height:150%;font-weight:normal;text-transform:uppercase;letter=
+-spacing:0.3px'>Mar 23</a></td><td width=3D"25"></td><td valign=3D"bottom" =
+align=3D"right" style=3D"color:#FFFFFF;font-family:Helvetica,Arial,sans-ser=
+if;font-size:8px;line-height:150%;font-weight:normal;text-transform:upperca=
+se;letter-spacing:0.3px;" aria-label=3D"Mar 30 40 words analyzed"><a rel=3D=
+"nofollow" style=3D'text-decoration:none; color:#FFFFFF;font-family:Helveti=
+ca,Arial,sans-serif;font-size:8px;line-height:150%;font-weight:normal;text-=
+transform:uppercase;letter-spacing:0.3px'><nobr>30</nobr></a></td><td width=
+=3D"15"></td><td valign=3D"bottom" align=3D"right" style=3D"color:#FFFFFF;f=
+ont-family:'Inter',Helvetica,Arial,sans-serif;font-size:8px;line-height:150=
+%;font-weight:normal;text-transform:uppercase;letter-spacing:0.3px;" aria-l=
+abel=3D"Apr 06 0 words analyzed"><a rel=3D"nofollow" style=3D'text-decorati=
+on:none; color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size:8px=
+;line-height:150%;font-weight:normal;text-transform:uppercase;letter-spacin=
+g:0.3px'>Apr 06</a></td><td width=3D"20"></td><td valign=3D"bottom" align=
+=3D"right" style=3D"color:#FFFFFF;font-family:'Inter',Helvetica,Arial,sans-=
+serif;font-size:8px;line-height:150%;font-weight:normal;text-transform:uppe=
+rcase;letter-spacing:0.3px;" aria-label=3D"Apr 13 0 words analyzed"><a rel=
+=3D"nofollow" style=3D'text-decoration:none; color:#FFFFFF;font-family:Helv=
+etica,Arial,sans-serif;font-size:8px;line-height:150%;font-weight:normal;te=
+xt-transform:uppercase;letter-spacing:0.3px'><nobr>13</nobr></a></td></tr><=
+/table></td></tr></table></td><td width=3D"15"></td><td width=3D"15" class=
+=3D"hide"></td></tr><tr><td colspan=3D"3" bgcolor=3D"#027E6F" height=3D"10"=
+ style=3D"line-height:10px;font-size:10px;">&nbsp;</td></tr></table></td></=
+tr></table> </td></tr></table> <table cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" width=3D"100%"> <tr> <td bgcolor=3D"#F5F5F5" height=3D"20" styl=
+e=3D"line-height:20px;font-size:20px;">&nbsp;</td> </tr> <tr><td> <table ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D"w95"=
+ align=3D"center" valign=3D"middle"> <tr> <td class=3D"mob-left-graph" vali=
+gn=3D"middle" align=3D"center" bgcolor=3D"#FFFFFF" width=3D"342"> <table ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"mid=
+dle"> <tr> <td width=3D"30" class=3D"hide"></td> <td align=3D"left" style=
+=3D"color:#1C1C1C;font-family:,Helvetica,Arial,sans-serif;font-size:14px;li=
+ne-height:150%;font-weight:bold;padding-top:30px;"> <table cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" width=3D"95%"> <tr> <td align=3D"left" val=
+ign=3D"top" style=3D"color:#1C1C1C;font-family:Helvetica,Arial,sans-serif;f=
+ont-size:24px;line-height:150%;font-weight:bold; letter-spacing:-1px;">Mast=
+ery</td> </tr> </table> </td> </tr> <tr> <td width=3D"30" class=3D"hide"></=
+td> <td align=3D"left" style=3D"color:#1C1C1C;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;line-height:150%;font-weight:normal;">No activity =
+detected for last week. <br>Please make sure you are <a href=3D"https://cli=
+ck.grammarly.com/s/c/kVAXEpzE_eyr5EX4j9lxP9FLxORgaJPjztRW-ug-mYSICbPahih_pd=
+y5nfvxNSMwpIbmG7sFaZKFKkGgSZ3wJtrEeSELzb1u77mv2d3zyfTB4WYTzIooA5GoIQevcTEzY=
+M0Tb9lnpyb_d9OxocOZsfuJk4JOceY32xHds2BFUGMbvkQr_O71XfrKhjwxPgTZLmcQa7hLLxW0=
+CdKg9TmMXftJvkD3hqib4BLFSQBevloe7T0D14NNJucxMYdo6RVDgW8iSv42Jj2-bUbBVr8pL2-=
+y8mrvLP95BAYtyXUv9vxokudBtzHxxBSmjR3iFQWjuqkVgenqeD0sZBjGbdiUlWygbOHwvvjuaM=
+AhswT0mp4wlq6Gr9SZtEWq1LQ2ahF3m3746PFHQt7MIw5gnhOGkI9tv80z2m1UZBOXYUO2m-2_i=
+SFtED2iVd8PvCKqiFMCOznswzG3pJ38uqKh908DzrSN6eQgMl7Qo70mdCbbvFpwc3GQ7mR4BqQY=
+k8QIiZkA74L9AdJP/vG_OSaNsEDbjdmK28jPMQ60aKoGWYuNt/8" style=3D"color:#027E6F=
+;text-decoration:none;white-space:nowrap" class=3D"hover">logged in</a>.</t=
+d> </tr> </table> </td> <td class=3D"mob-right-graph" valign=3D"middle" ali=
+gn=3D"right" bgcolor=3D"#027E6F" width=3D"208" height=3D"210"><table cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"w95"><tr><td align=3D"r=
+ight" style=3D"color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-si=
+ze:24px;line-height:normal;font-weight:bold;padding-top:20px;">0</td></tr><=
+tr><td align=3D"right" style=3D"color:#FFFFFF;font-family:Helvetica,Arial,s=
+ans-serif;font-size:16px;line-height:normal;font-weight:normal;">alerts sho=
+wn</td></tr><tr><td colspan=3D"3" bgcolor=3D"#027E6F" height=3D"37" style=
+=3D"line-height:37px;font-size:37px;">&nbsp;</td></tr> <!--Productivity Bar=
+ Graph --> <!-- Graph Logic num1 is either greatest or zero num1 Intervals =
+num2 Intervals num3 Intervals num4 Intervals --> <tr><td valign=3D"bottom" =
+width=3D"160" align=3D"right" style=3D"color:#FFFFFF;font-family:Helvetica,=
+Arial,sans-serif;font-size:15px;line-height:normal;font-weight:normal;"><ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td align=3D"right=
+" valign=3D"bottom" bgcolor=3D"#027E6F" width=3D"100%" height=3D"40"><table=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right"><tr><td a=
+lign=3D"right" valign=3D"bottom"><table cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" align=3D"right"><tr><td width=3D"2"></td><td valign=3D"bottom=
+"><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" alig=
+n=3D"left"><tr><td valign=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" styl=
+e=3D"line-height:40px;font-size:40px;">&nbsp;</td></tr><tr><td valign=3D"bo=
+ttom" bgcolor=3D"#FFFFFF" height=3D"0" style=3D"line-height:0px;font-size:0=
+px;">&nbsp;</td></tr></table></td><td width=3D"30"></td><td valign=3D"botto=
+m"><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" ali=
+gn=3D"left"><tr><td valign=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" sty=
+le=3D"line-height:40px;font-size:40px;">&nbsp;</td></tr><tr><td valign=3D"b=
+ottom" bgcolor=3D"#FFFFFF" height=3D"0" style=3D"line-height:0px;font-size:=
+0px;">&nbsp;</td></tr></table></td><td width=3D"30"></td><td valign=3D"bott=
+om"><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" al=
+ign=3D"left"><tr><td valign=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" st=
+yle=3D"line-height:40px;font-size:40px;">&nbsp;</td></tr><tr><td valign=3D"=
+bottom" bgcolor=3D"#FFFFFF" height=3D"0" style=3D"line-height:0px;font-size=
+:0px;">&nbsp;</td></tr></table></td><td width=3D"30"></td><td valign=3D"bot=
+tom"><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" a=
+lign=3D"left"><tr><td valign=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" s=
+tyle=3D"line-height:40px;font-size:40px;">&nbsp;</td></tr><tr><td valign=3D=
+"bottom" bgcolor=3D"#FFFFFF" height=3D"0" style=3D"line-height:0px;font-siz=
+e:0px;">&nbsp;</td></tr></table></td></tr></table></td></tr><tr><td width=
+=3D"100%" bgcolor=3D"#FFFFFF" height=3D"1" style=3D"line-height:1px;font-si=
+ze:1px;">&nbsp;</td></tr></table></td></tr><tr><td align=3D"right" valign=
+=3D"bottom"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=
+=3D"100%"><tr><td bgcolor=3D"#027E6F" height=3D"10" style=3D"line-height:10=
+px;font-size:10px;">&nbsp;</td></tr></table></td></tr><tr><td width=3D"160"=
+ align=3D"right" valign=3D"bottom"><table cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" width=3D"100%"><tr><td width=3D"5"></td><td valign=3D"botto=
+m" align=3D"right" style=3D"color:#FFFFFF;font-family:Helvetica,Arial,sans-=
+serif;font-size:8px;line-height:150%;font-weight:normal;text-transform: upp=
+ercase;letter-spacing:0.3px;" aria-label=3D"Mar 23 0 words analyzed"><a rel=
+=3D"nofollow" style=3D'text-decoration:none; color:#FFFFFF;font-family:Helv=
+etica,Arial,sans-serif;font-size:8px;line-height:150%;font-weight:normal;te=
+xt-transform:uppercase;letter-spacing:0.3px'>Mar 23</a></td><td width=3D"25=
+"></td><td valign=3D"bottom" align=3D"right" style=3D"color:#FFFFFF;font-fa=
+mily:Helvetica,Arial,sans-serif;font-size:8px;line-height:150%;font-weight:=
+normal;text-transform:uppercase;letter-spacing:0.3px;" aria-label=3D"Mar 30=
+ 0 words analyzed"><a rel=3D"nofollow" style=3D'text-decoration:none; color=
+:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size:8px;line-height:1=
+50%;font-weight:normal;text-transform:uppercase;letter-spacing:0.3px'><nobr=
+>30</nobr></a></td><td width=3D"15"></td><td valign=3D"bottom" align=3D"rig=
+ht" style=3D"color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size=
+:8px;line-height:150%;font-weight:normal;text-transform:uppercase;letter-sp=
+acing:0.3px;" aria-label=3D"Apr 06 0 words analyzed"><a rel=3D"nofollow" st=
+yle=3D'text-decoration:none; color:#FFFFFF;font-family:Helvetica,Arial,sans=
+-serif;font-size:8px;line-height:150%;font-weight:normal;text-transform:upp=
+ercase;letter-spacing:0.3px'>Apr 06</a></td><td width=3D"20"></td><td valig=
+n=3D"bottom" align=3D"right" style=3D"color:#FFFFFF;font-family:Helvetica,A=
+rial,sans-serif;font-size:8px;line-height:150%;font-weight:normal;text-tran=
+sform:uppercase;letter-spacing:0.3px;" aria-label=3D"Apr 13 0 words analyze=
+d"><a rel=3D"nofollow" style=3D'text-decoration:none; color:#FFFFFF;font-fa=
+mily:Helvetica,Arial,sans-serif;font-size:8px;line-height:150%;font-weight:=
+normal;text-transform:uppercase;letter-spacing:0.3px'><nobr>13</nobr></a></=
+td></tr></table></td></tr></table></td><td width=3D"15"></td><td width=3D"1=
+5" class=3D"hide"></td></tr><tr><td colspan=3D"3" bgcolor=3D"#027E6F" heigh=
+t=3D"10" style=3D"line-height:10px;font-size:10px;">&nbsp;</td></tr></table=
+></td></tr></table></td></tr></table> <table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" width=3D"100%"> <tr> <td bgcolor=3D"#F5F5F5" height=3D"=
+20" style=3D"line-height:20px; font-size:20px;">&nbsp;</td> </tr> <tr><td> =
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" clas=
+s=3D"w95" align=3D"center"> <tr> <td class=3D"mob-left-graph" valign=3D"mid=
+dle" align=3D"center" bgcolor=3D"#FFFFFF" width=3D"342"> <table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left"> <tr> <td width=3D"30"=
+ class=3D"hide"></td> <td align=3D"left" style=3D"color:#1C1C1C;font-family=
+:,Helvetica,Arial,sans-serif;font-size:14px;line-height:150%; font-weight:b=
+old;padding-top:30px;"> <table cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" width=3D"95%"> <tr> <td align=3D"left" valign=3D"top" style=3D"color=
+:#1C1C1C;font-family:Helvetica,Arial,sans-serif;font-size:24px;line-height:=
+150%;font-weight:bold; letter-spacing:-1px;">Vocabulary</td> </tr> </table>=
+ </td> </tr> <tr> <td width=3D"30" class=3D"hide"></td> <td align=3D"left" =
+style=3D"color:#1C1C1C;font-family:Helvetica,Arial,sans-serif;font-size:16p=
+x;line-height:150%;font-weight:normal;">No activity detected for last week.=
+<br>Please make sure you are <a href=3D"https://click.grammarly.com/s/c/GzK=
+wEmqEg_wSdJduf717hkAr6PCQYMd-MZBkYHVrm0Fr2y2eNORtVHO2r3gHDnOMdf-OhEEDjgwP-O=
+zK4YHVVuxFXjkSHcBzkIp4yXwjxVXQJhGWFqeFhpg-qvfDC93oMtpD_UwZQGEI7UUw9TWgVqII7=
+xQDoGuCzv-lZYJxaL_K1gPXn0_17ZBx3fBG-BQM-pJYSWXbOWvvfbTyFQa95Lv3FYE8HR4eTEJW=
+Vjcy5AKPMrQfTSSjZSB75qUsqhDQL5eVXXlIuH9iIG_zFl15tEllfSImpu_mBp9xZk4BMQHG8_a=
+-LMu3gMF3jmQIhLQDFWmrRzwZQwGNwR2FzS6gn2Iu7-71-Ewy3CTwDh6Z1Xhsgo24D5HG5-TdLi=
+HH9wBt9uLCMpjxU5J9GPmAiuZgJSW0r7KozOcpKrrqYygn8hTAw6YdweYFYOql-g_am_CR15Aib=
+tBpyA4h1tztvZ7CYArjE7dA5ECzzuh-0CkyWLLWXIX0Yj1ODeXbr7NtG2oN0-6pkU1Q/ICSsL9f=
+CNzJdhxvCAHEWQ-lFs_dQwoHG/8" style=3D"color:#027E6F;text-decoration:none;wh=
+ite-space:nowrap" class=3D"hover">logged in</a>.</td> </tr> </table> </td> =
+<td class=3D"mob-right-graph" valign=3D"middle" align=3D"right" bgcolor=3D"=
+#027E6F" width=3D"208" height=3D"210"> <table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" class=3D"w95"> <tr> <td align=3D"right" style=3D"color:=
+#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size:24px;line-height:n=
+ormal;font-weight:bold;padding-top:20px;">0</td> </tr> <tr><td align=3D"rig=
+ht" style=3D"color:#FFFFFF;font-family:'Inter',Helvetica,Arial,sans-serif;f=
+ont-size:15px;line-height:normal;font-weight:normal;"> unique words used</t=
+d> </tr> <tr> <td colspan=3D"3" bgcolor=3D"#027E6F" height=3D"37" style=3D"=
+line-height:37px;font-size:37px;">&nbsp;</td> </tr> <!--Productivity Bar Gr=
+aph --> <!-- Graph Logic num1 is either greatest or zero num1 Intervals num=
+2 Intervals num3 Intervals num4 Intervals --> <tr> <td valign=3D"bottom" wi=
+dth=3D"160" align=3D"right" style=3D"color:#FFFFFF;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:15px;line-height:normal;font-weight:normal;"><tabl=
+e cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td align=3D"right" =
+valign=3D"bottom" bgcolor=3D"#027E6F" width=3D"100%" height=3D"40"><table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"right"><tr><td ali=
+gn=3D"right" valign=3D"bottom"><table cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" align=3D"right"><tr><td width=3D"2"></td><td valign=3D"bottom">=
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" align=
+=3D"left"><tr><td valign=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" style=
+=3D"line-height:40px;font-size:40px;">&nbsp;</td></tr><tr><td valign=3D"bot=
+tom" bgcolor=3D"#FFFFFF" height=3D"0" style=3D"line-height:0px;font-size:0p=
+x;">&nbsp;</td></tr></table></td><td width=3D"30"></td><td valign=3D"bottom=
+"><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" alig=
+n=3D"left"><tr><td valign=3D"bottom" bgcolor=3D"#027E6F" height=3D"0" style=
+=3D"line-height:0px;font-size:0px;">&nbsp;</td></tr><tr><td valign=3D"botto=
+m" bgcolor=3D"#FFFFFF" height=3D"40" style=3D"line-height:40px;font-size:40=
+px;">&nbsp;</td></tr></table></td><td width=3D"30"></td><td valign=3D"botto=
+m"><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" ali=
+gn=3D"left"><tr><td valign=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" sty=
+le=3D"line-height:40px;font-size:40px;">&nbsp;</td></tr><tr><td valign=3D"b=
+ottom" bgcolor=3D"#FFFFFF" height=3D"0" style=3D"line-height:0px;font-size:=
+0px;">&nbsp;</td></tr></table></td><td width=3D"30"></td><td valign=3D"bott=
+om"><table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"10" al=
+ign=3D"left"><tr><td valign=3D"bottom" bgcolor=3D"#027E6F" height=3D"40" st=
+yle=3D"line-height:40px;font-size:40px;">&nbsp;</td></tr><tr><td valign=3D"=
+bottom" bgcolor=3D"#FFFFFF" height=3D"0" style=3D"line-height:0px;font-size=
+:0px;">&nbsp;</td></tr></table></td></tr></table></td></tr><tr><td width=3D=
+"100%" bgcolor=3D"#FFFFFF" height=3D"1" style=3D"line-height:1px;font-size:=
+1px;">&nbsp;</td></tr></table></td></tr><tr><td align=3D"right" valign=3D"b=
+ottom"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100=
+%"><tr><td bgcolor=3D"#027E6F" height=3D"10" style=3D"line-height:10px;font=
+-size:10px;">&nbsp;</td></tr></table></td></tr><tr><td width=3D"160" align=
+=3D"right" valign=3D"bottom"><table cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" width=3D"100%"><tr><td width=3D"5"></td><td valign=3D"bottom" ali=
+gn=3D"right" style=3D"color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;=
+font-size:8px;line-height:150%;font-weight:normal;text-transform: uppercase=
+;letter-spacing:0.3px;" aria-label=3D"Mar 23 0 words analyzed"><a rel=3D"no=
+follow" style=3D'text-decoration:none; color:#FFFFFF;font-family:Helvetica,=
+Arial,sans-serif;font-size:8px;line-height:150%;font-weight:normal;text-tra=
+nsform:uppercase;letter-spacing:0.3px'>Mar 23</a></td><td width=3D"25"></td=
+><td valign=3D"bottom" align=3D"right" style=3D"color:#FFFFFF;font-family:H=
+elvetica,Arial,sans-serif;font-size:8px;line-height:150%;font-weight:normal=
+;text-transform:uppercase;letter-spacing:0.3px;" aria-label=3D"Mar 30 40 wo=
+rds analyzed"><a rel=3D"nofollow" style=3D'text-decoration:none; color:#FFF=
+FFF;font-family:Helvetica,Arial,sans-serif;font-size:8px;line-height:150%;f=
+ont-weight:normal;text-transform:uppercase;letter-spacing:0.3px'><nobr>30</=
+nobr></a></td><td width=3D"15"></td><td valign=3D"bottom" align=3D"right" s=
+tyle=3D"color:#FFFFFF;font-family:Helvetica,Arial,sans-serif;font-size:8px;=
+line-height:150%;font-weight:normal;text-transform:uppercase;letter-spacing=
+:0.3px;" aria-label=3D"Apr 06 0 words analyzed"><a rel=3D"nofollow" style=
+=3D'text-decoration:none; color:#FFFFFF;font-family:Helvetica,Arial,sans-se=
+rif;font-size:8px;line-height:150%;font-weight:normal;text-transform:upperc=
+ase;letter-spacing:0.3px'>Apr 06</a></td><td width=3D"20"></td><td valign=
+=3D"bottom" align=3D"right" style=3D"color:#FFFFFF;font-family:'Inter',Helv=
+etica,Arial,sans-serif;font-size:8px;line-height:150%;font-weight:normal;te=
+xt-transform:uppercase;letter-spacing:0.3px;" aria-label=3D"Apr 13 0 words =
+analyzed"><a rel=3D"nofollow" style=3D'text-decoration:none; color:#FFFFFF;=
+font-family:Helvetica,Arial,sans-serif;font-size:8px;line-height:150%;font-=
+weight:normal;text-transform:uppercase;letter-spacing:0.3px'><nobr>13</nobr=
+></a></td></tr></table></td></tr></table></td><td width=3D"15"></td><td wid=
+th=3D"15" class=3D"hide"></td></tr><tr><td colspan=3D"3" bgcolor=3D"#027E6F=
+" height=3D"10" style=3D"line-height:10px;font-size:10px;">&nbsp;</td></tr>=
+</table></td></tr></table></td></tr></table> <table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"> <tr> <td bgcolor=3D"#F5F5F5" heig=
+ht=3D"20" style=3D"line-height:20px;font-size:20px;"> &nbsp;</td> </tr> </t=
+able> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%=
+"> <tr> <td align=3D"center" class=3D"w100P"> <table cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" class=3D"w95" align=3D"center" width=3D"100%" bg=
+color=3D"#F0EBE3"> <tr> <td class=3D"" align=3D"left" bgcolor=3D"#F0EBE3" w=
+idth=3D"50%" style=3D"max-height:321px;" valign=3D"middle"> <table cellpadd=
+ing=3D"0" cellspacing=3D"0" border=3D"0" class=3D"w95 padd-left-15 footerlo=
+go" valign=3D"middle"> <tr> <td colspan=3D"3" class=3D"hide" height=3D"20" =
+style=3D"line-height:20px;font-size:20px;">&nbsp;</td> </tr> <tr> <td width=
+=3D"30" class=3D"hide"></td> <td class=3D"font25" align=3D"left" style=3D"c=
+olor:#1C1C1C;font-family:Helvetica,Arial,sans-serif;font-size:28px;line-hei=
+ght:120%;font-weight:700; padding-bottom:12px;">Get 50% Off Grammarly Pro</=
+td> </tr> <tr> <td width=3D"30" class=3D"hide"></td> <td class=3D"font12 lh=
+12" align=3D"left" style=3D"color:#1C1C1C;font-family:Helvetica,Arial,sans-=
+serif;font-size:15px;line-height:22px;font-weight:400;">Spring into action =
+by April 16 and enjoy the fruits of productive communication.</td> </tr> <t=
+r> <td class=3D"hide" colspan=3D"3" height=3D"20" style=3D"line-height:20px=
+;font-size:20px;">&nbsp;</td> </tr> <tr> <td width=3D"26" class=3D"hide"></=
+td> <td align=3D"left" valign=3D"top" class=3D"show"> <!-- DT Button --> <t=
+able cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=
+=3D"hide"> <tr> <td align=3D"left" style=3D"padding-top:0px;padding-bottom:=
+0px;"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"120=
+"> <tr> <td class=3D"innertd buttonblock" bgcolor=3D"#027E6F" style=3D" bor=
+der-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; backg=
+round-color: #027E6F;" align=3D"center"> <a href=3D"https://click.grammarly=
+.com/s/c/U7rf1bPgVMmgQsraCJ1z2YtkfV6lnQfUVez3qohxGyLFY-MYGe9Q0_pTOvLLqKvmH=
+m0CIUqgjcP9GpYI-aH9YwHRN490klH_TM6C6bhtP6_4R8CsG9Inmo1Go1Vs1G6rVvDaSCvvRuxe=
+swgXxVWEXqsP1EYYcT3HlNcQaUBCGRkg-KIx907EtbL3LPMzNt3aoOVBTHP1NzCByiayDeewjGM=
+bx3Zg2UDHHmACuzr2pJPY1vbamH6nrhz0AIO80nuP15bykHWTpAyoGOGkyUhwQklQPnLDf0M4rB=
+S9UWrNK0rF0DNk50ebzzKfPCSHz0VvR26WSVoOEPYimKmnhxaQFyR5qRY1vm7Ul3kKh0PDviAQ0=
+_EmBX9fgF-vwlTYIqGGRAUhpVaAmhcW--SREDCUOWzNnmUazSqTdZhjmAcfGIgoj8S8gWFExpEE=
+_T_RzQrT9VlhEqNpR2WLDbpjjEZqHQeMFaKDtxTCQVcgpVPGQkWt9wsljjf7ycPWSFPPMG73T8_=
+ridyH1pQ9jtY5fLTb2ckp6sACVKjIbwRU5ms1oiyLltPrXxpatoEBHDi_AuwCAoTaUMJWkk4nuk=
+UKQQXUpEsAnN9dKzXuHmhWWqkMnZMJqd-7EYFK1ya-VHKMVw0nnjWQ8i-fdOssbZr6odPoo0ekt=
+ZPtWV12WUS_Mkn29UJLEWtOl-Hpcck7BxGMZvm2mGwfuQxGwlsls2G8w1TUGAi7LXT3tGbYEkLN=
+HUP-_LXbzc9SDk0SsCtsmKDlbSSd-ydhifoyKY1yj4s20vwvTMnqxJnHcIQPy5FlVbc_jma6A93=
+ViVfMtz9Wz4UKUoaP5cHYusRnYvUzbWbbD2ki7WBQBDxyOBNvXPBHmdVfprzDvfvbTKM8O9wO02=
+7He6I3TX7q7Z1uGApH5zZM4BKXmjibCVgCIF3O/NYwqG89GseGqZV5rTk1xtGcSh-N2mdYR/8" =
+target=3D"_blank" style=3D"font-size: 14px; font-family: Helvetica, Arial, =
+sans-serif; color: #ffffff; text-decoration: none;padding: 18px 24px; borde=
+r-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; display=
+: inline-block;font-weight:700;width:170px;"><!--[if mso]><i style=3D"lette=
+r-spacing: 25px;mso-font-width:-100%;mso-text-raise:16pt">&nbsp;</i><![endi=
+f]--><span style=3D"mso-text-raise:8pt;font-weight:bold;font-family:Helveti=
+ca, Arial, sans-serif;font-size:14px;padding: 11px 0px; text-align:center">=
+Upgrade to Pro</span><!--[if mso]><i style=3D"letter-spacing: 25px;mso-font=
+-width:-100%">&nbsp;</i><![endif]--> </a> </td> </tr> </table> </td> </tr> =
+</table> <!-- End Button --> <!-- MOB Button --> <!--[if !mso]><!-- --> <di=
+v style=3D"display: none; max-height: 0px; overflow: hidden; line-height: 0=
+px;" class=3D"show"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" width=3D"100%"> <tr> <td align=3D"left" style=3D"padding-top:15px;padding=
+-bottom:15px;"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" wid=
+th=3D"120"> <tr> <td align=3D"center" style=3D"-webkit-border-radius: 6px; =
+-moz-border"> <div><!--[if mso]> <v:rect xmlns:v=3D"urn:schemas-microsoft-c=
+om:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://c=
+lick.grammarly.com/s/c/kaswEKL1fydzybsIFwyyWVYoyEVc2LrXcUmPxnXmRqyAlEyBGOPf=
+3Kt69CXhCPCGA31zrYb4oi1qGyheXPGOHYHKPpHGYTdtAB4xvtjsUiFBRQKujfb3AER1RkCIG9M=
+R52hWrEgFAsEoQWDFkarAJnpCaXMoCv54Zluoc5_H5HYyc1PVS_1MhpihPyvlxcZBvEkQyk9Drp=
+1-ilKa1PiADWMMvJOTfglOUr8k0TDrsh5GQylMYS4vo-VI1pxubymcpNt_ZmyYOi1O9vWeWZFoY=
+e2FFIrgPBupTV08xc-rxXSd0JpUAZCA2Nt5-bg--ESXHj33iktoQYkvg0Qom3TwcUIbAhtvmMvo=
+gBTN-W9mdjuPCWpfqeTSjd38RvwG7GT19SNMlyM2Ln9P6BjV_Gutd95t270X2Ku-lkcfa1MsxWF=
+JQYP3vZCc-3sLyy2yV29vXKTxLUrf-QlJfnemxg_XfLXkD9foEav387u3H5sN216d91wNyv9Gqw=
+cMtBqhRxb1DO-XQ6Pbto1gpEDYWdtcb0uUT7mbYsJU8k0sXdVtJ_xFC6AFBDANKzyY-n7DGcqCg=
+epS_89sRHoWSfx-F5na89Tq6NO3n7tn6cV2OFwXzorwWTwJPDCyqiPgaNgcWYePc50FkZmUT362=
+95q3y1FUPvbfZq-_b4d33theC618fULhDvjRawjUl46XwZg2sJdvnNImYV-NVDz3uM4tivwYSx2=
+NPRyC5AOZzb1CLdyP_PL4PH2tWWh_uQxUF7K8l_E681pUqcYmkI7YK6N82rxxUEtr0eFsvdDCw9=
+AjOqRTblYIf3QAvustsWlNzM-8nWsmJlADX3ZzjLrzggeg_yC-5PFTl9L7n75zZYVP6tiP8ns56=
+Qa1SftqiB70CGbvwVQMDZ29lcZAwj5q3d59Pj3b4AlnbCOmFGmP/O-lYlo6OWgWeYqKuayXjitG=
+rIzgkwhd2/8" style=3D"height:40px;v-text-anchor:middle;width:160px;" stroke=
+color=3D"#027E6F" fillcolor=3D"#027E6F"> <w:anchorlock/> <center style=3D"c=
+olor:#027E6F;font-family:sans-serif;font-size:13px;font-weight:bold;">Upgra=
+de to Pro</center> </v:rect><![endif]--><a href=3D"https://click.grammarly.=
+com/s/c/_fmmK_hHMp5hAFEv58XZYS9OKiFadW5U3AgRWeGS30kCNRK_Ic1E6Qz6OlyEMHkgqTz=
+nCbKc1rbPIzFM9XwSyW98o0waYkz_Grw06zAsxfN6celeTB-7dsT0rM1EscjJMaRygzHc-Amtal=
+GTLGZvnZRJfdZ0qXUfKmgNIJsZ9623OUEpvmN42F5zvKmHaNa4n8LiNCGbpg0cG2aA6pR7xultx=
+e4Zh7d_eS5Bf_ZjigaK2YCtsxkw0GAJNoRsZ8ZpMApV21v8b9n8Fna24eUpOyTpHmKBn5oH0vzV=
+ckiDn9jevh-sOgdOYT1k-VvfSW8W9pkykKb3wuaAAZtmbVXV04fYfcUCfbeUkhq1ZrzJhRyrzGN=
+qv9NUbzdDBw8eF-xOhIb9g_urYoWDbUE5ErcCXl8v3BXzkwjnmycsYRMyeVoFDF_OQnmSzLuOIX=
+kwsW6UQJGMVK6HDnt6hSToummEUjLuQ_oGj6AY8rv1U-CTw9UTSSUIAFp1BWXu5aQDePyJeR-1w=
+8Q4gHiEkVpNI8JY-4LcTyVIaMv5iUHV_kIprKERuzPZYnBixGJcb0e2ENOs1sI8GLj9ig7i24yk=
+xjtxp-l4br5tfSUwcqPhT2luHqKhU6We8Mn3sCmiOibEWxjJHd3gqKY0R34qRBTIQqq2EqXlgpZ=
+RzKPB392GooUD0uwjhKNLb2AjJ9QgMJE29vWji6xVs0JWPX_YXm1V_PCou0Nvc7O8gQlTskPC5A=
+V-Ng6tN0qtGivjAN_U9o0iiKyrLXNmFrDUeAZ_mKMKzx35haDytkI5BGEGUHco5WGv1Kl8Ffm-0=
+fHJQs2KngpDo-wuz54w3J5RxTlLc9w9q3s6ibda7W3a_c6yELHt2NlajU7vZqdeCxYRtxTl1c_b=
+uEIJ2pWv21cms7d5V3FPU3bQEmypVUva7Yf_/qEP-CMgDLWkCpqkvNwKNbg_cvXTP-SVl/8" st=
+yle=3D"background-color:#027E6F;border:1px solid #027E6F;color:#ffffff;disp=
+lay:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;lin=
+e-height:32px;text-align:center;text-decoration:none;width:120px;-webkit-te=
+xt-size-adjust:none;mso-hide:all;border-radius: 6px; -moz-border-radius: 6p=
+x; -webkit-border-radius: 6px;">Upgrade to Pro</a></div> </td> </tr> </tabl=
+e> </td> </tr> </table> </div> <!--<![endif]--> <!-- End Button --> </td> <=
+/tr> </table> </td> <td valign=3D"middle" align=3D"right" width=3D"50%" cla=
+ss=3D""><a href=3D"https://click.grammarly.com/s/c/1rNGyo4mLWspoTRJ9Xmrt_pG=
+9MxBLE-Zn7Fqt8hha6jCUrlop2zjufiiHA4lSBTO_raODuIDGd56yac7V-epi7BxrChv5VwKM4M=
+FqLfOAZV63rYxKhFJcjssTEGnuAGtL7j7FRpAx_S_PWsz4KIDFES5u_veDWHHEsgSjFqeT7Wcjc=
+ykWxr_VLgp3RA2QFq3S9G9amCcaKGqJ24nOfYdpGe_TrAFmi5Me01NjZddi01g5vxNd6twd741a=
+TD4PzD83qS2wdBaoUqwSqrx3Z6HuuFcYg39YKEAHm4EsANK0yYxu7xxA9gZSzY7zFuSyNctqA21=
+q5AjSwJ93AzgjHVsBAQo4f-KobT5vOg0oHan73LXgT_suwscGthR8aiexWmj7SarbpMjlQsyYDu=
+anmq7Hp77R9cjM0_v39BeL02lLxD4UciDt5cqJzKxB6mmfYGt47NJNs_Yhkji4jqTUuXmfOWrKx=
+GXw-Co8toqr0rzAYAxpT3EgeOVEm4Bzy3fefJIlU2ozFvv2jPoR6uEcd8i7Zomfu8sP_W7_iGK9=
+S9KSYZO0DxsUAtnpC-QtCnLd-bn-J6pqASkQaR99nyjCgMbKcK58yvhnKd08rFfyW_O14gL56PT=
+xH-a3seUc5en4EMpS92utFhelvKlyHUgo-CX2j1ecNCDwdFhJiAlEeHGXGhZgdPmjexVOh85y0d=
+2d55A-thLtoSgokcRO4KWOn5jJDBkEBJsjaLE7vQSZGl1ncVs4cRIl01kOPuEeD7Y69BCmLIMmN=
+qFBriOktOrMDk1QcMK8ixEQLoiWtBacMfBcSTE9Bwf_fGWrFXoy_SfVdPw8rmUXOjexyBg4RQbv=
+PIF8Q_SBEpOj3duTDwdnvhdooLronrYdeYy9lvultfh-WmCppjmFr-drk2SN-is8nLAHTus5hPa=
+B-1a/s7EF2B2nlkWjxBk413jg3q2qhHLk5pXP/8"><img alt=3D"$12/month" src=3D"http=
+s://library.iterable.com/3110/20487/4664ac9a487242109b4ca8aeff302974-50offp=
+romo_april25.png" style=3D"display:block;" width=3D"307" class=3D"fluid"/><=
+/a></td> </tr> </table> </td> </tr> </table> <table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td bgcolor=3D"#F5F5F5" height=
+=3D"20" style=3D"line-height:20px; font-size:20px;">&nbsp;</td></tr></table=
+> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bg=
+color=3D"#ffffff" align=3D"center" class=3D"w95"><tr><td align=3D"center" v=
+align=3D"top" bgcolor=3D"#ffffff"> <table cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" class=3D"w100P" width=3D"100%"><tr><td align=3D"center"> <t=
+able cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"w95" width=
+=3D"90%" align=3D"center"> <tr><td bgcolor=3D"#FFFFFF" height=3D"40" style=
+=3D"line-height:40px; font-size:40px;">&nbsp;</td></tr> <tr><td align=3D"le=
+ft" style=3D"font-family:Helvetica,Arial,sans-serif;font-size:32px;line-hei=
+ght:150%;font-weight:400;"><img src=3D"https://d15k2d11r6t6rl.cloudfront.ne=
+t/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030=
+542259a008c5feabcd187/TopStories.png" aria-hidden=3D"true" width=3D"120" bo=
+rder=3D"0" style=3D"display:block;"></td></tr> <tr><td bgcolor=3D"#FFFFFF" =
+height=3D"10" style=3D"line-height:10px; font-size:10px;">&nbsp;</td></tr> =
+<tr><td bgcolor=3D"#FFFFFF" height=3D"22" style=3D"line-height:22px; font-s=
+ize:22px;">&nbsp;</td></tr> <tr><td width=3D"100%" class=3D"w95" align=3D"c=
+enter" style=3D"color:#2E3543;font-family:'Inter',Helvetica,Arial,sans-seri=
+f;font-size:19px;line-height:150%;font-weight:400;"> <table cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0" width=3D"90%" class=3D"w100P" align=3D"ce=
+nter"><tr><td align=3D"left"> <table cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" width=3D"100%"><tr><td height=3D"6" style=3D"line-height:6px; fo=
+nt-size:6px;">&nbsp;</td></tr></table> <table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"color:#1C1C1C;font-fami=
+ly:'Inter',Helvetica,Arial,sans-serif;font-size:15px;line-height:24px;lette=
+r-spacing:0px;font-weight:400;"><a href=3D"https://click.grammarly.com/s/c/=
+mGSqs26MbFwfK85XBagFSpGLQScaYiPGI-EUoGwFtR63OdwGrdyYtGsudBZ0bUL22GIfHYiuDj3=
+PrXnlIqfi37wMfHTWrSw1FrkKOhizRfGMKeFw-YvMayjX7yD8VWuMM4sqedeFG73Z61N0X9S4wh=
+fnozH5HT4MriEPyeaAJIgCMz3puiI30sJZze4bq6YHoRcoBs3aBX8BeAvyi3AVDQnSyulw6BFNj=
+nWgxDYnWTLorQ-XcEJJ6UXlBlZ3lcNprsD7Z6Aa9jTrV4JD3dQ9R9Vi8QYsXzhJ_iMZAXf0emSJ=
+n0Mg6ZcKTLNvpp8ojGUVcbCagkCpklvusW2r7uy6jJ7seVQeZl2T8cH47e6KijDyCoczIw8P4Cv=
+y6IVgGz-o0R0aqFwHhHYXPTcEBh14L-3MfL8Q4DCe681CdGIkKzC56t_LcGm3WNVc-3HYIJ943l=
+92FvpP11WTmGuY_cR7Mei41fi7SxbcY8z0IB_EbgPXx487/Evok41GYxrTkV_9IFk453KbAISfF=
+LU4A/8" target=3D"_blank" style=3D"text-decoration:none;color:#1C1C1C;">23 =
+Brainstorming Tools to Spark Creativity and Organize Ideas</a></td></tr></t=
+able></td><td width=3D"20"></td></tr><tr><td align=3D"left" style=3D"font-f=
+amily:Helvetica,Arial,sans-serif;font-size:15px;line-height:normal;letter-s=
+pacing:0px;font-weight:400;"><a href=3D"https://click.grammarly.com/s/c/LXv=
+G-AjdbqlVcF6P7gWeC6SmJyubJe_GlUsS-brzq6nvAxsmKvlP-xl1KP4CLorRIlxxAefYDQBsJv=
+XUvA2xcVOpJppqAaNlX7eqfURepN7fCMFTQs_8IMtl5FnZmBO396D0IvhvKw76mY21F-ZiZ1mT4=
+LdUrx4hvrcagxDeyhwM9QPtrgPtUmLCzrsZ8DsQxVuE-DsEAb41kUNfl_j05MiIbGzsDuYXhTl1=
+a03fzpb2EPApa9tFB8ke50gU35k6evkb4rV7e8u7a_Mjh02fIjYnqwakk36a6TKxz8mzxsKBCUQ=
+GjUYRtFMqul_OItca8Zso6F4Kr66DeNnbeswoYQ71MlAOuumXkYazeDwzwgVdOonboY9yfT4Z2G=
+tNpcisAosTrI3KX_FRbIX47F54oKZ5JbgrNl77LebbtBRZTbdaGy87Xzx7fp4Qkwmcxso7YyYjZ=
+oktZnZ9aGjQo3eJ67Na1RxCA_NvHOF9sb8EJAbmMOd-/9MtnkvlijM-1DFLp_6umpz8p9BpXvPP=
+2/8" target=3D"_blank" style=3D"text-decoration: none;color:#027E6F;" aria-=
+hidden=3D"true">Learn More &rarr;</a></td></tr></table></td></tr><tr><td bg=
+color=3D"#FFFFFF" height=3D"18" style=3D"line-height:18px; font-size:18px;"=
+>&nbsp;</td></tr> <tr><td bgcolor=3D"#FFFFFF" height=3D"22" style=3D"line-h=
+eight:22px; font-size:22px;">&nbsp;</td></tr> <tr><td width=3D"100%" class=
+=3D"w95" align=3D"center" style=3D"color:#2E3543;font-family:'Inter',Helvet=
+ica,Arial,sans-serif;font-size:19px;line-height:150%;font-weight:400;"> <ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"90%" class=3D=
+"w100P" align=3D"center"><tr><td align=3D"left"> <table cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td height=3D"6" style=3D"=
+line-height:6px; font-size:6px;">&nbsp;</td></tr></table> <table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"colo=
+r:#1C1C1C;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:15px;lin=
+e-height:24px;letter-spacing:0px;font-weight:400;"><a href=3D"https://click=
+.grammarly.com/s/c/fzKEBlSjs5GP5nRReBD1Mlv723nqsMnHMCzQU0hHvc-h7yMLBEQ93J6=
+gMC5YHUxYcaQRBl2qh39BUqJ7jhCveomakLw5dcde-iSqJ1sCJVFiYoyhtiFr1N6J6masO1Vulr=
+SKYwWt5xot0st2HmqsZMuTkBev_XDY6s4q4lk8nVBjDGR3lHX2WRMc-YKJxN5l5jvoDbogEsclP=
+u56cV9dRHB79dRjbeAHVAzwt4RtmvZSh4yreY_2LeVsqwGekqg9dZwPTBAmfSTFk21FTevM-KZb=
+b7lE9aguXPLo3R0TNTxJbNQN9taC-8vqlwvEDfWkrFl6DS2_tfKLE9bC7HyifTDUarqhDia_YbE=
+zu6pW1wfihusdbGj78MEwndatgyLw-A9sPXkj8CAnRxlWQ_gKzDCeYfp8zQ8knjoMWT2W9UtwV6=
+x-W8K6uxovaF30XJR-OmVIK9mmtJckY79GuA3SobrqLQ/9DR_XiNqYrR5MIzyydVCbN8yvMJdJy=
+Ck/8" target=3D"_blank" style=3D"text-decoration:none;color:#1C1C1C;">Decod=
+ing AI Language: Common Words and Phrases in AI-Generated Content</a></td><=
+/tr></table></td><td width=3D"20"></td></tr><tr><td align=3D"left" style=3D=
+"font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:normal;l=
+etter-spacing:0px;font-weight:400;"><a href=3D"https://click.grammarly.com/=
+s/c/ZRyD_33uFk0VqMvy8lgSRgSbOfCin-8YTdNbM4YmZ__jpQqyTVubDRMHZGqHYPOsXEdatY4=
+z651U7soxSKsge_-tQWXH7hkfdvj-hbjZPTA6WlCpHCtM6w9VO3hI161mk470PB0UFoad5nDnh4=
+oGwMzkE09cNq3mbPPQ1ugskKoBi6-DgPWo4-gDbgaCkMWKFVEugevoRDA1Sa0fdlUHQL6NG3y35=
+7pwDDYw65LoeIH46_np553B_X7wRzBd6TFvk5lLD0UQQN-Ho2pgCPKZlDHzInR27pzAddPAincD=
+mOtOyGJX7VM0WgRWlzLPdwvU2QVwYqJzUeAx_ecEW4gazYPaz_LC8OPf8Y5gMPHKncbHQI4M4Lw=
+Hnx2YHtx-8w3njB9cYcD92dLkse7A4cujqE5oXh6MDCiucWr-cmKvRHDzKz2A1x7toZO-nfM_Lh=
+_k4_oVckq_6fjBzfYjWzkfeS5xdQ/McbsETbLujUF9YnRPAcxHcOInA6fYfg8/8" target=3D"=
+_blank" style=3D"text-decoration: none;color:#027E6F;" aria-hidden=3D"true"=
+>Learn More &rarr;</a></td></tr></table></td></tr><tr><td bgcolor=3D"#FFFFF=
+F" height=3D"18" style=3D"line-height:18px; font-size:18px;">&nbsp;</td></t=
+r> <tr><td bgcolor=3D"#FFFFFF" height=3D"22" style=3D"line-height:22px; fon=
+t-size:22px;">&nbsp;</td></tr> <tr><td width=3D"100%" class=3D"w95" align=
+=3D"center" style=3D"color:#2E3543;font-family:'Inter',Helvetica,Arial,sans=
+-serif;font-size:19px;line-height:150%;font-weight:400;"> <table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"90%" class=3D"w100P" align=
+=3D"center"><tr><td align=3D"left"> <table cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" width=3D"100%"><tr><td height=3D"6" style=3D"line-height:6=
+px; font-size:6px;">&nbsp;</td></tr></table> <table cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" width=3D"100%"><tr><td style=3D"color:#1C1C1C;fon=
+t-family:'Inter',Helvetica,Arial,sans-serif;font-size:15px;line-height:24px=
+;letter-spacing:0px;font-weight:400;"><a href=3D"https://click.grammarly.co=
+m/s/c/7LS197Ycf2crK9Q99XAUs6BaeJr5ayLrSAQ32z248juX-bzm7On_b_DuE5SaZYIiF4gPW=
+28UYWas2s7E73oNkUEVNIdjL5scKrzMN3tidEMWxPx9GFCF8DA9R9skj-AfXrKfQWhZQ8yrbAzu=
+0sG9AbvjOVTEZIe6UUK8z5uTWuiFiHpFKO3ApF85-WXtOw1ySuGmeqWgM34l1WyyJKYv6ML8n9f=
+8THysp1af9wYCtTXLlXS2p1Peu_zrRGcTj5_erPLLw_3WxhIF9d5VV-SaBP2HS1rgCwLD8J6-yI=
+5luPc-OrhAaGLT21WWrrhfYMuafLSnXEB7ZJiY7z65BdvvUSKDad3bVN1tPZ3Mnv6ykQaWOgft0=
+XQDhQCru3uIa1vbVqoa2EtzM3cQAOnz6vkpF5kBxz_Altm9y6RB4kw_hSDO--YBfuWoOxb8wt-i=
+vI9nMFqqXShSM7PuHHAszDmOrTTQ--NL7PagcQ/ulsPQpEKPYLguco-79OkfKKWFJJjLlS8/8" =
+target=3D"_blank" style=3D"text-decoration:none;color:#1C1C1C;">Is ChatGPT =
+Plagiarism=3F How to Use AI Responsibly and Avoid Plagiarism in Your Writin=
+g</a></td></tr></table></td><td width=3D"20"></td></tr><tr><td align=3D"lef=
+t" style=3D"font-family:Helvetica,Arial,sans-serif;font-size:15px;line-heig=
+ht:normal;letter-spacing:0px;font-weight:400;"><a href=3D"https://click.gra=
+mmarly.com/s/c/wclN29ZcKYG9BEzgPnkYPoSLgxovh7TZBrYtTgyzNUasSRJF-3xb4fXDO-iX=
+n7HrxlRe3amRb5a3eGC5jLyZTGgP4mnUWSBfbovc4wPWJt-Zzc68kN1VM-5fkjT3yjP3tY80QSY=
+HA8hzK7CX_jOujp9VjAcn_FagrnWIhGrLiaucSXt8CTG-lfIFAbazARfspmLKYbI_0SQbprUMvV=
+PCvi-dJgsEoMewfA4s5K4Jdj9Hl61gS97RiHnfC5x-Tumq-Z7dzbir2dpGM807J2Wyhnf3O-o_8=
+OhDivcvnZ4I_8oF7ROepX4zltJSdApa7lqRiUwMalpat1kdnjC351XyE6SnEFtE5MzB24KNZNUq=
+kMy3OLHJd7SlTbK9qWB1MOOMgYU_IUD9UVSjYy_LNM7MqlHtXNGm5a3nB219FzbVwVbJOauCWEY=
+16cSqC_l_auyvPuVcbDxgLV_vF0O75flkhLhlcZItt1GSnw/gHvZiNhgY3GVbeHKpAm4MlE8xxP=
+D6bif/8" target=3D"_blank" style=3D"text-decoration: none;color:#027E6F;" a=
+ria-hidden=3D"true">Learn More &rarr;</a></td></tr></table></td></tr><tr><t=
+d bgcolor=3D"#FFFFFF" height=3D"18" style=3D"line-height:18px; font-size:18=
+px;">&nbsp;</td></tr> </table></td></tr></table><table cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" width=3D"100%"><tr><td bgcolor=3D"#FFFFFF" hei=
+ght=3D"40" style=3D"line-height:40px; font-size:40px;">&nbsp;</td></tr></ta=
+ble></td></tr></table> <table cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" width=3D"100%" class=3D"w100P"><tr><td bgcolor=3D"#F5F5F5" height=3D"20=
+" style=3D"line-height:20px; font-size:20px;">&nbsp;</td></tr></table> <tab=
+le cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" class=3D=
+"w95" align=3D"center"><tr><td align=3D"center" class=3D"w100P" bgcolor=3D"=
+#FFFFFF"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"=
+w95" width=3D"87%"> <tr><td align=3D"left"> <table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" align=3D"left"> <tr><td bgcolor=3D"#FFFFFF" class=
+=3D"w95" height=3D"40" style=3D"line-height:40px;font-size:40px;">&nbsp;</t=
+d></tr> <tr><td bgcolor=3D"#FFFFFF" class=3D"w95" height=3D"20" style=3D"li=
+ne-height:20px; font-size:20px;"><img src=3D"https://d15k2d11r6t6rl.cloudfr=
+ont.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16=
+746030542259a008c5feabcd187/Button.png" aria-hidden=3D"true" width=3D"120" =
+border=3D"0" style=3D"display:block; padding-bottom:24px;"></td></tr> <tr><=
+td bgcolor=3D"#FFFFFF" align=3D"left" style=3D"color:#1C1C1C;font-family:He=
+lvetica,Arial,sans-serif;font-size:24px;line-height:150%;font-weight:400;">=
+Get More From Grammarly</td></tr><tr><td bgcolor=3D"#FFFFFF" height=3D"10" =
+style=3D"line-height:10px;font-size:10px;">&nbsp;</td></tr> <tr><td bgcolor=
+=3D"#FFFFFF" align=3D"left" style=3D"color:#1C1C1C;font-family:Helvetica,Ar=
+ial,sans-serif;font-size:16px;line-height:150%;font-weight:400;"> Fully pro=
+tect yourself from writing mistakes<br> by activating all 5 Grammarly featu=
+res.</td></tr> <tr><td bgcolor=3D"#FFFFFF" height=3D"24" style=3D"line-heig=
+ht:24px;font-size:24px;">&nbsp;</td></tr></table> </td></tr></table> </td><=
+/tr> <tr><td align=3D"center" class=3D"w95" bgcolor=3D"#FFFFFF"> <table cel=
+lpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"w95" width=3D"87%"><=
+tr><td align=3D"left"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" class=3D"w95"><tr><td width=3D"520" class=3D"w95" align=3D"center" styl=
+e=3D"color:#2E3543;font-family:'Inter',Helvetica,Arial,sans-serif;font-size=
+:19px;line-height:150%;font-weight:400;"> <table cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" width=3D"100%"><tr><td width=3D"228" align=3D"left" =
+style=3D"color:#1C1C1C;font-family:Helvetica,Arial,sans-serif;font-size:19p=
+x;line-height:150%;font-weight:normal;"> Browser Extension</td><td width=3D=
+"242" align=3D"right"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" width=3D"100%"><tr> <td align=3D"right" style=3D"color:#2E3543;font-fam=
+ily:'Inter',Helvetica,Arial,sans-serif;font-size:19px;line-height:150%;font=
+-weight:400;"><img src=3D" https://d15k2d11r6t6rl.cloudfront.net/public/use=
+rs/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5=
+feabcd187/Switcher%20On.png" aria-label=3D"Green toggle: ON" width=3D"56" h=
+eight=3D"25" border=3D"0" style=3D"display:block;"></td></tr></table></td><=
+/tr></table></td></tr><tr><td colspan=3D"3" bgcolor=3D"#FFFFFF" height=3D"1=
+0" style=3D"line-height:10px;font-size:10px;">&nbsp;</td></tr><tr><td width=
+=3D"350" class=3D"w95" align=3D"center" style=3D"color:#2E3543;font-family:=
+'Inter',Helvetica,Arial,sans-serif;font-size:19px;line-height:150%;font-wei=
+ght:400;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"=
+100%"><tr><td width=3D"228" align=3D"left" style=3D"color:#2E3543;font-fami=
+ly:'Inter',Helvetica,Arial,sans-serif;font-size:19px;line-height:150%;font-=
+weight:400;">Mobile Keyboard</td><td width=3D"242" align=3D"right"> <table =
+cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr><td wid=
+th=3D"20"></td><td align=3D"right" style=3D"color:#2E3543;font-family:Helve=
+tica,Arial,sans-serif;font-size:19px;line-height:150%;font-weight:400;"><a =
+alias=3D"native" href=3D"https://click.grammarly.com/s/c/oIb0YlhNOFEow_7Oby=
+EpWwaETANnmKkfEyFE9KTDQg9PsGW1ff96jBpTJQ-G0jPhOgufvYNG9kSkhCPtAEoGfK_VnV1W-=
+TYJxFGl0oVF7lLhPhyVZO3T8k_JyzGBvHYGPqF9xkHoU2kvtoRlYl9bD_MjVI7sQlfcaeHTx4C0=
+jmHx_Exha7d5s9rWYVBOC1T3p3_6WGEvll5RfzGg44n4A5jPdT2ZoAuVoG4XsrJP-fDA4f028lZ=
+D-hNOkjt1gsxwDIpkszUqNrphUf-niXswZ5hJnHmd42poGkBG5NtfCZS1-ZBmmKCKwWP-02k9Xy=
+RUuyxU1IEYqkltfD0xkRDz4J-N8LUbpzS5lANTpnzZKn5ZB5hRl1GQDXYOJbewG6KinK3D-utBb=
+drdsyT0AZac_JRnG_VT1Ev11GnMfOanbFkVELRfvA5oX0OnMbmTeKVOwg/iD9HruQz2PNcJyQoV=
+jKxjtKgM_vvu_02/8" style=3D"text-decoration:underline;color:#027E6F;font-si=
+ze:12px;">Activate</a></td> <td align=3D"right" style=3D"color:#2E3543;font=
+-family:Helvetica,Arial,sans-serif;font-size:19px;line-height:150%;font-wei=
+ght:400;"><img src=3D"https://image.send.grammarly.com/lib/fe8f127477600175=
+76/m/1/7f389a3f-bc5e-4536-a3ae-e30e8e08e5dc.png" aria-label=3D"Gray toggle:=
+ OFF" width=3D"56" height=3D"25" border=3D"0" style=3D"display:block;"></td=
+></tr></table></td></tr></table></td></tr> <tr><td colspan=3D"3" bgcolor=3D=
+"#FFFFFF" height=3D"10" style=3D"line-height:10px;font-size:10px;">&nbsp;</=
+td></tr><tr><td width=3D"350" class=3D"w95" align=3D"center" style=3D"color=
+:#2E3543;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:19px;line=
+-height:150%;font-weight:400;"><table cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" width=3D"100%"><tr><td width=3D"228" align=3D"left" style=3D"co=
+lor:#1C1C1C;font-family:Helvetica,Arial,sans-serif;font-size:19px;line-heig=
+ht:150%;font-weight:normal;"> Grammarly for Your Desktop</td><td width=3D"2=
+42" align=3D"right"> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" width=3D"100%"><tr><td align=3D"right" style=3D"color:#2E3543;font-family=
+:'Inter',Helvetica,Arial,sans-serif;font-size:19px;line-height:150%;font-we=
+ight:400;"><img src=3D" https://d15k2d11r6t6rl.cloudfront.net/public/users/=
+Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5fea=
+bcd187/Switcher%20On.png" aria-label=3D"Green toggle: ON" width=3D"56" heig=
+ht=3D"25" border=3D"0" style=3D"display:block;"></td></tr></table></td></tr=
+></table></td></tr> <tr><td colspan=3D"3" bgcolor=3D"#FFFFFF" height=3D"10"=
+ style=3D"line-height:10px;font-size:10px;">&nbsp;</td></tr><tr><td width=
+=3D"350" class=3D"w95" align=3D"center" style=3D"color:#2E3543;font-family:=
+'Inter',Helvetica,Arial,sans-serif;font-size:19px;line-height:150%;font-wei=
+ght:400;"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"=
+100%"><tr><td width=3D"228" align=3D"left" style=3D"color:#1C1C1C;font-fami=
+ly:Helvetica,Arial,sans-serif;font-size:19px;line-height:150%;font-weight:4=
+00;">Premium Suggestions</td><td width=3D"242" align=3D"right"><table cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"><tr> <td width=
+=3D"20"></td><td align=3D"right" style=3D"color:#2E3543;font-family:'Inter'=
+,Helvetica,Arial,sans-serif;font-size:19px;line-height:150%;font-weight:400=
+;"><a alias=3D"upgrade" href=3D"https://click.grammarly.com/s/c/C3AYE6Ynq06=
+xAJzKzWEk0rj2yJLWY2Z7PtZvMImBQnNaUYADXzxoAtNcl15zVslKz_WY5lXceyiLTgZLRdCUVu=
+AkNiIRjlDX8_uDbY3g_F2ASExqRp0G-Gb_Fxw686wusxwdHCBvDMn3pKWLEtTMkqQlI-N2aNbX7=
+sli_5GpMd7hwMN8-y9E_i6gIXrgS9NbrtvnterrV_QIBtUUsL3ygUckIQqCWl_Ay_88J-BwIIrn=
+NoYSjkvrTmJBpUS9giZz8aIXU5fbUXz8XNlpalGOfYOoYb3RebjV4SQjhKAg81F592mmsb82e3S=
+nWdnsWbVywvLgQEfRkftdP5EMu8fD2zfRCRg96v8bn3Ee9Zkn2xVTDEIJH6AD4q16zOlX_LaV0i=
+AhP0ChVy5DtUhpW-pUwoOwXBGT2m_3LMD4_rCtQfV19Nl_Ne4IoR3ON1nS_Oz7PVaWqOhUzFNAN=
+i4loUUx-CqVl_zmLKMmTIl6O_KUthxpNJ9vCwCGnIwtcjdT_Xr_Pvu0j1QPen4qo230DyqQtA/F=
+6YA_ZaFsmf3yxsRAODFWpNghZcTy-hn/8" style=3D"text-decoration:underline;color=
+:#027E6F;font-size:12px;">Activate</a></td><td align=3D"right" style=3D"col=
+or:#2E3543;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:19px;li=
+ne-height:150%;font-weight:400;"><img src=3D" https://image.send.grammarly.=
+com/lib/fe8f12747760017576/m/1/7f389a3f-bc5e-4536-a3ae-e30e8e08e5dc.png" ar=
+ia-label=3D"Gray toggle: OFF" width=3D"56" height=3D"25" border=3D"0" style=
+=3D"display:block;"></td></tr></table></td></tr></table></td></tr><tr><td c=
+olspan=3D"3" bgcolor=3D"#FFFFFF" height=3D"10" style=3D"line-height:10px;fo=
+nt-size:10px;">&nbsp;</td></tr><tr><td width=3D"350" class=3D"w95" align=3D=
+"center" style=3D"color:#2E3543;font-family:'Inter',Helvetica,Arial,sans-se=
+rif;font-size:19px;line-height:150%;font-weight:400;"> <table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%"> <tr> <td width=3D"228=
+" align=3D"left" style=3D"color:#1C1C1C;font-family:'Inter',Helvetica,Arial=
+,sans-serif;font-size:19px;line-height:150%;font-weight:400;">Free Suggesti=
+ons</td> <td width=3D"242" align=3D"right"> <table cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" width=3D"100%"> <tr><td align=3D"right" style=3D"c=
+olor:#2E3543;font-family:'Inter',Helvetica,Arial,sans-serif;font-size:19px;=
+line-height:150%;font-weight:400;"><img src=3D"https://d15k2d11r6t6rl.cloud=
+front.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e=
+16746030542259a008c5feabcd187/Switcher%20On.png" aria-label=3D"Green toggle=
+: ON" width=3D"56" height=3D"25" border=3D"0" style=3D"display:block;"> </t=
+d></tr></table></td></tr></table></td></tr><tr><td colspan=3D"2" bgcolor=3D=
+"#FFFFFF" height=3D"40" style=3D"line-height:40px;font-size:40px;">&nbsp;</=
+td></tr></table></td></tr><tr><td bgcolor=3D"#FFFFFF" height=3D"20" style=
+=3D"line-height:20px;font-size:20px;">&nbsp;</td></tr></table></td></tr></t=
+able> <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"cent=
+er" width=3D"100%" bgcolor=3D"#F5F5F5"> <tr> <td align=3D"center" valign=3D=
+"top" style=3D"mso-line-height-rule: exactly; font-family: Helvetica, Arial=
+, sans-serif; font-weight: normal; font-size: 16px; line-height: 24px; colo=
+r: #545454; border-collapse: collapse;"> <!-- Start Footer --> <table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"foote=
+rdevice" width=3D"100%"> <tbody> <tr> <td align=3D"center"> <table align=3D=
+"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"91%"> <t=
+body> <tr> <td align=3D"left" colspan=3D"2" height=3D"35" style=3D"font-siz=
+e: 1px; line-height: 1px;" valign=3D"top">&nbsp;</td> </tr> <tr> <td align=
+=3D"center"> <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"320"> <tbody> <tr> <td align=3D"center" width=3D"80"><a=
+ href=3D"https://click.grammarly.com/s/c/CnB5It2p6ODaIoz7630oiBTpRiSU5RBJAD=
+IyB3u4Lo88ihdanX_SJsMUG_iTPWuCS6zCNNkRZQsqpTbBYmMHekhF9OgaTsgac69rgEQgfPjc3=
+StI7XtUL7AmTv7UUbY6KQ721Z98JrJf3aEky5ggFgXVCPCmbMFfvCiUtzA0cchHMO-MDRq0w4qS=
+4URXKOYCySbjOo4VKjlEg2TRKuY8R0yIJrZMmY-gGpwRHyvpSyiHhTAXZ7wB7KU_bAMi2gH123J=
+2r3_2onmIEKJD--CIHLUjgeMP-jHGYBJ3669SjbjIsiM9GlkJuC1eOVgAvzdF_1DECcrfIa9TdO=
+ZOLdREwbENhdiPRyNlEclr0cvHhvMQRwcVoARw5mOTVFMyW8BGnSGGjqWL5ALpHbJZadM96Pgd8=
+a8kIWpIil1an2SRKpaZbm8D71cVRjNEUBAP5hFqyeE/jHYSeyUsBDVYLgEUYIytjlRBLO_cL9LL=
+/8" style=3D"text-decoration: none;"><img alt=3D"facebook" border=3D"0" hei=
+ght=3D"22" class=3D"fbWhite" src=3D"https://d15k2d11r6t6rl.cloudfront.net/p=
+ublic/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542=
+259a008c5feabcd187/facebook_footer_icon.png" style=3D"width: 12px; height: =
+21px; max-width: 21px; border: none; outline: none; text-decoration: none; =
+font-size: 19px; font-family: Helvetica Neue, Arial, sans-serif; color: #3b=
+5998; font-weight: bold;" width=3D"12"></a></td> <td align=3D"center" width=
+=3D"80"><a href=3D"https://click.grammarly.com/s/c/q7ZMsL3Fc3mZhjb9sRoMstnc=
+MMbpODf-Sb1ONSrepX9vsFD-8JYqkbLbutWXkFjp016aPc9XtHzCEHoRl1AQqgKf8GXV9VHahRR=
+-oeY_6VQHo7lY3yaN2MbQIUCXRt-omKRzxcdHfw4tOnuIrH9S0_j1HBTG9Um_kTtw0X-AANviOI=
+0_LlFWLWfupWJrDX4btUchnCGyauaYWSjfacO-yNojN74HykydjuKnnk-dRXzAW1bOa2aJ_dVop=
+wOt5rBo2b2G7Dzq5-hbyZ3u1Qg6leTEAdkEMYbJXxOHGa5IyQAx0uA4KOPbMzn2v9s8frrhRzzF=
+pNd1Q0j7RfSveEtDVjwg-PWfminYtgwm_AcyutZVSXnOy_v3Sm0vu7BxPoQnkIVx3y6GtkS5aOu=
+4jh-TAocjmT27-UKY-Y-SQtEoiEwV0eoebqgyFbj9VXk1CFEbxSZFq6k/qktquPdoLEYVaoJ253=
+wLfpqd7Yeyi9fg/8" style=3D"text-decoration: none;"><img alt=3D"instagram" b=
+order=3D"0" height=3D"26" class=3D"igWhite" src=3D"https://d15k2d11r6t6rl.c=
+loudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a=
+/a8e16746030542259a008c5feabcd187/instagram_footer_icon.png" style=3D"width=
+: 26px; height: 25px; max-width: 26px; border: none; outline: none; text-de=
+coration: none; font-size: 19px; font-family: &quot;Helvetica Neue&quot;, A=
+rial, sans-serif; color: rgb(0, 172, 237); font-weight: bold;" width=3D"26"=
+></a></td> <td align=3D"center" width=3D"80"><a href=3D"https://click.gramm=
+arly.com/s/c/0T8qhlRiy68W_EtwhHm1OjYgR2x1fJLQ9TdSfkStxd0gU_DL2EBO6WtciPX8QI=
+boV09pItwufLFSKvu98Lo5xJo7A8NH59sCA-CBg0SR8D1lIXA11t5y5-WffrW9yPEcXzjvYM6z-=
+AI7_5Ja7FADjgtvzKkkBJYpSMJ76T2R_TqDmP3Pn9P_rijPj1N3VwBWcJfzDNEOKTPsqqTwMUPI=
+R9j0ebyyGFGZGnnUqtynAnUqQ6kTwDLvdOB64_MhCT0rPu2z9z7TOH4G8wBe0Zn_RkdjpCwnaSO=
+qniBgQtFGxd4z6usC8Qm5RzpXE22OuItknZs51nzk-dtjnyUUvb5_HF8gIbnraKIHmGIQbFfFz_=
+mX95x7-M0RaIQ3hySGcZ270ADpVf-_QdkEWs1FnvfRIj-ec4GLw1ng1UYF8UJ7FZ6FugfCdWIhS=
+K5Mw35_1N7Om5IX4s1Kn03Y0w/EdNdhBj2qVs6HBCROVc2fjOp0Ch7LOkx/8" style=3D"text=
+-decoration: none;"><img alt=3D"linkedin" border=3D"0" class=3D"liWhite" he=
+ight=3D"18" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integ=
+rators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5feabcd18=
+7/linkedin_footer_icon2.png" style=3D"width: 19px; height: 18px; max-width:=
+ 19px; border: none; outline: none; text-decoration: none; font-size: 19px;=
+ font-family: &quot;Helvetica Neue&quot;, Arial, sans-serif; color: rgb(0, =
+123, 182); font-weight: bold;" width=3D"19"></a></td> <td align=3D"center" =
+width=3D"80"><a href=3D"https://click.grammarly.com/s/c/KPfGbn61I9xe9Mp0toT=
+lT24xxCaEfi7xh2USg_lp97Y2r8RvEnTKTeKR5wtVniok_sRYoxoguFwdSyLNz1eKOuzbkA03nl=
+CPwF8TkFpJTELpCASKw_Rb0RFgjlxK4D_KhEwv2cm7gHVugH9xeCGRNIeRD8b6Vpozm6hklEd04=
+b7EqXGZmfXjr9h4d190Wsflag4pnOfp9CWtI7Omb8gmIr7NlP4_IYhTDnpzi9OnZtSGK97ou1nu=
+pIuOYH6UOe1zs40WO3pmcO_q_E1nkn3F9a94PRVm4fnHU5D3yUxGEqts4T39JbNxyZJZZPp1MYA=
+Y3KIiqrFQ5gJ6ayzhevwlQ5-0WllhkLH_FFYiihpJWGtwPeGHO13Jv7NGu8qZm92Qlld1y_3n4G=
+nuL-eapqn-iMdxhhv-Qds054dkNyffA7zgEvod6VdEcZTuKdsr/pfyC7IZEnBaDwQHoBX2YtXxg=
+Q-Onrm2a/8" style=3D"text-decoration: none;"><img alt=3D"x" border=3D"0" cl=
+ass=3D"twWhite" height=3D"23" src=3D"https://d15k2d11r6t6rl.cloudfront.net/=
+public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e1674603054=
+2259a008c5feabcd187/Vector%20%281%29.png" style=3D"width: 23px; height: 20p=
+x; max-width: 23px; border: none; outline: none; text-decoration: none; fon=
+t-size: 19px; font-family: &quot;Helvetica Neue&quot;, Arial, sans-serif; c=
+olor: rgb(0, 172, 237); font-weight: bold;" width=3D"23"></a></td> </tr> </=
+tbody> </table> </td> </tr> <tr> <td align=3D"left" height=3D"35" style=3D"=
+font-size: 1px; line-height: 1px; border-bottom: 1px solid #A8A8A8;" valign=
+=3D"top">&nbsp;</td> </tr> <tr> <td align=3D"left" height=3D"28" style=3D"f=
+ont-size: 1px; line-height: 1px;" valign=3D"top">&nbsp;</td> </tr> <tr> <td=
+ align=3D"center" style=3D"font-family: Helvetica, arial, sans-serif; font-=
+size: 14px; line-height: 20px; color: #545454; padding-left: 45px; padding-=
+right: 45px;" valign=3D"top"> <a class=3D"footerlink" href=3D"https://click=
+.grammarly.com/s/vb/qK-5sifK3rBt2jFxAcFWz1GmX9LuTYDyk5IwJIqUedSH0_C8UhMCc1=
+6X8vgzB5Cvr_WG-cphE7n8_ddJhXswWSIMp6gYrfVffAqI011g9fxCqfSG-6Ew9HmTVHA_N8P-H=
+hLxXiYh6PfOqiCICop6PAOOMfvoqCVuLnqnsQ/pr0wtyo9WVLwjENSJYf5c6cUzANB4kaP/8" s=
+tyle=3D"text-decoration: none; border-bottom: 1px solid #A8A8A8; color: #54=
+5454; white-space: nowrap;">View Web Version</a> &bull; <a class=3D"footerl=
+ink" href=3D"https://click.grammarly.com/s/c/-szk75nEH6uQDDUCJZnxaIal42tMVB=
+DlJSVxthldskoRT9AjoDUek32Z-drxbWKtYH4HQvC-7RmPAMlRduTXMKWJr3g6m3WDcndRMAMPv=
+qaos5x0ya-PH2g2TbrgQlN9jTWSK0g-pRqfw2ZXHJeTMnVZndK6pzerRK8HmV96mlPWX5RnXlIe=
+DNBJU711Z1FXuPI9mXiRuUhkIKzqIcs1OTFDmIg-kHTEqXK69aXqGben2v2IOagzaWTPp8BFKux=
+F-ZLmQ-Z88LM36tsebyHkLm2Zg3_XCQwWmKcxGrBDHRvQQNqb6REccib-a6nNQmrjTmdXNujmkL=
+ApnSRE34gGGrp_qAzICcYxDCt8FbtQGDl6pvE672beXkPzi6Or0BpsufbfATgQK4H-qvFL1HMC2=
+MS13jeRSuq4C1ieUkeBQMe4F38ysoRe4Nbm6xiNNc2-aYl8U2VUcEWrUkzrHZIa58Xda6rhXXmA=
+YymTQNWnvZKUj7820qZZsey9e09L6mTxZwX7KwPiLpcPTflce-GrckEHSO_A6nWoze5LHlXxROP=
+n7O6TWSvNJDEemonpMuvkX3Exanoy7GPwSQ2KHSPMUZuSNkBUEMNK_Doi7psYFs-aPSEZp-kyX6=
+FqugfOKgwxwO20_6e-qKsiCeH7_UbJPhWzWQ88h2DBbV0PeVH6htFw/OvT2m_4mC9KHffsUyoe8=
+xDYSeOuTtKdu/8" style=3D"text-decoration: none; border-bottom: 1px solid #A=
+8A8A8; color: #545454; white-space: nowrap;">Email Preferences</a> &bull; <=
+a class=3D"footerlink" href=3D"https://click.grammarly.com/s/eh/Wr4pnKuhnZK=
+6mWLHWVpz8-AMZ-Juc-MGIfjXgp7i5_wf6FbNW_EOShcp2DNpr7ipFKGyBfra8Ddux6vjNsRb86=
+fJfnXiCL7ZjWcE6Irrhsb-SqEUxAy7DEgR_pzVtYRvDTT1Z8eCfkxRQIIfeVyc9um7p-RJcQKrS=
+nCvEAZStBnF8q2xkRdArh4s51csL1e5KX9gH2SmZCGjD92n06QatTmF4CDlk56x2CugRtwvYL2v=
+fkvmcS4W5_RazAipB5HV3ib1ww_qR-FAIWODOzFDm8FlIMtdpeiVuDDvXm2e1IQu7d0yDM3b-bz=
+DfaPUgr0uMFW-HtMyg32SojCEoTCkPXqEolhV0QSyGunXWbzmRJPbzIpKVRB2izdoIANcCZvSAC=
+ey_j-TOACGJqa4wgRizB_FNWAo08wCSCi-gVsTJdDC-AYaNBiRzMdiclLI3Ijw9gHTiK83Ln-JY=
+GGpYmGc05Rgjd8dS2qtrfq9EM7QzWNrRD0uG0AEilmbC2Zdhz_o7j06VfIugbDyyRum7fHUId_f=
+J0MfYKIs1VRDNhku_DoYVGxJdl22mlOXBj-RyKcmdsKbvBkMks8bP4SBaI3UuHLp4RKyeLXiLho=
+0M0WF6Mhd1PLhsHIZle6EoHu-cyk8Il7Ni_qj1g/GIEkz5JVNQ__KEqr3XORKkMihkDAMFwR/8"=
+ style=3D"text-decoration: none; border-bottom: 1px solid #A8A8A8; color: #=
+545454; white-space: nowrap;">Unsubscribe</a> </td> </tr> <tr> <td align=3D=
+"left" height=3D"20" style=3D"font-size: 1px; line-height: 1px;" valign=3D"=
+top">&nbsp;</td> </tr> <tr> <td align=3D"center" class=3D"gblue" style=3D"f=
+ont-family: Helvetica, arial, sans-serif; font-size: 13px; line-height: 20p=
+x; color: #545454;" valign=3D"top"> We hope you enjoy monitoring your weekl=
+y writing trends. But if you no longer wish to receive Grammarly Insights e=
+mails, you may change your preferences by clicking the link above.<!-- Do n=
+othing to show footerDisclosure, it's already specified --> </td> </tr> <tr=
+> <td align=3D"left" height=3D"20" style=3D"font-size: 1px; line-height: 1p=
+x;" valign=3D"top">&nbsp;</td> </tr> <tr> <td align=3D"center" class=3D"gbl=
+ue" style=3D"font-family: Helvetica, arial, sans-serif; font-size: 13px; li=
+ne-height: 20px; color: #545454;" valign=3D"top">&copy; 2025 Grammarly, Inc=
+., 548 Market St. #35410, San Francisco, CA 94104</td> </tr> <tr> <td alig=
+n=3D"left" height=3D"70" style=3D"font-size: 1px; line-height: 1px;" valign=
+=3D"top">&nbsp;</td> </tr> </tbody> </table> </td> </tr> </tbody> </table> =
+<!-- End Footer --> </td> </tr> </table> </td> </tr> </table> </td> </tr> <=
+/table> </body> </html>=0D=0A<img border=3D"0" width=3D"1" height=3D"1" alt=
+=3D"" src=3D"http://tracksp.grammarly.com/q/LnLi-UvAaLnoBt-fwP3h6Q~~/AARGbB=
+A~/cAprIHQslWgg6UVJPphFbsN2YjHig4M5XpfShdxsBtBnpOSk5LVu0fhPEKFj3uiuSKZ_kG7q=
+zZddc--HRAFoUw~~">=0D=0A
+--_----NjIKSStJa2u6Z30zy8vELA===_E2/48-04018-E3C6DF76--
+

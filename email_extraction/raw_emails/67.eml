@@ -1,0 +1,147 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a2e:b17c:0:b0:302:48c2:8a05 with SMTP id a28csp265952ljm;
+        Tue, 4 Feb 2025 09:26:10 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEctL1mL+WvAh8U1wlnF/W4Le1H2XSrVLd2qdG8owBynpNN73xlZaWnHCrxIs1MvjOTgUr9
+X-Received: by 2002:a05:620a:400f:b0:7bd:dbc6:bf9f with SMTP id af79cd13be357-7bffcce0a5cmr4229697585a.13.1738689969907;
+        Tue, 04 Feb 2025 09:26:09 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738689969; cv=none;
+        d=google.com; s=arc-20240605;
+        b=DSl9BLtGpkVfSTWoZSCPSRWO5l00mWBWL3II1VJTRhj27zerahQeJqfdKtuDJEkUxb
+         Fg5Z2jc/zAlSWKtYqvPSPaur1amc/rpvb86ArvU1yD+olLsZHSsvxmRyxZRVdOlS+kAx
+         DacsqcPR6e4R9ApPx6nebzekPyRs3y0pdsOwjqh7DNpo9WBcS+yjc06hqQwA3AXEOl+U
+         s74sBkU//68hS2RxFDAQvN9ZA401TgrSt0IwOcNJyOtWfRNe7bKfee/oASLk+ClutMGH
+         IjbYKoUWfNTtKpzxgKFznld/owVjNXkhn5ynRhyZjklez4ldwKJoKrQhJ08oDBZmNWG8
+         ULJw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe-post:feedback-id:reply-to:list-unsubscribe
+         :content-transfer-encoding:mime-version:message-id:subject:from:to
+         :date:dkim-signature:dkim-signature;
+        bh=nXS8FnKuB0FqENEVhmdPC4ck4aAdXQrvzCqe+7BtYqk=;
+        fh=jr4okOh7E2d0WZMVHxGqnO/W04OT7AUZTNAnXvFBUe8=;
+        b=T78ycWLBLhUI1hj/3fU6c6we4AT6afxQbBciY5LT/qeGWAoa6Z5Klupg+EOyUnQoAV
+         wv/UkQe3iKfGkPvVSabZFUIvt9SPpwSj4JoN/k/uHH6HNFKGRGOOyUm4RYSba94VMVds
+         kuj2S/NTXHWaz6XArnNFg7rVIfjSu1kDPk0/E78hmbOZz0jWBPi2AajNyKs2Y9ux3AN1
+         S0PHtyHnEsdrA22m8T505TLqgJHYgLoaipOZjPdb803eQ/Lc/0AK9Z7vGZ1ESG0nLwuz
+         /x3LPBaSZ3MZlrJHiF3B8j/gO2fyfixWV7QBUz9wHSL+3RVKIxeviiMs53/6P7atoNWW
+         tTlA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg.sg.graphy.com header.s=nc2048 header.b=BFqQpflW;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=XEecx+av;
+       spf=pass (google.com: domain of 17386083852332933-182003-1-gmail.com@delivery.mg.sg.graphy.com designates 175.158.66.157 as permitted sender) smtp.mailfrom=17386083852332933-182003-1-gmail.com@delivery.mg.sg.graphy.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=graphy.com
+Return-Path: <17386083852332933-182003-1-gmail.com@delivery.mg.sg.graphy.com>
+Received: from mta6-66.157.ptransmail.com (mta6-66.157.ptransmail.com. [175.158.66.157])
+        by mx.google.com with ESMTPS id af79cd13be357-7c0365cd77fsi93135985a.301.2025.02.04.09.26.09
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 04 Feb 2025 09:26:09 -0800 (PST)
+Received-SPF: pass (google.com: domain of 17386083852332933-182003-1-gmail.com@delivery.mg.sg.graphy.com designates 175.158.66.157 as permitted sender) client-ip=175.158.66.157;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg.sg.graphy.com header.s=nc2048 header.b=BFqQpflW;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=XEecx+av;
+       spf=pass (google.com: domain of 17386083852332933-182003-1-gmail.com@delivery.mg.sg.graphy.com designates 175.158.66.157 as permitted sender) smtp.mailfrom=17386083852332933-182003-1-gmail.com@delivery.mg.sg.graphy.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=graphy.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=mg.sg.graphy.com; s=nc2048;
+	h=list-unsubscribe-post:feedback-id:reply-to:list-unsubscribe:
+	 content-transfer-encoding:content-type:mime-version:message-id:subject:from:to:
+	 from:to:subject;
+	bh=nXS8FnKuB0FqENEVhmdPC4ck4aAdXQrvzCqe+7BtYqk=;
+	b=BFqQpflWORUNQCpc0GZF9OE4ML2IKf/naFpuYGrYuvbI14BCNM/JMJxvWAP+M44p1zmZAf/k0xuLl
+	 WmdBurzKbY8D/dw+O4IIyKx+rOSFvQK9sfQyL8y6vvCOslcEtDDoxSVwBJ/PGHOcD2YXmSinOadcCi
+	 URTsb1IEN32Wsqk7jADdSy0cQajOpm/2WBYEu2hf03uCEKGihmkp/LWP2huNL9Ixa3MixV5D62Xn+i
+	 DZVrTralbdwQ99ghfwr9iZiTZLcBwcY/yp6Mpgy09SeI0T4bfEtTI7gdvM3r7LHQy5EQGVGSDAJwCJ
+	 9sF6dEVMsCZ12Lv85O3pJhGEngEAg0w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=env.etransmail.com; s=fnc;
+	h=list-unsubscribe-post:feedback-id:reply-to:list-unsubscribe:
+	 content-transfer-encoding:content-type:mime-version:message-id:subject:from:to:
+	 from:to:subject;
+	bh=nXS8FnKuB0FqENEVhmdPC4ck4aAdXQrvzCqe+7BtYqk=;
+	b=XEecx+avH0kVDPLJXU22KYDfpVNGmM2gkKNsdgxb3bZIhcyKQC2A3r7Up4r0kpV0gj8Uwdtr/PrRR
+	 vKtAP7Fw7Pz3RgZiIPue7Rr4l8L/cITLzN8ej8DMV6uQx3sT6EEnLXYnwVLWzX7fGWj970FHRFhgjM
+	 EDDFVHo3t24VlIv4=
+Date: Tue, 04 Feb 2025 22:56:09 +0530
+To: <yash31204testing@gmail.com>
+From: =?UTF-8?B?Q29kZUhlbHA=?= <notifications@mg.sg.graphy.com>
+Subject: =?UTF-8?B?8J+knSBZb3UgYXJlIG5vdyBlbnJvbGxlZCBpbiAtIFF1YW50aXRhdGl2ZSBBcHRpdHVkZSBNb2NrIFRlc3Q=?=
+Message-Id: <ohgult17386083852332933@mg.sg.graphy.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_----------=_1738689968304221391"
+Content-Transfer-Encoding: binary
+List-Unsubscribe: <https://unsub-api.netcorecloud.net/YHNMJN?id=182003=NEkACFoDCQYGHxMTGBQQRRIYE0YXEUJFRkMSRBcVEhVBFRAZQhEZFhVDExMYFBBFEghPH1ZCClZXUQJQQ1BBQQhbV3kFXFhfWU1QXFVIAVIBAAVWDwJaUFRQAVYOBgFJCUFESRELFhlADUBGWhlRFVsWXQNDUg0XAwBeC0JRHFsEQR9gKn90fHtcWldEQgM=>, <mailto:17386083852332933-182003-fncunsub@usub.ftrans03.com?subject=Unsubscribe>
+Reply-To: codehelprazorpay@gmail.com
+Feedback-Id: 182003:202502:1:falconide
+X-Dkim-Options: 
+X-Fncid: 182003-17386083852332933-0
+X-Injtime: 1738689968
+X-Traffic-Type: 182003-2
+X-Mailer: NetcoreCloud Mailer
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+This is a multi-part message in MIME format.
+
+--_----------=_1738689968304221391
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+
+
+
+
+
+
+
+=09
+=09=09
+			Hi,
+=09=09=09
+			You are now enrolled in the course - Quantitative Aptitude Mock Test
+=09=09=09
+			If you have any doubts, don't hesitate we are there. Write to us on - co=
+dehelprazorpay@gmail.com
+=09=09=09
+			Keep Learning,
+			CodeHelp
+=09=09
+=09
+
+=
+
+--_----------=_1738689968304221391
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width" />
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body style=3D"width: 100%!important;height: 100%;margin:0;">
+	<div style=3D"padding: 20px;height: 100%;background:#e5e5e5;">
+		<div style=3D"padding:30px;display: block!important;max-width: 600px!impo=
+rtant;margin: 0 auto!important;clear: both!important;background:#fff;border=
+-radius: 10px;border: 1px solid #aaa;">
+			<p>Hi,</p>
+			<br>
+			<p>You are now enrolled in the course - Quantitative Aptitude Mock Test<=
+/p>
+			<br>
+			<p>If you have any doubts, don't hesitate we are there.<br>Write to us o=
+n - codehelprazorpay@gmail.com</p>
+			<br>
+			<p>Keep Learning,<br>
+			CodeHelp</p>
+		</div>
+	</div>
+</body>
+</html>=
+=
+
+--_----------=_1738689968304221391--
+

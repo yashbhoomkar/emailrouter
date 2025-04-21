@@ -1,0 +1,337 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:6a97:b0:43a:a54e:2943 with SMTP id co23csp857359mdb;
+        Sat, 19 Apr 2025 06:57:56 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFC6hGGmyM1rC4XwlnTLICaKRY0qeBoiA+KJjohI3VGC3E+EChx+3cgp4Q3qCEbfEmkcjVS
+X-Received: by 2002:a17:902:e5cf:b0:223:5525:6239 with SMTP id d9443c01a7336-22c53600e34mr96464785ad.38.1745071076125;
+        Sat, 19 Apr 2025 06:57:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1745071076; cv=none;
+        d=google.com; s=arc-20240605;
+        b=jln3rxdLyYENpGVaw9pTvYtyrCNCc0a/jYlMk9smsPiL5yw2YKLsIcDvFG5n9cCMb7
+         c6m/kmgDzgpVYocwhG8jE0lKTBirsRZEyqDGkjaCIJqCX/RysWvz81tYFIOpOyP31SBm
+         CDgg0Pj0W3ETfwf2RkqgcftqRyySuv7XDzorCO7dRN0mfpXfMkq8sMblLxdQcyAxnIFq
+         EXwAHNMM4o84uZnBt453neF0RS4yAiPDpRkChDar7nMXSewMaRVHgeb/T27ZGVkL7yaK
+         frHKdzRekqNyOnaf+EflolzCb3ty8awpxfIRTM4uMBzewxTUbgj7BhG9UEfMscnHdIay
+         hTSQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:mime-version:subject:to:reply-to:from
+         :dkim-signature:dkim-signature;
+        bh=m1kpYDOx7+J2BGNO9t18N4upujs56UaHYBbDAUtIkkg=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=Ltu9pWXcZwVbl79RC/4GRtCVq6yVWYKEhtNOSCeuQRsDJkfk91KlEG5a08j0r23cxd
+         FyKRTsNxud2GOX0TVROoYb7Yo3WVEgW2i02oSjSEYE4w9dDrys7GCrA7dndWDD0uBMBK
+         9yG8W1pJdMgRfDMuvEIpvgKccBJiUs3xNAX4k8cv/gIpXPRvNgeAeLABHleGRag3euXZ
+         d1ad+el/z9razK1wEWhVEUykljvstETfi8uBOb7/MJ7dgMXKyE8u13mRuGyJ/ZJewSN8
+         kvqvhd7B8pdDyK2yI/0SuLBsoCynQGWBg3VWi0e7lvgVC8TfiYSIXvVQmkIMbvYoUaXg
+         Glgg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@propeers.in header.s=cjodlusggfvg6gcc5b43qvonkgkluttl header.b=PrEs8u0V;
+       dkim=pass header.i=@amazonses.com header.s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h header.b=e2AanPvx;
+       spf=pass (google.com: domain of 010901964e576ebc-d3c62ef9-ea7f-41d0-a553-010de346e75f-000000@ap-south-1.amazonses.com designates 76.223.180.21 as permitted sender) smtp.mailfrom=010901964e576ebc-d3c62ef9-ea7f-41d0-a553-010de346e75f-000000@ap-south-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=propeers.in
+Return-Path: <010901964e576ebc-d3c62ef9-ea7f-41d0-a553-010de346e75f-000000@ap-south-1.amazonses.com>
+Received: from c180-21.smtp-out.ap-south-1.amazonses.com (c180-21.smtp-out.ap-south-1.amazonses.com. [76.223.180.21])
+        by mx.google.com with ESMTPS id d9443c01a7336-22c50d5db8bsi58851145ad.366.2025.04.19.06.57.55
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 19 Apr 2025 06:57:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010901964e576ebc-d3c62ef9-ea7f-41d0-a553-010de346e75f-000000@ap-south-1.amazonses.com designates 76.223.180.21 as permitted sender) client-ip=76.223.180.21;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@propeers.in header.s=cjodlusggfvg6gcc5b43qvonkgkluttl header.b=PrEs8u0V;
+       dkim=pass header.i=@amazonses.com header.s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h header.b=e2AanPvx;
+       spf=pass (google.com: domain of 010901964e576ebc-d3c62ef9-ea7f-41d0-a553-010de346e75f-000000@ap-south-1.amazonses.com designates 76.223.180.21 as permitted sender) smtp.mailfrom=010901964e576ebc-d3c62ef9-ea7f-41d0-a553-010de346e75f-000000@ap-south-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=propeers.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=cjodlusggfvg6gcc5b43qvonkgkluttl; d=propeers.in; t=1745071075;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=eZdvtpiGe5YuKvketKt03Cc2siSr3ae3pqywOrJ8xqQ=;
+	b=PrEs8u0V8t2GmzS4p+rI7OaARl4ZsarSPLCloorBjfvJ+ObyG6wtcvqI4EFOh5Ft
+	r0ItB/eQeCKi3yhE8WQDlsp+9HHZbITU2u3MliMNAW6fzxnK+S2OL3j+OOaEuXJV85C
+	CmexrRbweDQOqr62CA1KbdlfAdKtOEXNolIdn08c=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=dvogjbaa3ou3tduyzvyu4rj5tkuzdi4h; d=amazonses.com; t=1745071075;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=eZdvtpiGe5YuKvketKt03Cc2siSr3ae3pqywOrJ8xqQ=;
+	b=e2AanPvx8cwD4vgABKc7tbLBNYYsO4DplBNmlJfamxrTzjPp/+SZVnk5IcM8Jhp8
+	H0WOJ7T1dcDU6TqxiTSIIqibzr+wQ6e5zL2YFguRsMRqUAV8uLRKJHc/NdYwWGKdwRc
+	InjqZ3YFTIZAaQuk+yAT8anrlIEK02NUJI7tkD9Y=
+From: Parikh Jain <no-reply@propeers.in>
+Reply-To: propeers.parikh@gmail.com
+To: yash31204testing@gmail.com
+Subject: Yash, Just Launched the Most Powerful DSA + Dev Combo for YOU
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1645674_1291154953.1745071075004"
+Message-ID: <010901964e576ebc-d3c62ef9-ea7f-41d0-a553-010de346e75f-000000@ap-south-1.amazonses.com>
+Date: Sat, 19 Apr 2025 13:57:55 +0000
+Feedback-ID: ::1.ap-south-1.ke8Mai8DaCyhFQoC/cwaG4enVBuObF8VeBYaiFffQjQ=:AmazonSES
+X-SES-Outgoing: 2025.04.19-76.223.180.21
+
+------=_Part_1645674_1291154953.1745071075004
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+This is the body
+------=_Part_1645674_1291154953.1745071075004
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+    <html>
+   =20
+    <head>
+        <meta charset=3D"UTF-8">
+        <style>
+            body {
+                background-color: #ffffff;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.4;
+                color: #333333;
+                margin: 0;
+                padding: 0;
+            }
+   =20
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+   =20
+            .logo {
+                max-width: 140px;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+   =20
+            .body {
+                font-size: 16px;
+                margin-bottom: 20px;
+                text-align: left; /* Left-align the content within the body=
+ */
+            }
+   =20
+            .message {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+   =20
+            .follow-text {
+                font-weight: 600;
+                font-size: 14px;
+            }
+   =20
+            .footer-text {
+                text-align: left;
+                font-size: 12px;
+                font-weight: 500;
+                float: left;
+            }
+   =20
+            .icon {
+                max-width: 20px;
+                margin-left: 12px;
+                margin-right: 12px;
+                text-decoration: none;
+            }
+   =20
+            .footer {}
+   =20
+            .unsubscribe-text {
+                font-size: 12px;
+                font-weight: 400;
+                color: #e0e0e0;
+                float: right;
+            }
+
+            .textCenter{
+                text-align: center;
+            }
+
+            .alignContent{
+                display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+
+           =20
+            .img-container {
+                margin: 0 auto;
+            }
+        </style>
+   =20
+    </head>
+   =20
+    <body>
+        <div class=3D"container">
+           <div class=3D"textCenter">
+            </div>
+           =20
+            <div class=3D"body">
+                <body style=3D"margin:0; padding:0; font-family: Arial, san=
+s-serif; background-color: #f6f8fa;">
+
+  <div style=3D"max-width: 700px; margin: auto; background-color: #ffffff; =
+padding: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05)=
+;">
+
+    <p style=3D"font-size: 18px;"><strong>Hey Yash,</strong></p>
+
+    <p>If you=E2=80=99re still preparing <strong>DSA</strong> and <strong>d=
+evelopment</strong> separately, you=E2=80=99re already behind.</p>
+
+    <p>Today, product companies expect both=E2=80=94<strong>strong DSA + re=
+al-world dev skills</strong>.</p>
+
+    <p>That=E2=80=99s why I created a powerful <strong>Combo Kit</strong> t=
+hat brings both in one place:</p>
+
+    <div style=3D"background-color: #f1f8ff; padding: 15px 20px; border-rad=
+ius: 8px; margin: 20px 0;">
+      <p style=3D"margin: 0; font-size: 16px;"><strong>=F0=9F=94=A5 DSA Pat=
+terns Kit</strong> =E2=80=93 All must-know patterns (DP, Trees, Graphs, etc=
+.) with structured problem sets and deep insights to solve new problems con=
+fidently.</p>
+    </div>
+
+    <div style=3D"background-color: #fff9f0; padding: 15px 20px; border-rad=
+ius: 8px; margin: 20px 0;">
+      <p style=3D"margin: 0; font-size: 16px;"><strong>=F0=9F=94=A5 [Fronte=
+nd / Full Stack Java / MERN] Developer Kit</strong> =E2=80=93 Complete road=
+map with real-world projects, machine coding rounds, and core dev skills to=
+ crack any full stack or frontend role.</p>
+    </div>
+
+    <p>This is not just a resource=E2=80=94it=E2=80=99s the <strong>exact s=
+trategy</strong> that=E2=80=99s helped 1000s of learners land interviews an=
+d convert them at companies like <strong>Amazon, Google, Zomato, Microsoft<=
+/strong>, and more.</p>
+
+    <p style=3D"font-weight: bold;">Those who start now will be ready.<br>
+    Those who wait will watch others get the offers.</p>
+
+    <div style=3D"text-align: center; margin: 30px 0;">
+      <a href=3D"https://bit.ly/3Y3kNXu" style=3D"display: inline-block; wi=
+dth: 100%; max-width: 300px; background-color: #0984e3; color: white; paddi=
+ng: 14px 0; font-size: 16px; text-decoration: none; border-radius: 6px; tex=
+t-align: center;">
+        =F0=9F=91=89  Grab the Combo Kit Now
+      </a>
+    </div>
+
+    <p style=3D"margin-top: 40px;"><strong>Parikh Jain</strong><br>
+    Ex-Amazon | Founding Member @ Coding Ninjas<br>
+    Founder @ ProPeers</p>
+
+  </div>
+
+</body>
+            </div>
+
+    <table role=3D"presentation" valign=3D"top" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" width=3D"100%">
+                <tbody>
+                <tr>
+                <td style=3D"padding-bottom:16px;text-align:center">
+                    <h2 style=3D"margin:0;font-weight:500;font-size:20px">S=
+tay informed with the Propeer app</h2>
+                </td>
+            </tr>
+            <tr>
+                <td style=3D"text-align:center">
+                    <a href=3D"https://apps.apple.com/in/app/propeers/id644=
+6427356" style=3D"text-decoration: none;">
+                        <img alt=3D"Download on the App Store" src=3D"https=
+://ci3.googleusercontent.com/meips/ADKq_Nb3K_tyUQe5MJXq5TBbkdaPEqtXrdx4s9uo=
+rYLmo9huzT4rm90pNvfQ1b9xHBvrhCLEUUUTw3M9s4lohvyz5NVd9E8DT7ISkQbQc4Di_FDKjwe=
+Yu5I=3Ds0-d-e1-ft#https://static.licdn.com/aero-v1/sc/h/76yzkd0h5kiv27lrd4y=
+aenylk" style=3D"outline:none;text-decoration:none;height:40px;width:120px;=
+padding-right:8px" width=3D"120" height=3D"40">
+                    </a>
+                    <a href=3D"https://play.google.com/store/apps/details?i=
+d=3Dcom.wireless.propeers" style=3D"text-decoration: none;">
+                        <img alt=3D"Get it on Google Play" src=3D"https://c=
+i3.googleusercontent.com/meips/ADKq_Na4vGlgWbb5d_c0BKM_aoF8r7kcJPwyVTRxmwOv=
+FvH-2PTgZmoPgRHgNxJfriUyoB3gL3BwEmtJqwvRPcuhYUFAgQ8U-unbpAYBdxVRmPzDb1gnZmE=
+=3Ds0-d-e1-ft#https://static.licdn.com/aero-v1/sc/h/142qudwblp58zwmc9vkqfpl=
+ug" style=3D"outline:none;text-decoration:none;height:40px;width:134px" wid=
+th=3D"134" height=3D"40">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style=3D"padding-top:16px;padding-bottom:16px">
+                    <hr style=3D"height:1px;border-style:none;background-co=
+lor:#e0dfdd">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+             =20
+  <table  cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"center"=
+>
+  <tbody>
+      <tr>
+      <th colspan=3D"3" style=3D"padding-Bottom: 20px;" align=3D"center">
+          Follow us on
+      </th>
+      </tr>
+      <tr>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.instagram.com/pro.peers/" style=3D"tex=
+t-decoration:none" target=3D"_blank">
+                  <img src=3D"https://upload.wikimedia.org/wikipedia/common=
+s/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" border=3D"0" widt=
+h=3D"30" height=3D"30" style=3D"border:none;outline:none;text-decoration:no=
+ne;font-size:19px;font-family:Helvetica Neue,Arial,sans-serif;color:#00aced=
+;font-weight:bold" alt=3D"instagram-icon" />
+              </a>
+          </td>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.youtube.com/@parikh-jain" style=3D"tex=
+t-decoration:none" target=3D"_blank">
+                  <img src=3D"https://www.iconpacks.net/icons/2/free-youtub=
+e-logo-icon-2431-thumb.png" border=3D"0" width=3D"40" height=3D"40" style=
+=3D"border:none;outline:none;text-decoration:none;font-size:19px;font-famil=
+y:Helvetica Neue,Arial,sans-serif;color:#00aced;font-weight:bold" alt=3D"yo=
+utube-icon" />
+              </a>
+          </td>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.linkedin.com/company/propeers/" style=
+=3D"text-decoration:none" target=3D"_blank">
+                  <img src=3D"https://static-00.iconduck.com/assets.00/link=
+edin-icon-512x512-dhkaf9ri.png" border=3D"0" width=3D"30" height=3D"30" sty=
+le=3D"border:none;outline:none;text-decoration:none;font-size:19px;font-fam=
+ily:Helvetica Neue,Arial,sans-serif;color:#00aced;font-weight:bold" alt=3D"=
+linkedin-icon" />
+              </a>
+          </td>
+      </tr>
+       <tr>
+        <td colspan=3D"3" style=3D"padding-top: 40px;" align=3D"center" wid=
+th=3D"400">
+            This is an auto-generated email, please do not reply.
+        </td>
+    </tr>
+    <tr>
+        <td colspan=3D"3" style=3D"padding-top: 20px;" align=3D"center" wid=
+th=3D"400">
+            <a href=3D"https://propeers.in/unsubscribe/67e249d16592165f8a2c=
+18f4/9PyKYsoCkNgfdRwU">Unsubscribe here</a>
+        </td>
+  </tbody>
+    =20
+</table>
+
+ </div>
+           =20
+           =20
+    </body>
+   =20
+    </html>
+   =20
+   =20
+------=_Part_1645674_1291154953.1745071075004--

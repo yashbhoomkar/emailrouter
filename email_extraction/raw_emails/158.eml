@@ -1,0 +1,438 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7011:812:b0:43a:a54e:2943 with SMTP id gx18csp5419092mdb;
+        Fri, 4 Apr 2025 22:30:01 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHW9J5ftJvHA1qDeL0a/7Gme3Tdrh7DqvSDdNojZonaLJpn2OxvLnCOsquwZHPYIf0WbeBH
+X-Received: by 2002:a05:6902:a87:b0:e5d:d8ea:8c96 with SMTP id 3f1490d57ef6-e6e1c25a0ffmr9257122276.29.1743831001726;
+        Fri, 04 Apr 2025 22:30:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1743831001; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ktVzQYdb/P9kesjsJvJXQXKqcjjiZFw1z+ZbtHxVSpUS9/rrY03rbBEtJmitM+nfvP
+         wkO9RC5IuED0pOHpIpVDJ2Io/ZVPcGUiHK5zfOkJNNKhh8uXw3GBlw4NZnUkN6may9lK
+         rJI/QQ45lLz5erMv3q+mvNGyJpqovrEb4YYE1BowqJQ+S3oZ8omqyv8MbyqVJd4Vyr/o
+         Bh4v9DLUgHZz6vzE0XeqJnai/nW8Z9FoSXHVzSwKNVvs7EVW7UEuCU6tQVjGD5I+1fOT
+         f9rtZodSKZZGdJng/sALr6UjhHBQYcfVAMzC+icFLIZnBHJmxrcs4DOjjyZ9Qngsvw+3
+         LCiw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=wYlHdJDBEsK9ACAzfelJdUQJUTzhK49xuf6BG9+1Du8=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=aGgjK4LaBaQKwc5ThWaQSCWezVXRFLDdTv91c68fhY2a6iMO0gyGBFJ52HFpC4J5Hq
+         qK+ZaqUKm0CU+jOgJnLDeaSBc+8HzJEhS71stz7NAtwfnj8609mHxY8uKFO8PBvc1veV
+         lqV8oOWqfxYn9AW7xsGVFSf5JbZCXQt44/4nwN9PuC+YnYQAGhb6Dr3Z/deV3BYDlq4Y
+         zzOq53tcNQ7GJwyly9tITAICF8FeqyLFQp7jzreTO8qsjTY0JXDOD6usxk6SXGvYTQXu
+         Fp41O8o19NSU58t25cLk/SYNzLNob/vhibST2CXc9a8FGKxl4Dtu0BqxgDBBqHcv2V9R
+         BFeg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@tryexponent.com header.s=s1 header.b=Twf4bNvM;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=mskdXmpw;
+       spf=pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 168.245.123.156 as permitted sender) smtp.mailfrom="bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tryexponent.com
+Return-Path: <bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com>
+Received: from o21.sg.m.dripemail2.com (o21.sg.m.dripemail2.com. [168.245.123.156])
+        by mx.google.com with ESMTPS id 3f1490d57ef6-e6e32d56d03si1300989276.266.2025.04.04.22.30.01
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 04 Apr 2025 22:30:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 168.245.123.156 as permitted sender) client-ip=168.245.123.156;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tryexponent.com header.s=s1 header.b=Twf4bNvM;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=mskdXmpw;
+       spf=pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 168.245.123.156 as permitted sender) smtp.mailfrom="bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tryexponent.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tryexponent.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=s1; bh=wYlHdJDBEsK9ACAzfelJdUQJUTzhK49xuf6BG9+1Du8=;
+	b=Twf4bNvMu9aZaVt/tq0uZW0jqWWPKaSorzv82K0XpEdnfB2wV5/uBxVl9A9pRNGOkdzp
+	hv/XoeQyKCMM7y1j41+mDoQ3KuI6PNk8ZzKPqFDCoHq1EhzLTatvdoWJfFdDTDmhZnM3hC
+	+Tpmw6oGVKORHZH8SRJKtdcVsGg6/9ejEDBG7AuYTcNShwg+W3BiLZ703WxMZAVrAL1wIC
+	FWPecMKO474U2jRp4pCxPfcYQEBaoGrbqQOkBzGjo+3GbgX+jrDCO3HDsoEKc2oo6Pagwf
+	KVy70XWBiRn0o/crQ1Wkg3vwL+ZQShIzG+WyGEgPgV8idbiROnn4NIFjEHU4+17g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:feedback-id:from:subject:to;
+	s=smtpapi; bh=wYlHdJDBEsK9ACAzfelJdUQJUTzhK49xuf6BG9+1Du8=;
+	b=mskdXmpwAhufybommQzmLi9K+tdvbG2C4WWxVPZRGOlWCVplh9Uz4AoPvRR8Mg99Cxkl
+	b4UhwNiYx4tOff/L83zKLQP5f2GeLlaNnAadFqwtCRHqqgCq946SfpMQtE9TvU1+eahpO0
+	fHKiS7LDfmtCV8/kypz96Ousd4yN0dSM4=
+Received: by recvd-856595dfb-4tn5g with SMTP id recvd-856595dfb-4tn5g-1-67F09865-F
+	2025-04-05 02:41:41.27905911 +0000 UTC m=+12201535.424556454
+Received: from Mjc0NzUxMjA (unknown)
+	by geopod-ismtpd-32 (SG) with HTTP
+	id zygHCQtJRJu7zxSIjZQkJg
+	Sat, 05 Apr 2025 02:41:41.223 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=4723f22379a392f2b5b5bb0fd724ce1db259b63948de94ee3d4bff82c8a5
+Date: Sat, 05 Apr 2025 05:30:00 +0000 (UTC)
+From: "Jacob @ Exponent" <hello@tryexponent.com>
+Mime-Version: 1.0
+Message-ID: <zygHCQtJRJu7zxSIjZQkJg@geopod-ismtpd-32>
+Subject: =?UTF-8?B?4oyb?= Last chance. Get 20% off Exponent.
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40unsubscribe=2Edripemail3=2Ecom=3Fsubject=3DeyJhbGc?=
+ =?us-ascii?Q?iOiJIUzI1NiJ9=2EeyJhdWQiOiJtYWlsdG9fdW5zd?=
+ =?us-ascii?Q?WJzY3JpYmVfbGFtYmRhIiwiaXNzIjoibW9ub2xp?=
+ =?us-ascii?Q?dGgiLCJzdWIiOiJsaXN0X3Vuc3Vic2NyaWJlIiw?=
+ =?us-ascii?Q?iaWF0IjoxNzQzODMxMDAwLCJuYmYiOjE3NDM4Mz?=
+ =?us-ascii?Q?EwMDAsImFjY291bnRfcHVibGljX2lkIjo0NzA4N?=
+ =?us-ascii?Q?TIwLCJzdWJzY3JpYmVyX3Rva2VuIjoiZHB3enhk?=
+ =?us-ascii?Q?NDVoZHlnOG1sNXp5c2IiLCJkZWxpdmVyeV90b2t?=
+ =?us-ascii?Q?lbiI6IjhqdmkwdWFkM3Bnd3VzcHlrOXl1In0=2Eps?=
+ =?us-ascii?Q?FXX-FGw63-yoJvIRvl6S-8-InFtjAWq0RRfsiZ6?=
+ =?us-ascii?Q?2w=3E=2C=3Chttps=3A=2F=2Funsubscribe=2Edripemail3=2Ecom?=
+ =?us-ascii?Q?=3Fsubject=3DeyJhbGciOiJIUzI1NiJ9=2EeyJhdWQiO?=
+ =?us-ascii?Q?iJtYWlsdG9fdW5zdWJzY3JpYmVfbGFtYmRhIiwi?=
+ =?us-ascii?Q?aXNzIjoibW9ub2xpdGgiLCJzdWIiOiJsaXN0X3V?=
+ =?us-ascii?Q?uc3Vic2NyaWJlIiwiaWF0IjoxNzQzODMxMDAwLC?=
+ =?us-ascii?Q?JuYmYiOjE3NDM4MzEwMDAsImFjY291bnRfcHVib?=
+ =?us-ascii?Q?GljX2lkIjo0NzA4NTIwLCJzdWJzY3JpYmVyX3Rv?=
+ =?us-ascii?Q?a2VuIjoiZHB3enhkNDVoZHlnOG1sNXp5c2IiLCJ?=
+ =?us-ascii?Q?kZWxpdmVyeV90b2tlbiI6IjhqdmkwdWFkM3Bnd3?=
+ =?us-ascii?Q?VzcHlrOXl1In0=2EpsFXX-FGw63-yoJvIRvl6S-8-?=
+ =?us-ascii?Q?InFtjAWq0RRfsiZ62w=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Drip-SendingAccount: 4708520
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EuSDS9eFxEU3M+kbHxIGVRJttqyJ9Y19zuGEZgFpcFXVyOlqsS=2FzpCdgGM?=
+ =?us-ascii?Q?PYg=2F2B6rkHjI2dymhsrMtshLHqvOVQgSZ4dJtfU?=
+ =?us-ascii?Q?LevfNGUjstBJL5C03gnOwCMUguUzJ2L+h0Wfm0v?=
+ =?us-ascii?Q?Y5pytXbgMMf9j3btAScUpBonq5hlr0qaK8ApnSc?=
+ =?us-ascii?Q?K=2FBEJQL3pTW1zuRa3T+umxSd=2F4yeJE4GusdeSIo?=
+ =?us-ascii?Q?gjzj0QRX9LsqUrTMaPWDLEdV7uRXy9Wt+wDYPxm?= =?us-ascii?Q?FgAD?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCAf2TSkkcsbWsXt?=
+ =?us-ascii?Q?+6pnbIhZ+hkW=2FtdnXMYWgwff=2F7EbAyLx=2FyrOj8Z?=
+ =?us-ascii?Q?yuxpqkE=2FVU3KHFD7X2WzELSkTtgiF9eDb5jUH8f?=
+ =?us-ascii?Q?vHwLXZzX8ROUIPpcQAOmyLSw6vvsvuqCuD2T8nN?=
+ =?us-ascii?Q?rtyjmDSHhJOPJxm2wfQhqy2bq9FP99EyaHwm0v1?=
+ =?us-ascii?Q?zg=2FBpPGXwhJ8vQgFrlerkCn6uWJOJUciMnkzjbW?=
+ =?us-ascii?Q?0ZnWZcj=2FPdb=2F4nF8pb=2FGQh+BzOOH2EadvmjlhdS?=
+ =?us-ascii?Q?Clx7=2FBeZJvoqTGhEEfoIHQGE3yIlXnGgRx9moPz?=
+ =?us-ascii?Q?XzF=2FqMUrX+7JczBkqAdl47XkbbiHgPSrP4nOdDX?=
+ =?us-ascii?Q?JjLjL0wZruJX8zk9HVL0LWt7qgRTldoWNiq+mfN?=
+ =?us-ascii?Q?uM1eNGWZtoQdiRfeLFZuECQXC9sjjTPYX7EEORZ?=
+ =?us-ascii?Q?JsSfM1wcHVVHNRjIAQ3bwlPRVqC4hS584nm=2FTSO?=
+ =?us-ascii?Q?m=2FpVblmBa+Cs=2FCb7o=2FpzqGWKJ446nsH+jYGy2hF?=
+ =?us-ascii?Q?g81rbEPWOL5PPT7FWLzETuY=2FCazqCXe099WrK2k?=
+ =?us-ascii?Q?XzbuQxSWbmkKY0RYLBcF6DwH3tx1vBYmD6mIgpd?=
+ =?us-ascii?Q?b4M=2FAen2HAeD92w+20HIiyyDrSpEG9J=2F0Cj19=2Fs?=
+ =?us-ascii?Q?=2FkvMM59z1JmbCWja79On4V2HKCnXMqnn4F2fEM6?=
+ =?us-ascii?Q?yRdwRMlL3d97nlfSNwejZUC+nf11oPudXU0j4Uo?=
+ =?us-ascii?Q?+gO5F+50cUrsSlDMW=2FsU6hOfZlQ=3D?=
+To: yash31204testing@gmail.com
+X-Entity-ID: u001.Q8GX+GkWXypxhatSvAZ5gQ==
+
+--4723f22379a392f2b5b5bb0fd724ce1db259b63948de94ee3d4bff82c8a5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+Hi Yash,
+
+You're still eligible for a 20% discount on our interview prep
+courses and coaching, but this offer ends soon.
+
+Get access to expert mock interviews, interactive exercises, and
+everything you need to ace the job interview.
+
+>> Become an Exponent member - 20% off today only!=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzODIwOTAxLCJuYmYi=
+OjE3NDM4MjA5MDEsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiI4anZpMHV=
+hZDNwZ3d1c3B5azl5dSIsInRva2VuIjoiOGp2aTB1YWQzcGd3dXNweWs5eXUiLCJzZW5kX2F0Ij=
+oxNzQzODMxMDAwLCJlbWFpbF9pZCI6OTU1MTU0OSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vdXBncmFkZT9wcm9tb19jb2RlPVRXRU5UWU9GRiZfX3M9ZHB3enhkNDVoZHlnOG1sNXp5c2I=
+ifQ.lxSI7DssxX0V8inxltOGcLIkAty6Xn6DQeLDoCKaTgE )
+
+Jacob Simon
+
+Co-founder, Exponent
+
+Connect on LinkedIn=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzODIwOTAxLCJuYmYi=
+OjE3NDM4MjA5MDEsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiI4anZpMHV=
+hZDNwZ3d1c3B5azl5dSIsInRva2VuIjoiOGp2aTB1YWQzcGd3dXNweWs5eXUiLCJzZW5kX2F0Ij=
+oxNzQzODMxMDAwLCJlbWFpbF9pZCI6OTU1MTU0OSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5saW5rZWRpbi5jb20v=
+Y29tcGFueS90cnlleHBvbmVudC8_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiIn0.-ZXyLLd-M3p=
+wMaqCjO_JObH1KuCIZgXToyd2yqHJx7Q )
+
+---------------------
+To make sure you keep getting these emails, please add
+hello@tryexponent.com to your address book or whitelist us. Want out of
+the loop? <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdW=
+QiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxN=
+zQzODIwOTAxLCJuYmYiOjE3NDM4MjA5MDEsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZl=
+cnlfaWQiOiI4anZpMHVhZDNwZ3d1c3B5azl5dSIsInRva2VuIjoiOGp2aTB1YWQzcGd3dXNweWs=
+5eXUiLCJzZW5kX2F0IjoxNzQzODMxMDAwLCJlbWFpbF9pZCI6OTU1MTU0OSwiZW1haWxhYmxlX3=
+R5cGUiOiJDYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3d=
+y5nZXRkcmlwLmNvbS9zdWJzY3JpYmVycy9kcHd6eGQ0NWhkeWc4bWw1enlzYi90b3BpY3M_ZD04=
+anZpMHVhZDNwZ3d1c3B5azl5dSZleGNsdWRlX2NsaWNrPTEmX19zPWRwd3p4ZDQ1aGR5ZzhtbDV=
+6eXNiIn0.at49n69xlyMB8XVaSYmKJQzNai8XuDhF3WjtCj0WB2M">Unsubscribe</a>.
+
+Our postal address: 150 Albion St, San Francisco, CA 94110
+
+
+--4723f22379a392f2b5b5bb0fd724ce1db259b63948de94ee3d4bff82c8a5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D'font-family: "Helveti=
+ca Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box=
+; font-size: 14px; line-height: 1.5;'>
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+<style>img {
+max-width: 100%; margin-bottom: 14px;
+}
+body {
+background-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+a:visited {
+color: #5025D8 !important;
+}
+a:hover {
+color: #3917A7 !important;
+}
+a:active {
+color: #3917A7 !important;
+}
+.cta-button:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+.cta-button:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+.cta-button:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+</style></head>
+<body style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.6; ba=
+ckground-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: none; width: 100% !important; height: 100%;' bgcolor=3D"#ffffff">
+<!--[if mso 16]>
+    <style type=3D"text/css">
+        a{
+            text-decoration:none !important;
+        }
+    </style>
+<![endif]-->
+
+<table class=3D"body-wrap" style=3D'font-family: "Helvetica Neue", "Helveti=
+ca", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;=
+ line-height: 1.5; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background=
+-color: #ffffff; width: 100%;' bgcolor=3D"#ffffff">
+  <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+    <td class=3D"container" style=3D'font-family: "Helvetica Neue", "Helvet=
+ica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px=
+; line-height: 1.5; vertical-align: top; display: block !important; max-wid=
+th: 600px !important; overflow: visible; clear: both !important; margin: 0;=
+' valign=3D"top">
+      <div class=3D"content" style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5; max-width: 600px; overflow: visible; display: block; m=
+argin: 0;'>
+        <table class=3D"main" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Aria=
+l, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+          <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>
+            <td class=3D"main-content" style=3D"font-family: 'Helvetica Neu=
+e', 'Helvetica', 'Arial', sans-serif; box-sizing: border-box; font-size: 14=
+px; line-height: 1.5; vertical-align: top; color: #222222; padding: 25px;" =
+valign=3D"top">
+              <!-- cke-content-start --><!-- cke-content-start --><!-- cke-=
+content-start --><!-- cke-content-start -->Hi Yash,<br style=3D'font-family=
+: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: =
+border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+You're still eligible for a 20% discount on our interview prep courses and =
+coaching, but this offer ends soon.<br style=3D'font-family: "Helvetica Neu=
+e", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font=
+-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Get access to expert mock interviews, interactive exercises, and everything=
+ you need to ace the job interview.<br style=3D'font-family: "Helvetica Neu=
+e", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font=
+-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<span style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'><=
+span style=3D'text-decoration: underline; font-family: "Helvetica Neue", "H=
+elvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size:=
+ 14px; line-height: 1.5;'><span style=3D'font-weight: bold; font-family: "H=
+elvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: bord=
+er-box; font-size: 14px; line-height: 1.5;'>&gt;&gt; </span></span></span><=
+a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvd=
+XIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzODIwOTAx=
+LCJuYmYiOjE3NDM4MjA5MDEsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiI=
+4anZpMHVhZDNwZ3d1c3B5azl5dSIsInRva2VuIjoiOGp2aTB1YWQzcGd3dXNweWs5eXUiLCJzZW=
+5kX2F0IjoxNzQzODMxMDAwLCJlbWFpbF9pZCI6OTU1MTU0OSwiZW1haWxhYmxlX3R5cGUiOiJDY=
+W1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBv=
+bmVudC5jb20vdXBncmFkZT9wcm9tb19jb2RlPVRXRU5UWU9GRiZfX3M9ZHB3enhkNDVoZHlnOG1=
+sNXp5c2ImdXRtX3NvdXJjZT1kcmlwJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPVNXRS=
+tJbnRlcmVzdCtDYW1wYWlnbiZ1dG1fY29udGVudD0lRTIlOEMlOUIrTGFzdCtjaGFuY2UuK0dld=
+CsyMCUyNStvZmYrRXhwb25lbnQuIn0.IjXBteSpMZABPKG_k7LRX5b8q4BMGUaeHWfQljW19gw"=
+ style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, san=
+s-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; color: =
+#5025D8; text-decoration: underline;'><span style=3D'font-family: "Helvetic=
+a Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box;=
+ font-size: 14px; line-height: 1.5;'><span style=3D'text-decoration: underl=
+ine; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-ser=
+if; box-sizing: border-box; font-size: 14px; line-height: 1.5;'><span style=
+=3D'font-weight: bold; font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>Become an Exponent member - 20% off today only!</span></span></span>=
+</a><br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Ari=
+al, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'=
+>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Jacob Simon<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helveti=
+ca, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height=
+: 1.5;'>
+Co-founder, Exponent<br style=3D'font-family: "Helvetica Neue", "Helvetica"=
+, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; li=
+ne-height: 1.5;'>
+<a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRv=
+dXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzODIwOTA=
+xLCJuYmYiOjE3NDM4MjA5MDEsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOi=
+I4anZpMHVhZDNwZ3d1c3B5azl5dSIsInRva2VuIjoiOGp2aTB1YWQzcGd3dXNweWs5eXUiLCJzZ=
+W5kX2F0IjoxNzQzODMxMDAwLCJlbWFpbF9pZCI6OTU1MTU0OSwiZW1haWxhYmxlX3R5cGUiOiJD=
+YW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5saW5rZWR=
+pbi5jb20vY29tcGFueS90cnlleHBvbmVudC8_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiJnV0bV=
+9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW50ZXJlc3QrQ=
+2FtcGFpZ24mdXRtX2NvbnRlbnQ9JUUyJThDJTlCK0xhc3QrY2hhbmNlLitHZXQrMjAlMjUrb2Zm=
+K0V4cG9uZW50LiJ9.y4cskUjkTM8srd4oEeHfPOjmeP2OtbWoLGuVTUArr8E" style=3D'font=
+-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-s=
+izing: border-box; font-size: 14px; line-height: 1.5; color: #5025D8; text-=
+decoration: underline;'><span style=3D'font-family: "Helvetica Neue", "Helv=
+etica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14=
+px; line-height: 1.5;'><em style=3D'font-family: "Helvetica Neue", "Helveti=
+ca", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;=
+ line-height: 1.5;'>Connect on LinkedIn</em></span></a>
+            </td>
+          </tr>
+        </table>
+      </div>
+     =20
+      <div class=3D"content" style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5; max-width: 600px; overflow: visible; display: block; m=
+argin: 0;'>
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D'=
+font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; b=
+ox-sizing: border-box; font-size: 14px; line-height: 1.5; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt;'>
+          <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>
+            <td class=3D"footer-content" style=3D"font-family: 'Helvetica N=
+eue', 'Helvetica', 'Arial', sans-serif; box-sizing: border-box; font-size: =
+14px; line-height: 1.5; vertical-align: top; width: 100%; clear: both; colo=
+r: #777; border-top-width: 1px; border-top-color: #d0d0d0; border-top-style=
+: solid; padding: 25px;" valign=3D"top">
+              To make sure you keep getting these emails, please add hello@=
+tryexponent.com to your address book or whitelist us. Want out of the loop?=
+ <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXR=
+vdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzODIwOT=
+AxLCJuYmYiOjE3NDM4MjA5MDEsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiO=
+iI4anZpMHVhZDNwZ3d1c3B5azl5dSIsInRva2VuIjoiOGp2aTB1YWQzcGd3dXNweWs5eXUiLCJz=
+ZW5kX2F0IjoxNzQzODMxMDAwLCJlbWFpbF9pZCI6OTU1MTU0OSwiZW1haWxhYmxlX3R5cGUiOiJ=
+DYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5nZXRkcm=
+lwLmNvbS9zdWJzY3JpYmVycy9kcHd6eGQ0NWhkeWc4bWw1enlzYi90b3BpY3M_ZD04anZpMHVhZ=
+DNwZ3d1c3B5azl5dSZleGNsdWRlX2NsaWNrPTEmX19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiJnV0=
+bV9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW50ZXJlc3Q=
+rQ2FtcGFpZ24mdXRtX2NvbnRlbnQ9JUUyJThDJTlCK0xhc3QrY2hhbmNlLitHZXQrMjAlMjUrb2=
+ZmK0V4cG9uZW50LiJ9.G8ln__clRzUw8Gr-kl60iB8mjr3rZQasTOh8HvPFL-s" style=3D'fo=
+nt-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box=
+-sizing: border-box; font-size: 14px; line-height: 1.5; color: #5025D8; tex=
+t-decoration: underline;'>Unsubscribe</a>.
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'><br=
+ style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, san=
+s-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Our postal address: 150 Albion St, San Francisco, CA 94110
+
+            </td>
+          </tr>
+        </table>
+      </div>
+     =20
+    </td>
+  </tr>
+</table>
+<img src=3D"https://u27475120.ct.sendgrid.net/wf/open?upn=3Du001.aRCGSPwM0C=
+8HED7rMt4XUJenHxM5HFFHeaRgbP8Nq-2Bhdk-2BWD1-2Bsvv5oKaxydZuxYDKz8dkEqs2eJv-2=
+FAUnonkVbEeB3X-2F0vJRc4sHx8truMfzW2aoN-2F8TzPHi80bXzxIvs66-2Bj4QqTF-2FNZMc1=
+OhKIednHvKWr2k1jFAEC9UJWMfozW-2BVuB6LnK4Z6IHRjOxRAHPVmFKn-2FBZ7zH6OJFRBC5-2=
+FXbh2T-2FXhv8EUhDcmZfnmbCl53wIMVFebt-2BeGGDt5ygiLWGmx-2B5SA4pcZAhT8LT06Evn5=
+UDFXmwHYBLbv4OI507AUxVlnwrKbGK2pmMzdfskbWmtFDrrJY6OSuc7Wwfidd6MBoojMShiqmL6=
+Z83aJyD0zSml1agGMCocEneSGLqmgzXLVOJXuw0HAVHFcPP-2FqQ-2BDxWg1-2F-2BjYGcb18ut=
+tcldlfhAu0IgBQ8Pn4URvg-2Ffql2jnHS6nWkIU8nkQ6JLSrm7MCRahaI1EDAg71ipaGdvsGUCb=
+8AMKPOjMBth0dRv0hr7lztV-2FdSTDJYx-2BAE9XcpjCXQCsk-2Byg9up3zeNOXzW7AfTKwJgr2=
+VH1rOtj2hQVXWR7BE5Ge0VI6KiR3vPY23-2Bus7ys7FmOm0HPEt6vQcoYuVHxYErGJprYtb-2FZ=
+9xpcDxSMcUX8mtH9M9JRwaE4rKT8IRgG-2Bn4W8UIVwPFlFrU-2FjW0laAVHICpZdpw0M9UwTKW=
+wzkfaezkrxh-2FuAZOE0HaesaNDevObgJbAfvgPbQmYr0ykTDhsNMxe2WrgN9BvEIFnqsF2hKUR=
+-2Bf4lECucJRqJn23jD37JdTcTnYdRMO2v3nJNnpA3JijKpjfTUq6VEJoogF50qeHO5KgfGpML4=
+MccTHkHyDzEutJSFxcjJd5nT0uE7Dr0Z-2Bex2NMRLGSoCHSxFnjg9hcWoTjj6-2B-2BVC7kiBs=
+wqYw-2BK5k5z1ktoZE-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+--4723f22379a392f2b5b5bb0fd724ce1db259b63948de94ee3d4bff82c8a5--

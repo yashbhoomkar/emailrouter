@@ -1,0 +1,90 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:e716:b0:43a:a54e:2943 with SMTP id lx22csp2460771mdb;
+        Mon, 24 Mar 2025 23:15:35 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEy1q4/NSFMnycdR+9js5cpzNRyi/WQ/s8PbiM4tqt/4cNXhl0qBgw3HT10Csr3t8A+MlUF
+X-Received: by 2002:a05:620a:1a8e:b0:7c5:592c:c27 with SMTP id af79cd13be357-7c5ba15e0c4mr2407988185a.21.1742883335558;
+        Mon, 24 Mar 2025 23:15:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742883335; cv=none;
+        d=google.com; s=arc-20240605;
+        b=i7cRan3ZED8nXVdIv2pUGLsgR7T7rTFReSWOMarGtL4c3JPKG6rTMiAnOxsAQ8/uZT
+         yLkFtsV2Q1yPxmhHqgDLLoGehx645K4tz19yBtNLRd7vX64KWwmUEoJHLGGd07ta51n5
+         yi8quOi6Wk8HXVfJUbYTKd5ZrMlKDPfkxz350D+W3gcGkbc/hEzhsWGZetFAHd8d9pU5
+         oZn3gkIcpXJfZ3SKCgGeZ11UY4i8Os2Cer/WKlTMyQudOLFnyoFF5IVtdoAqioxhp66C
+         V2SE5kB32FGFHjp8sd0osrimizFIowAqUTEAKc6X1xKsX0IOLaP5APnyKab8rnN35scC
+         ndcQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:to:reply-to:mime-version:subject
+         :message-id:from:date:dkim-signature:dkim-signature;
+        bh=YYEE8v2MiGS4s5HgxNQ88/jRlCLHqZ4NFySPeGjmu8M=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=KW49wcmnR6aeZV2BLLSIaqHEV9NvEoCiZzepRDIlubphoECmCTgMSSlbx4NyuG/ySO
+         6wV3xjTr+Zul2wRTVdxgzPzTkSoZrvyCLGTe9qaFYf/ZyfWcV7H0IHpkfV9gjN/vRMI7
+         o3iS/KOUkurzckKtfzzWCFIus6yZ3ldbo5LQrblQXHdI+lRIeBjY66Rg1CZAFeODeGVR
+         UIanYNdnbJV+PZ0ocgqTGsdb29h6CyAvxGeZjjCnrI3Yu60YkM0avEG5CQDomjYufk0f
+         7mPYznjQjkp6uQQyCTEORJjzMiuDGjDN88rwVg+3rMhYW2t79pdO4IxFTBGg/FuLwGQ1
+         AiDw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dev.to header.s=s1 header.b=RdkPtInU;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="u2p+N8/u";
+       spf=pass (google.com: domain of bounces+5281943-21f6-yash31204testing=gmail.com@em4984.dev.to designates 168.245.25.100 as permitted sender) smtp.mailfrom="bounces+5281943-21f6-yash31204testing=gmail.com@em4984.dev.to"
+Return-Path: <bounces+5281943-21f6-yash31204testing=gmail.com@em4984.dev.to>
+Received: from o1.ptr462.dev.to (o1.ptr462.dev.to. [168.245.25.100])
+        by mx.google.com with ESMTPS id af79cd13be357-7c5b9348526si884017085a.264.2025.03.24.23.15.35
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 24 Mar 2025 23:15:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+5281943-21f6-yash31204testing=gmail.com@em4984.dev.to designates 168.245.25.100 as permitted sender) client-ip=168.245.25.100;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dev.to header.s=s1 header.b=RdkPtInU;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="u2p+N8/u";
+       spf=pass (google.com: domain of bounces+5281943-21f6-yash31204testing=gmail.com@em4984.dev.to designates 168.245.25.100 as permitted sender) smtp.mailfrom="bounces+5281943-21f6-yash31204testing=gmail.com@em4984.dev.to"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=dev.to;
+	h=from:subject:mime-version:reply-to:to:content-type:
+	content-transfer-encoding:cc:content-type:from:subject:to;
+	s=s1; bh=YYEE8v2MiGS4s5HgxNQ88/jRlCLHqZ4NFySPeGjmu8M=;
+	b=RdkPtInUqp6jeDvoV6Cl8uoRsof37pdXsRoaulYdeART2rkMmNeA/j4Bbpl+agUI+2HP
+	2i/YvO97V3FjWSiMjxawX5YP2L2H8tf5CCUwisXXGXOtxvz8Q+XSdsGRJRFHyrRYubq9Br
+	GfpegwGWIXMjCJ+2elfS8C4lkCJraxGfwu33/KiMURBKfaqiSx2YHXHX66XY7sglzAhHnF
+	rGkNAA0w6JNAs+QoBHFi/xYAcQbM6IFu4g1DVpBM/kaXmsceiJm8eDbHVn2jc5YO233nEZ
+	lZeNytOfWzSNiZ38BdM4amYy9bQ05akitFbotx4UAF2H6tpjPGKAwPWJ+PlhhyEQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:mime-version:reply-to:to:content-type:
+	content-transfer-encoding:cc:content-type:from:subject:to;
+	s=smtpapi; bh=YYEE8v2MiGS4s5HgxNQ88/jRlCLHqZ4NFySPeGjmu8M=;
+	b=u2p+N8/uDRAq7d967P+x6xEM/QfiH8i3cJ3nWWMNUt3FgAs6ljtMYi1VvG4Jymkdvhpf
+	jWzlp3KUc/smcZzRxILOvTD+fZJ9WzxyYdWpScYP+dBvXw7lQoaeovpvkV8UM3+s47CkZ3
+	5rG+/Z5XBks+V3nSl8beFd2LvWBAoagvc=
+Received: by recvd-64f844b5bd-4p9zp with SMTP id recvd-64f844b5bd-4p9zp-1-67E24A06-33
+	2025-03-25 06:15:34.912828807 +0000 UTC m=+11263938.236837161
+Received: from dev.to (unknown)
+	by geopod-ismtpd-18 (SG) with ESMTP
+	id R1Af3qIdTV6KDW8mNTsSbw
+	for <yash31204testing@gmail.com>;
+	Tue, 25 Mar 2025 06:15:34.852 +0000 (UTC)
+Date: Tue, 25 Mar 2025 06:15:34 +0000 (UTC)
+From: DEV Community <yo@dev.to>
+Message-ID: <67e24a06c236c_1027765dc11146@e305a1cb-0e62-4a97-9072-64db475a9862.mail>
+Subject: Yash, confirm your DEV Community account
+Mime-Version: 1.0
+Reply-To: yo@dev.to
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EW1shSjMCJdtfro28h8AE+alo5r9vABv2cnmbutq70hj=2FLLpOVxkbV4vk0?=
+ =?us-ascii?Q?U6YjxGwwgcthPYLdUOky9dEyVDYcIr+vm5F73GC?=
+ =?us-ascii?Q?bXdJhkkyS8E9w7ufx4cjz4vInA6HnD0bE1N8GFe?=
+ =?us-ascii?Q?0Ig3Tx+dFIzD1ILASJo5fL=2FzhpRrtV8DXYYdMMi?=
+ =?us-ascii?Q?XjXzjmIHsIIwTfEbDkQkGB6xNg+KeNDgKlp+jhD?=
+ =?us-ascii?Q?GNEym=2FHcfZcPkLKU3RfWcI=3D?=
+To: yash31204testing@gmail.com
+X-Entity-ID: u001.lfYYxBPJ942pxM6i+md4cg==
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<p>Welcome Yash!</p>
+
+  <p>You can confirm your account email through the link below:</p>
+
+  <p><a href="https://dev.to/users/confirmation?confirmation_token=PvwByGHpGs3xxosj_FHY&ahoy_click=true&t=9kXay2Y4B2tdrzt22BpCkfovZg67DFV1&s=Q5ISRkv6MAKAO5h0w-lEpvVpxN1q1ewUoiQf6d4hyQw&u=https%253A%252F%252Fdev.to%252Fusers%252Fconfirmation%253Fconfirmation_token%253DPvwByGHpGs3xxosj_FHY">Confirm my account</a></p>
+<img src="http://url5517.dev.to/wf/open?upn=u001.aRCGSPwM0C8HED7rMt4XUJenHxM5HFFHeaRgbP8Nq-2BiuzDxJiNH6LIEInB9YHbUwAPwcNOkH27Kj-2BCHEdzNE8HSnRqetHpEfmHs8ZjfFB4nkAS8hek3lPt4e1bnUk2qIa6E1Yf9GT89AR-2B6v1PI-2FArYrx-2BJO77Zk-2BLh2t6YAkuEUhAHJOa6monrk5FLtu4Onth94l783lmx9Qne9qeZ08u9poOrAVwnj9IDBN808VAI-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/></body></html>

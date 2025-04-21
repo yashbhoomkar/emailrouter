@@ -1,0 +1,632 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a2e:82d7:0:b0:308:ec77:1bb9 with SMTP id n23csp1450780ljh;
+        Sat, 15 Feb 2025 09:30:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHGfl7fYupXcgWyX2oiUYMDaSxw8pF4VUrxwwHJabnh9bVOablWTqH2ceHzcj8oZjripuFb
+X-Received: by 2002:a05:6a21:6014:b0:1e1:c4e4:8898 with SMTP id adf61e73a8af0-1ee8c97a8camr6968677637.0.1739640617727;
+        Sat, 15 Feb 2025 09:30:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1739640617; cv=none;
+        d=google.com; s=arc-20240605;
+        b=VdYkCFtA/KzjJoHSNkFgREhapwzdNKX+PNfZR+0moHLvI5YOblCmZG9s/zbtkisYj6
+         NiKg19H87tSN/s3/O7kOetIZz5Rgcp3HR8EPDjhvUqg0N3AkKjavnaU7XNfMtTV48qIb
+         feWmEy4iW9N5TJlMSS71LSB++R13q9ufutO/ro1s57ObzwLUe5rFT9RdsLSsYyWQEhjH
+         mYesymCcBQsOXZggAhgYCx7CPHVNNPI/If6U0242EyFyrgEPP8utCo6E6igBRHJ9ehzu
+         JRTfVCJOw41cD5bDW8CvCNcUvUEpYKOo3RbOOe7F+1FqM4elJUeWFnex47vAndp530gN
+         qQBw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:from:subject:list-unsubscribe-post:reply-to
+         :list-unsubscribe:mime-version:date:message-id:to:dkim-signature;
+        bh=RbzxkOkDWz+6GbagZFW8PoGnmb6vhqe0U3WcUug/rxo=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=YX+gUWJyEQ/MbX6XuBU6lA4BiiSJnqhghQZTaiozlSkZyJyhvICEIvvtL7ar1XJ3k2
+         vzwoajvVanE40H0xkUO2gu8M34U9cIR+HutxEEp4iCdWHx0FCtnw+RXiWlR/ux0gTT7d
+         xhLZac+dCzx9HxrL+QrOXLrGVJQnXRbdGGUYrQ15ZrfF5OHlQjGzuXAsSQx2YahetPlz
+         1d3SvzcK4asAlEtQX/Hu7eg242BtBy6VlsIgsiYTT4+J/efDxg/PvCRTC7QYPslGb1/h
+         GfiJEk8C2Js+CC9xyywlr3vskGcoElkfdsHTcMsJTsmXgjamgXI0kNwlJ97U+KgFNRGE
+         eqsg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.grammarly.com header.s=20230920 header.b=Zk49FhEy;
+       spf=pass (google.com: domain of msprvs1=20141jetmgaqq=bounces-280172-1538@bounces.grammarly.com designates 168.203.32.160 as permitted sender) smtp.mailfrom="msprvs1=20141JetMGAQq=bounces-280172-1538@bounces.grammarly.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=grammarly.com
+Return-Path: <msprvs1=20141JetMGAQq=bounces-280172-1538@bounces.grammarly.com>
+Received: from mta-203-32-160.info.grammarly.com.sparkpostmail.com (mta-203-32-160.info.grammarly.com.sparkpostmail.com. [168.203.32.160])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-73242745a86si7065804b3a.207.2025.02.15.09.30.17
+        for <yash31204testing@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 15 Feb 2025 09:30:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of msprvs1=20141jetmgaqq=bounces-280172-1538@bounces.grammarly.com designates 168.203.32.160 as permitted sender) client-ip=168.203.32.160;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.grammarly.com header.s=20230920 header.b=Zk49FhEy;
+       spf=pass (google.com: domain of msprvs1=20141jetmgaqq=bounces-280172-1538@bounces.grammarly.com designates 168.203.32.160 as permitted sender) smtp.mailfrom="msprvs1=20141JetMGAQq=bounces-280172-1538@bounces.grammarly.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=grammarly.com
+X-MSFBL: /PZ0FwOBqvwRJNebwFB2zATNG/Aw6qxGsMcuaaXN4WY=|eyJzdWJhY2NvdW50X2l
+	kIjoiMTUzOCIsIm1lc3NhZ2VfaWQiOiI2N2EzMjhjZmIwNjc5ZTBjMWUzMSIsInI
+	iOiJ5YXNoMzEyMDR0ZXN0aW5nQGdtYWlsLmNvbSIsImN1c3RvbWVyX2lkIjoiMjg
+	wMTcyIiwidGVuYW50X2lkIjoic3BjIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.grammarly.com;
+	s=20230920; t=1739640616; i=@mail.grammarly.com;
+	bh=RbzxkOkDWz+6GbagZFW8PoGnmb6vhqe0U3WcUug/rxo=;
+	h=To:Message-ID:Date:Content-Type:List-Unsubscribe:
+	 List-Unsubscribe-Post:Subject:From:From:To:Cc:Subject;
+	b=Zk49FhEy/28o6Gr3TGEFxUxj+gA5p6rkoS9dZa53lliD2Pow9SfSmYCE65nWA6nLF
+	 N/Zc7DfG/RruerrBqiqkc8q71Fkj28bmPGjZ7Zqa4SwWsIbJgmneEnZhzSWyO3V56O
+	 Yo4Xc0SUBUnuYYkXz5Joyxx95J0/XymD0cXIYRVU4duWVg2kP3Qm/3jbZ3eEeouTOd
+	 xy0SV8hNyAsBNGHAJNS52HSpky2Q0pPTftJ28kbhP2QFJuqDYfncDdRFPtniMsXAgj
+	 CrtSLllImNxYy5as0bks1kbXSwOIGJUoKHD6+Hjo9cZSX4kkcWWeLll0UyLhAkMlTa
+	 sFITOQzXX0eLw==
+To: yash31204testing@gmail.com
+Message-ID: <13.E9.12378.82FC0B76@i-09697c45a562f61d5.mta1vrest.sd.prd.sparkpost>
+Date: Sat, 15 Feb 2025 17:30:16 +0000
+Content-Type: multipart/alternative; boundary="_----NAEvcHiWO4H2/5gn7WCZiA===_A2/E9-12378-82FC0B76"
+MIME-Version: 1.0
+X-Campaign-ID: 7858719
+List-Unsubscribe: <https://links.iterable.com/s/u/_BZuUiOQ6yFeL9pN_YuvbwsleBAr4JA4zTaqFmkcfcukU4fy7B5aio4XE2jl3zTC2pTwtqQVYlVPuXK3cOawO0e6x75AxbHwjeA5FWljJQIwkKAh7avgKbFzoKs0XKSx1O_rd3Pxw8RIm86E4DzsfsH84yQqw-KAxIjJh_AaSJgKc67MA9I_RDcaDUsX9Ppn8Hdulb2EMBOhf9rT/ZB-UH_x5R2IbMYSoWgKWtXp7Jfh2CKq4/6>,<mailto:unsubscribe+7858719+10447965@unsubscribe.iterable.com>
+X-Message-ID: 81d9a365b65f4b6f810c252f76f0fe76
+X-Feedback-ID: 10447965:7858719:87826:iterable
+Reply-To: noreply@grammarly.com
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Subject: Are You in Love with Grammarly on Chrome? Please Let Us Know!
+From: "Grammarly" <hello@mail.grammarly.com>
+Feedback-ID: 10447965:7858719:87826:iterable
+
+--_----NAEvcHiWO4H2/5gn7WCZiA===_A2/E9-12378-82FC0B76
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Grammarly  =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =0A=E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =0A=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C=E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =0A=E2=80=8C =E2=80=
+=8C =E2=80=8C =0A=0A=0A <http://grammarly.com/>  <http://grammarly.com/>  =
+=0A<https://www.grammarly.com/business>  <https://www.grammarly.com/busines=
+s> =0A=0A=0A=0A=0A=0A <http://bit.ly/1EJ88ee> =0A=0A=0A=0A=0A=0AWe=E2=80=99=
+d Appreciate Your Feedback =0A=0A=0A=0A=0A=0A=0A Feedback makes better writ=
+ers=E2=80=94and better writing apps. If Grammarly has =0Ahelped sharpen you=
+r writing skills or speed up your workflow, please rate us on =0Athe Chrome=
+ Store. And if there=E2=80=99s anything we can do better, help us improve b=
+y =0Ataking this short survey.=0A=0A =E2=80=94 Grammarly Customer Service =
+=0A=0A=0ALeave a Review <http://bit.ly/1EJ88ee> =0A=0A=0A=0A=0A=0A=0A=0A=0A=
+=0A <http://www.facebook.com/grammarly>  <https://www.instagram.com/grammar=
+ly/>  =0A<http://www.linkedin.com/company/grammarly>  <http://twitter.com/g=
+rammarly> =0A=0A=0AView Web Version =0A<https://click.grammarly.com/s/vb/Ev=
+8TffTMPK_AU0JmzlOGZqiW646PTf7z5B1e146ss3BwrciBjvpUzsmzGds1lrCdYewpIvZRCUVz7=
+Iv1On9vgozdaANMK2TDuU_EeRjm9D-0DoqbTiaAWI6LmuyG6wOUL9u8z3b2Uww0tP3HRz8na_xA=
+riIsxW2-CbCrtw/n1tLEnddB6TyHGnpoP6FmwITjT2uIRvF/6>=0A =E2=80=A2Email Prefer=
+ences =0A<https://redirect.grammarly.com/redirect=3Fmail_profile_preference=
+s=3D1&profileToken=3DeydlbWFpbCc6ICd5YXNoMzEyMDR0ZXN0aW5nQGdtYWlsLmNvbScsIC=
+dzaWduYXR1cmUnOiAnNDI5NjI3NWViOTQ3OGI3YmYyZjM4ODM3OTYwM2JlMmQ2NjgxYTg5MSd9>=
+=0A =E2=80=A2Unsubscribe =0A<https://click.grammarly.com/s/eh/ESicIKYqMpOHE=
+fq6NRTYAKu7KbqmePCyykRsEga6CuOY1_W10wmjZFG6ae3TF2IQSgbysLiQKfOZ5CUmfiSlcoef=
+YxTMyeac9Y_RLYNM5QDHRDfowwoJbmwed31zdzVnI5UE8jKnLyHz-AIr4HFMRasqrAGzGwuiDw2=
+zvMCKkcdQEuxSLgP_y25Sl7tCoN7eZPStWlxxyFt0-LSSADojBGOPTcDIVXcBk28LqogbMYtEmA=
+et-fisbg63W0iV5QXd3IkedapRe0C1WezWQoxluJEUOCgavT5P89dThQpAVCIv9mRonBaUS-nrf=
+Ep6ZYrJEpclrDpZESLSfVJ14luhmTUl3pYfOArkEd2wVA_WMn9td09jDwG_hT02LoTkXFpVpLeZ=
+rnpSYBAnU71SON8tWxfItCT6kbrxMvKIHtEbxPbMivPbEIb8XOog4QBCUq_hYrlDWu2ALm8yIFG=
+Y_xb8TLh5uEEuWSd8WqoRbIE-uMPBLVU/dYMtcOMqCFw4rKLRI1J9JVoVPwxOigLJ/6>=0A=0AY=
+ou received this email because you are a Grammarly customer. You may adjust=
+ =0Ayour preferences at any time by clicking the link above. =0A=0A=C2=A9 2=
+025 Grammarly, Inc., 548 Market St. #35410, San Francisco, CA 94104
+--_----NAEvcHiWO4H2/5gn7WCZiA===_A2/E9-12378-82FC0B76
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd"> <html lang=3D"en" xmlns:v=3D"urn:schemas-micros=
+oft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" style=3D"-=
+webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased; color-s=
+cheme: light dark; supported-color-schemes: light dark;"> <head> <!--[if gt=
+e mso 9]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96=
+</o:PixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]--> <meta htt=
+p-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"> <meta name=
+=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"> <meta nam=
+e=3D"format-detection" content=3D"telephone=3Dno"> <meta name=3D"format-det=
+ection" content=3D"date=3Dno"> <meta name=3D"format-detection" content=3D"a=
+ddress=3Dno"> <meta name=3D"format-detection" content=3D"email=3Dno"> <meta=
+ http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <meta name=3D"x-appl=
+e-disable-message-reformatting"> <meta name=3D"robots" content=3D"noindex">=
+ <meta name=3D"color-scheme" content=3D"light dark"> <meta name=3D"supporte=
+d-color-schemes" content=3D"light dark"> <title>Grammarly</title> <style ty=
+pe=3D"text/css">ReadMsgBody{width:100%}.ExternalClass{width:100%}.ExternalC=
+lass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClas=
+s td,.ExternalClass div{line-height:100%}body{-webkit-text-size-adjust:100%=
+;-ms-text-size-adjust:100%;margin:0!important}html{-webkit-text-size-adjust=
+:none;-webkit-font-smoothing:antialiased}a{outline:0}img{display:block;outl=
+ine:0}a img{border:0}td{mso-line-height-rule:exactly}table td{border-collap=
+se:collapse}@-ms-viewport{width:device-width}a[x-apple-data-detectors]{colo=
+r:inherit!important;text-decoration:none!important;font-size:inherit!import=
+ant;font-family:inherit!important;font-weight:inherit!important;line-height=
+:inherit!important}</style> <style type=3D"text/css">@font-face{font-family=
+:'Inter';font-style:normal;font-weight:400;mso-generic-font-family:swiss;fo=
+nt-display:swap;mso-font-alt:Helvetica,Arial,sans-serif;src:url('https://gr=
+ammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-regular.=
+otf') format('otf'),url('https://grammarly-marketing.s3.amazonaws.com/email=
+s-images/fonts/inter/inter-regular.woff2') format('woff2')}@font-face{font-=
+family:'Inter';font-style:normal;font-weight:700;mso-generic-font-family:sw=
+iss;font-display:swap;mso-font-alt:Helvetica,Arial,sans-serif;src:url('http=
+s://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-bo=
+ld.otf') format('otf'),url('https://grammarly-marketing.s3.amazonaws.com/em=
+ails-images/fonts/inter/inter-bold.woff2') format('woff2')}@font-face{font-=
+family:'Inter';font-style:italic;font-weight:400;mso-generic-font-family:sw=
+iss;font-display:swap;mso-font-alt:Helvetica,Arial,sans-serif;src:url('http=
+s://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inter-it=
+alic.otf') format('otf'),url('https://grammarly-marketing.s3.amazonaws.com/=
+emails-images/fonts/inter/inter-italic.woff2') format('woff2')}@font-face{f=
+ont-family:'Inter';font-style:italic;font-weight:700;mso-generic-font-famil=
+y:swiss;font-display:swap;mso-font-alt:Helvetica,Arial,sans-serif;src:url('=
+https://grammarly-marketing.s3.amazonaws.com/emails-images/fonts/inter/inte=
+r-bold-italic.otf') format('otf'),url('https://grammarly-marketing.s3.amazo=
+naws.com/emails-images/fonts/inter/inter-bold-italic.woff2') format('woff2'=
+)}</style> <style type=3D"text/css">td,p,a,span,strong{font-family:'Inter',=
+Helvetica,Arial,sans-serif;font-weight:400;color:#333954}a{color:#4a6ee0}li=
+{font-family:'Inter',Helvetica,Arial,sans-serif;font-weight:400;color:#3339=
+54}.h1{font-family:'Inter',Helvetica,Arial,sans-serif;font-weight:700;font-=
+size:32px;line-height:48px;color:#0e101a}.h2{font-family:'Inter',Helvetica,=
+Arial,sans-serif;font-weight:700;font-size:24px;line-height:32px;color:#0e1=
+01a}.h3{font-family:'Inter',Helvetica,Arial,sans-serif;font-weight:700;font=
+-size:18px;line-height:24px;color:#0e101a}sup,sub{vertical-align:baseline;p=
+osition:relative;top:-0.4em}</style> <style type=3D"text/css">@media only s=
+creen and (max-width:480px){.container{width:100%!important}.footer{width:a=
+uto!important;margin-left:0}.mobile-hidden{display:none!important}.logo{dis=
+play:block!important;padding:0!important}img{max-width:100%!important;heigh=
+t:auto!important;max-height:auto!important}.header img{max-width:100%!impor=
+tant;height:auto!important;max-height:auto!important}.photo img{width:100%!=
+important;max-width:100%!important;height:auto!important}.drop{display:bloc=
+k!important;width:100%!important;float:left;clear:both}.footerlogo{display:=
+block!important;width:100%!important;padding-top:15px;float:left;clear:both=
+}.nav4,.nav5,.nav6{display:none!important}.tableBlock{width:100%!important}=
+.responsive-td{width:100%!important;display:block!important;padding:0!impo=
+rtant}.fluid,.fluid-centered{width:100%!important;max-width:100%!important;=
+height:auto!important;margin-left:auto!important;margin-right:auto!importan=
+t}.fluid-centered{margin-left:auto!important;margin-right:auto!important}ta=
+ble .stylingblock-content-wrapper{border:none!important}*{-webkit-text-size=
+-adjust:none;-ms-text-size-adjust:none;-webkit-font-smoothing:antialiased}.=
+height{height:auto!important}.hide{display:none!important}.stack{display:bl=
+ock!important;width:100%!important}.w100P{width:100%!important;height:auto!=
+important}.textC{text-align:center!important}.marginCenter table{margin:0 a=
+uto!important}.show{display:block!important;max-height:none!important;overf=
+low:visible!important;line-height:normal!important}.showTable{display:inlin=
+e-block!important}h1{font-family:'Inter',Helvetica,Arial,sans-serif;font-we=
+ight:700;font-size:28px;line-height:40px}.LogoMobilePadding{padding-left:16=
+px!important}.MobileCTAPadding{padding-right:16px!important}.MobileTableWid=
+th{width:91%!important}.w24{width:24px!important}.w56{width:56px!important}=
+.w80{width:80px!important}.w104{width:104px!important}.hw64{width:64px!imp=
+ortant;height:64px!important}.hw158{width:158px!important;height:158px!impo=
+rtant}.dirLTR{direction:ltr!important}}</style> <style type=3D"text/css">:r=
+oot{color-scheme:light dark;supported-color-schemes:light dark}@media(prefe=
+rs-color-scheme:dark){td,p,span,li{color:#fff!important}a{color:#4c7af1}td =
+.darkBody{background-color:#000001!important}.lightimage{display:none!impo=
+rtant}.darkimageWrapper,.darkimage{display:block!important}.darkModeBG{back=
+ground-color:#323342!important}.DarkHeader{background-color:#f5f5f5!importa=
+nt}.darkModeDarkCopy{color:#000001!important}.darkModeLink{color:#4c7af1!im=
+portant;font-weight:bold!important}[data-ogsc] .darkBody{background-color:#=
+000001!important}[data-ogsc] .lightimage{display:none!important}[data-ogsc]=
+ .darkimageWrapper,[data-ogsc] .darkimage{display:block!important}}[data-og=
+sc] .lightimage{display:none!important}[data-ogsc] .darkimageWrapper,[data-=
+ogsc] .darkimage{display:block!important}</style> <style type=3D"text/css">=
+:root{color-scheme:light dark;supported-color-schemes:light dark}@media(pre=
+fers-color-scheme:dark){td,p,span,li{color:#fff!important}a{color:#027e6f}.=
+footerlink{color:#fff!important;text-decoration:underline!important}.footer=
+line{background-color:none!important;border-bottom:solid 1px #fff!important=
+}.fbWhite{content:url('https://d15k2d11r6t6rl.cloudfront.net/public/users/I=
+ntegrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5feab=
+cd187/EBS-Facebook-White_Footer_Icon_1_1.png')!important}.igWhite{content:u=
+rl('https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713=
+-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5feabcd187/EBS-Instagram=
+-White_Footer_Icon_1_1.png')!important}.twWhite{content:url('https://d15k2d=
+11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c5=
+42cff6dd6a/a8e16746030542259a008c5feabcd187/X_whiteicon_1.png')!important}.=
+liWhite{content:url('https://d15k2d11r6t6rl.cloudfront.net/public/users/Int=
+egrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5feabcd=
+187/EBS-LinkedIn-White_Footer_Icon_1_1.png')!important}td .darkBody{backgro=
+und-color:#000001!important}.lightimage{display:none!important}.darkimageWr=
+apper,.darkimage{display:block!important}.darkModeBG{background-color:#3233=
+42!important}.DarkHeader{background-color:#f0f2fc!important}.darkModeDarkCo=
+py{color:#000001!important}.darkModeLink{color:#4c7af1!important;font-weigh=
+t:bold!important}[data-ogsc] .darkBody{background-color:#000001!important}[=
+data-ogsc] .lightimage{display:none!important}[data-ogsc] .darkimageWrapper=
+,[data-ogsc] .darkimage{display:block!important}}[data-ogsc] .lightimage{di=
+splay:none!important}[data-ogsc] .darkimageWrapper,[data-ogsc] .darkimage{d=
+isplay:block!important}</style> </head> <!-- URL DEFINITIONS Unsubscribe/Pr=
+eferences FOOTER DISCLOSURES RENEWAL DEFINITIONS FIRST NAME SNIPPETS Defaul=
+t USER NAME --> <body class=3D"body darkModeBG" bgcolor=3D"#F5F5F5" style=
+=3D"-webkit-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-fon=
+t-smoothing: antialiased; padding: 0; margin: 0 !important;">=0D=0A<div sty=
+le=3D"color:transparent;visibility:hidden;opacity:0;font-size:0px;border:0;=
+max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!important;=
+display:none!important;line-height:0px!important;"><img border=3D"0" width=
+=3D"1" height=3D"1" src=3D"http://tracksp.grammarly.com/q/j-7l-aNW96J23m8UQ=
+LzBaw~~/AARGbBA~/GaVXNBe6cTATVYxqZcJ3vLpJR5rIUxorgeL_ZLqAgx-0kNsSynN0BoWuBm=
+d9EdL7wzIfFwG6BEXw0Pa9Rwrk0w~~" alt=3D""/></div>=0D=0A<span style=3D"color:=
+transparent;visibility:hidden;display:none;opacity:0;height:0;width:0;font-=
+size:0;"></span><img src=3D"https://click.grammarly.com/s/eo/xJXipLGNnw3dmB=
+6CSK91IFKdNt1wNo8UmwrmNEBwqj9Sm53lSBK83lutVItLQef0knr8qRgM7CfmwVhikyGg7VcID=
+oYCrcIduxs3yfHUbkDQ3CiFlqGwscQp7ZP41yiNgY1fnobSnHksMkrLtpLqUY4OtgImOD18qmmf=
+aYA1H9CrqgePlI2fGlFj_MuiTP-rU4jZoyqMedQgiOokGwaM75P5XBD1_A56FyMA/5QL4U8ehWS=
+xIO1xIZgTmVODkSrUhn-pO/6" style=3D"border:0;width:1px;height:1px;border-wid=
+th:0px!important;display:none!important;line-height:0!important;" width=3D"=
+1" height=3D"1"/> &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &=
+zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj;=
+ &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwn=
+j; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &z=
+wnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; =
+&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj=
+; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zw=
+nj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &=
+zwnj;&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; =
+&zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj=
+; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zwnj; &zw=
+nj; &zwnj; <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D=
+"center" width=3D"100%" class=3D"darkModeBG" bgcolor=3D"#F5F5F5"> <tr> <td =
+align=3D"center" valign=3D"top" style=3D"mso-line-height-rule: exactly; fon=
+t-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; color: #=
+333954; border-collapse: collapse;"> <table cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" align=3D"center" width=3D"600" class=3D"container" styl=
+e=3D"margin:0 auto;"> <tr> <td valign=3D"top" style=3D"mso-line-height-rule=
+: exactly; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight:=
+ 400; color: #333954; border-collapse: collapse;"> <!--Body--> <table borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td align=
+=3D"left" class=3D"LogoMobilePadding" height=3D"82" valign=3D"middle"> <a a=
+lias=3D"header-logo-homepage" href=3D"https://click.grammarly.com/s/c/qg4ux=
+i-zBV772cm2IEOeXC0ejStax-IoHViqN8omcTRSqcatUNcKfJMowPhScznn-jfJHbjvDO8Wvxx_=
+EPftHvUq1pFsWiC3lzdpKHq37iqyxRP0gc7XsB7U_SQwXImgc5lB-Y-zCCBPyNxUh-WnAXR-pm6=
+rbKgjWZBtiZ4edLSWvgpnH7BZUNftotTYtOR2187b9NnVnC4tYuli_JyJ0xz19cqzkisPgt6Qla=
+fKQGn1Ym3663FIXtNFIpnBkZomWHZQhVNhjg1xx_T6EPCjinFqdvJI1X9piJblNn1MPOG0b_H2a=
+y2WiCsqadoCQk1E_FNevcUcDOlG0av9sJRwpogjgHDKug94xL8iVTwPNw_oyaqfUli_uxDMKssb=
+41NlqAHmbr7XBNuz8Dcygj4X8RCKUMv-/pCsErqKD6UP_dOQp9XYA5D1tdBauiWxf/6" style=
+=3D"text-decoration:none;border:0;display:inline-block;" target=3D"_blank" =
+title=3D"Grammarly Business"><img alt=3D"G" border=3D"0" class=3D"lightimag=
+e" height=3D"34" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/=
+Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5fea=
+bcd187/GPrimaryLockup_lightimage.png" style=3D"display: block;" title=3D"Gr=
+ammarly Business" width=3D"157"></a><!--[if !mso]><! --><div class=3D"darki=
+mageWrapper" style=3D"mso-hide: all; display: none;"> <a alias=3D"header-lo=
+go-homepage" href=3D"https://click.grammarly.com/s/c/zp3f8M2Y4qqzjsXE1puR_5=
+zxQBu_o8oxR12vHky0OMw39mzZP3_KUHJ_aQfTARuGad-fXYWFmidc5hKUp8BoMOdlA_V8jeVGm=
+fBy8LVDxM6uzFV6Quqsc0YRXgxdGiNzzPeLBYBnYFiIZGZLblGW-UgeHI87qnVsZ6t5BVYJP_0g=
+WVPvmEkm0QgpcUBOOXLlb7G8g24k7-J2KVibgsmOWCekks-b7XNwejRsht3_lmPaQFvObEqPUhH=
+ufXCRZ_EmaRzm3S6OZvVDA6mscqq1zWoZRaO6m9AlZnCRw1RPrqQWfGZ3u-A8OWiRrzcd4_Xk6_=
+bk82aym-7h05dhi_TdbAhJc685zoCjh9olZr5iPpIViGFqqMlMHVywr9ci_TQJYiDXkY8MvMHWK=
+rl5hMeX-C41KK4L/MUcurQi_0z9qFvMTb0bw6EklfTf5qG9Z/6" style=3D"text-decoratio=
+n:none;border:0;display:inline-block;" target=3D"_blank" title=3D"Grammarly=
+ Business"><img alt=3D"G" border=3D"0" class=3D"darkimage" height=3D"34" sr=
+c=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d571=
+3-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5feabcd187/GPrimaryLock=
+up_darkimage.png" style=3D"display: block;" title=3D"Grammarly Business" wi=
+dth=3D"157"></a></div><!--<![endif]--></td><td align=3D"right" class=3D"Log=
+oMobilePadding" height=3D"82" valign=3D"middle"> <a alias=3D"header-logo-ho=
+mepage" href=3D"https://click.grammarly.com/s/c/1uxSTe436XScBuuCMvN82tyJxBt=
+UZ5Z1YdqHJiw3fPV17SBYpHwEnlvExQ1HtF-5HBREliViQoa2L-KweA2SomLKISHf-PC143_dXL=
+Ebto8toNo8mjB6tsihIRz1ySVZ9KAvXZymYhRKhxUhwyOWG9Pz7xaWkRFT2CFN_Fh8oe6rxonfg=
+2eynVKiKfxFxroln5-0XHus_Gm2T3v9yzu4pUaXWvOZUlPhvil28QyaEfQydVXz4sTv8k8FeUR7=
+Jl7RzAujz5Vtl3P8lwtAesRcjTWcg1Jg2SwQF2Iyn9K5SFopK-SMhJX6RczqA9RJRbIS_icrsGd=
+WJ2AzvqNcohwEeInPl6ptgc5egURxb4zUnwvHKm16xAf1lxkLsTG_DBw_zJAIeA9m8juubTr6fk=
+YEdBrc3oK3omBcMm7W8QklK7ncNA/gbLr5DeVVRspzz1rUD8MZysBvFMB3uFf/6" style=3D"t=
+ext-decoration:none;border:0;display:inline-block;" target=3D"_blank" title=
+=3D"Grammarly Business"><img alt=3D"Grammarly for Business" border=3D"0" cl=
+ass=3D"lightimage" height=3D"17" src=3D"https://d15k2d11r6t6rl.cloudfront.n=
+et/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e1674603=
+0542259a008c5feabcd187/GrammarlyforBusiness_lightimage.png" style=3D"displa=
+y: block;" title=3D"Grammarly Business" width=3D"198"></a><!--[if !mso]><! =
+--><div class=3D"darkimageWrapper" style=3D"mso-hide: all; display: none;">=
+ <a alias=3D"header-logo-homepage" href=3D"https://click.grammarly.com/s/c/=
+6ylY_3l8vDXzKy7EG6Y8-xJMbARh1zi0rAGyHhFMCXio-LZpqYl6crm9_2PoBh98LyKdGp6YIM6=
+UuB3kB-k_86U2k57xDFL8UsgdUzg7GIfKWOz_pWHWiFbpmiaSrZXNWMAK98APhSa5KqTnUJcrvx=
+JBk5xNVzs2tudqiRBQjqpQeOmvCjme2JD2JNByZodAySJQpd95TouyEzExdWXRMz7nhmU0OeiZw=
+hP21FAPAEkWMYsB_ybfmDmmp1hcXLk4VWqiuf62USPnmLSrLDYpzkd3A1_F9H088zQ9enlyFv6A=
+kogd0IRsrUCB-aio9OvjLE2RTyD9mFEvC1zs2f3gfZINBwomKWOXtP6KQLEVlLNLdEeGYqEBHcJ=
+iW6xAwQP_HMruOlQr-n8x7uHm45CUQPdYf5pP3ZhQ5OLLOLcA20zJdQ/hRNSQV0WHYdDWg_-Xbm=
+6B1r3QUFDgm_X/6" style=3D"text-decoration:none;border:0;display:inline-bloc=
+k;" target=3D"_blank" title=3D"Grammarly for Business"><img alt=3D"Grammarl=
+y for Business" border=3D"0" class=3D"darkimage" height=3D"17" src=3D"https=
+://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46b=
+b-bd7e-c542cff6dd6a/a8e16746030542259a008c5feabcd187/GrammarlyforBusiness_d=
+arkimage.png" style=3D"display: block;" title=3D"Grammarly Business" width=
+=3D"198"></a></div><!--<![endif]--></td></tr></table> </td> </tr> <tr> <td =
+valign=3D"top" bgcolor=3D"#FFFFFF" class=3D"darkBody" style=3D"mso-line-hei=
+ght-rule: exactly; font-family: 'Inter', Helvetica, Arial, sans-serif; font=
+-weight: 400; color: #333954; border-collapse: collapse;"> <table cellpaddi=
+ng=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" style=3D"ba=
+ckground-color: transparent; min-width: 100%; " class=3D"stylingblock-conte=
+nt-wrapper"> <tr> <td style=3D"mso-line-height-rule: exactly; font-family: =
+'Inter', Helvetica, Arial, sans-serif; font-weight: 400; color: #333954; bo=
+rder-collapse: collapse; padding: 0px;" class=3D"stylingblock-content-wrapp=
+er camarker-inner"> <table style=3D"width: 100%;" role=3D"presentation" cel=
+lspacing=3D"0" cellpadding=3D"0"> <tr> <td style=3D"mso-line-height-rule: e=
+xactly; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 40=
+0; color: #333954; border-collapse: collapse;"> <table style=3D"width: 100%=
+;" role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0"> <tr> <td styl=
+e=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helvetica, Arial,=
+ sans-serif; font-weight: 400; color: #333954; border-collapse: collapse; w=
+idth: 100%; padding-bottom: 0px;" class=3D"responsive-td" valign=3D"top" wi=
+dth=3D"100%"> <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" rol=
+e=3D"presentation" style=3D"min-width: 100%; " class=3D"stylingblock-conten=
+t-wrapper"> <tr> <td class=3D"stylingblock-content-wrapper camarker-inner" =
+style=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helvetica, Ar=
+ial, sans-serif; font-weight: 400; color: #333954; border-collapse: collaps=
+e;"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+> <tr> <td align=3D"center" valign=3D"top" style=3D"mso-line-height-rule: e=
+xactly; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 40=
+0; color: #333954; border-collapse: collapse;"> <a alias conversion=3D"fals=
+e" data-linkto=3D"other" href=3D"https://click.grammarly.com/s/c/ftlWUrtEnt=
+uXvZu6pk89XQKYpbtt8BcTtnKv-ULbTPw9H1FKYbp7ZARQbL_mker_uOPc-Cu-7S0mg4uXfPRdS=
+3tL7Dpl7qy5RF1syYHjcc2b4vaON0BgzV6eYk0I4OfmsfeDY_-pxAD-iNeZ-n4Oz1LB1MhL0ajX=
+ZACW5SgoQPSQrJFjn25Ysrvq8cLQGWrGPce_R935oT-gnY3j6bRyvTonRNZZTVzjNe82s17tJI5=
+KE7mrnjrpCWQcMQQi3NkE66gmNfqBMWpCKrRrBz78GI5lSXXx-0Pm9TgTHqzANnTeNHLBC67EMi=
+n06JUHgJeC_xURSHaTLo3A31NqQ241Guds2CQO6L780k3fdiXX0Z9BnR5u32pKTJqqaADRoD6uo=
+iAF9cwGJi9vXeNkF8ejEmeMbL0e/YmkndAYz1OSNuUbPvv16F8jE1wrUZHrY/6" target=3D"_=
+blank" title style=3D"outline: 0; font-family: 'Inter', Helvetica, Arial, s=
+ans-serif; font-weight: 400; color: #4A6EE0;"><img alt data-assetid=3D"7813=
+7" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/66=
+9d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5feabcd187/Chrome_=
+review_hero.png" style=3D"outline: 0; border: none; display: block; padding=
+: 0px; text-align: center; height: auto; width: 600px;" width=3D"600"></a> =
+</td> </tr> </table> </td> </tr> </table> </td> </tr> </table> </td> </tr> =
+<tr> <td style=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helv=
+etica, Arial, sans-serif; font-weight: 400; color: #333954; border-collapse=
+: collapse;"> <table style=3D"width: 100%;" role=3D"presentation" cellspaci=
+ng=3D"0" cellpadding=3D"0"> <tr> <td style=3D"mso-line-height-rule: exactly=
+; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; col=
+or: #333954; border-collapse: collapse; width: 100%; padding-top: 0px;" cla=
+ss=3D"responsive-td" valign=3D"top" width=3D"100%"> <table cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" role=3D"presentation" style=3D"min-width=
+: 100%; " class=3D"stylingblock-content-wrapper"> <tr> <td class=3D"styling=
+block-content-wrapper camarker-inner" style=3D"mso-line-height-rule: exactl=
+y; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; co=
+lor: #333954; border-collapse: collapse;"> <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%"> <tr> <td height=3D"40" style=3D"ms=
+o-line-height-rule: exactly; font-family: 'Inter', Helvetica, Arial, sans-s=
+erif; font-weight: 400; color: #333954; border-collapse: collapse; line-hei=
+ght: 40px; font-size: 40px; height: 40px;"> &nbsp; </td> </tr> </table> </t=
+d> </tr> </table> <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ role=3D"presentation" style=3D"min-width: 100%; " class=3D"stylingblock-co=
+ntent-wrapper"> <tr> <td class=3D"stylingblock-content-wrapper camarker-inn=
+er" style=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helvetica=
+, Arial, sans-serif; font-weight: 400; color: #333954; border-collapse: col=
+lapse;"> <!--H1 Headline--> <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%"> <tr> <td style=3D"mso-line-height-rule: exactly; f=
+ont-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; color:=
+ #333954; border-collapse: collapse; text-align: center;" valign=3D"middle"=
+ align=3D"center"> <span class=3D"h1" style=3D"font-family: 'Inter', Helvet=
+ica, Arial, sans-serif; font-weight: 700; font-size: 32px; line-height: 48p=
+x; color: #0E101A;">We&rsquo;d Appreciate Your Feedback</span> </td> </tr> =
+</table> </td> </tr> </table> <table cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" role=3D"presentation" style=3D"min-width: 100%; " class=3D"sty=
+lingblock-content-wrapper"> <tr> <td class=3D"stylingblock-content-wrapper =
+camarker-inner" style=3D"mso-line-height-rule: exactly; font-family: 'Inter=
+', Helvetica, Arial, sans-serif; font-weight: 400; color: #333954; border-c=
+ollapse: collapse;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0"> <tr> <td style=3D"mso-line-height-rule: exactly; font-fam=
+ily: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; color: #33395=
+4; border-collapse: collapse; line-height: 24px; font-size: 24px; height: 2=
+4px;" height=3D"24"> &nbsp; </td> </tr> </table> </td> </tr> </table> <tabl=
+e align=3D"center" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation" style=3D"width: 85%; " class=3D"stylingblock-content-wrap=
+per"> <tr> <td class=3D"stylingblock-content-wrapper camarker-inner" style=
+=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helvetica, Arial, =
+sans-serif; font-weight: 400; color: #333954; border-collapse: collapse;"> =
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr=
+> <td style=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helveti=
+ca, Arial, sans-serif; font-weight: 400; color: #333954; border-collapse: c=
+ollapse; line-height: 24px; font-size: 24px; height: 24px; border-top: 1px =
+solid #E9EBEA; width: 100%;" height=3D"24" width=3D"100%"> &nbsp; </td> </t=
+r> </table> </td> </tr> </table> <table cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" role=3D"presentation" style=3D"background-color: transparen=
+t; min-width: 100%; " class=3D"stylingblock-content-wrapper"> <tr> <td styl=
+e=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helvetica, Arial,=
+ sans-serif; font-weight: 400; color: #333954; border-collapse: collapse; p=
+adding: 0px;" class=3D"stylingblock-content-wrapper camarker-inner"> <!--He=
+ro Copy--> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%"> <tr> <td align=3D"center" style=3D"mso-line-height-rule: exactly; f=
+ont-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; color:=
+ #333954; border-collapse: collapse; padding-bottom: 40px;" valign=3D"top">=
+ <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"MobileTab=
+leWidth" width=3D"80%"> <tr> <td align=3D"left" style=3D"mso-line-height-ru=
+le: exactly; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weigh=
+t: 400; color: #333954; border-collapse: collapse; font-size: 16px; line-he=
+ight: 24px;" valign=3D"top"> Feedback makes better writers=E2=80=94and bett=
+er writing apps. If Grammarly has helped sharpen your writing skills or spe=
+ed up your workflow, please rate us on the Chrome Store. And if there&rsquo=
+;s anything we can do better, help us improve by taking this short survey. =
+<br><br> &mdash; Grammarly Customer Service </td> </tr> </table> </td> </tr=
+> </table> </td> </tr> </table> <table cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" role=3D"presentation" style=3D"background-color: transparent=
+; min-width: 100%; " class=3D"stylingblock-content-wrapper"> <tr> <td style=
+=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helvetica, Arial, =
+sans-serif; font-weight: 400; color: #333954; border-collapse: collapse; pa=
+dding: 0px 0px 72px;" class=3D"stylingblock-content-wrapper camarker-inner"=
+> <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"10" r=
+ole=3D"presentation"> <tr> <td align=3D"center" style=3D"mso-line-height-ru=
+le: exactly; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weigh=
+t: 400; color: #333954; border-collapse: collapse;"> <table border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" role=3D"presentation"> <tr> <td class=3D"=
+innertd buttonblock" bgcolor=3D"#027E6F" style=3D"mso-line-height-rule: exa=
+ctly; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400;=
+ color: #333954; border-collapse: collapse; border-radius: 5px; -moz-border=
+-radius: 5px; -webkit-border-radius: 5px; background-color: #027E6F;"><a ta=
+rget=3D"_blank" class=3D"buttonstyles" style=3D"outline: 0; font-size: 14px=
+; font-family: Inter, Helvetica, Arial, sans-serif; font-weight: 700; line-=
+height: 32px; color: #FFFFFF; text-align: center; text-decoration: none; di=
+splay: block; background-color: #027E6F; border: 1px solid #027E6F; padding=
+: 8px 32px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-rad=
+ius: 5px;" href=3D"https://click.grammarly.com/s/c/EZkMh10RmQS9FVyo0xHMaBPX=
+ne7mz2BepTicqZyQtjX-1bFhlV7x2h0wK0Od2UmU5CB-s5CzpL5C2rSaxBd3wbNJ-KBS-HQdfDC=
+vBh4lEZ9frB3GT7xna36X_uQIHRXlzbUYQzejuPMP7mylm1pyCLiAjZx9e_ZeA7QElAu64lxzSi=
+r7JWg_BtTu3I4l_AZEzMyxzjCkI0xtTmLSz_5ww_tcCrfxBXiMRHXtArmtkiscuj1hao80Vjr_0=
+ubq1086LMhenlPlMnXUhsijBfMO2YxYTS5RM28hgs9CwduOLTR9AF1TxtdotcVdcLMk9fWBoxX6=
+4V2vFOGbZtLGJJ9HLRL5MZYMrce7HXT-zLBSd_frE9qlRhTXFWkddkrr3EhSJZFkv89oBjK6vaF=
+Zi0t5-QZmZT1o/aTOaWo6xVl2XMZE41oUv0RqI_yRrgV5-/6" title alias conversion=3D=
+"false" data-linkto=3D"https://">Leave a Review</a></td> </tr> </table> </t=
+d> </tr> </table> </td> </tr> </table> <table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%"> <tr> <td class=3D"darkModeBG" bgcolor=
+=3D"#F5F5F5" height=3D"24" style=3D"mso-line-height-rule: exactly; font-fam=
+ily: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; color: #33395=
+4; border-collapse: collapse; line-height: 24px; font-size: 24px; height: 2=
+4px;"> &nbsp; </td> </tr> </table> </td> </tr> </table> </td> </tr> </table=
+> </td> </tr> </table> </td> </tr> <tr> <td valign=3D"top" style=3D"mso-lin=
+e-height-rule: exactly; font-family: 'Inter', Helvetica, Arial, sans-serif;=
+ font-weight: 400; color: #333954; border-collapse: collapse;"> <table cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" style=
+=3D"background-color: transparent; min-width: 100%; " class=3D"stylingblock=
+-content-wrapper"> <tr> <td style=3D"mso-line-height-rule: exactly; font-fa=
+mily: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; color: #3339=
+54; border-collapse: collapse; padding: 0px;" class=3D"stylingblock-content=
+-wrapper camarker-inner"> <table style=3D"width: 100%;" role=3D"presentatio=
+n" cellspacing=3D"0" cellpadding=3D"0"> <tr> <td style=3D"mso-line-height-r=
+ule: exactly; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weig=
+ht: 400; color: #333954; border-collapse: collapse;"> <table style=3D"width=
+: 100%;" role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0"> <tr> <t=
+d style=3D"mso-line-height-rule: exactly; font-family: 'Inter', Helvetica, =
+Arial, sans-serif; font-weight: 400; color: #333954; border-collapse: colla=
+pse; width: 100%; padding-bottom: 0px;" class=3D"responsive-td" valign=3D"t=
+op" width=3D"100%"> <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%" role=3D"presentation" style=3D"min-width: 100%; " class=3D"stylingblock-=
+content-wrapper"> <tr> <td valign=3D"top" style=3D"mso-line-height-rule: ex=
+actly; font-family: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400=
+; color: #333954; border-collapse: collapse;"><!-- Start Footer --> <table =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+footerdevice" width=3D"100%"> <tbody> <tr> <td align=3D"center"> <table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"91%=
+"> <tbody> <tr> <td align=3D"left" colspan=3D"2" height=3D"35" style=3D"fon=
+t-size: 1px; line-height: 1px;" valign=3D"top">&nbsp;</td> </tr> <tr> <td a=
+lign=3D"center"> <table align=3D"center" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"320"> <tbody> <tr> <td align=3D"center" width=3D"80=
+"><a href=3D"https://click.grammarly.com/s/c/4Mrt9CLcEwvsaYBceR1vtjDEY3BACA=
+HW1y-gvaoFX86mP9m-P2thXIT_3ZkhaKp6o_Wjws5TZstesW97qIv6owsECoOgzUhoMq1_ROmaC=
+ISZdEItZURbFyyfeat25AiwaEvathf4jw0Eq9PLqWtlr-XbIge6Gyjn7Q3iu_hrxBk3NQ5cL-qv=
+WHYVV3-3zxQCJuV0VXbqaEHcc68t37_9ZmZRe0z2CKwwXka3aovid3ZNHE0wr0Cuvy2cZ4KOASQ=
+9GH76WS4Hjwx_e3LRFEvWOB4E72fNFh8zGdjK3lyzkFj573rXke2T_dlxdPm9ooZwwNKGA3R5ca=
+00a7RS6ifmPdleGg69IghzCQE_RQHsPVKluDdYm_4TuYVX8gk97N6ME9vGOrhl1HtKFytiSDD4B=
+T5dmJClb16ElWYhwQAz3pun/WTeKUP6f-nGN0_a0oeX37NZH32_DWmny/6" style=3D"text-d=
+ecoration: none;"><img alt=3D"facebook" border=3D"0" height=3D"22" class=3D=
+"fbWhite" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integra=
+tors/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5feabcd187/=
+facebook_footer_icon.png" style=3D"width: 12px; height: 21px; max-width: 21=
+px; border: none; outline: none; text-decoration: none; font-size: 19px; fo=
+nt-family: Helvetica Neue, Arial, sans-serif; color: #3b5998; font-weight: =
+bold;" width=3D"12"></a></td> <td align=3D"center" width=3D"80"><a href=3D"=
+https://click.grammarly.com/s/c/l7cHFEiFOKXy0ATuO9ArAlP0I_9fZdi5qPxkVE87Zfh=
+9Okt7tiLrBKLO2d5zrBSDX1TiV9wmHLenUiWGlzR5GWV_RuZFxNjRiW4d8fOUUtWH-6z6wiKAzS=
+oEgF8XDPlkgGOKkgPEcQZph8ek0qMz-hLV-c8eRGRq8SkULSWQFpJQZr3n4zHZMBHaAOK4f7G0n=
+PI6DkvwzkdLJLwuqUau24nrNC6QM26i7jVB-pM12zHbA6v1p7vTCc7tG9rIXxnl7PHCkySwy9fs=
+nG3IZY4VlnK_-KFGNLHcqqUnawtd6nO0d2vA4VJOSe5TeQevap8btWhOE0K2W7DkYxEAxXOAFrY=
+8MJjpOEOGy3WSm0qxhSlQs6yT0Ih61yMAvTovWsWoY1DGS4yVk7OSviSKht2M83a78F9L6qZJkL=
+vv3QR7ixIdzbNS/d4EcISiOX5j-Uf5EOJOJ4-yVY70rq-1Q/6" style=3D"text-decoration=
+: none;"><img alt=3D"instagram" border=3D"0" height=3D"26" class=3D"igWhite=
+" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669=
+d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5feabcd187/instagra=
+m_footer_icon.png" style=3D"width: 26px; height: 25px; max-width: 26px; bor=
+der: none; outline: none; text-decoration: none; font-size: 19px; font-fami=
+ly: &quot;Helvetica Neue&quot;, Arial, sans-serif; color: rgb(0, 172, 237);=
+ font-weight: bold;" width=3D"26"></a></td> <td align=3D"center" width=3D"8=
+0"><a href=3D"https://click.grammarly.com/s/c/RkrzzIGb2fhTmxuf0pUrnxNvK8V6h=
+oxuD0TMnUK8zfE-bUTfv_EJ3Dw-fX22BR1uWvRzqZxyLHV-7tn_1JNybfwTgIwScwT6xsFpeIAu=
+zifGl4ZQCFpsmNmYO93TZAegamxLzq8oU_V9PScAzfme5AllwOCLt06g4M2HK743R1I5AbV8QiQ=
+sN8enxKAb0Y7tWGOlugRu9JGQlqzkmPbt-MIhoGP0hfeKqHIpYWDSlZtt_4K6ASQ1fBljlL0ds8=
+HSnABMMN04VWbTIBDNOCig8Ca-GDgEj_3FH6hv3hoLyKYNVH5_Nfol0X89llfF4T7urGmxOnrk4=
+nIlUUfcozeXuXAenM5DCg8JSaNocR4gkAfXBovnPFSXDks0D6u_Bi55AumzX-32XcD88q2gSueD=
+w2yhCPElhKmnt2GRmOU1CjmXmKfwhd97YIM/sdp6-UlPpWFZaSMCZbTa9X_cPWUKaiEF/6" sty=
+le=3D"text-decoration: none;"><img alt=3D"linkedin" border=3D"0" class=3D"l=
+iWhite" height=3D"18" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/u=
+sers/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008=
+c5feabcd187/linkedin_footer_icon2.png" style=3D"width: 19px; height: 18px; =
+max-width: 19px; border: none; outline: none; text-decoration: none; font-s=
+ize: 19px; font-family: &quot;Helvetica Neue&quot;, Arial, sans-serif; colo=
+r: rgb(0, 123, 182); font-weight: bold;" width=3D"19"></a></td> <td align=
+=3D"center" width=3D"80"><a href=3D"https://click.grammarly.com/s/c/ZfSgE5_=
+a5criTb9KAm9XtMav2CgqpGoMrgyKjRZI5npRNlM26JsBh4RQwyIUmQLI9Qti7JvG-x5uiqC7Nw=
+mwzrZjMK2sUuKd9O-wI9c2lWEwXAO_jghWOCc3hESHLNcbeixKqeUIIoMqqI6F2kGZAUuRw1EGV=
+xxuyNUtfu35f9ujy3_7ng8IdhjKSV-X7hEADezX4053w_qjNfqxeDdug5k9V1fvSKJS1OQH_lV3=
+9G-Ojfft-A7fJtCf6OZICOhDRYzhAvsMYupEOmq2VbVkBb-2NceNnrMiZI0F853xrJG8KWEx1nW=
+UCXG6oa9Po_3q6zBPD847IMVUAF7oJinL1vqN5b2_PoF_phB52PugmG1rqV4o7jI1KO3SRKppGJ=
+rrK5EjgJFpkIlDxG-sEa83untiTziyS4RqoPvsIA/xwWtrTnr28uyqCEFPSInhuBzs6R9r2pw/6=
+" style=3D"text-decoration: none;"><img alt=3D"x" border=3D"0" class=3D"twW=
+hite" height=3D"23" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/use=
+rs/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/a8e16746030542259a008c5=
+feabcd187/Vector%20%281%29.png" style=3D"width: 23px; height: 20px; max-wid=
+th: 23px; border: none; outline: none; text-decoration: none; font-size: 19=
+px; font-family: &quot;Helvetica Neue&quot;, Arial, sans-serif; color: rgb(=
+0, 172, 237); font-weight: bold;" width=3D"23"></a></td> </tr> </tbody> </t=
+able> </td> </tr> <tr> <td align=3D"left" height=3D"35" style=3D"font-size:=
+ 1px; line-height: 1px; border-bottom: 1px solid #A8A8A8;" valign=3D"top">&=
+nbsp;</td> </tr> <tr> <td align=3D"left" height=3D"28" style=3D"font-size: =
+1px; line-height: 1px;" valign=3D"top">&nbsp;</td> </tr> <tr> <td align=3D"=
+center" style=3D"font-family: Helvetica, arial, sans-serif; font-size: 14px=
+; line-height: 20px; color: #545454; padding-left: 45px; padding-right: 45p=
+x;" valign=3D"top"> <a class=3D"footerlink" href=3D"https://click.grammarly=
+.com/s/vb/Ev8TffTMPK_AU0JmzlOGZqiW646PTf7z5B1e146ss3BwrciBjvpUzsmzGds1lrCd=
+YewpIvZRCUVz7Iv1On9vgozdaANMK2TDuU_EeRjm9D-0DoqbTiaAWI6LmuyG6wOUL9u8z3b2Uww=
+0tP3HRz8na_xAriIsxW2-CbCrtw/n1tLEnddB6TyHGnpoP6FmwITjT2uIRvF/6" style=3D"te=
+xt-decoration: none; border-bottom: 1px solid #A8A8A8; color: #545454; whit=
+e-space: nowrap;">View Web Version</a> &bull; <a class=3D"footerlink" href=
+=3D"https://click.grammarly.com/s/c/TWlFDSYuQc28rak3eBUmXmYsYXErrsKVXoD32Y3=
+l91QzeqY2ORxUwYZRfL_hVLQJtJo6naTgWDBFmBKJCUjDNSMu9TUriipwW-ogK48UeX7nohEiyE=
+0Iw0RCnj_FVNwjD6iPdISVQ-aCv3I5XrastBS45qJ26vZ5cbIz7HDEw_bxZFjw51bTF53l7XWkl=
+F3JVAzTW6u16QIkRuCMPuGr7Jj14aB-t2UfKINfkG4f6Njkh1l_BT_ppqAMBX6FQhEKc7k8Mqfi=
+9RMkaBK_2MfvWEZN0hdI69g0Q5ZMrS8DRjXlBl9iT9V9NgL3CQbI1RKP2rm4Jt3mzijHyl3KHBT=
+yGGNDHvtY99DGH6b8DZ4xWSCa1Fmo2cjktg4mOfgupZaGzBB02HyMUUzL0DuRVYt2UKqnBh8P9D=
+e7dS4DH5JAAJ_w91FF9eyqPIwJWH4Vr5RXUH1zyeICBut68ceocAdwQsifkll3XlxWpRkf9uWxM=
+JzEoWIgziy70axNCQ2tmSSqT50KnJ-rQWc0yrKV1Cm2MnB3Apb6xndU1s400y-03RbDofKyL3-a=
+AZ3qiKuEmNDITtVobTVj4koVVASUjD_pVU9jzio52wEoTUjnrv4eaj6CctXQDaIP1QB7xit4mxZ=
+3b-6NVldHVpzIQyrK7SuHlQ/JOy6BLodxC68WIY41IW1W_kKEkAT1Tej/6" style=3D"text-d=
+ecoration: none; border-bottom: 1px solid #A8A8A8; color: #545454; white-sp=
+ace: nowrap;">Email Preferences</a> &bull; <a class=3D"footerlink" href=3D"=
+https://click.grammarly.com/s/eh/FHj9nRd8QL_V3F5n4yoyLtKg1OtqikWPX1gwqNfoBB=
+Ht_W7a5ZfonsoCzINCWPsPsk_JVGh3-8NLSstB7SMx_FdBY4-7gIniJj-XC_LcP84twQR74iM8K=
+QBw-1PQlnItrjbnAZi7mo--D5zfZODlT8QLRMRYbZoAH-skz5G6dV-QtSfUvkrLzk_sxFi2AFiK=
+MOMz3QiDsYrqNL03VRv-2vTjvwCmfWpsiLLYJ2POyYYR31IOhqi3C_jUMF9hVqEGstAvvk0alPy=
+GL1kKVUbMdrJfv1ZopG5_UcFzC98NVwzLIyDe6hBSGif_7g5fR9w_ujudwsoR2sgR2i9sas5hGy=
+gtARXEttaqYLC6LDCsNDX4Q2pmXtLQgvsIvBuSfNZXu2SVVHmaM-FJ45kzHxyaCIF5M_JiI2jpg=
+nH_Qru1SKAQ-lX5O1sB1H34odpFlLzrGGZM27cPsBLfi3vABqhSA5GN0fuFJTuq8AztqDMc8Pph=
+OrRZtMkFKYjF4DINh7Px2sI-7urvZ9wCFIpexOfMFKoLuJGPBmCzO44_3IQxUdOALh5ThkjU8nb=
+ai42tLVDApUsJG0XVU-S-IxMkW7pRX0vk63iGnV3nzTue1VTofHBmSX0_q3E/EryEA39l7bMdLw=
+aTrXMpYNMrhaUbFA7H/6" style=3D"text-decoration: none; border-bottom: 1px so=
+lid #A8A8A8; color: #545454; white-space: nowrap;">Unsubscribe</a> </td> </=
+tr> <tr> <td align=3D"left" height=3D"20" style=3D"font-size: 1px; line-hei=
+ght: 1px;" valign=3D"top">&nbsp;</td> </tr> <tr> <td align=3D"center" class=
+=3D"gblue" style=3D"font-family: Helvetica, arial, sans-serif; font-size: 1=
+3px; line-height: 20px; color: #545454;" valign=3D"top">You received this e=
+mail because you are a Grammarly customer. You may adjust your preferences =
+at any time by clicking the link above.</td> </tr> <tr> <td align=3D"left" =
+height=3D"20" style=3D"font-size: 1px; line-height: 1px;" valign=3D"top">&n=
+bsp;</td> </tr> <tr> <td align=3D"center" class=3D"gblue" style=3D"font-fam=
+ily: Helvetica, arial, sans-serif; font-size: 13px; line-height: 20px; colo=
+r: #545454;" valign=3D"top">&copy; 2025 Grammarly, Inc., 548 Market St. #35=
+410, San Francisco, CA 94104</td> </tr> <tr> <td align=3D"left" height=3D"7=
+0" style=3D"font-size: 1px; line-height: 1px;" valign=3D"top">&nbsp;</td> <=
+/tr> </tbody> </table> </td> </tr> </tbody> </table> <!-- End Footer --></t=
+d> </tr> </table> </td> </tr> </table> </td> </tr> <tr> <td style=3D"mso-li=
+ne-height-rule: exactly; font-family: 'Inter', Helvetica, Arial, sans-serif=
+; font-weight: 400; color: #333954; border-collapse: collapse;"> <table sty=
+le=3D"width: 100%;" role=3D"presentation" cellspacing=3D"0" cellpadding=3D"=
+0"> <tr> <td style=3D"mso-line-height-rule: exactly; font-family: 'Inter', =
+Helvetica, Arial, sans-serif; font-weight: 400; color: #333954; border-coll=
+apse: collapse; width: 100%; padding-top: 0px;" class=3D"responsive-td" val=
+ign=3D"top" width=3D"100%"> <table cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%" role=3D"presentation" style=3D"min-width: 100%; " class=3D"styli=
+ngblock-content-wrapper"> <tr> <td class=3D"stylingblock-content-wrapper ca=
+marker-inner" style=3D"mso-line-height-rule: exactly; font-family: 'Inter',=
+ Helvetica, Arial, sans-serif; font-weight: 400; color: #333954; border-col=
+lapse: collapse;"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0"> <tr> <td style=3D"mso-line-height-rule: exactly; font-famil=
+y: 'Inter', Helvetica, Arial, sans-serif; font-weight: 400; color: #333954;=
+ border-collapse: collapse; line-height: 64px; font-size: 64px;" height=3D"=
+64">&nbsp; </td> </tr> </table> </td> </tr> </table> </td> </tr> </table> <=
+/td> </tr> </table> </td> </tr> </table> <!--/Body--> </td> </tr> </table> =
+</td> </tr> </table> =0D=0A<img border=3D"0" width=3D"1" height=3D"1" alt=
+=3D"" src=3D"http://tracksp.grammarly.com/q/HEoFw_UogXnr53oNRGVzMQ~~/AARGbB=
+A~/RlB1cDChLpkN2K5XBkdyk1N6zrv6y0WOK4Syslp-724XdUv5PI_0kSkDBdhNL-gct6dcPawS=
+LjMoFQYbsQXPbQ~~">=0D=0A</body> </html>
+--_----NAEvcHiWO4H2/5gn7WCZiA===_A2/E9-12378-82FC0B76--
+

@@ -1,0 +1,1027 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:988e:b0:43a:a54e:2943 with SMTP id cm14csp1600420mdb;
+        Tue, 11 Mar 2025 01:42:50 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGmyu1hdfM0wwRBp7dIDn+olkZEZTlAwuZ9VjMXSul2xsqcbctEXxqoHvsaNydjlxnRNdIB
+X-Received: by 2002:a17:90b:54cb:b0:2ee:ee77:227c with SMTP id 98e67ed59e1d1-300ff0a93edmr3519114a91.3.1741682570624;
+        Tue, 11 Mar 2025 01:42:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1741682570; cv=none;
+        d=google.com; s=arc-20240605;
+        b=lPSJIsAQ3DQ3G8D9oeW3RgcSXoD12oG/5VjItJ1kQSgzJcjDLWdl3dIYGe7EADBojB
+         N1ngjUj/TBbw2MX16NwlnPIreIjChdizJNs4aF+FBXYbQ37fvIAFgoubplO2zU0vhdNG
+         0Yf9rajzkspcb4RIZKBSb3w6bYyutptu7yLVuSrIgpOZHhEpmSaD/lBHXfuzAtEs6nhY
+         Y6vZIJwO3Irw//CT7FTvyVsMYGmcmsNt0908tnuGDP/v5CUVi0vQpqL+ASSUBQrPyrT6
+         HuncVr9tjkFsvXSZwWt0j5aC76x47hHq8QOCz7hyLlhPuYyS3wScgpV2wSMtpUzMAl44
+         Hqbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:mime-version:to:from:subject:date:message-id
+         :dkim-signature:dkim-signature;
+        bh=3+ttKsOBL8DMyt+fxOGzwfL3i6IuoWkbt9LwsKkbroU=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=g211XUeoaYTy6YzW3Hgs1yppHou9IWpPB84r2L8+zDty3E5EJyswvs4vBe8+av9EV9
+         yGiR8SnC+/ohTPl3K2K9P/0Kua9rjMlF5xDDRB6fseMd+J8KYCc5nKpzS4bJrvyrUz73
+         JZ/YnCONGpEYzeoPBRcK3a8CbAtybDKIi3muZdDHbyTaQJPdIkTly58RQ8AUZhFQ/dTk
+         v0Z2xWSzomU3mbUtGMDp1VT8CafxGUQTlwpar1I0iWsyUDPtMZMCdcTu0CrbQhGtCGMi
+         yvPSpLOZM0Rh3w5W37Cl4uu7cSLkdJ8vSzY0hWuGwCwSyVxS5YlChnqDvn+WvNry4jkW
+         4bCQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@unstop.com header.s=4blexnw4c7vlfu2yvfksrgnoe7jreyig header.b=AVh3cBLS;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=LxYv1LpK;
+       spf=pass (google.com: domain of 01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000@emails.unstop.com designates 76.223.176.211 as permitted sender) smtp.mailfrom=01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000@emails.unstop.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=unstop.com
+Return-Path: <01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000@emails.unstop.com>
+Received: from c176-211.smtp-out.ap-south-1.amazonses.com (c176-211.smtp-out.ap-south-1.amazonses.com. [76.223.176.211])
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-2ff4e867f6asi20298567a91.131.2025.03.11.01.42.49
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 11 Mar 2025 01:42:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000@emails.unstop.com designates 76.223.176.211 as permitted sender) client-ip=76.223.176.211;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@unstop.com header.s=4blexnw4c7vlfu2yvfksrgnoe7jreyig header.b=AVh3cBLS;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=LxYv1LpK;
+       spf=pass (google.com: domain of 01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000@emails.unstop.com designates 76.223.176.211 as permitted sender) smtp.mailfrom=01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000@emails.unstop.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=unstop.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=4blexnw4c7vlfu2yvfksrgnoe7jreyig; d=unstop.com; t=1741682569;
+	i=@emails.unstop.com;
+	h=Message-ID:Date:Subject:From:To:MIME-Version:Content-Type;
+	bh=tgFieuzA6SmsD7bkvM3Fc3E3NtZfhhKD+C2DKAa6iNo=;
+	b=AVh3cBLSDrLxNkeXKF/jXMvkvPtHqKXuJF9KEsmshEhPT8zYmqXnUzcXztz61xk6
+	Ahg8G7gHOu/+4MByfQ++dsjC78kn/HlUj2T1/zHs9XxTJ0fBpQ+Z5G0MNzqyrC866Ga
+	Giwfy7jH0wE8tBCCWT8JCMBReT//t08jNxVida3xM7Y9e6yU94/PFciMxi3hd8Eaj0v
+	6lNI7gZ4D2SUBIfDP7y/OmzfA970YRFdx4aK0ujO4i5BsX8SZ2+vq/wb6LwFpLT7lt/
+	1wW6dwc6zA/93/VCwVRQGa+VVgcG2+qCm4vjcmQKo4scH7qDZ8M97B3ANfu6J4u8PIZ
+	ec4LT5+18A==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zpkik46mrueu52d3326ufxxchortqmoc; d=amazonses.com; t=1741682569;
+	h=Message-ID:Date:Subject:From:To:MIME-Version:Content-Type:Feedback-ID;
+	bh=tgFieuzA6SmsD7bkvM3Fc3E3NtZfhhKD+C2DKAa6iNo=;
+	b=LxYv1LpKZzioIahwUc9X3f/Plza+9QiTGQF8BFd1E7tPZznJd0Z7ydP+/2i+xQtD
+	L8te2+QEDjcLlqXYqKBgAloMgbtFZaGAsGG+hjydh7kBXL/s2g6DGc7jhIuF+vuGtsc
+	RDNfEdiySt1zsx3cD1p/1KQRA1R2MuWi6dhFhCXQ=
+Message-ID: <01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000@ap-south-1.amazonses.com>
+Date: Tue, 11 Mar 2025 08:42:49 +0000
+Subject: Hooray! You've Joined the Unstoppable Family!
+ =?utf-8?Q?=F0=9F=9A=80?=
+From: Unstop <noreply@emails.unstop.com>
+To: yash31204testing@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1741682569_ac56dfd91c27ffe7295c10dec3562af3_=_"
+Feedback-ID: ::1.ap-south-1.vLaUspdbZtz+0zahNQSbWc0bbDg5bpfORXW9fnjVqUQ=:AmazonSES
+X-SES-Outgoing: 2025.03.11-76.223.176.211
+
+--_=_swift_1741682569_ac56dfd91c27ffe7295c10dec3562af3_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+
+<head>
+    <meta http-equiv=3D"=
+Content-Type" content=3D"text/html; charset=3Dutf-8" />
+    <meta http-eq=
+uiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+    <title>Sign up</titl=
+e>
+    <meta name=3D"author" content=3D"" content=3D"" />
+    <meta nam=
+e=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0" />
+ =
+   <meta name=3D"x-apple-disable-message-reformatting">
+    <style type=
+=3D"text/css">
+        @import  url('https://fonts.googleapis.com/css2?fa=
+mily=3DInter:wght@100..900&display=3Dswap');
+
+        body {
+        =
+    width: auto;
+            background-color: #fff;
+            margin=
+: 0 auto;
+            padding: 0;
+            font-size: 14px;
+      =
+      -webkit-text-size-adjust: 100% !important;
+            -ms-text-siz=
+e-adjust: 100% !important;
+            -webkit-font-smoothing: antialiase=
+d;
+            font-family: "Inter", sans-serif;
+        }
+
+       =
+ h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,=
+
+        p,
+        span,
+        a,
+        strong,
+        div,=
+
+        td {
+            font-family: "Inter", sans-serif;
+        }=
+
+
+        img {
+            border: 0 !important;
+            outli=
+ne: none !important;
+            display: inline-block;
+        }
+
+=
+        a {
+            text-decoration: none;
+            color: #0073=
+e6;
+        }
+
+        .h_text_color:hover {
+            color: #00=
+73e6 !important;
+            text-decoration: underline !important;
+   =
+     }
+
+        table {
+            border-collapse: collapse;
+    =
+        mso-table-lspace: 0px;
+            mso-table-rspace: 0px;
+     =
+   }
+
+        @media (max-width: 600px) {
+            .full {
+     =
+           width: 100% !important;
+            }
+            .pdng {
+=
+                padding: 30px 16px !important;
+            }
+          =
+  .pdng ul li {
+                font-size: 14px !important;
+           =
+     line-height: 20px !important;
+            }
+
+            .footer=
+_ui {
+                border-radius: 8px;
+            }
+            .=
+footer_ui .footer_pdng {
+                padding-left: 16px !important;=
+
+                padding-right: 16px !important;
+            }
+      =
+      .footer_ui .un_logo {
+                width: 100px !important;=20
+ =
+           }
+    </style>
+</head>
+
+<body>
+    <div style=3D"backg=
+round-color: #fff; width: 100%; margin: 0; padding: 0;">
+        <table=
+
+            cellpadding=3D"0"
+            cellspacing=3D"0"
+        =
+    align=3D"center"
+            bgcolor=3D"#ffffff"
+            border=
+=3D"0"
+            width=3D"700"
+            class=3D"full"
+         =
+   style=3D"background-color: #fff;"
+        >
+            <tbody>
+  =
+              <tr>
+                    <td>
+                        <a =
+href=3D"https://unstop.com/" target=3D"_blank" style=3D"display: block;">=
+
+                                                        <img
+         =
+                       src=3D"https://d8it4huxumps7.cloudfront.net/uploads/=
+images/65dd600464590_asset_21.png?d=3D900x900"
+                          =
+      style=3D"display:block; margin:0;width: 100%;"
+                    =
+            />
+                                                    </a>=
+
+                    </td>
+                </tr>
+                <tr>=
+
+                    <td  class=3D"pdng" style=3D"padding: 40px 30px;">=
+
+                         <p style=3D"font-family: 'Inter', sans-serif; m=
+argin: 0 0 20px; color: #1c1c1c; font-size: 16px; line-height: 22px; font-w=
+eight: 400; text-align: left;">
+                            Hey Yash,
+ =
+                       </p>
+
+                                          =
+          <p style=3D"font-family: 'Inter', sans-serif; margin: 0 0 20px; c=
+olor: #1c1c1c; font-size: 16px; line-height: 22px; font-weight: 400; text-a=
+lign: left;">
+                                Welcome aboard!=F0=9F=8C=
+=9FGet ready to explore, learn, participate and thrive on Unstop as we conn=
+ect you to sparkling opportunities. You=E2=80=99ve also won a Welcome badge=
+ for your great choice!
+                            </p>
+              =
+         =20
+                       =20
+                        <div style=
+=3D"text-align: center;  margin: 0 0 20px;" >
+                           =
+ <img=20
+                                src=3D"https://d8it4huxumps7.cloud=
+front.net/uploads/images/65d967a958417_badge.png?d=3D337x310"=20
+          =
+                      width=3D"120"=20
+                                heig=
+ht=3D"120"=20
+                                alt=3D"Welcome badge"=20
+    =
+                            style=3D"margin: auto; max-height: 120px; max-w=
+idth: 120px; height:auto; width:auto;"=20
+                            />
+=
+                        </div>
+
+                                       =
+             <p style=3D"font-family: 'Inter', sans-serif; margin: 0 0 5px;=
+ color: #1c1c1c; font-size: 16px; line-height: 22px; font-weight: 600; text=
+-align: left;">
+                                Besides that, we treat yo=
+u to:
+                            </p>
+                            <ul =
+style=3D"margin: 0 0 20px;">
+                                <li style=3D=
+"font-family: 'Inter', sans-serif; margin: 0 0 5px; color: #1c1c1c; font-si=
+ze: 15px; line-height: 21px; font-weight: 400; text-align: left;">
+      =
+                              =F0=9F=93=91 Well-structured courses to upski=
+ll you
+                                </li>
+                          =
+          <li style=3D"font-family: 'Inter', sans-serif; margin: 0 0 5px; c=
+olor: #1c1c1c; font-size: 15px; line-height: 21px; font-weight: 400; text-a=
+lign: left;">
+                                    =F0=9F=92=BB Sprints an=
+d mock tests for the right practice
+                                </li>=
+
+                                <li style=3D"font-family: 'Inter', sans-=
+serif; margin: 0 0 5px; color: #1c1c1c; font-size: 15px; line-height: 21px;=
+ font-weight: 400; text-align: left;">
+                                  =
+  =F0=9F=8F=85 Life-changing competitions by top companies (with exciting r=
+ewards & PPIs =F0=9F=91=80)
+                                </li>
+     =
+                           <li style=3D"font-family: 'Inter', sans-serif; m=
+argin: 0 0 5px; color: #1c1c1c; font-size: 15px; line-height: 21px; font-we=
+ight: 400; text-align: left;">
+                                    =
+=F0=9F=A7=91=E2=80=8D=F0=9F=8F=AB Guidance from top mentors across industri=
+es
+                                </li>
+                              =
+  <li style=3D"font-family: 'Inter', sans-serif; margin: 0; color: #1c1c1c;=
+ font-size: 15px; line-height: 21px; font-weight: 400; text-align: left;">=
+
+                                    =F0=9F=94=AE Jobs & Internships to p=
+ut your talents to the best use
+                                </li>
+ =
+                           </ul>
+                       =20
+             =
+                                       <div style=3D"text-align: center;  m=
+argin: 0 0 20px;" class=3D"btn">
+                                <a=20
+  =
+                                  href=3D"https://unstop.com/"=20
+         =
+                           style=3D"
+                                    =
+    display: inline-block;
+                                        paddin=
+g: 12px 32px;
+                                        height: 40px;
+   =
+                                     background: #0073E6;
+               =
+                         border-radius: 50px;
+                           =
+             font-weight: 500;
+                                        fo=
+nt-size: 16px;
+                                        line-height: 16px;=
+
+                                        color: #FFFFFF;
+              =
+                          cursor: pointer;
+                              =
+          box-sizing: border-box;
+                                    "=
+
+                                >
+                                    =
+Begin my career journey now
+                                </a>
+      =
+                      </div>
+                       =20
+                 =
+       <p style=3D"font-family: 'Inter', sans-serif; margin: 0 0 20px; colo=
+r: #1c1c1c; font-size: 16px; line-height: 22px; font-weight: 600; text-alig=
+n: left;">
+                            #BeUnstoppable=F0=9F=8C=9F
+     =
+                   </p>
+
+                        <p style=3D"font-famil=
+y: 'Inter', sans-serif; margin: 0; color: #1c1c1c; font-size: 16px; line-he=
+ight: 22px; font-weight: 400; text-align: left;">
+                       =
+     Regards, <br>
+                            Team Unstop
+            =
+            </p>
+                    </td>
+                </tr>
+    =
+        </tbody>
+        </table>
+
+        <table cellpadding=3D"0" c=
+ellspacing=3D"0" align=3D"center" border=3D"0" width=3D"700" class=3D"full =
+footer_ui" style=3D"background: #f2f2f2;">
+    <tbody>
+        <tr>
+ =
+           <td class=3D"footer_pdng" style=3D"padding: 24px 30px;">
+     =
+           <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" bord=
+er=3D"0" style=3D"width: 100%;">
+                    <tbody>
+          =
+              <tr>
+                            <td style=3D"border-bottom=
+: 1px solid #DEDEDE; padding-bottom: 20px; text-align: center;">
+        =
+                        <a=20
+                                    href=3D"h=
+ttps://unstop.com/pro"
+                                    style=3D"displ=
+ay: inline-block; text-decoration: none;"
+                               =
+     target=3D"_blank"
+                                >
+              =
+                      <img
+                                        src=3D=
+"https://d8it4huxumps7.cloudfront.net/uploads/images/66443642605a0_unstop_p=
+ro.png"
+                                        alt=3D"Unstop pro logo" s=
+tyle=3D"display: block; width: 120px;"
+                                  =
+      class=3D"un_logo"
+                                    >
+         =
+                       </a>
+                            </td>
+         =
+               </tr>
+
+                        <tr>
+                  =
+          <td style=3D"padding-top: 20px; text-align: center;">
+         =
+                       <p
+                                    style=3D"fo=
+nt-family: 'Inter', sans-serif; color: #1c1c1c; font-size: 12px; font-weigh=
+t: 500; margin: 0 0 10px; text-align: center;">
+                         =
+           Join our evergrowing unstoppable community
+                   =
+             </p>
+
+                                <div style=3D"text-a=
+lign: center;">
+                                    <a href=3D"https://ww=
+w.instagram.com/unstop.world/"
+                                        st=
+yle=3D"display: inline-block; text-decoration: none; margin-right: 10px; wi=
+dth: 40px; height: 40px; background: #FAFAFA; border-radius: 50px;"
+     =
+                                   target=3D"_blank">
+                   =
+                     <img
+                                            src=
+=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/66433aee6e146_insta=
+gram.png"
+                                            alt=3D"Instagram Ic=
+on" style=3D"display: block; width: 40px;">
+                             =
+       </a>
+
+                                    <a href=3D"https://www=
+.linkedin.com/company/unstop/"
+                                        st=
+yle=3D"display: inline-block; text-decoration: none; margin-right: 10px; wi=
+dth: 40px; height: 40px; background: #FAFAFA; border-radius: 50px;"
+     =
+                                   target=3D"_blank">
+                   =
+                     <img
+                                            src=
+=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/66433aff63c9b_linke=
+din.png"
+                                            alt=3D"Linkedin Icon=
+" style=3D"display: block; width: 40px;">
+                               =
+     </a>
+
+                                    <a href=3D"https://t.me/=
++ON15qceSy-IyZjY9"
+                                        style=3D"displ=
+ay: inline-block; text-decoration: none; margin-right: 10px; width: 40px; h=
+eight: 40px; background: #FAFAFA; border-radius: 50px;"
+                 =
+                       target=3D"_blank">
+                               =
+         <img
+                                            src=3D"https://=
+d8it4huxumps7.cloudfront.net/uploads/images/66433b096c58b_telegram.png"
+ =
+                                           alt=3D"Telegram Icon" style=3D"d=
+isplay: block; width: 40px;">
+                                    </a>
+=
+
+                                    <a=20
+                              =
+          href=3D"https://www.youtube.com/c/Unstop_World"
+               =
+                         style=3D"display: inline-block; text-decoration: n=
+one; width: 40px; height: 40px; background: #FAFAFA; border-radius: 50px;" =
+
+                                        target=3D"_blank"
+            =
+                        >
+                                        <img
+=
+                                            src=3D"https://d8it4huxumps7.cl=
+oudfront.net/uploads/images/66433b12a37a3_youtube.png"
+                  =
+                          alt=3D"Youtube Icon" style=3D"display: block; wid=
+th: 40px;">
+                                    </a>
+                  =
+              </div>
+                            </td>
+                =
+        </tr>
+
+                        <tr>
+                         =
+   <td style=3D"padding-top: 20px; text-align: center;">
+                =
+                <p
+                                    style=3D"font-fami=
+ly: 'Inter', sans-serif; color: #1c1c1c; font-size: 12px; font-weight: 500;=
+ margin: 0 0 10px; text-align: center;">
+                                =
+    Get the Unstop app
+                                </p>
+           =
+                     <div>
+                                    <a href=3D=
+"https://play.google.com/store/apps/details?id=3Dcom.dare2compete.app"
+  =
+                                      style=3D"display: inline-block; text-=
+decoration: none; margin-right: 10px;"
+                                  =
+      target=3D"_blank">
+                                        <img
+ =
+                                           src=3D"https://d8it4huxumps7.clo=
+udfront.net/uploads/images/6641f370d8dc5_google_play.png"
+               =
+                             alt=3D"Play Store Icon"
+                    =
+                        style=3D"display: block; width: 120px; border: 1px =
+solid #383838 !important; border-radius: 50px; background: #1c1c1c;">
+   =
+                                 </a>
+
+                                =
+    <a href=3D"https://apps.apple.com/in/app/unstop-formerly-dare2compete/i=
+d1601170365"
+                                        style=3D"display: in=
+line-block; text-decoration: none;" target=3D"_blank">
+                  =
+                      <img
+                                            sr=
+c=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/6641f38f1c761_app_=
+store.png"
+                                            alt=3D"App Store I=
+con"
+                                            style=3D"display: block;=
+ width: 120px; border: 1px solid #383838 !important; border-radius: 50px; b=
+ackground: #1c1c1c;">
+                                    </a>
+        =
+                        </div>
+                            </td>
+      =
+                  </tr>
+                       =20
+                      =
+  <tr>
+                            <td style=3D"padding-top: 20px; text-a=
+lign: center;">
+                                <span
+                 =
+                   style=3D"font-family: 'Inter', sans-serif; text-align: c=
+enter; color: #000; font-size: 12px; font-weight: 500; border-right: 1px so=
+lid #D9D9D9; padding-right: 12px; margin-right: 12px;">
+                 =
+                   Queries? We're just one email away: <a href=3D"mailto:su=
+pport@unstop.com" class=3D"h_text_color"
+                                =
+        style=3D"font-family: 'Inter', sans-serif; color: #000; text-decora=
+tion: none;">support@unstop.com</a>
+                                </spa=
+n>
+
+                                <span style=3D"font-family: 'Inter'=
+, sans-serif; text-align: center; color: #000; font-size: 12px; font-weight=
+: 500;">
+                                    =C2=A9 2025 <a class=3D"h_te=
+xt_color" href=3D"https://unstop.com/"
+                                  =
+      style=3D"font-family: 'Inter', sans-serif; color: #000; text-decorati=
+on: none;">Unstop</a>.
+                                    All rights res=
+erved
+                                </span>
+                         =
+   </td>
+                        </tr>
+                    </tbody>
+ =
+               </table>
+            </td>
+        </tr>
+    </tbody>=
+
+</table>    </div>
+</body>
+
+</html>
+
+
+
+--_=_swift_1741682569_ac56dfd91c27ffe7295c10dec3562af3_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html lang=3D"en">
+
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <title>Sign up</title>
+    <meta name=3D"author" content=3D"">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <meta name=3D"x-apple-disable-message-reformatting">
+    <style type=3D"text/css">
+        @import  url('https://fonts.googleapis.com/css2?family=3DInter:wght=
+@100..900&display=3Dswap');
+
+        body {
+            width: auto;
+            background-color: #fff;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 14px;
+            -webkit-text-size-adjust: 100% !important;
+            -ms-text-size-adjust: 100% !important;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Inter", sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span,
+        a,
+        strong,
+        div,
+        td {
+            font-family: "Inter", sans-serif;
+        }
+
+        img {
+            border: 0 !important;
+            outline: none !important;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+
+        .h_text_color:hover {
+            color: #0073e6 !important;
+            text-decoration: underline !important;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0px;
+            mso-table-rspace: 0px;
+        }
+
+        @media (max-width: 600px) {
+            .full {
+                width: 100% !important;
+            }
+            .pdng {
+                padding: 30px 16px !important;
+            }
+            .pdng ul li {
+                font-size: 14px !important;
+                line-height: 20px !important;
+            }
+
+
+            .footer_ui {
+                border-radius: 8px;
+            }
+            .footer_ui .footer_pdng {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+            .footer_ui .un_logo {
+                width: 100px !important;=20
+            }
+    </style>
+</head>
+
+<body style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: bord=
+er-box; color: #74787E; height: 100%; line-height: 1.4; margin: 0; width: 1=
+00% !important; -webkit-text-size-adjust: none;">
+    <div style=3D"box-sizing: border-box; font-family: 'Inter', sans-serif;=
+ background-color: #fff; width: 100%; margin: 0; padding: 0;">
+        <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" bgcolor=
+=3D"#ffffff" border=3D"0" width=3D"700" class=3D"full" style=3D"font-family=
+: Avenir, Helvetica, sans-serif; box-sizing: border-box; border-collapse: c=
+ollapse; mso-table-lspace: 0px; mso-table-rspace: 0px; background-color: #f=
+ff;">
+            <tbody style=3D"font-family: Avenir, Helvetica, sans-serif; box=
+-sizing: border-box;">
+                <tr>
+                    <td style=3D"box-sizing: border-box; font-family: 'Inte=
+r', sans-serif;">
+                        <a href=3D"https://mstats.dare2compete.com/CL0/http=
+s:%2F%2Funstop.com%2F/1/01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822=
+e2-000000/UrjqgOpoHdS2mR1dX55wnsHNh7VQqZSlPZZZoglpfFk=3D197" target=3D"_bla=
+nk" style=3D"box-sizing: border-box; font-family: 'Inter', sans-serif; text=
+-decoration: none; color: #3869D4; display: block;">
+                                                        <img src=3D"https:/=
+/d8it4huxumps7.cloudfront.net/uploads/images/65dd600464590_asset_21.png?d=
+=3D900x900" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing=
+: border-box; border: 0 !important; outline: none !important; max-width: 10=
+0%; display: block; margin: 0; width: 100%;">
+                                                    </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class=3D"pdng" style=3D"box-sizing: border-box; fon=
+t-family: 'Inter', sans-serif; padding: 40px 30px;">
+                         <p style=3D"box-sizing: border-box; margin-top: 0;=
+ font-family: 'Inter', sans-serif; margin: 0 0 20px; color: #1c1c1c; font-s=
+ize: 16px; line-height: 22px; font-weight: 400; text-align: left;">
+                            Hey Yash,
+                        </p>
+
+                                                    <p style=3D"box-sizing:=
+ border-box; margin-top: 0; font-family: 'Inter', sans-serif; margin: 0 0 2=
+0px; color: #1c1c1c; font-size: 16px; line-height: 22px; font-weight: 400; =
+text-align: left;">
+                                Welcome aboard!=F0=9F=8C=9FGet ready to exp=
+lore, learn, participate and thrive on Unstop as we connect you to sparklin=
+g opportunities. You=E2=80=99ve also won a Welcome badge for your great cho=
+ice!
+                            </p>
+                       =20
+                       =20
+                        <div style=3D"box-sizing: border-box; font-family: =
+'Inter', sans-serif; text-align: center; margin: 0 0 20px;">
+                            <img src=3D"https://d8it4huxumps7.cloudfront.ne=
+t/uploads/images/65d967a958417_badge.png?d=3D337x310" width=3D"120" height=
+=3D"120" alt=3D"Welcome badge" style=3D"font-family: Avenir, Helvetica, san=
+s-serif; box-sizing: border-box; border: 0 !important; outline: none !impor=
+tant; display: inline-block; margin: auto; max-height: 120px; max-width: 12=
+0px; height: auto; width: auto;">
+                        </div>
+
+
+                                                    <p style=3D"box-sizing:=
+ border-box; margin-top: 0; font-family: 'Inter', sans-serif; margin: 0 0 5=
+px; color: #1c1c1c; font-size: 16px; line-height: 22px; font-weight: 600; t=
+ext-align: left;">
+                                Besides that, we treat you to:
+                            </p>
+                            <ul style=3D"font-family: Avenir, Helvetica, sa=
+ns-serif; box-sizing: border-box; line-height: 1.4; text-align: left; margi=
+n: 0 0 20px;">
+                                <li style=3D"box-sizing: border-box; font-f=
+amily: 'Inter', sans-serif; margin: 0 0 5px; color: #1c1c1c; font-size: 15p=
+x; line-height: 21px; font-weight: 400; text-align: left;">
+                                    =F0=9F=93=91 Well-structured courses to=
+ upskill you
+                                </li>
+                                    <li style=3D"box-sizing: border-box; fo=
+nt-family: 'Inter', sans-serif; margin: 0 0 5px; color: #1c1c1c; font-size:=
+ 15px; line-height: 21px; font-weight: 400; text-align: left;">
+                                    =F0=9F=92=BB Sprints and mock tests for=
+ the right practice
+                                </li>
+                                <li style=3D"box-sizing: border-box; font-f=
+amily: 'Inter', sans-serif; margin: 0 0 5px; color: #1c1c1c; font-size: 15p=
+x; line-height: 21px; font-weight: 400; text-align: left;">
+                                    =F0=9F=8F=85 Life-changing competitions=
+ by top companies (with exciting rewards &amp; PPIs =F0=9F=91=80)
+                                </li>
+                                <li style=3D"box-sizing: border-box; font-f=
+amily: 'Inter', sans-serif; margin: 0 0 5px; color: #1c1c1c; font-size: 15p=
+x; line-height: 21px; font-weight: 400; text-align: left;">
+                                    =F0=9F=A7=91=E2=80=8D=F0=9F=8F=AB Guida=
+nce from top mentors across industries
+                                </li>
+                                <li style=3D"box-sizing: border-box; font-f=
+amily: 'Inter', sans-serif; margin: 0; color: #1c1c1c; font-size: 15px; lin=
+e-height: 21px; font-weight: 400; text-align: left;">
+                                    =F0=9F=94=AE Jobs &amp; Internships to =
+put your talents to the best use
+                                </li>
+                            </ul>
+                       =20
+                                                    <div style=3D"box-sizin=
+g: border-box; font-family: 'Inter', sans-serif; text-align: center; margin=
+: 0 0 20px;" class=3D"btn">
+                                <a href=3D"https://mstats.dare2compete.com/=
+CL0/https:%2F%2Funstop.com%2F/2/01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a=
+686bf822e2-000000/nfi0XBqddh-JeFGAUDTK8eJF8Isy5Ro5-ZxzEbNpTuM=3D197" style=
+=3D"font-family: 'Inter', sans-serif; text-decoration: none; display: inlin=
+e-block; padding: 12px 32px; height: 40px; background: #0073E6; border-radi=
+us: 50px; font-weight: 500; font-size: 16px; line-height: 16px; color: #FFF=
+FFF; cursor: pointer; box-sizing: border-box;">
+                                    Begin my career journey now
+                                </a>
+                            </div>
+                       =20
+                        <p style=3D"box-sizing: border-box; margin-top: 0; =
+font-family: 'Inter', sans-serif; margin: 0 0 20px; color: #1c1c1c; font-si=
+ze: 16px; line-height: 22px; font-weight: 600; text-align: left;">
+                            #BeUnstoppable=F0=9F=8C=9F
+                        </p>
+
+                        <p style=3D"box-sizing: border-box; margin-top: 0; =
+font-family: 'Inter', sans-serif; margin: 0; color: #1c1c1c; font-size: 16p=
+x; line-height: 22px; font-weight: 400; text-align: left;">
+                            Regards, <br>
+                            Team Unstop
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" border=
+=3D"0" width=3D"700" class=3D"full footer_ui" style=3D"font-family: Avenir,=
+ Helvetica, sans-serif; box-sizing: border-box; border-collapse: collapse; =
+mso-table-lspace: 0px; mso-table-rspace: 0px; border-radius: 8px; backgroun=
+d: #f2f2f2;">
+    <tbody style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing:=
+ border-box;">
+        <tr>
+            <td class=3D"footer_pdng" style=3D"box-sizing: border-box; font=
+-family: 'Inter', sans-serif; padding-left: 16px !important; padding-right:=
+ 16px !important; padding: 24px 30px;">
+                <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center"=
+ border=3D"0" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizi=
+ng: border-box; border-collapse: collapse; mso-table-lspace: 0px; mso-table=
+-rspace: 0px; width: 100%;">
+                    <tbody style=3D"font-family: Avenir, Helvetica, sans-se=
+rif; box-sizing: border-box;">
+                        <tr>
+                            <td style=3D"box-sizing: border-box; font-famil=
+y: 'Inter', sans-serif; border-bottom: 1px solid #DEDEDE; padding-bottom: 2=
+0px; text-align: center;">
+                                <a href=3D"https://mstats.dare2compete.com/=
+CL0/https:%2F%2Funstop.com%2Fpro%3Futm_campaign=3Dsite-emails%26utm_medium=
+=3Dd2c-automated%26utm_source=3Dhooray-youve-joined-the-unstoppable-family/=
+1/01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000/jDLUmjWXAWgr=
+JJa1i6HYdEm3N_Te34NWZ4IOvvHrzAk=3D197" style=3D"box-sizing: border-box; fon=
+t-family: 'Inter', sans-serif; color: #3869D4; display: inline-block; text-=
+decoration: none;" target=3D"_blank">
+                                    <img src=3D"https://d8it4huxumps7.cloud=
+front.net/uploads/images/66443642605a0_unstop_pro.png" alt=3D"Unstop pro lo=
+go" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: border=
+-box; border: 0 !important; outline: none !important; max-width: 100%; disp=
+lay: block; width: 120px;" class=3D"un_logo">
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style=3D"box-sizing: border-box; font-famil=
+y: 'Inter', sans-serif; padding-top: 20px; text-align: center;">
+                                <p style=3D"box-sizing: border-box; line-he=
+ight: 1.5em; margin-top: 0; font-family: 'Inter', sans-serif; color: #1c1c1=
+c; font-size: 12px; font-weight: 500; margin: 0 0 10px; text-align: center;=
+">
+                                    Join our evergrowing unstoppable commun=
+ity
+                                </p>
+
+                                <div style=3D"box-sizing: border-box; font-=
+family: 'Inter', sans-serif; text-align: center;">
+                                    <a href=3D"https://mstats.dare2compete.=
+com/CL0/https:%2F%2Fwww.instagram.com%2Funstop.world%2F/1/01090195845ef073-=
+6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000/oFVA5BmkPy4MCudM8JWDvpg8gMCfi4a=
+GdLOPOw7R0lY=3D197" style=3D"box-sizing: border-box; font-family: 'Inter', =
+sans-serif; color: #3869D4; display: inline-block; text-decoration: none; m=
+argin-right: 10px; width: 40px; height: 40px; background: #FAFAFA; border-r=
+adius: 50px;" target=3D"_blank">
+                                        <img src=3D"https://d8it4huxumps7.c=
+loudfront.net/uploads/images/66433aee6e146_instagram.png" alt=3D"Instagram =
+Icon" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: bord=
+er-box; border: 0 !important; outline: none !important; max-width: 100%; di=
+splay: block; width: 40px;">
+                                    </a>
+
+                                    <a href=3D"https://mstats.dare2compete.=
+com/CL0/https:%2F%2Fwww.linkedin.com%2Fcompany%2Funstop%2F/1/01090195845ef0=
+73-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000/NBfQ8YG5dS7Yd092s7rpU8KgofoA=
+xKJMLTAkrQwUKhA=3D197" style=3D"box-sizing: border-box; font-family: 'Inter=
+', sans-serif; color: #3869D4; display: inline-block; text-decoration: none=
+; margin-right: 10px; width: 40px; height: 40px; background: #FAFAFA; borde=
+r-radius: 50px;" target=3D"_blank">
+                                        <img src=3D"https://d8it4huxumps7.c=
+loudfront.net/uploads/images/66433aff63c9b_linkedin.png" alt=3D"Linkedin Ic=
+on" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: border=
+-box; border: 0 !important; outline: none !important; max-width: 100%; disp=
+lay: block; width: 40px;">
+                                    </a>
+
+                                    <a href=3D"https://mstats.dare2compete.=
+com/CL0/https:%2F%2Ft.me%2F%2BON15qceSy-IyZjY9/1/01090195845ef073-6ec1c09d-=
+9ec0-46cc-85bf-1a686bf822e2-000000/htxYip2QllQhUUCBSwK0zXA1kHzkBo1C48PmAZFs=
+Aug=3D197" style=3D"box-sizing: border-box; font-family: 'Inter', sans-seri=
+f; color: #3869D4; display: inline-block; text-decoration: none; margin-rig=
+ht: 10px; width: 40px; height: 40px; background: #FAFAFA; border-radius: 50=
+px;" target=3D"_blank">
+                                        <img src=3D"https://d8it4huxumps7.c=
+loudfront.net/uploads/images/66433b096c58b_telegram.png" alt=3D"Telegram Ic=
+on" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: border=
+-box; border: 0 !important; outline: none !important; max-width: 100%; disp=
+lay: block; width: 40px;">
+                                    </a>
+
+                                    <a href=3D"https://mstats.dare2compete.=
+com/CL0/https:%2F%2Fwww.youtube.com%2Fc%2FUnstop_World/1/01090195845ef073-6=
+ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000/74gYRolZaSlVCDYAEatMyjwe6_2ReRRk=
+LrZBd4uCoiU=3D197" style=3D"box-sizing: border-box; font-family: 'Inter', s=
+ans-serif; color: #3869D4; display: inline-block; text-decoration: none; wi=
+dth: 40px; height: 40px; background: #FAFAFA; border-radius: 50px;" target=
+=3D"_blank">
+                                        <img src=3D"https://d8it4huxumps7.c=
+loudfront.net/uploads/images/66433b12a37a3_youtube.png" alt=3D"Youtube Icon=
+" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: border-b=
+ox; border: 0 !important; outline: none !important; max-width: 100%; displa=
+y: block; width: 40px;">
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style=3D"box-sizing: border-box; font-famil=
+y: 'Inter', sans-serif; padding-top: 20px; text-align: center;">
+                                <p style=3D"box-sizing: border-box; line-he=
+ight: 1.5em; margin-top: 0; font-family: 'Inter', sans-serif; color: #1c1c1=
+c; font-size: 12px; font-weight: 500; margin: 0 0 10px; text-align: center;=
+">
+                                    Get the Unstop app
+                                </p>
+                                <div style=3D"box-sizing: border-box; font-=
+family: 'Inter', sans-serif;">
+                                    <a href=3D"https://mstats.dare2compete.=
+com/CL0/https:%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid=3Dcom.dar=
+e2compete.app/1/01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-00000=
+0/Dh0W-vothXSC_IvzsMY5P_Ka4hOI8hWVrXJUCZSxtmI=3D197" style=3D"box-sizing: b=
+order-box; font-family: 'Inter', sans-serif; color: #3869D4; display: inlin=
+e-block; text-decoration: none; margin-right: 10px;" target=3D"_blank">
+                                        <img src=3D"https://d8it4huxumps7.c=
+loudfront.net/uploads/images/6641f370d8dc5_google_play.png" alt=3D"Play Sto=
+re Icon" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: b=
+order-box; outline: none !important; max-width: 100%; display: block; width=
+: 120px; border: 1px solid #383838 !important; border-radius: 50px; backgro=
+und: #1c1c1c;">
+                                    </a>
+
+                                    <a href=3D"https://mstats.dare2compete.=
+com/CL0/https:%2F%2Fapps.apple.com%2Fin%2Fapp%2Funstop-formerly-dare2compet=
+e%2Fid1601170365/1/01090195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-00=
+0000/qoKaup09WJ_IWfufOZFAdf0tufyJVvfWR8qZIFomjrE=3D197" style=3D"box-sizing=
+: border-box; font-family: 'Inter', sans-serif; color: #3869D4; display: in=
+line-block; text-decoration: none;" target=3D"_blank">
+                                        <img src=3D"https://d8it4huxumps7.c=
+loudfront.net/uploads/images/6641f38f1c761_app_store.png" alt=3D"App Store =
+Icon" style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: bord=
+er-box; outline: none !important; max-width: 100%; display: block; width: 1=
+20px; border: 1px solid #383838 !important; border-radius: 50px; background=
+: #1c1c1c;">
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                       =20
+                        <tr>
+                            <td style=3D"box-sizing: border-box; font-famil=
+y: 'Inter', sans-serif; padding-top: 20px; text-align: center;">
+                                <span style=3D"box-sizing: border-box; font=
+-family: 'Inter', sans-serif; text-align: center; color: #000; font-size: 1=
+2px; font-weight: 500; border-right: 1px solid #D9D9D9; padding-right: 12px=
+; margin-right: 12px;">
+                                    Queries? We're just one email away: <a =
+href=3D"mailto:support@unstop.com" class=3D"h_text_color" style=3D"box-sizi=
+ng: border-box; font-family: 'Inter', sans-serif; color: #000; text-decorat=
+ion: none;">support@unstop.com</a>
+                                </span>
+
+                                <span style=3D"box-sizing: border-box; font=
+-family: 'Inter', sans-serif; text-align: center; color: #000; font-size: 1=
+2px; font-weight: 500;">
+                                    =C2=A9 2025 <a class=3D"h_text_color" h=
+ref=3D"https://mstats.dare2compete.com/CL0/https:%2F%2Funstop.com%2F/3/0109=
+0195845ef073-6ec1c09d-9ec0-46cc-85bf-1a686bf822e2-000000/dH-uWv_6SW1S21o13v=
+KjQQQf8aD5LjJoCuCN7cqV9mg=3D197" style=3D"box-sizing: border-box; font-fami=
+ly: 'Inter', sans-serif; color: #000; text-decoration: none;">Unstop</a>.
+                                    All rights reserved
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>    </div>
+<img alt=3D"" src=3D"http://mstats.dare2compete.com/CI0/01090195845ef073-6e=
+c1c09d-9ec0-46cc-85bf-1a686bf822e2-000000/-H_7iPg9xD6avIXTFszeK-dpPRhjrZ_cD=
+493rHrLVUM=3D197" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+
+</html>
+
+--_=_swift_1741682569_ac56dfd91c27ffe7295c10dec3562af3_=_--

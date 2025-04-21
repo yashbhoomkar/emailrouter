@@ -1,0 +1,561 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:988e:b0:43a:a54e:2943 with SMTP id cm14csp956006mdb;
+        Mon, 10 Mar 2025 03:32:50 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHteKmm6qwhhRNqKg3TNBCBVR9vwPoB0G9iR7Tcugv3HwOt7iNgQceE0kA9XJLqe2HO7AV9
+X-Received: by 2002:a05:620a:4387:b0:7c0:7cc8:db2d with SMTP id af79cd13be357-7c4e6105746mr1884601485a.30.1741602770347;
+        Mon, 10 Mar 2025 03:32:50 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1741602770; cv=none;
+        d=google.com; s=arc-20240605;
+        b=f5za3sl80Xgm7PXF852XJsT2G9Oniv4v8Vb1ZToYSmvSyAxLuVgblr3fmAEH7tE9J5
+         EyanaohJ2rduoZntJkRQvQTX3gIR7vLk+YUofE+9+079MVBOP11Mr3J/P14bA3boQ4UA
+         lFXwn1pUG1Koav9ly6WpM+8ZhQZhs1hGnJsc/PqBVwN1vdelcA40UuqlhQjQC517gQ0T
+         AJkYAyOFP6XRIzVg8UgRZ8QT5aji3QnlBOf8v1wHiAlFQzQXyDVh+LYDLCFzZxCYKs+E
+         mNESmV1RPGqLRCs0AfzUv3HqfjKSQTz7kBTDMDWL2QJcFlyQCB+aoBTg2NW4BTPwl9I+
+         hE2g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:list-unsubscribe:reply-to:list-unsubscribe-post:to:from
+         :subject:mime-version:date:sender:dkim-signature:dkim-signature;
+        bh=mtqk1jyfjtFhXTXwmLXyMW5bHsLTc4OYgsz2vmmittc=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=HmpvlNKwgE1YAr5vzmnvnFDWtTS/L/7Gj9bcVP9xm+npNpLbsRgbrIZKinbs6rY8va
+         20P2cKTf2kwD5I8cjkyNDlOlw/AdSTQSQP/AW3+cBviSV4jjD8dFGxqrdboPzpZpIsBw
+         pOGClPCpZ3rA5Zik45lfqlIqDukYBY1TPE8E5sB8paLmxZNBCEnbdACoGCDwfUqfZNHC
+         0fxEq/GGUnHsp6di8AJChnxS0iiJNf/lSsJeDVMWO2C+63/6Sp4l15xiDH5h9TDDYlqP
+         s48yEVAabNnyPdanmiiXWHiJbJtMOh3h+2lfIlLlAdhAAysf7mIvM90UQlUcTDErwDNq
+         7hrg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.codesandbox.io header.s=mx header.b=EdYMx5sB;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=egrHjUp4;
+       spf=pass (google.com: domain of bounce+c6686b.b0105-yash31204testing=gmail.com@email.codesandbox.io designates 143.55.234.142 as permitted sender) smtp.mailfrom="bounce+c6686b.b0105-yash31204testing=gmail.com@email.codesandbox.io";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=codesandbox.io
+Return-Path: <bounce+c6686b.b0105-yash31204testing=gmail.com@email.codesandbox.io>
+Received: from pc234-142.mailgun.net (pc234-142.mailgun.net. [143.55.234.142])
+        by mx.google.com with UTF8SMTPS id af79cd13be357-7c54a7e6f17si298637385a.83.2025.03.10.03.32.50
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 10 Mar 2025 03:32:50 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+c6686b.b0105-yash31204testing=gmail.com@email.codesandbox.io designates 143.55.234.142 as permitted sender) client-ip=143.55.234.142;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.codesandbox.io header.s=mx header.b=EdYMx5sB;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=egrHjUp4;
+       spf=pass (google.com: domain of bounce+c6686b.b0105-yash31204testing=gmail.com@email.codesandbox.io designates 143.55.234.142 as permitted sender) smtp.mailfrom="bounce+c6686b.b0105-yash31204testing=gmail.com@email.codesandbox.io";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=codesandbox.io
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=email.codesandbox.io; q=dns/txt; s=mx; t=1741602769; x=1741609969;
+ h=Message-Id: List-Unsubscribe: Reply-To: List-Unsubscribe-Post: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=mtqk1jyfjtFhXTXwmLXyMW5bHsLTc4OYgsz2vmmittc=;
+ b=EdYMx5sBwQecEmSGIqR1f5s4h20js7wRuZMhjQ/PfZ2V8tQvP1s/SDR1M5jSpmhKPQCeKPcVh19ESeBTIoCQPNrtpQiFii/sV5tdtoxLpBvIP9FUKxpWTxGWlvRGGfQyEwwvz3emkzQqPzNO2OK0/8fxmdHSKsWgSFDhnOtV/YM=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1741602769; x=1741609969;
+ h=Message-Id: List-Unsubscribe: Reply-To: List-Unsubscribe-Post: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=mtqk1jyfjtFhXTXwmLXyMW5bHsLTc4OYgsz2vmmittc=;
+ b=egrHjUp4vhB01RqydWZ7xshrlt5Wc9XWuLt4TQaj+GxPq7+wj7gOGcwwWH2eiEcze0llHcEKsQFXxj7X6S1+7mnLdB0bhOBQbZyl2FKF9tbw1C7fJrdlr1dPmZ6WR125MdHmdH48msS3hc2CEZfhHw2ixcdzeaI4rbJayUUeEL4=
+X-Feedback-Id: postmaster@email.codesandbox.io:vero-behavioural:5ea9672aa5e98e45085880d5:mailgun
+X-Mailgun-Sending-Ip: 143.55.234.142
+X-Mailgun-Sending-Ip-Pool-Name: CUSTOM DOMAIN SHARED POOL A
+X-Mailgun-Sending-Ip-Pool: 648727d08dcc24cfbe938959
+X-Mailgun-Sid: WyIyODFiOCIsInlhc2gzMTIwNHRlc3RpbmdAZ21haWwuY29tIiwiYjAxMDUiXQ==
+Received: by d0415663f807 with HTTP id 67cebfd1b5e5f406e8e45b28; Mon, 10 Mar 2025
+ 10:32:49 GMT
+Sender: hello=codesandbox.io@email.codesandbox.io
+Date: Mon, 10 Mar 2025 10:32:49 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="6e430fba6bee328c665ca526b358bba05ab64598eadf4eb1308b9c752f7f"
+Subject: Powerful code collaboration
+From: CodeSandbox <hello@codesandbox.io>
+To: yash31204testing@gmail.com
+X-Mailgun-Tag: vero
+X-Mailgun-Tag: behavioural
+X-Mailgun-Track-Clicks: true
+X-Mailgun-Track-Opens: true
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Vero-Id: 33642251484
+Reply-To: hello@codesandbox.io
+List-Unsubscribe: <https://app.getvero.com/unsubscribe/one-click?data=eJxj4ahmt-JPzs8tSMyrjM9MyWT6vMKKryC1qDg_D8jN0WZPf7m6BgD1Bw4hbcd725171c925b764ac20657bd534562&variation_id=1286886>
+X-Mailgun-Variables: {"campaign[campaign_id]": "1179237", "campaign[email_subject]": "Powerful code
+ collaboration", "campaign[project_name]": "CodeSandbox",
+ "campaign[recipient_domain]": "gmail.com", "campaign[subject]": "Powerful
+ code collaboration", "campaign[template_name]": "", "campaign[type]":
+ "Behavioural", "campaign[variation]": "Control"}
+Message-Id: <20250310103249.9d2555c15b849716@email.codesandbox.io>
+
+--6e430fba6bee328c665ca526b358bba05ab64598eadf4eb1308b9c752f7f
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+****************************
+Powerful code collaboration.
+****************************
+
+---------------------------------------------------------------------------=
+---
+Quick, quality feedback is one of the key ingredients of top-performing tea=
+ms.
+---------------------------------------------------------------------------=
+---
+
+With CodeSandbox, you can instantly collaborate sync and async with your te=
+am: just share the URL of your branch.
+
+Learn more ( http://email.email.codesandbox.io/c/eJyUkktT2zAUhX-NvGFg9LCseO=
+EFYAJDeadDWjYZPa4TFVkysvLi13ccCA3L7jz3fOf66MzVsu2knXvEz_afM2sQrytCREmZyA4Ia=
+KV1s36p_oBOA_MQ1hCbpTvSwcCRDs5JFaJMNvhDXxfD4Jh52cJgOw8GJtIbFTaHWARtOws-zUxo=
+pfUDOh9-eaJDewj-f4IEbedkgq8I38Rtt5udwUKubFhG6Q7llYx2t_Ajuk8xuMxUChPMM6iIyEm=
+BqSjKbFGVpBxJjgvRaBAjxkpOGyW04AI3BCTPbEUx5ZgRTDCjeXlSGso514SrUV4KUqAcw-ebDf=
+QfJZ3YkLlqkVLXI3aK6BjR8XcZ0bEJukd07EBGj-g4Qhd6m0K00O_wfTNw3C9kBMTGy9TO-rCMG=
+hCrPax7BylBRLQYlBaMXbaI1bs4n8OvWlgdvAoyGuvnx99q35PBJ_AJsVp_VPY5TxCHpdMQXxsX=
+1ogWK4hhuDlWF1ILiRttSAHcSKxAwYiCpEIRAizHRDFhctibdPArxOq7bToHfH1v8ObxZS1Xm9P=
+XMt36S3Xxzm-fLiab_CG9nS2kyjE9_f2o7u_t9Mdd0vl68npF7349vz3dwJT2P7eXs2fHm83WPd=
+IXYtPN-7WdTPG5sk1zXdbN8-Qqi9VW9gtGKM4T9Mn6OcrxvytN1ZAsS5U6OKZVRf8GAAD__wMLK=
+T8 )
+
+**********
+Grow
+your team.
+**********
+
+Bring your team to your CodeSandbox workspace in minutes! You can add up to=
+ 5 team members in your Free workspace (20 in Pro) and immediately start co=
+llaborating with them.
+
+***************************
+Feedback is one click away.
+***************************
+
+Next time you need feedback, simply share the link to your branch. This mak=
+es it easy for anyone, including designers, managers and marketers, to prev=
+iew your code and commit simple changes.
+
+Read our blog post ( http://email.email.codesandbox.io/c/eJyUUslS4zAU_Br5Qk=
+Fps40PPgAmUAx7psgMl5SW50SDLAVZdmK-fsps4xznpnrd_V6rq5VoNsKsHEpPv55Lo1FalYTkB=
+WV5MmFAI4xdtp38AyqOnHu_hVB39kB5DQfKWyukDyIa76a6TfCjYulEA6PszGuYC6el301pAZTZ=
+GHBxqX0jjBupq_HkkfLNlPj_DiI0GysifFvYA4fN--wU1qI3vgvCTuFeBPO-8MO6i8HbRJcSE5w=
+mUJKckwzTPCuSdQmKYQbAaaZkDgXRGLTKMkpprnJOWGJKimmKGcEEM8qLo0LTNE0VSeUxL3KSIY=
+7h888a2o-QjoxPbLmOcdMidoLoDNHZPozoTFq_QnQGPYTBOzhUwh0q3zQmIjbrYrNsfRcUIFY52=
+LYWYoSAaDYiDWjTNYhV75c_h98JsMo76UXQxq0O9xL-YnoXwUXEKvWRzuc8QhiXLnx4qa3fIpr1=
+EPxYL1ZlQuUC10qTDFItsAQJxxQEzSUhwDgmkuWaw5dIedcjVt0O8Qzw1Z3Gu4fnreh3Jy9FvHE=
+X8vwtvXk8n-_4fXw9XQvJMT35_SDv7szix21UfDt_uaS3v55eH69hQdufw8Xyyab1brAP9JmYeP=
+12ZeYLfCZNXV8VVf00v0xCOYh2zQjFPEIbjVshjv8VMpajsySWctKbvqR_AwAA___SaiHC )
+
+Copyright =C2=A9 2025 CodeSandbox BV.
+
+Unsubscribe ( http://email.email.codesandbox.io/c/eJyUU01z6jgQ_DXi8uql9Gnjg=
+w8Eh7zlMwnZsJsLpY8xiNiWIwti8-u3TJJd9vguKlere6anPdKyrKXdVUjcfn9urUEiSwmJE8ri=
+wRUDSmmLbXNUB9Ch5zy4D_D5sfihnYEf2hWFVM7LYF11rau96xXbSpbQy8bOwFpWRrn2muZB29p=
+CFbbGldJWPXXXt7zRrrwm_r6DAGVdyAD_WvjfZVdfsFvYy5N1Ry-L6-uT9PZS8NN6FbwrBiZVmG=
+AxgJTEnESYxlEy2KdcKK6jWGOutJaC0jwBlcgkVipiwMTAphRTgRnBBDPKk5vEUCGEJkINeRKTC=
+HEMXzMbaD5DurFuUKT7EOoGsRGiE0Qnsq5vdhBO4F0fD6KTY9UcVaO9VYDopPaQg4dKQ4PoBKbt=
+gctD2aymD-dmGNaLzh8WyaLbPEenxWzmuzF5z3bbbHhY4s3rQx6XUevcefU8LMjLcnoaW7Ka_8S=
+zrCSbTLdzvGHT-WpXLujs_Pzn3egezP0fb4iKeKyTWAk5BK41x5rFBnIio6EgOTdiiDlik2Mot4=
+07eg2IZf0IiEY9VoKxxxKx7BLBF6hdFaAKiGX6M_xv_PsXsezuky4oFpfz5-UcfRED-L7mxvm3v=
+HAfiEZ9y37NWRZJHUuca0MiEEZiBQqGFCSNFSHAOCaKxYbDt0i76oRYtuzCGPB0ZXD7-PohT-3o=
+LQmL6l7dncXi6W7d8ofwfruXimM6-vtRrVZ2M1sGzT_Wb7_o8q-X96c5bGjz3N1vXwqRt13xSF-=
+JDfPz1K43eKxsnk-TLH9Z_xr4tJPNnhGKeYAm2GqHOP7vYYS0dzYIqbra31NK_wkAAP__Db9IdQ=
+ )
+|
+View in web browser ( http://email.email.codesandbox.io/c/eJyUkcty2jAUhp_G3=
+mSGkY4ljBZaAAnJ0ARC6ECbDaPLMaiRLceIW56-Y9KLu-xOo_P90qdfRpW1ctsq4aPfy42zCb-V=
+lOYCsjztEFgq5zf7g_6BJrbMczhhUxz8jQkWb0zwXunQqOhC1c3VTWgTm0qV2MbGweJSVVaHcxd=
+r0LjaYRU3NpTKVS26ba_smVB2wf83iFjWXkX8o_DP8FJf90a4U0cXDo3y3fFRNe564Kd6FZvgUy=
+s1oYSnKGnOaJ9A3hfpToqCGjOgaCkxlGg0mbBKFIMByQH6BFIngQAnGSWUZMBET1jgnBvK9YCJn=
+PYTRvDXmy3uP0vquZB6uYuxTrJhApMEJqque1uMR2xC204Ck2sqgQnLgNMEJrNLHCOZzi05L15P=
+6ngevon4VN3ruw_-9HK3PLPn-D7aKc0IDL8v9Hzu1l9m0bDT8u0BZt9W7y-PuIb918v9ZuV5cb7=
+4BbxSFx8_pm65JmPtimIqbovV8iFt5EXtdxkFwiLuo6u2CSN__y7KVjSNUncqPkr4GQAA__9Mxt=
+Vf )
+
+( http://email.email.codesandbox.io/c/eJyUkklv2z4QxT8NdQn-AVfJOujgRHGC_LO7i=
+NtcDC6jmI0kOtR4y6cv5KVVj70QxOPvcd4Mxupmqf17S9TF6Tr3jqiyYCzLuciSAQGN9vW8W5mf=
+YLFnnsIGYrWqz2xwcGZDXWsTokYf2qFvGUPvmLe6gd52GRxMdetM2A6xCNYvPbQ4d6HRvu3R977=
+kuQ3NEPz3BAjNstYIvyP89bhb7rULWOi1D6uo6-HzWke___AQvcUY6sQVhjKqEihYJllKeZbmya=
+IYCSXEyDI24tpQzuVIApWcUkaNypVMfMEpV1QwyqjgMj_PHVdKWabMSOYZS4mkcOzZQXcY0rkPS=
+V0sEJcdEWPCJ4RPcOMRIfajIXwygImYrLCZd2EVLRBRriEGwtNea8D5VUNEua9wFG1oEVokorSH=
+3k76aQKivDrgilO1P__bn-MjiBD7P2chflR12BCe9iX7LRJlqm2maWUdS0E5TQ0YGHHQPDOMgZC=
+UGZE5CSeTDe2aiPJhh5dAbx8d3T6_bfR6O_7I8b69Nldf6v7larqVT_h5sdBGUj7-8WweH_3s_w=
+e0cjP9uOEP318_X-5gxrtvu-v5a62q7a5-5m_M493XrZ_O6KXxVXWbl9Xr9CaJxU53C8E4lQgd-=
+vadSPpn77DokyVYmMF6rAv-KwAA__9r8hMj )
+
+( http://email.email.codesandbox.io/c/eJyUkstS4zwQhZ9G3lBQUkuy8cKLgAkUP_f8R=
+WbYpHRpJxpsK9hyLjz9lB0yY5azUdmt76hPn2qjqrVyy5rIi-Pnwlki84yxJAWeRCMCK-XKRdvp=
+X2hCzzz5LTZFV54Yb_HE-LJU2jcqOF-PdevG94pFrSrsZZfe4kzVVvvdGGvQuLXDOiysr5Sre3T=
+ZtzwzvhqD_-4gYLUuVcA_Fr5d7tdD7QJXauN816hyfL1RjRsePFivQ-PLyGaaMiojzFgiWEwhid=
+NolaUJpIkGy4RMVQFMMEiUKRhLlDjnKo5cBhQk5YwyykGkZ6kFKaVhUp-LNGExERS_ZrbYHkI6c=
+z4qs1UI65bwCYEpgenShVWn-2QITEfs979TU_aBEj7tQrVofdcYJDzfYOMJxH2tQuu6ivB86PpV=
+NL4Ogyw3h3mP9WMqPL864BKoHM7T4Zx8gQGb_s25b96L0m8JxH3LfrN4HiuTKFoYy2KUVlGNGs8=
+BFSSaMeSCMs0TK_AoMr7eEJ4_7MMl0ttHS3fPb1u12U3e03BfX-urT3n_cjXbiafwcbFSWlCY_H=
+zWj49u_t9DMGI7e7-Bhx-vHy93OIf2__314rWUxW5fPsMbc-Hu89bN5vRSu6K4TfPidXYTNdlet=
+SvOgIqAbXD1kgj6dxdD1juLQqZHK7PJ4HcAAAD__50LGzw )
+
+( http://email.email.codesandbox.io/c/eJyUkklv2zAQhX8NdQkacJWigw5OlAVpdhdxm=
+4vBZRSzkUiHoiwrv76QHbfKsReCePM9zuNgtGzW0r46JE4P16U1SJQFIVlOWZZMCGikrZdtp36D=
+jiPz4HsIVVcfaW_gSPu6lsoHGa13U986-NGxdLKB0XbmDcylM8pvp1gAbdcWXFwa30jrRvR1bHm=
+sfTMF_z9BhGZdywh_I3wpDuuddgorubG-C7Keljcy2N2D--guBl8nplCYYJFAQTJOUkyzNE9WhT=
+QGU8PACGAVCK5wRQyr0hPGsMgwTmxBMRWYEUwwozw_zg0VQmgi1AnPM5IijuHzzwba_ZCOrU_qY=
+hXjukVshugFohd9339BtG-aztk4jGV20cVm2fouaECs3EDwiKaj1oCxXYNYuWvyKWrvIriIWKn3=
+3zvohyGw8nyPC4rF7vy2O2efYIQwvrnw4a2qfY9oOrYcF4mVqdSZxJU2JAVhJFag4ISCpJkiBBj=
+HRLHMcDiYtHcbxMq7IZ4Bvr43ePv40svNdvaWx1t3qc4_xO3T-XzLH-L76Uoqjuns16O6v7eL73=
+dR837-dkXvfj6_P93AgrY_hsvlcy2q7VA_0hdi483HtZ0v8JmyVXWdl9Xz_CoJxSDbFSMU8whtt=
+O4Vcfxv9WIxJktioSYbsinonwAAAP__zQ4V0g )
+--6e430fba6bee328c665ca526b358bba05ab64598eadf4eb1308b9c752f7f
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+  <head>
+    <title>Powerful code collaboration</title>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+   =20
+   =20
+  <style>@font-face {
+font-family: 'Inter'; font-style: normal; font-weight: 200; font-display: s=
+wap; src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMr=
+MxCp50SjIw2boKoduKmMEVuDyfMZg.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: s=
+wap; src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMr=
+MxCp50SjIw2boKoduKmMEVuLyfMZg.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: s=
+wap; src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMr=
+MxCp50SjIw2boKoduKmMEVuI6fMZg.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: s=
+wap; src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMr=
+MxCp50SjIw2boKoduKmMEVuGKYMZg.ttf') format('truetype');
+}
+body {
+font-family: Inter, sans-Serif; margin: 0; padding: 0; -webkit-text-size-ad=
+just: 100%; -ms-text-size-adjust: 100%; text-rendering: optimizeLegibility;=
+ font-smooth: always;
+}
+img {
+border: 0; height: auto; line-height: 100%; outline: none; text-decoration:=
+ none; -ms-interpolation-mode: bicubic;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    background: #1D1D1D;
+  }
+  .table {
+    width: auto;
+  }
+  .logo {
+    font-size: 24px !important;
+  }
+  .title {
+    padding: 0 20px !important; font-size: 42px !important;
+  }
+}
+</style>
+</head>
+  <body style=3D"background-color: #0f0e0e; font-family: Inter, sans-Serif;=
+ -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-rendering=
+: optimizeLegibility; font-smooth: always; margin: 0; padding: 0;" bgcolor=
+=3D"#0f0e0e">
+    <div class=3D"container" style=3D"margin: 0 auto; padding: 50px 0px;">
+      <table class=3D"table" style=3D"border-collapse: collapse; mso-table-=
+lspace: 0pt; mso-table-rspace: 0pt; width: 600px; text-align: center; backg=
+round-color: #1D1D1D; color: #7f7f80; margin: 0 auto; padding: 40px;" bgcol=
+or=3D"#1D1D1D">
+        <thead>
+          <tr>
+            <td class=3D"header" style=3D"border-collapse: collapse; mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; padding: 100px 0 20px;">
+              <div class=3D"square" style=3D"width: 54px; height: 54px; mar=
+gin: 0 auto; border: 6px solid #dcff50;"></div>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- section 1 -->
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <h1 class=3D"title" style=3D"color: #E3FF73; max-width: 400px=
+; font-family: Inter, sans-Serif; font-style: normal; font-weight: 500; fon=
+t-size: 48px; line-height: 100%; text-align: center; letter-spacing: -0.05e=
+m; margin: 0 auto; padding: 0 80px;" align=3D"center">
+               Powerful code collaboration.
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <h2 class=3D"subtitle" style=3D"max-width: 430px; font-family=
+: Inter, sans-Serif; font-style: normal; font-weight: 400; font-size: 24px;=
+ line-height: 120%; text-align: center; letter-spacing: -0.05em; color: whi=
+te; margin: 10px auto;" align=3D"center">Quick, quality feedback is one of =
+the key ingredients of top-performing teams.</h2>
+              <p class=3D"body" style=3D'max-width: 460px; display: block; =
+font-family: Inter, sans-Serif; font-style: normal; font-weight: 400; font-=
+size: 16px; line-height: 140%; text-align: center; letter-spacing: -0.0125e=
+m; font-feature-settings: "liga"off, "calt"off, "kern"off; color: #7f7f80; =
+margin: 10px auto; padding: 0 40px;' align=3D"center">
+                With CodeSandbox, you can instantly collaborate sync and as=
+ync with your team: just share the URL of your branch.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <a class=3D"button-secondary" href=3D"http://email.email.code=
+sandbox.io/c/eJyUkktT2zAUhX-NvGFg9LCseOEFYAJDeadDWjYZPa4TFVkysvLi13ccCA3L7j=
+z3fOf66MzVsu2knXvEz_afM2sQrytCREmZyA4IaKV1s36p_oBOA_MQ1hCbpTvSwcCRDs5JFaJMN=
+vhDXxfD4Jh52cJgOw8GJtIbFTaHWARtOws-zUxopfUDOh9-eaJDewj-f4IEbedkgq8I38Rtt5ud=
+wUKubFhG6Q7llYx2t_Ajuk8xuMxUChPMM6iIyEmBqSjKbFGVpBxJjgvRaBAjxkpOGyW04AI3BCT=
+PbEUx5ZgRTDCjeXlSGso514SrUV4KUqAcw-ebDfQfJZ3YkLlqkVLXI3aK6BjR8XcZ0bEJukd07E=
+BGj-g4Qhd6m0K00O_wfTNw3C9kBMTGy9TO-rCMGhCrPax7BylBRLQYlBaMXbaI1bs4n8OvWlgdv=
+AoyGuvnx99q35PBJ_AJsVp_VPY5TxCHpdMQXxsX1ogWK4hhuDlWF1ILiRttSAHcSKxAwYiCpEIR=
+AizHRDFhctibdPArxOq7bToHfH1v8ObxZS1Xm9PXMt36S3Xxzm-fLiab_CG9nS2kyjE9_f2o7u_=
+t9Mdd0vl68npF7349vz3dwJT2P7eXs2fHm83WPdIXYtPN-7WdTPG5sk1zXdbN8-Qqi9VW9gtGKM=
+4T9Mn6OcrxvytN1ZAsS5U6OKZVRf8GAAD__wMLKT8" target=3D"_blank" style=3D"margi=
+n-top: 10px; background-image: none !important; vertical-align: middle; dis=
+play: inline-flex; align-items: center; position: relative; z-index: 9999; =
+gap: 10px; font-family: Inter, sans-Serif; font-style: normal; font-weight:=
+ 400; font-size: 16px; line-height: 100%; text-align: center; text-decorati=
+on: none; color: #E3FF72; padding: 12px 18px; border: none;">
+                Learn more
+              </a>
+            </td>
+          </tr>
+          <!-- section 2 -->
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <img class=3D"icon" width=3D"80" height=3D"80" src=3D"https:/=
+/assets.codesandbox.io/icons/users.png" style=3D"height: auto; line-height:=
+ 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubi=
+c; margin-top: 100px; border: 0;">
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <h1 class=3D"title" style=3D"font-family: Inter, sans-Serif; =
+font-style: normal; font-weight: 500; font-size: 48px; line-height: 100%; t=
+ext-align: center; letter-spacing: -0.05em; color: white; margin: 0 auto; p=
+adding: 0;" align=3D"center">
+                Grow <br> your team.
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <p class=3D"body" style=3D'max-width: 460px; display: block; =
+font-family: Inter, sans-Serif; font-style: normal; font-weight: 400; font-=
+size: 16px; line-height: 140%; text-align: center; letter-spacing: -0.0125e=
+m; font-feature-settings: "liga"off, "calt"off, "kern"off; color: #7f7f80; =
+margin: 10px auto; padding: 0 40px;' align=3D"center">
+                Bring your team to your CodeSandbox workspace in minutes! Y=
+ou can add up to 5 team members in your Free workspace (20 in Pro) and imme=
+diately start collaborating with them.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <img width=3D"100%" height=3D"auto" style=3D"margin-top: 20px=
+; height: auto; line-height: 100%; outline: none; text-decoration: none; -m=
+s-interpolation-mode: bicubic; border: 0;" src=3D"https://assets.codesandbo=
+x.io/images/add-team-members.jpg">
+            </td>
+          </tr>
+          <!-- section 3 -->
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <img class=3D"icon" width=3D"90" height=3D"90" src=3D"https:/=
+/assets.codesandbox.io/emails/2022/09/chat.png" style=3D"height: auto; line=
+-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode=
+: bicubic; margin-top: 100px; border: 0;">
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <h1 class=3D"title" style=3D"max-width: 350px; font-family: I=
+nter, sans-Serif; font-style: normal; font-weight: 500; font-size: 48px; li=
+ne-height: 100%; text-align: center; letter-spacing: -0.05em; color: white;=
+ margin: 10px auto 0; padding: 0;" align=3D"center">
+               Feedback is one click away.
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <p class=3D"body" style=3D'max-width: 410px; display: block; =
+font-family: Inter, sans-Serif; font-style: normal; font-weight: 400; font-=
+size: 16px; line-height: 140%; text-align: center; letter-spacing: -0.0125e=
+m; font-feature-settings: "liga"off, "calt"off, "kern"off; color: #7f7f80; =
+margin: 10px auto; padding: 0 40px;' align=3D"center">
+              Next time you need feedback, simply share the link to your br=
+anch. This makes it easy for anyone, including designers, managers and mark=
+eters, to preview your code and commit simple changes.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <img width=3D"100%" height=3D"auto" style=3D"margin-top: 20px=
+; height: auto; line-height: 100%; outline: none; text-decoration: none; -m=
+s-interpolation-mode: bicubic; border: 0;" src=3D"https://assets.codesandbo=
+x.io/gifs/branch-collaboration-new.gif">
+            </td>
+          </tr>
+          <tr style=3D"z-index: 9999; position: relative;">
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+              <a style=3D"margin-top: 40px; text-decoration: none; gap: 10p=
+x; vertical-align: middle; display: inline-flex; align-items: center; backg=
+round-color: #E3FF73; box-sizing: border-box; border-radius: 4px; font-fami=
+ly: Inter, sans-Serif; font-style: normal; font-weight: 500; font-size: 14p=
+x; line-height: 100%; position: relative; z-index: 9999; text-align: center=
+; letter-spacing: -0.0125em; color: #090909; transition: background 300ms, =
+color 300ms; padding: 12px 18px;" href=3D"http://email.email.codesandbox.io=
+/c/eJyUUslS4zAU_Br5QkFps40PPgAmUAx7psgMl5SW50SDLAVZdmK-fsps4xznpnrd_V6rq5Vo=
+NsKsHEpPv55Lo1FalYTkBWV5MmFAI4xdtp38AyqOnHu_hVB39kB5DQfKWyukDyIa76a6TfCjYul=
+EA6PszGuYC6el301pAZTZGHBxqX0jjBupq_HkkfLNlPj_DiI0GysifFvYA4fN--wU1qI3vgvCTu=
+FeBPO-8MO6i8HbRJcSE5wmUJKckwzTPCuSdQmKYQbAaaZkDgXRGLTKMkpprnJOWGJKimmKGcEEM=
+8qLo0LTNE0VSeUxL3KSIY7h888a2o-QjoxPbLmOcdMidoLoDNHZPozoTFq_QnQGPYTBOzhUwh0q=
+3zQmIjbrYrNsfRcUIFY52LYWYoSAaDYiDWjTNYhV75c_h98JsMo76UXQxq0O9xL-YnoXwUXEKvW=
+Rzuc8QhiXLnx4qa3fIpr1EPxYL1ZlQuUC10qTDFItsAQJxxQEzSUhwDgmkuWaw5dIedcjVt0O8Q=
+zw1Z3Gu4fnreh3Jy9FvHEX8vwtvXk8n-_4fXw9XQvJMT35_SDv7szix21UfDt_uaS3v55eH69hQ=
+dufw8Xyyab1brAP9JmYeP12ZeYLfCZNXV8VVf00v0xCOYh2zQjFPEIbjVshjv8VMpajsySWctKb=
+vqR_AwAA___SaiHC" target=3D"_blank" class=3D"button">
+               Read our blog post
+              </a>
+            </td>
+          </tr>
+        </tbody>
+        <!-- footer -->
+        <tfoot class=3D"footer" style=3D"position: relative; z-index: 9999;=
+ font-family: Inter, sans-Serif; font-style: normal; font-weight: normal; f=
+ont-size: 10px; line-height: 150%; letter-spacing: -0.0125em; color: #7f7f8=
+0; margin: 60px 0px; padding: 80px 0;">
+          <tr>
+            <td style=3D"padding-top: 100px; border-collapse: collapse; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt;">Copyright =C2=A9 2025 CodeSandb=
+ox BV.</td>
+          </tr>
+          <tr>
+            <td style=3D"border-collapse: collapse; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;">
+                <a style=3D"color: #7f7f80; text-decoration: none;" href=3D=
+"http://email.email.codesandbox.io/c/eJyUU01z6jgQ_DXi8uql9Gnjgw8Eh7zlMwnZsJ=
+sLpY8xiNiWIwti8-u3TJJd9vguKlere6anPdKyrKXdVUjcfn9urUEiSwmJE8riwRUDSmmLbXNUB=
+9Ch5zy4D_D5sfihnYEf2hWFVM7LYF11rau96xXbSpbQy8bOwFpWRrn2muZB29pCFbbGldJWPXXX=
+t7zRrrwm_r6DAGVdyAD_WvjfZVdfsFvYy5N1Ry-L6-uT9PZS8NN6FbwrBiZVmGAxgJTEnESYxlE=
+y2KdcKK6jWGOutJaC0jwBlcgkVipiwMTAphRTgRnBBDPKk5vEUCGEJkINeRKTCHEMXzMbaD5Dur=
+FuUKT7EOoGsRGiE0Qnsq5vdhBO4F0fD6KTY9UcVaO9VYDopPaQg4dKQ4PoBKbtgctD2aymD-dmG=
+NaLzh8WyaLbPEenxWzmuzF5z3bbbHhY4s3rQx6XUevcefU8LMjLcnoaW7Ka_8SzrCSbTLdzvGHT=
+-WpXLujs_Pzn3egezP0fb4iKeKyTWAk5BK41x5rFBnIio6EgOTdiiDlik2Mot407eg2IZf0IiEY=
+9VoKxxxKx7BLBF6hdFaAKiGX6M_xv_PsXsezuky4oFpfz5-UcfRED-L7mxvm3vHAfiEZ9y37NWR=
+ZJHUuca0MiEEZiBQqGFCSNFSHAOCaKxYbDt0i76oRYtuzCGPB0ZXD7-PohT-3oLQmL6l7dncXi6=
+W7d8ofwfruXimM6-vtRrVZ2M1sGzT_Wb7_o8q-X96c5bGjz3N1vXwqRt13xSF-JDfPz1K43eKxs=
+nk-TLH9Z_xr4tJPNnhGKeYAm2GqHOP7vYYS0dzYIqbra31NK_wkAAP__Db9IdQ">
+                    Unsubscribe</a>
+              =C2=A0|=C2=A0
+              <a style=3D"color: #7f7f80; text-decoration: none;" href=3D"h=
+ttp://email.email.codesandbox.io/c/eJyUkcty2jAUhp_G3mSGkY4ljBZaAAnJ0ARC6ECb=
+DaPLMaiRLceIW56-Y9KLu-xOo_P90qdfRpW1ctsq4aPfy42zCb-VlOYCsjztEFgq5zf7g_6BJrb=
+MczhhUxz8jQkWb0zwXunQqOhC1c3VTWgTm0qV2MbGweJSVVaHcxdr0LjaYRU3NpTKVS26ba_smV=
+B2wf83iFjWXkX8o_DP8FJf90a4U0cXDo3y3fFRNe564Kd6FZvgUys1oYSnKGnOaJ9A3hfpToqCG=
+jOgaCkxlGg0mbBKFIMByQH6BFIngQAnGSWUZMBET1jgnBvK9YCJnPYTRvDXmy3uP0vquZB6uYux=
+TrJhApMEJqque1uMR2xC204Ck2sqgQnLgNMEJrNLHCOZzi05L15P6ngevon4VN3ruw_-9HK3PLP=
+n-D7aKc0IDL8v9Hzu1l9m0bDT8u0BZt9W7y-PuIb918v9ZuV5cb74BbxSFx8_pm65JmPtimIqbo=
+vV8iFt5EXtdxkFwiLuo6u2CSN__y7KVjSNUncqPkr4GQAA__9MxtVf">View in web browser=
+</a>
+            </td>
+          </tr>
+          <tr>
+            <td style=3D"padding-bottom: 50px; border-collapse: collapse; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;">
+              <table align=3D"center" style=3D"border-collapse: collapse; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <tr>
+                  <td style=3D"border-collapse: collapse; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt;">
+                    <a href=3D"http://email.email.codesandbox.io/c/eJyUkklv=
+2z4QxT8NdQn-AVfJOujgRHGC_LO7iNtcDC6jmI0kOtR4y6cv5KVVj70QxOPvcd4Mxupmqf17S9T=
+F6Tr3jqiyYCzLuciSAQGN9vW8W5mfYLFnnsIGYrWqz2xwcGZDXWsTokYf2qFvGUPvmLe6gd52GR=
+xMdetM2A6xCNYvPbQ4d6HRvu3R977kuQ3NEPz3BAjNstYIvyP89bhb7rULWOi1D6uo6-HzWke__=
+_AQvcUY6sQVhjKqEihYJllKeZbmyaIYCSXEyDI24tpQzuVIApWcUkaNypVMfMEpV1QwyqjgMj_P=
+HVdKWabMSOYZS4mkcOzZQXcY0rkPSV0sEJcdEWPCJ4RPcOMRIfajIXwygImYrLCZd2EVLRBRriE=
+GwtNea8D5VUNEua9wFG1oEVokorSH3k76aQKivDrgilO1P__bn-MjiBD7P2chflR12BCe9iX7LR=
+Jlqm2maWUdS0E5TQ0YGHHQPDOMgZCUGZE5CSeTDe2aiPJhh5dAbx8d3T6_bfR6O_7I8b69Nldf6=
+v7larqVT_h5sdBGUj7-8WweH_3s_we0cjP9uOEP318_X-5gxrtvu-v5a62q7a5-5m_M493XrZ_O=
+6KXxVXWbl9Xr9CaJxU53C8E4lQgd-vadSPpn77DokyVYmMF6rAv-KwAA__9r8hMj">
+                      <img class=3D"social" width=3D"24" height=3D"24" styl=
+e=3D"mix-blend-mode: difference; height: auto; line-height: 100%; outline: =
+none; text-decoration: none; -ms-interpolation-mode: bicubic; margin: 20px =
+5px; border: 0;" src=3D"https://assets.codesandbox.io/emails/social/twitter=
+=2Epng">
+                    </a>
+                  </td>
+                  <td style=3D"border-collapse: collapse; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt;">
+                    <a href=3D"http://email.email.codesandbox.io/c/eJyUkstS=
+4zwQhZ9G3lBQUkuy8cKLgAkUP_f8RWbYpHRpJxpsK9hyLjz9lB0yY5azUdmt76hPn2qjqrVyy5r=
+Ii-Pnwlki84yxJAWeRCMCK-XKRdvpX2hCzzz5LTZFV54Yb_HE-LJU2jcqOF-PdevG94pFrSrsZZ=
+fe4kzVVvvdGGvQuLXDOiysr5Sre3TZtzwzvhqD_-4gYLUuVcA_Fr5d7tdD7QJXauN816hyfL1Rj=
+RsePFivQ-PLyGaaMiojzFgiWEwhidNolaUJpIkGy4RMVQFMMEiUKRhLlDjnKo5cBhQk5YwyykGk=
+Z6kFKaVhUp-LNGExERS_ZrbYHkI6cz4qs1UI65bwCYEpgenShVWn-2QITEfs979TU_aBEj7tQrV=
+ofdcYJDzfYOMJxH2tQuu6ivB86PpVNL4Ogyw3h3mP9WMqPL864BKoHM7T4Zx8gQGb_s25b96L0m=
+8JxH3LfrN4HiuTKFoYy2KUVlGNGs8BFSSaMeSCMs0TK_AoMr7eEJ4_7MMl0ttHS3fPb1u12U3e0=
+3BfX-urT3n_cjXbiafwcbFSWlCY_HzWj49u_t9DMGI7e7-Bhx-vHy93OIf2__314rWUxW5fPsMb=
+c-Hu89bN5vRSu6K4TfPidXYTNdletSvOgIqAbXD1kgj6dxdD1juLQqZHK7PJ4HcAAAD__50LGzw=
+">
+                      <img class=3D"social" width=3D"24" height=3D"24" styl=
+e=3D"mix-blend-mode: difference; height: auto; line-height: 100%; outline: =
+none; text-decoration: none; -ms-interpolation-mode: bicubic; margin: 20px =
+5px; border: 0;" src=3D"https://assets.codesandbox.io/emails/social/github.=
+png">
+                    </a>
+                  </td>
+                  <td style=3D"border-collapse: collapse; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt;">
+                    <a href=3D"http://email.email.codesandbox.io/c/eJyUkklv=
+2zAQhX8NdQkacJWigw5OlAVpdhdxm4vBZRSzkUiHoiwrv76QHbfKsReCePM9zuNgtGzW0r46JE4=
+P16U1SJQFIVlOWZZMCGikrZdtp36DjiPz4HsIVVcfaW_gSPu6lsoHGa13U986-NGxdLKB0XbmDc=
+ylM8pvp1gAbdcWXFwa30jrRvR1bHmsfTMF_z9BhGZdywh_I3wpDuuddgorubG-C7Keljcy2N2D-=
+-guBl8nplCYYJFAQTJOUkyzNE9WhTQGU8PACGAVCK5wRQyr0hPGsMgwTmxBMRWYEUwwozw_zg0V=
+Qmgi1AnPM5IijuHzzwba_ZCOrU_qYhXjukVshugFohd9339BtG-aztk4jGV20cVm2fouaECs3ED=
+wiKaj1oCxXYNYuWvyKWrvIriIWKn33zvohyGw8nyPC4rF7vy2O2efYIQwvrnw4a2qfY9oOrYcF4=
+mVqdSZxJU2JAVhJFag4ISCpJkiBBjHRLHMcDiYtHcbxMq7IZ4Bvr43ePv40svNdvaWx1t3qc4_x=
+O3T-XzLH-L76Uoqjuns16O6v7eL73dR837-dkXvfj6_P93AgrY_hsvlcy2q7VA_0hdi483HtZ0v=
+8JmyVXWdl9Xz_CoJxSDbFSMU8whttO4Vcfxv9WIxJktioSYbsinonwAAAP__zQ4V0g">
+                      <img class=3D"social" width=3D"24" height=3D"24" styl=
+e=3D"mix-blend-mode: difference; height: auto; line-height: 100%; outline: =
+none; text-decoration: none; -ms-interpolation-mode: bicubic; margin: 20px =
+5px; border: 0;" src=3D"https://assets.codesandbox.io/icons/community-gray.=
+png"></a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  <img width=3D"1" height=3D"1" alt=3D"" src=3D"http://email.email.codesand=
+box.io/o/eJyUkE1uwyAUhE9jbyJFD2zisGCT9gCVegDrAc8JFeZZmLjN7Ssn_XGX3SHmG5gZh-=
+OE4Zwqdfo-9sFX6tkI0WnZdPWGoBFD7OerfSNXVuaF3ykP17hz7GnnOEa0nLEETlvflHl19AlHW=
+m1P7OkVk7f8scUyuTAFSqX3PGJIK3pev9w7Hrfg_xMUGqeIhX4i_BFv0_3uRBdcAl8zxq28YA73=
+Bx_RU8kca28sCFA1GdG14gCyO-j6YiSSbsgdQWPnpfYASmp3HKQVWrlhqIORIBU0AgQ0stV77aV=
+Sygllj63uxKFqgb46e5ofI-0D19nccL40QkJbaC4hnasWftcpZqHMdTF2U2Ix8jMAAP__mDOhxg=
+"></body>
+</html>
+
+--6e430fba6bee328c665ca526b358bba05ab64598eadf4eb1308b9c752f7f--

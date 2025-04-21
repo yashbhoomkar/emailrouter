@@ -1,0 +1,146 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a2e:b17c:0:b0:302:48c2:8a05 with SMTP id a28csp266184ljm;
+        Tue, 4 Feb 2025 09:26:35 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFIpEEo6PvRPeVkBEOpwc+QieFF3OGVja6iuL8o0+8BcWbPp1S0GoxnRluJB0AwETDSXFq+
+X-Received: by 2002:a05:620a:40d2:b0:7b6:d273:9b44 with SMTP id af79cd13be357-7bffcce5810mr4056231885a.18.1738689995102;
+        Tue, 04 Feb 2025 09:26:35 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1738689995; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ZfXYHrrY6FTYyy8xXIgcBCtU81qq1svcjZRC4huZK85VIcu8W6G30kMsRZP0etjNSK
+         Y6E8DYQwQzosWJrhQ6NrAyGgoZGyPVx+iRoap6+Mi/ab4vDmWHsjc/howqL4+Zl6erhE
+         DHbE8sN0LkyQECmdsNHV2iaSNESeABRrwatepQp6neltP0yMGoOZ096j+EKCLQwajlwY
+         4aCSKJZ9goG+3pUzs1+CsSr29DaAwHP5w6AWqw7s9R5N9HrcrNImD/Ht1ySulPWnDmjV
+         q04YFqWkH1hPgsYypCIgxGmrP4PPkaqgsDoGLkfyV3sof6e9JUN883KImv2HOo+0OeDB
+         3RFw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe-post:feedback-id:reply-to:list-unsubscribe
+         :content-transfer-encoding:mime-version:message-id:subject:from:to
+         :date:dkim-signature:dkim-signature;
+        bh=KKvZxh8QI1M3nvuVKbHfMq30gE1gKeVIDCuW1IKAhBQ=;
+        fh=jr4okOh7E2d0WZMVHxGqnO/W04OT7AUZTNAnXvFBUe8=;
+        b=S0117V3N2FrSI88+O0sx2YGF8IjBqQBMV1wSXXoJ5lmqGquj8aJt6nDsOGvV3nCQYG
+         nxuLSvkZjxwakM11smEc3oVbEgjZQPV+KWxnYasmao5TVBlKQzjoJXzBjrIr4h3vzQdw
+         YFu7JKUbcLgRNnsDfw4lBBJbMvN4VqwNYmPX+m3cA0Xy5V6Sq7h/YgI0LTRmtIdOVCBV
+         5dAnMUWzWya8/kde6LFgr38YnM385dZ2dnCxEb1ymEFBSPbk1RirBvzqFW+AnsZhNBK4
+         1KgL4q/Fopmz7e+gVyF0o1KA28Fc2xfHpunLMZWtjMXWlMvky09ngjHaMs5GKPe85l6E
+         dCiw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg.sg.graphy.com header.s=nc2048 header.b=H34Kdyad;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=aUvTgjz6;
+       spf=pass (google.com: domain of 17386083852350825-182003-1-gmail.com@delivery.mg.sg.graphy.com designates 175.158.66.157 as permitted sender) smtp.mailfrom=17386083852350825-182003-1-gmail.com@delivery.mg.sg.graphy.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=graphy.com
+Return-Path: <17386083852350825-182003-1-gmail.com@delivery.mg.sg.graphy.com>
+Received: from mta6-66.157.ptransmail.com (mta6-66.157.ptransmail.com. [175.158.66.157])
+        by mx.google.com with ESMTPS id af79cd13be357-7c0365cd77fsi93135985a.301.2025.02.04.09.26.34
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 04 Feb 2025 09:26:35 -0800 (PST)
+Received-SPF: pass (google.com: domain of 17386083852350825-182003-1-gmail.com@delivery.mg.sg.graphy.com designates 175.158.66.157 as permitted sender) client-ip=175.158.66.157;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg.sg.graphy.com header.s=nc2048 header.b=H34Kdyad;
+       dkim=pass header.i=@env.etransmail.com header.s=fnc header.b=aUvTgjz6;
+       spf=pass (google.com: domain of 17386083852350825-182003-1-gmail.com@delivery.mg.sg.graphy.com designates 175.158.66.157 as permitted sender) smtp.mailfrom=17386083852350825-182003-1-gmail.com@delivery.mg.sg.graphy.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=graphy.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=mg.sg.graphy.com; s=nc2048;
+	h=list-unsubscribe-post:feedback-id:reply-to:list-unsubscribe:
+	 content-transfer-encoding:content-type:mime-version:message-id:subject:from:to:
+	 from:to:subject;
+	bh=KKvZxh8QI1M3nvuVKbHfMq30gE1gKeVIDCuW1IKAhBQ=;
+	b=H34Kdyadc5uqIoefCBUWj0ImmtcGFuyBreKY4UXD0XpACZaJgX5fzWhwErZ0HGrY8PkxuWlP9cMdM
+	 uQw+OSYbYAZyQnYc0LLjlPAcPiyxutiRi6Xz9Na2z/xef6dzp+Xq8M2++ATJpUHUq4XTz3i+FfNfji
+	 15MFThxXHJi44hDA01x0URWmbi6NFNAcYXqXgNoXrYyu4Gi0f99qjO9l9VTnBWPZtiU5ZEK8bIAjLR
+	 jJG1wpiUZHWfBaOjTC5p0btD8Tj+E0HNBTkFhFocds334ImpUgi5CaMJ1zn49c/0oCApl1halDjGg5
+	 jzn/S49ZxYGKhjhXZ9G75lAh32CWlUw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=env.etransmail.com; s=fnc;
+	h=list-unsubscribe-post:feedback-id:reply-to:list-unsubscribe:
+	 content-transfer-encoding:content-type:mime-version:message-id:subject:from:to:
+	 from:to:subject;
+	bh=KKvZxh8QI1M3nvuVKbHfMq30gE1gKeVIDCuW1IKAhBQ=;
+	b=aUvTgjz64oIdFj2lAiOKJU3ZDEUfftiXZYuHESoyhYrACiASoukh8AVjYU/FSI2FOEddtrHmQfyw8
+	 chOR8x1G77EFNnAj82rfPKOQGB3cdtaE1YlZJa2Xay+7/ZNd5nbX3fnNCDklJ24wjcoyEp+8i8eYgh
+	 XTOjCfK26Ri+O7OA=
+Date: Tue, 04 Feb 2025 22:56:34 +0530
+To: <yash31204testing@gmail.com>
+From: =?UTF-8?B?Q29kZUhlbHA=?= <notifications@mg.sg.graphy.com>
+Subject: =?UTF-8?B?8J+knSBZb3UgYXJlIG5vdyBlbnJvbGxlZCBpbiAtIE9wZXJhdGluZyBTeXN0ZW0gTW9jayBUZXN0?=
+Message-Id: <voogdq17386083852350825@mg.sg.graphy.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="_----------=_1738689993304471678"
+Content-Transfer-Encoding: binary
+List-Unsubscribe: <https://unsub-api.netcorecloud.net/YHNMJN?id=182003=NEkACFoDCQYGHxMTGBQQRRIYE0YXEUJFRkMSRBcVEhVBFRAZQhEZFhVDExMYFBBFEghPH1ZCClZXUQJQQ1BBQQhbV3kFXFhfWU1QXFVIAVIBAAVWDwJaUFRQB1QPBwdJCUFESRELFhlADUBGWhlRFVsWXQNDUg0XAwBeC0JRHFsEQR9gKn90fHtcWldEQgM=>, <mailto:17386083852350825-182003-fncunsub@usub.ftrans03.com?subject=Unsubscribe>
+Reply-To: codehelprazorpay@gmail.com
+Feedback-Id: 182003:202502:1:falconide
+X-Dkim-Options: 
+X-Fncid: 182003-17386083852350825-0
+X-Injtime: 1738689993
+X-Traffic-Type: 182003-2
+X-Mailer: NetcoreCloud Mailer
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+
+This is a multi-part message in MIME format.
+
+--_----------=_1738689993304471678
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+
+
+
+
+
+
+
+=09
+=09=09
+			Hi,
+=09=09=09
+			You are now enrolled in the course - Operating System Mock Test
+=09=09=09
+			If you have any doubts, don't hesitate we are there. Write to us on - co=
+dehelprazorpay@gmail.com
+=09=09=09
+			Keep Learning,
+			CodeHelp
+=09=09
+=09
+
+=
+
+--_----------=_1738689993304471678
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width" />
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" />
+</head>
+<body style=3D"width: 100%!important;height: 100%;margin:0;">
+	<div style=3D"padding: 20px;height: 100%;background:#e5e5e5;">
+		<div style=3D"padding:30px;display: block!important;max-width: 600px!impo=
+rtant;margin: 0 auto!important;clear: both!important;background:#fff;border=
+-radius: 10px;border: 1px solid #aaa;">
+			<p>Hi,</p>
+			<br>
+			<p>You are now enrolled in the course - Operating System Mock Test</p>
+			<br>
+			<p>If you have any doubts, don't hesitate we are there.<br>Write to us o=
+n - codehelprazorpay@gmail.com</p>
+			<br>
+			<p>Keep Learning,<br>
+			CodeHelp</p>
+		</div>
+	</div>
+</body>
+</html>=
+=
+
+--_----------=_1738689993304471678--
+

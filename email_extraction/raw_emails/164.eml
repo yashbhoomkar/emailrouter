@@ -1,0 +1,417 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7011:812:b0:43a:a54e:2943 with SMTP id gx18csp7442302mdb;
+        Tue, 8 Apr 2025 10:24:12 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEjrN/7FrB7L4YgJjyttE/305lbmtKgRZJ2vN28a6haEvKFfPSi5zZZ2EBU11ufNIKfxTrn
+X-Received: by 2002:a05:6a21:9182:b0:1f5:67e2:7790 with SMTP id adf61e73a8af0-20107efecdcmr24917629637.17.1744133052349;
+        Tue, 08 Apr 2025 10:24:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744133052; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ZJtwPmeezPjhv0ZWcmIzxmCj8pW5gxgzKtVIH2fXVWuIf7csgaxsea5+DjE0lS0xpf
+         p7nqYiecGJqQper5M15RhIDZQAVqiKL3By1+1762sDEe/fefx5MbkN4rkkFRZgtnn+lg
+         0/B5emEbinHrTbMj33p1OAzNNq0qmUjeEUVfzTGIkJazmD4/E37uOuxW2GenwesE0axA
+         I0JUNZ78gUQwjcws5NXcAdRgN9IYQ7cQ2F1COWutDAtVoDe2KSEUahP7FGk5ONNQq7ol
+         wntPGkELLeAn6Uvgv0VZh60m2jXMzTcexAvlTxQrdjpZwyFPDSy4lZRAIJ61qDtvXHJs
+         uB+g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:function:content-transfer-encoding:mime-version:subject
+         :message-id:to:from:date:dkim-signature:dkim-signature;
+        bh=9mnUCQneOAOaMpbu0zn0k52P2BHJ6KYep9vAVzoh+bs=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=PM1CiyE8HTYA7a6kyBj5j3q5EFSy/SWug2EYU4mLKxRWR7enRxrVbyAbDIgget6skq
+         U5j/oVmvlWP/awxKIohdZUvLBlNLzhrpheyGRT1Ljqpaztcg9d1W+bxrHO7ojnmU7MC2
+         x0HhV84Ys2oQsXggQcrV6tAwv5ZvK5OUjMUIGnksJjXeLpQMJjDYJFiO82ECtABR9Q/S
+         3kHpne0WZZxYsj89uWN8My7k7z0ey3Bg9NkkO/+Jb1nJb36DvG7E+o5qeN4pbUD6DudX
+         Ze9IYNkt40ZlLPOCVE+AXuHyUCFtEJFgSmzS9jpOWBUsIYrHqo+fR8zhqsiE8okXUuFf
+         Y6KA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@interviewbit.com header.s=5cyviditqa26afaqgrx7nwipgglubcws header.b=JQMiwRGP;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=cb4kymC7;
+       spf=pass (google.com: domain of 01010196166e55e8-871a62f4-aae8-4bdb-bfe2-b1268bf1575b-000000@us-west-2.amazonses.com designates 54.240.27.32 as permitted sender) smtp.mailfrom=01010196166e55e8-871a62f4-aae8-4bdb-bfe2-b1268bf1575b-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=interviewbit.com
+Return-Path: <01010196166e55e8-871a62f4-aae8-4bdb-bfe2-b1268bf1575b-000000@us-west-2.amazonses.com>
+Received: from a27-32.smtp-out.us-west-2.amazonses.com (a27-32.smtp-out.us-west-2.amazonses.com. [54.240.27.32])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-af9bc2cae40si13987659a12.24.2025.04.08.10.24.12
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 08 Apr 2025 10:24:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01010196166e55e8-871a62f4-aae8-4bdb-bfe2-b1268bf1575b-000000@us-west-2.amazonses.com designates 54.240.27.32 as permitted sender) client-ip=54.240.27.32;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@interviewbit.com header.s=5cyviditqa26afaqgrx7nwipgglubcws header.b=JQMiwRGP;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=cb4kymC7;
+       spf=pass (google.com: domain of 01010196166e55e8-871a62f4-aae8-4bdb-bfe2-b1268bf1575b-000000@us-west-2.amazonses.com designates 54.240.27.32 as permitted sender) smtp.mailfrom=01010196166e55e8-871a62f4-aae8-4bdb-bfe2-b1268bf1575b-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=interviewbit.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=5cyviditqa26afaqgrx7nwipgglubcws; d=interviewbit.com;
+	t=1744133052;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding;
+	bh=U+JzQIm5dAMo9Xvxy8kpfbVplwubSL/penltxOv/eKg=;
+	b=JQMiwRGP+fN+8SmlxTJfb0vvd2iku48j45hsSw1A/B2IsPdAAey6YtMOFUOaD3zX
+	MeTvIwcDVrVJetGU5dQI8Z3zPEZiLy0ZXC9fV32A797PFcoAa32gwxBBkkWlbVK2C6V
+	HS8l1Q7hcA02nJDErdeYCN4wmhmL5ENR1eJZKl8E=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1744133052;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=U+JzQIm5dAMo9Xvxy8kpfbVplwubSL/penltxOv/eKg=;
+	b=cb4kymC7YAGTmGlAjF9UIQLmVekgrCku3e4kpDfbo8T/UzqXNswgbOmmGSE3jVS+
+	vvDQ8Red9rfgkc1WRr365Xbm32P9YSpu5qMXzN81hQCqmG625NqnPg/TBDzZcX7sMPJ
+	RiCU31gUNKjRqhUqnJoFldTn2x+dAF7uVKHKTbhw=
+Date: Tue, 8 Apr 2025 17:24:11 +0000
+From: InterviewBit <info@interviewbit.com>
+To: yash31204testing@gmail.com
+Message-ID: <01010196166e55e8-871a62f4-aae8-4bdb-bfe2-b1268bf1575b-000000@us-west-2.amazonses.com>
+Subject: FREE Mock Coding Interview for you
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_67f55bbbb46e8_1ebc3feb6b2353d4118453"
+Content-Transfer-Encoding: 7bit
+function: ib_signup
+Feedback-ID: ::1.us-west-2.4IL1RMe5cbhTVyuZ1E+SrtEWnVH+uXsPDFDsKRbi/so=:AmazonSES
+X-SES-Outgoing: 2025.04.08-54.240.27.32
+
+
+----==_mimepart_67f55bbbb46e8_1ebc3feb6b2353d4118453
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+InterviewBit =
+
+( https://www.interviewbit.com/ahoy/messages/TdyxY3x9XmKHHyGCrhsROwVYW0Eh=
+K56p/click?signature=3Dde55565e03cec316c7c342e697e14029e82a143a&url=3Dhtt=
+ps%3A%2F%2Fwww.interviewbit.com%2Fpractice )
+
+
+Hello Yash
+
+As you embark upon this journey of self-improvement and
+learning, join over 10,000+ Indian
+developers in taking FREE Mock Coding Interview powered by
+Scaler for Software
+Professionals like yourself.
+
+Stay one step ahead of your peers with our Holistic Performance
+Report, Structured Learning
+Path along with Learning Resources & Practice Problems!
+
+Why should you take the assessment?
+
+* Question-wise Performance Report
+* Identify exact Topics to Improve
+* Get a Structured Learning Path
+* Free learning resources for DSA & System Design
+* Real-life Interview questions (from FAANG companies and BigTech
+Startups!)
+* A complementary career counselling session after the test.
+
+Begin Mock Coding Interview =
+
+( https://www.interviewbit.com/ahoy/messages/TdyxY3x9XmKHHyGCrhsROwVYW0Eh=
+K56p/click?signature=3D96002cc2f3dadb1a7f235722cf973e06f0d3be25&url=3Dhtt=
+ps%3A%2F%2Fwww.interviewbit.com%2Fevent%2Ffree-mock-coding-interview%2F%3=
+Futm_source%3Dib%26utm_medium%3Demail%26utm_campaign%3DMoCo%26utm_content=
+%3Dfree_mock_email )
+
+
+What are you waiting for? Take this FREE Mock Coding Interview
+and beat your competition!
+
+Kickstart your learning journey NOW!
+
+Follow Us =
+
+( https://www.interviewbit.com/ahoy/messages/TdyxY3x9XmKHHyGCrhsROwVYW0Eh=
+K56p/click?signature=3Dcfacd79c323a130d1fc218ba2fb3f82071619a6f&url=3Dhtt=
+ps%3A%2F%2Ftwitter.com%2Finterview_bit )
+
+
+Like Us =
+
+( https://www.interviewbit.com/ahoy/messages/TdyxY3x9XmKHHyGCrhsROwVYW0Eh=
+K56p/click?signature=3Dac3eaeea7465311737b5a07b29243f013266a5e0&url=3Dhtt=
+ps%3A%2F%2Ffacebook.com%2Finterviewbit )
+
+
+=C2=A9 2025 InterviewBit=
+
+----==_mimepart_67f55bbbb46e8_1ebc3feb6b2353d4118453
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.o=
+rg/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns=3D"http://www.w3.org/1=
+999/xhtml">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+" />
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0" />
+  <title>InterviewBit</title>
+  =
+
+<style>body {
+width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adj=
+ust: 100%; margin: 0; padding: 0;
+}
+img {
+outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;
+}
+h1 a:active {
+color: red !important;
+}
+h2 a:active {
+color: red !important;
+}
+h3 a:active {
+color: red !important;
+}
+h4 a:active {
+color: red !important;
+}
+h5 a:active {
+color: red !important;
+}
+h6 a:active {
+color: red !important;
+}
+h1 a:visited {
+color: purple !important;
+}
+h2 a:visited {
+color: purple !important;
+}
+h3 a:visited {
+color: purple !important;
+}
+h4 a:visited {
+color: purple !important;
+}
+h5 a:visited {
+color: purple !important;
+}
+h6 a:visited {
+color: purple !important;
+}
+a:visited {
+color: blue;
+}
+a:hover {
+color: green;
+}
+</style></head>
+<body style=3D"width: 100% !important; -webkit-text-size-adjust: 100%; -m=
+s-text-size-adjust: 100%; margin: 0; padding: 0;">
+<div class=3D"background-div" style=3D"width: 100% !important; min-height=
+: 100%; line-height: 100% !important; background-color: #f6f6f6; font-fam=
+ily: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-si=
+ze: 14px; margin: 0; padding: 0;">
+<table class=3D"background-table" style=3D"border-collapse: collapse; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; line-height: 100%=
+ !important; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial=
+, sans-serif; font-size: 14px; margin: 0; padding: 0; border-width: 0;" b=
+gcolor=3D"#f8f8f8" cellpadding=3D"0" cellspacing=3D"0">
+  <tbody>
+  <tr style=3D"font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Ari=
+al, sans-serif; font-size: 14px; margin: 0; padding: 0;">
+    <td style=3D"border-collapse: collapse; font-family: 'Helvetica Neue'=
+, 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; margin: 0; =
+padding: 0;" valign=3D"top"></td>
+    <td class=3D"content-td" style=3D"border-collapse: collapse; font-fam=
+ily: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-si=
+ze: 14px; display: block !important; max-width: 600px !important; clear: =
+both !important; width: 100% !important; margin: 0 auto; padding: 0;" val=
+ign=3D"top">
+      <div class=3D"container-div" style=3D"font-family: 'Helvetica Neue'=
+, 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; display: bl=
+ock; max-width: 600px; margin: 0 auto; padding: 10px;">
+      <table class=3D"container-table" style=3D"border-collapse: separate=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-family: 'Helvetica N=
+eue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; width: =
+100%; border-radius: 5px; color: #4a4a4a; line-height: 20px; border-spaci=
+ng: 0; max-width: 600px; text-align: center; margin: 0; padding: 0 0 10px=
+; border: 1px solid #e9e9e9;" bgcolor=3D"#fff" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0">
+        <tbody>
+        <tr style=3D"font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; margin: 0; padding: 0;">
+          <td class=3D"header-top" style=3D"border-collapse: collapse; fo=
+nt-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; f=
+ont-size: 14px; border-radius: 5px 5px 0 0; margin: 0; padding: 5px; bord=
+er-color: #6AC6DB;" bgcolor=3D"#6AC6DB" valign=3D"top"></td>
+        </tr>
+        <tr style=3D"font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; margin: 0; padding: 0;">
+          <td class=3D"header-content" style=3D"border-collapse: collapse=
+; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-seri=
+f; font-size: 14px; color: white; width: 100%; margin: 0; padding: 0;" va=
+lign=3D"top"><a href=3D"https://www.interviewbit.com/ahoy/messages/TdyxY3=
+x9XmKHHyGCrhsROwVYW0EhK56p/click?signature=3Dde55565e03cec316c7c342e697e1=
+4029e82a143a&amp;url=3Dhttps%3A%2F%2Fwww.interviewbit.com%2Fpractice" tar=
+get=3D"_blank" class=3D"header-link" style=3D"color: #333 !important; wid=
+th: 90%; text-align: center; border-bottom-width: 1px; border-bottom-colo=
+r: #e9e9e9; border-bottom-style: solid; display: inline-block; text-decor=
+ation: none; font-weight: bolder; font-size: 24px; margin: 0 auto; paddin=
+g: 20px 0;">InterviewBit</a></td>
+        </tr>
+        <tr style=3D"font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; margin: 0; padding: 0;">
+          <td class=3D"mail-content" style=3D"border-collapse: collapse; =
+font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;=
+ font-size: 14px; margin: 0; padding: 20px 5%;" align=3D"center" valign=3D=
+"top">
+            <div style=3D"" align=3D"left">
+  <p style=3D"margin: 1em 0;"><b>Hello Yash</b></p>
+  <p style=3D"margin: 1em 0;">As you embark upon this journey of self-imp=
+rovement and learning, <b>join over 10,000+</b> Indian
+  developers in taking <b>FREE Mock Coding Interview</b> powered by Scale=
+r for Software
+  Professionals like yourself.</p>
+  <p style=3D"margin: 1em 0;">Stay one step ahead of your peers with our =
+Holistic Performance Report, Structured Learning
+  Path along with Learning Resources &amp; Practice Problems!</p>
+  <p style=3D"margin: 1em 0 0;">Why should you take the assessment?</p>  =
+
+  <ul>
+    <li>Question-wise Performance Report</li>
+    <li>Identify exact Topics to Improve</li>
+    <li>Get a Structured Learning Path</li>
+    <li>Free learning resources for DSA &amp; System Design</li>
+    <li>Real-life Interview questions (from FAANG companies and BigTech S=
+tartups!)</li>
+    <li>A complementary career counselling session after the test.</li>
+  </ul>
+  <p style=3D"margin: 1em 0;">
+    <a href=3D"https://www.interviewbit.com/ahoy/messages/TdyxY3x9XmKHHyG=
+CrhsROwVYW0EhK56p/click?signature=3D96002cc2f3dadb1a7f235722cf973e06f0d3b=
+e25&amp;url=3Dhttps%3A%2F%2Fwww.interviewbit.com%2Fevent%2Ffree-mock-codi=
+ng-interview%2F%3Futm_source%3Dib%26utm_medium%3Demail%26utm_campaign%3DM=
+oCo%26utm_content%3Dfree_mock_email" target=3D"_blank" style=3D"color: #3=
+33 !important; text-decoration: none;">
+      <span style=3D"display: inline-block; background-color: #3088f0; bo=
+rder-radius: 5px; color: white; cursor: pointer; padding: 10px 15px;">Beg=
+in Mock Coding Interview</span>
+    </a>
+  </p>
+  <p style=3D"margin: 1em 0;">What are you waiting for? Take this FREE Mo=
+ck Coding Interview and beat your competition!</p>
+  <p style=3D"margin: 1em 0;">Kickstart your learning journey NOW!</p>
+</div>
+
+          </td>
+        </tr>
+        <tr style=3D"font-family: 'Helvetica Neue', 'Helvetica', Helvetic=
+a, Arial, sans-serif; font-size: 14px; margin: 0; padding: 0;">
+          <td class=3D"footer-content" style=3D"border-collapse: collapse=
+; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-seri=
+f; font-size: 14px; border-top-width: 1px; border-top-color: #e9e9e9; bor=
+der-top-style: solid; margin: 0; padding: 0;" valign=3D"top">
+            <table style=3D"border-collapse: collapse; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; width: 100%; text-align: center; color: #8080=
+80; line-height: 18px; margin-top: 20px;">
+              <tbody>
+              <tr style=3D"font-family: 'Helvetica Neue', 'Helvetica', He=
+lvetica, Arial, sans-serif; font-size: 14px; margin: 0; padding: 0;">
+                <td class=3D"tw-footer" style=3D"border-collapse: collaps=
+e; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-ser=
+if; font-size: 14px; width: 50%; margin: 0; padding: 0 30px 0 0;" valign=3D=
+"top">
+                  <table style=3D"border-collapse: collapse; mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                    <tbody>
+                    <tr style=3D"font-family: 'Helvetica Neue', 'Helvetic=
+a', Helvetica, Arial, sans-serif; font-size: 14px; margin: 0; padding: 0;=
+">
+                      <td style=3D"border-collapse: collapse; font-family=
+: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size:=
+ 14px; margin: 0; padding: 0;" valign=3D"top">
+                        <a href=3D"https://www.interviewbit.com/ahoy/mess=
+ages/TdyxY3x9XmKHHyGCrhsROwVYW0EhK56p/click?signature=3Dcfacd79c323a130d1=
+fc218ba2fb3f82071619a6f&amp;url=3Dhttps%3A%2F%2Ftwitter.com%2Finterview_b=
+it" target=3D"_blank" class=3D"tw-footer" style=3D"color: #333; width: 10=
+0px; height: 100%; border-radius: 10px; vertical-align: middle; float: ri=
+ght; padding: 10px; border: 1px solid #e9e9e9;">
+                          <img src=3D"https://assets.interviewbit.com/ass=
+ets/email/tw-footer-de1a21adb684052d49278632271e900df05c9bfc2fc2f14156b38=
+50339758634.png" style=3D"outline: none; text-decoration: none; -ms-inter=
+polation-mode: bicubic; height: 20px; width: 20px; vertical-align: text-b=
+ottom; border-style: none;" /><span style=3D"display: inline-block; heigh=
+t: 100%; vertical-align: middle; margin-left: 10px;">Follow Us</span>
+                        </a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td class=3D"fb-footer" style=3D"border-collapse: collaps=
+e; font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-ser=
+if; font-size: 14px; width: 50%; margin: 0; padding: 0 0 0 30px;" valign=3D=
+"top">
+                  <table style=3D"border-collapse: collapse; mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                    <tbody>
+                    <tr style=3D"font-family: 'Helvetica Neue', 'Helvetic=
+a', Helvetica, Arial, sans-serif; font-size: 14px; margin: 0; padding: 0;=
+">
+                      <td style=3D"border-collapse: collapse; font-family=
+: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size:=
+ 14px; margin: 0; padding: 0;" valign=3D"top">
+                      <a href=3D"https://www.interviewbit.com/ahoy/messag=
+es/TdyxY3x9XmKHHyGCrhsROwVYW0EhK56p/click?signature=3Dac3eaeea7465311737b=
+5a07b29243f013266a5e0&amp;url=3Dhttps%3A%2F%2Ffacebook.com%2Finterviewbit=
+" target=3D"_blank" style=3D"color: #333; height: 100%; width: 100px; bor=
+der-radius: 10px; vertical-align: middle; float: left; padding: 10px; bor=
+der: 1px solid #e9e9e9;">
+                        <img src=3D"https://assets.interviewbit.com/asset=
+s/email/fb-footer-5511c1d936c0a22c1dd3a612328ec497d19ca7bd0e4db09f642e593=
+221765017.png" style=3D"outline: none; text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: 20px; width: 20px; background-color: #6C6C6=
+C; vertical-align: text-bottom; border-style: none;" /><span style=3D"dis=
+play: inline-block; height: 100%; vertical-align: middle; margin-left: 10=
+px;">Like Us</span>
+                      </a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <table style=3D"border-collapse: collapse; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; width: 100%; text-align: center; color: #8080=
+80; line-height: 18px; margin-top: 20px;">
+              <tbody>
+              <tr style=3D"font-family: 'Helvetica Neue', 'Helvetica', He=
+lvetica, Arial, sans-serif; font-size: 14px; margin: 0; padding: 0;">
+                <td style=3D"border-collapse: collapse; font-family: 'Hel=
+vetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px;=
+ margin: 0; padding: 0;" valign=3D"top">
+                  <div class=3D"footer-line" style=3D"font-size: 11px; co=
+lor: #bbbbbb; margin: 0;" align=3D"center">=C2=A9 2025 InterviewBit</div>=
+
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </td>
+    <td style=3D"border-collapse: collapse; font-family: 'Helvetica Neue'=
+, 'Helvetica', Helvetica, Arial, sans-serif; font-size: 14px; margin: 0; =
+padding: 0;" valign=3D"top"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<img alt=3D"" src=3D"https://www.interviewbit.com/ahoy/messages/TdyxY3x9X=
+mKHHyGCrhsROwVYW0EhK56p/open.gif" width=3D"1" height=3D"1" style=3D"outli=
+ne: none; text-decoration: none; -ms-interpolation-mode: bicubic;" />
+</body>
+</html>
+
+----==_mimepart_67f55bbbb46e8_1ebc3feb6b2353d4118453--

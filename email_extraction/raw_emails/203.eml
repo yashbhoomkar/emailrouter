@@ -1,0 +1,747 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:6a97:b0:43a:a54e:2943 with SMTP id co23csp1228702mdb;
+        Sun, 20 Apr 2025 02:47:48 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGI8Bhw4EsqQLsCg8y4GsPzKsocC1qmf3HL5Vcka04oqLd8wwgpToRTQQd2r0zOXtUzHbwy
+X-Received: by 2002:a05:620a:2415:b0:7c5:5cc4:ca5b with SMTP id af79cd13be357-7c927f63372mr1264313185a.12.1745142468630;
+        Sun, 20 Apr 2025 02:47:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1745142468; cv=none;
+        d=google.com; s=arc-20240605;
+        b=TtgrWobYJT0jUCGjJS3aJ3v9u9wyae0apNz2FYeb/lnxCyn3Cxrb1iRdHc0DaA0Vm/
+         bof2v9BbPVi+1SY7ihlLdERPKW2km2Eaks0qzgN+Jzj+Ofca2YKpg2uMyfj8o0gNE7yK
+         eGSIx5JDMMsqB8rdnB8k6IgQqegmsdhcagGwluy66SscrLllYFrkbql5m9CnJlFZoa9O
+         WCNs9RIfVixF6VQLn2yZm0Tc1zbspul9WYEDaj9w7j+XEzMFWVnKS/AXnDnYRnyy7OW5
+         vs9yQSpdhIPsetrj8bKQJTG62/1Yzrum+3eFKFCliMNaFkPIVd6COsT6s1DjLFVSYmFr
+         ttCQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:date:list-unsubscribe-post:list-unsubscribe
+         :require-recipient-valid-since:feedback-id:x_id:subject:to:from
+         :mime-version:dkim-signature:dkim-signature:dkim-signature
+         :dkim-signature;
+        bh=SrRvbPVOdfC5Wo3yiQYDuXARDhk4cTvfJOJllIfQpt0=;
+        fh=xj44JXiMItDkRhOeYzt0ZEqqFfIGMqAReR/ILVD1IY8=;
+        b=DC+ETUJKeI/ZgOlqKT1O1gnZygOLxCxphXdOmAHUn8l85VSgxR3Hc2XZmZrXycwkIA
+         OO7btMOFapyG3SoDnIIsG70J12aH83iRJLqSY3JPlPZq8ocK6CI1JTqiTevMMAKzxvFk
+         WWs763MOXyrkBBwz3ytr8jRtr9qZwaSUQdF2OU9MeRXHckzD5lHj6G0cvQ56UTSwzRk6
+         VqKn4IbKOx9tSpZaVLzusXXpTD2SzGd5sgrIR1x+xZBCyI6b8eShsifxM3Yt/GzL21pl
+         jbnSe8dv4zbFgQLNEmtkrRbb9tmQnrqtUwZi9Bb9wm9CcJf1xG7rh3eBcx+apkGZqvoj
+         Z12g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@undetectable.ai header.s=aweber_key_a header.b="H1hgjo/D";
+       dkim=pass header.i=@aweber.com header.s=aweber_key_a header.b=sGHj16hb;
+       dkim=pass header.i=@undetectable.optin.com header.s=k1 header.b="A/R1Nxh1";
+       dkim=pass header.i=@optin.com header.s=k1 header.b=ohAJXvwO;
+       spf=pass (google.com: domain of bgwc7exsllrmlkxmlcxsnlrmtiymnixmhgysta==@smtp-soi-g18-152.aweber.com designates 204.194.223.152 as permitted sender) smtp.mailfrom="bGwc7ExsLLRMLKxMLCxsnLRmtIyMnIxMHGysTA==@smtp-soi-g18-152.aweber.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=undetectable.ai
+Return-Path: <bGwc7ExsLLRMLKxMLCxsnLRmtIyMnIxMHGysTA==@smtp-soi-g18-152.aweber.com>
+Received: from smtp-soi-g18-152.aweber.com (smtp-soi-g18-152.aweber.com. [204.194.223.152])
+        by mx.google.com with ESMTPS id af79cd13be357-7c925adb4f3si593102085a.182.2025.04.20.02.47.48
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sun, 20 Apr 2025 02:47:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bgwc7exsllrmlkxmlcxsnlrmtiymnixmhgysta==@smtp-soi-g18-152.aweber.com designates 204.194.223.152 as permitted sender) client-ip=204.194.223.152;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@undetectable.ai header.s=aweber_key_a header.b="H1hgjo/D";
+       dkim=pass header.i=@aweber.com header.s=aweber_key_a header.b=sGHj16hb;
+       dkim=pass header.i=@undetectable.optin.com header.s=k1 header.b="A/R1Nxh1";
+       dkim=pass header.i=@optin.com header.s=k1 header.b=ohAJXvwO;
+       spf=pass (google.com: domain of bgwc7exsllrmlkxmlcxsnlrmtiymnixmhgysta==@smtp-soi-g18-152.aweber.com designates 204.194.223.152 as permitted sender) smtp.mailfrom="bGwc7ExsLLRMLKxMLCxsnLRmtIyMnIxMHGysTA==@smtp-soi-g18-152.aweber.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=undetectable.ai
+DKIM-Signature: v=1; a=rsa-sha256; d=undetectable.ai; s=aweber_key_a; c=relaxed/relaxed;
+	bh=SrRvbPVOdfC5Wo3yiQYDuXARDhk4cTvfJOJllIfQpt0=;
+	h=sender:subject:subject:date:date:from:from:list-unsubscribe:
+		list-unsubscribe:list-unsubscribe-post:list-unsubscribe-post:to:to:
+		mime-version:mime-version:content-type:content-type:message-id:message-id:
+		x_id:x_id:require-recipient-valid-since:require-recipient-valid-since:
+		feedback-id:feedback-id:x-mailer:x-mailer:x-awmessage:x-awmessage:cc:
+		reply-to:x-subscription:x-subscription; t=1745142468; x=1746092868;
+	b=H1hgjo/DUQZMMNYcex8mpJsMPgO5UJiuqLEluTNTFcsfVzzRcoXkcKmbEol3E79rR/xpuzH4v
+	PE0Np1D/y1TXuWUHncNpN4dWIzoOZr6Y7Ao71sJ5wGoNLepLEPvza8JeCDkFCQULY+NZ2PHscnh
+	xNd01hxW0SpS52R+RgBzkkNVPbxGwcZFYj0QTwx3i2KPfd6BXrbbWd5uN886dz75ez/EsO/kRBv
+	N0d/RJcs/O22/d/UZTlYR3TWQ2uFCvRnhGfKFk4pIyt1NS7j/B44gqTa92qdXBqLtaLUW+9wo0q
+	G5klz4xEPpTL/wvPYYKPuT2dqJkaftMbY+5CH5y7bOeg==;
+DKIM-Signature: v=1; a=rsa-sha256; d=aweber.com; s=aweber_key_a; c=relaxed/relaxed;
+	bh=SrRvbPVOdfC5Wo3yiQYDuXARDhk4cTvfJOJllIfQpt0=;
+	h=sender:subject:subject:date:date:from:from:list-unsubscribe:
+		list-unsubscribe:list-unsubscribe-post:list-unsubscribe-post:to:to:
+		mime-version:mime-version:content-type:content-type:message-id:message-id:
+		x_id:x_id:require-recipient-valid-since:require-recipient-valid-since:
+		feedback-id:feedback-id:x-mailer:x-mailer:x-awmessage:x-awmessage:cc:
+		reply-to:x-subscription:x-subscription; t=1745142468; x=1746092868;
+	b=sGHj16hb6KEOnUUYcVKpfB2jenQ9c8St+TZ6feZn2P4WXuv92hQBEi/nJwsT/M0pV2Wm5cOr8
+	6uc/ODZocRiBgs1zaNAoJH9BngDH3M2Q6hw1MCBDUymKDHOwmesfMAhcnrlt967dgsBi2T78EOa
+	RoVCiQqXixcfX7cu4G+ehk85z+6b2n+PeBuxt6v5wR35oMe5Y3b5jByNdlUrhKpBgXfBmjiMXCs
+	OP8AjQ9cgT/Q8O5UZY1o1IHTH/ABlAar75iMVxeYGHCiRriof1BY5/c6kruKe2d72ZRKxbZdYqo
+	Vh3b/KurnaMhbUbbvKOam0oK47WZLhvoEBNUf4QSsN6Q==;
+DKIM-Signature: v=1; a=rsa-sha256; d=undetectable.optin.com; s=k1; c=relaxed/relaxed;
+	bh=SrRvbPVOdfC5Wo3yiQYDuXARDhk4cTvfJOJllIfQpt0=;
+	h=sender:subject:subject:date:date:from:from:list-unsubscribe:
+		list-unsubscribe:list-unsubscribe-post:list-unsubscribe-post:to:to:
+		mime-version:mime-version:content-type:content-type:message-id:message-id:
+		x_id:x_id:require-recipient-valid-since:require-recipient-valid-since:
+		feedback-id:feedback-id:x-mailer:x-mailer:x-awmessage:x-awmessage:cc:
+		reply-to:x-subscription:x-subscription; t=1745142468; x=1746092868;
+	b=A/R1Nxh1tewaZKASrVtiCYcV+F5l7ZBFAF+motokTPwkfIkozW0e5/tYE5E5NLb06yWutkFy1
+	dBD6aTWHsJW/g0dOOMAb7wW8b3G2AhfBZ+v61cNrzgGj4NzCfwKpNH6MLwA2pcOX5HDXN+lpxtc
+	t2IPAaLn9YgPM1GXXEXCN7FirWpctK6okIqrtbrBhfYdVbpmC7beJHXvJ2oQBHqx7Gjk86zFDtw
+	MgdBPHidfq1i8rA527oIZjMOFk9RGa5lEaBaugMYBA64b90+ML4pTyv1KB6KFhB7xghA2Y1++2+
+	vCDragc0LRG38LbQCj26ZfmOXf9unwDfkqNfULmBYAMg==;
+DKIM-Signature: v=1; a=rsa-sha256; d=optin.com; s=k1; c=relaxed/relaxed;
+	bh=SrRvbPVOdfC5Wo3yiQYDuXARDhk4cTvfJOJllIfQpt0=;
+	h=sender:subject:subject:date:date:from:from:list-unsubscribe:
+		list-unsubscribe:list-unsubscribe-post:list-unsubscribe-post:to:to:
+		mime-version:mime-version:content-type:content-type:message-id:message-id:
+		x_id:x_id:require-recipient-valid-since:require-recipient-valid-since:
+		feedback-id:feedback-id:x-mailer:x-mailer:x-awmessage:x-awmessage:cc:
+		reply-to:x-subscription:x-subscription; t=1745142468; x=1746092868;
+	b=ohAJXvwOS3zwkkslLzKTAdb2a9YXrwPzUqmpWdhJJmMpxzaEKar7d0Xjj9EQtyJmgh3L8TqFo
+	iLTmn7cwJt36BvulvMYQNk16hD+nOulpdsaZeVPLQ2fECfkTVOwuNBr2CzF+7agJvMU2QZw+oSi
+	Su8vTu73eAhgX7d3VD9xaxL/ZcEivARFV96N/hO05t/TMgNusoO27bfWu7Esb4pyt4VMcRllvj2
+	xLQQXwDNg9xOkaY3l0KNE1upMxf95JQp2Pcp3DJBYaZ1v68TH9ML9mXZ5yXUKcmJw1z1tVcaW9U
+	1Xun2K8+GXpwc/7Pq6I/MB0KxBeMQbjLq+AUIN6YYWZA==;
+Content-Type: multipart/alternative; boundary="===============4824333309198511880=="
+MIME-Version: 1.0
+From: "Undetectable AI" <contact@undetectable.ai>
+To: "Yash undefined" <yash31204testing@gmail.com>
+Subject: AI Detectors Exposed: Keep your content safe!
+X-AWMessage: 44d0afa5-814c-47ef-ad8c-daf59735f710
+X_Id: 6687264:119128652:yash31204testing@gmail.com
+Feedback-ID: 
+ Ae25599c2-101b-4f50-82e1-fa6a38195ccb:Ld7186e10-a422-4ab2-9dd2-6b8ac766d3a4:CAMPAIGN-44d0afa5-814c-47ef-ad8c-daf59735f710:AWeber
+Require-Recipient-Valid-Since: yash31204testing@gmail.com; Tue, 15 Apr 2025
+ 09:15:58 +0000
+X-Subscription: Subscribed on 04/15/2025, via API, by None
+List-Unsubscribe: 
+ <https://www.aweber.com/z/r/?bGwc7ExsLLRMLKxMLCxsnLRmtIyMnIxMHGysTA==>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailer: AWeber Composer 2.90.3
+Date: Sun, 20 Apr 2025 09:47:48 +0000
+Message-ID: <84960f451dcc11f081a016ffe21813af@smtp-soi-g18-152.aweber.com>
+
+--===============4824333309198511880==
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+https://undetectable.ai?awt_a=3D1ZHN5&awt_l=3D5Hbjz&awt_m=3D95iudcXNnQzbGDN=
+5&utm_source=3Daweber&utm_medium=3Demail&utm_campaign=3Dheader&utm_id=3Dema=
+il3link1
+
+            AI detectors are wreaking havoc in the content creation and ass=
+ignment community, with employers getting fired and students flagged for th=
+eir genuine work.
+
+Here are steps to avoid unjustly flagging someone and/or being flagged your=
+self:
+
+            Ready to elevate your content?
+
+
+
+                                TAKE ME TO THE TOOLS ->
+
+https://undetectable.ai?awt_a=3D1ZHN5&awt_l=3D5Hbjz&awt_m=3D95iudcXNnQzbGDN=
+5&utm_source=3Daweber&utm_medium=3Demail&utm_campaign=3Dcta&utm_id=3Demail3=
+link4
+
+                        Article Image
+
+https://undetectable.ai/blog/avoid-false-flags-ai-detectors/?awt_a=3D1ZHN5&=
+awt_l=3D5Hbjz&awt_m=3D95iudcXNnQzbGDN5&utm_source=3Daweber&utm_medium=3Dema=
+il&utm_campaign=3Darticlefalseflags&utm_id=3Demail3link3
+
+https://undetectable.ai?awt_a=3D1ZHN5&awt_l=3D5Hbjz&awt_m=3D95iudcXNnQzbGDN=
+5&utm_source=3Daweber&utm_medium=3Demail&utm_campaign=3Dlogobottom&utm_id=
+=3Demail3link4
+
+1309 Coffeen Ave
+Sheridan WY 82801
+US
+
+To unsubscribe or change subscriber options, visit:
+https://www.aweber.com/z/r/?bGwc7ExsLLRMLKxMLCxsnLRmtIyMnIxMHGysTA=3D=3D
+
+
+--===============4824333309198511880==
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html>
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml">
+    <head>
+        <title></title>
+        <meta charset=3D"UTF-8">
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-sc=
+ale=3D1">
+        <!-- AWeber Styles Begin -->
+        <style id=3D"aw-autoinject" type=3D"text/css">
+            body, a {
+                word-break: break-word;
+            }
+            .feed__title a {
+                text-decoration: underline;
+            }
+            img[data-emoji] {
+                height: 1.2em;
+                width: 1.2em;
+                vertical-align: middle;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            .text-element h1 {
+                line-height: 1.5;
+                margin: 0.5em 0;
+            }
+            .text-element h2 {
+                line-height: 1.5;
+                margin: 0.5em 0;
+            }
+            .text-element h3 {
+                line-height: 1.5;
+                margin: 0.5em 0;
+            }
+            .text-element h4 {
+                font-size: 20px;
+                line-height: 1.5;
+                margin: 0.5em 0;
+            }
+            .text-element h5 {
+                font-size: 18px;
+                line-height: 1.5;
+                margin: 0.5em 0;
+            }
+            .text-element h6 {
+                font-size: 16px;
+                line-height: 1.5;
+                margin: 0.5em 0;
+            }
+            .text-element p, .paragraph p {
+                line-height: 1.5;
+                margin: 0;
+            }
+            .text-element div {
+                line-height: 1.5;
+                margin: 0;
+            }
+            .text-element pre {
+                display: block;
+                font-family: monospace;
+                line-height: 1.5;
+                margin: 0.5em 0;
+                white-space: pre-wrap;
+                overflow: auto;
+                overflow-wrap: break-word;
+            }
+            .text-element address {
+                display: block;
+                font-style: italic;
+                line-height: 1.5;
+                margin: 0.5em 0;
+            }
+            .headline blockquote, .paragraph blockquote, .text-element bloc=
+kquote {
+                border-left: 5px solid #ccc;
+                box-sizing: border-box;
+                font-style: normal;
+                line-height: 1.5;
+                margin: 0.5em 0;
+                overflow: hidden;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+            .headline ul, .paragraph ul, .text-element ul {
+                margin: .5rem 0;
+            }
+            .headline ol, .paragraph ol, .text-element ol {
+                list-style-type: decimal;
+                margin: .5rem 0;
+            }
+            .headline ol ol, .paragraph ol ol, .text-element ol ol { list-s=
+tyle-type: lower-latin; }
+            .headline ol ol ol, .paragraph ol ol ol, .text-element ol ol ol=
+ { list-style-type: lower-roman; }
+            .headline ol ol ol ol, .paragraph ol ol ol ol, .text-element ol=
+ ol ol ol { list-style-type: upper-latin; }
+            .headline ol ol ol ol ol, .paragraph ol ol ol ol ol, .text-elem=
+ent ol ol ol ol ol { list-style-type: upper-roman; }
+            .headline .image, .paragraph .image, .text-element .image {
+                clear: both;
+                display: table;
+                margin: 0.5em auto;
+                min-width: 50px;
+                text-align: center;
+            }
+            .headline .image img, .paragraph .image img, .text-element .ima=
+ge img {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+                min-width: 100%;
+            }
+            .headline .image.image_resized, .paragraph .image.image_resized=
+, .text-element .image.image_resized {
+                box-sizing: border-box;
+                display: block;
+                max-width: 100%;
+            }
+            .headline .image.image_resized img, .paragraph .image.image_res=
+ized img, .text-element .image.image_resized img {
+                width: 100%;
+            }
+            .headline .image-style-block-align-left, .paragraph .image-styl=
+e-block-align-left, .text-element .image-style-block-align-left {
+                margin-left: 0;
+                margin-right: auto;
+            }
+            .headline .image-style-block-align-right, .paragraph .image-sty=
+le-block-align-right, .text-element .image-style-block-align-right {
+                margin-left: auto;
+                margin-right: 0;
+            }
+            .headline .image-inline.image-style-align-right, .paragraph .im=
+age-inline.image-style-align-right, .text-element .image-inline.image-style=
+-align-right {
+                margin-left: 0.75em;
+            }
+            .headline .image-style-align-left, .paragraph .image-style-alig=
+n-left, .text-element .image-style-align-left,
+            .headline .image-style-align-right, .paragraph .image-style-ali=
+gn-right, .text-element .image-style-align-right {
+                margin-bottom: 0.75em;
+                margin-top: 0.75em;
+            }
+            .headline .image-style-align-left, .paragraph .image-style-alig=
+n-left, .text-element .image-style-align-left {
+                float: left;
+                margin-right: 0.75em;
+            }
+            .headline .image-style-align-right, .paragraph .image-style-ali=
+gn-right, .text-element .image-style-align-right {
+                float: right;
+                margin-left: 0.75em;
+            }
+            .headline .image figcaption, .paragraph .image figcaption, .tex=
+t-element .image figcaption {
+                background-color: #f7f7f7;
+                font-size: .875rem;
+                padding: 0.5em;
+            }
+            .headline .image figcaption img, .paragraph .image figcaption i=
+mg, .text-element .image figcaption img {
+                display: inline;
+                height: 1.2em;
+                min-width: unset;
+                width: 1.2em;
+                vertical-align: middle;
+            }
+            @media only screen and (max-width:599px) {
+                img {
+                    max-width: 100% !important;
+                    min-height: 1px !important;
+                    height: auto !important;
+                }
+                .text-element pre {
+                    max-width: 250px;
+                }
+                .aw-stack .container {
+                    box-sizing: border-box;
+                    display: block !important;
+                    float: left;
+                    max-width: 100% !important;
+                    margin: auto;
+                    width: 100% !important;
+                }
+                .video .video-content {
+                    width: auto !important;
+                }
+                .feed__item--postcard-side,
+                .feed__item--postcard-main,
+                .feed__item--block {
+                    box-sizing: border-box;
+                    display: block !important;
+                    max-width: 100% !important;
+                    margin: auto;
+                    width: 100% !important;
+                }
+                .feed__item--block > div {
+                    margin: 0 0 16px 0 !important;
+                }
+                .feed__image {
+                    width: 100% !important;
+                }
+                .feed__spacer {
+                    display: none !important;
+                }
+            }
+        </style>
+        <style type=3D"text/css">
+            v:* { behavior: url(#default#VML); display: inline-block; }
+        </style>
+        <style type=3D"text/css">
+            /* Base styles */
+            body {
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            }
+           =20
+            img {
+              -ms-interpolation-mode: bicubic;
+              border: 0;
+              height: auto;
+              line-height: 100%;
+              max-width: 100%;
+              outline: none;
+              padding: 0;
+            }
+           =20
+            .article {
+              line-height: 1.5;
+            }
+            .article p {
+              margin: 0;
+            }
+            .article .headline {
+              font-size: 20px;
+            }
+            .article .paragraph {
+              font-size: 16px;
+            }
+            .article .permalink {
+              padding-top: 4px;
+            }
+           =20
+            .coupon {
+              line-height: 1.5;
+            }
+            .coupon p {
+              margin: 0;
+            }
+            .coupon .headline {
+              font-size: 20px;
+            }
+            .coupon .paragraph {
+              font-size: 16px;
+            }
+            .coupon .paragraph small p {
+              font-size: small;
+            }
+           =20
+            .product {
+              line-height: 1.5;
+              font-size: 16px;
+            }
+            .product p {
+              margin: 0;
+            }
+            .product-content, .product-image, .product-title {
+              display: block;
+              padding-bottom: 8px;
+            }
+           =20
+            .signature {
+              line-height: 1.5;
+              font-size: 16px;
+            }
+            .signature p {
+              margin: 0;
+            }
+           =20
+            /* Template specific styles */
+            a {
+              text-decoration-color: currentcolor;
+            }
+        </style>
+        <style type=3D"text/css">
+            .aw-DCCWB{color:#333333;font-family:Helvetica,Arial,sans-serif;=
+font-size:16px;}.aw-DCCWB h1,.aw-DCCWB h2,.aw-DCCWB h3,.aw-DCCWB h4,.aw-DCC=
+WB h5,.aw-DCCWB h6{color:#333333;font-family:Helvetica,Arial,sans-serif;}.a=
+w-DCCWB h1{font-size:28px;}.aw-DCCWB h2{font-size:24px;}.aw-DCCWB h3{font-s=
+ize:22px;}.aw-DCCWB a{color:#4B7BEC;}.aw-DCCWB hr{background:#F1F2F6;border=
+:0;height:3px;margin:20px 0;}
+        </style>
+        <!-- AWeber Styles End -->
+       =20
+    </head>
+    <body>
+       =20
+        <center>
+            <div class=3D"aw-email-document aw-DCCWB"><div align=3D"center">
+                <table cellpadding=3D"0" cellspacing=3D"0" class=3D"aw-bgc"=
+ style=3D"width: 100%; background-color: rgb(255, 255, 255);">
+                    <tbody><tr>
+                        <td>
+                            <!--[if !mso]><!--><table align=3D"center" cell=
+padding=3D"0" cellspacing=3D"0" style=3D"width: 100%; max-width: 600px;"><!=
+--<![endif]-->
+                            <!--[if gte mso 9]><table align=3D"center" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"600"><![endif]-->
+           =20
+                                <!--Body-->
+                                    <tbody><tr>
+                                        <td>
+                                            <div style=3D"text-align: left;=
+">
+                                                <div class=3D"region"><div>=
+<table class=3D"row aw-stack" style=3D"width:100%" role=3D"presentation"><t=
+body><tr><td class=3D"container" style=3D"border-radius: 0px; padding: 20px=
+; width: 100%;" width=3D"100%" valign=3D"top" bgcolor=3D"#FFFFFF">
+            <div class=3D"definition-parent"><span><table align=3D"center" =
+cellspacing=3D"0" width=3D"100%" class=3D"floated-none" style=3D"float: non=
+e; text-align: center;" role=3D"presentation">
+                <tbody><tr>
+                    <td align=3D"center" style=3D"padding: 0px 0px 0px 0px;=
+">
+                        <a class=3D"aw-image-link" href=3D"https://undetect=
+able.ai?awt_a=3D1ZHN5&amp;awt_l=3D5Hbjz&amp;awt_m=3D95iudcXNnQzbGDN5&amp;ut=
+m_source=3Daweber&amp;utm_medium=3Demail&amp;utm_campaign=3Dheader&amp;utm_=
+id=3Demail3link1" rel=3D"noopener noreferrer" style=3D"text-decoration-colo=
+r: currentcolor;"><img alt=3D"" class=3D"model" height=3D"221" src=3D"https=
+://hostedimages-cdn.aweber-static.com/MjIyMDUzMw=3D=3D/original/fafe9baf267=
+3483f997123d3dda7d8a6.jpeg" width=3D"560" style=3D"display: block; height: =
+221px; width: 560px; border: 0px; line-height: 100%; max-width: 100%;
+outline: none; padding: 0px;"></a>
+                    </td>
+                </tr>
+            </tbody></table></span></div>
+           =20
+           =20
+            <div class=3D"definition-parent">
+              <div class=3D"divider">
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" r=
+ole=3D"presentation">
+                  <tbody>
+                      <tr>
+                        <td class=3D"divider-container" style=3D"padding:20=
+px 0;">
+                          <table width=3D"100%" role=3D"presentation" style=
+=3D"border-top:3px solid #FFFFFF; border-collapse: collapse;">
+                            <tbody>
+                              <tr>
+                                <td width=3D"100%"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+           =20
+           =20
+            <div class=3D"definition-parent"><div class=3D"text-element"><p=
+>AI detectors are wreaking havoc in the content creation and assignment&nbs=
+p;community, with employers getting fired and students flagged for their ge=
+nuine work.&nbsp;</p><p>&nbsp;</p><p>Here are steps to avoid unjustly flagg=
+ing someone and/or being flagged yourself:</p></div></div>
+           =20
+           =20
+            <div class=3D"definition-parent">
+              <div class=3D"divider">
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" r=
+ole=3D"presentation">
+                  <tbody>
+                      <tr>
+                        <td class=3D"divider-container" style=3D"padding:20=
+px 0;">
+                          <table width=3D"100%" role=3D"presentation" style=
+=3D"border-top:3px solid #FFFFFF; border-collapse: collapse;">
+                            <tbody>
+                              <tr>
+                                <td width=3D"100%"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+           =20
+           =20
+            <div class=3D"definition-parent"><span><table align=3D"center" =
+cellspacing=3D"0" width=3D"100%" class=3D"floated-none" style=3D"float: non=
+e; text-align: center;" role=3D"presentation">
+                <tbody><tr>
+                    <td align=3D"center" style=3D"padding: 0px 0px 0px 0px;=
+">
+                        <img alt=3D"tips 1) Understand the scoring system 2=
+) use the detector even when your text is 100% human and 3) Humanize your c=
+ontent" class=3D"model" height=3D"292" src=3D"https://hostedimages-cdn.aweb=
+er-static.com/MjIyMDUzMw=3D=3D/optimized/fa13e85ecbc9402c8c43fd3a9af3b7a8.p=
+ng" width=3D"560" style=3D"display: block; height: 292px; width: 560px; bor=
+der: 0px; line-height: 100%; max-width: 100%; outline: none; padding: 0px;">
+                    </td>
+                </tr>
+            </tbody></table></span></div>
+           =20
+           =20
+            <div class=3D"definition-parent">
+              <div class=3D"divider">
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" r=
+ole=3D"presentation">
+                  <tbody>
+                      <tr>
+                        <td class=3D"divider-container" style=3D"padding:20=
+px 0;">
+                          <table width=3D"100%" role=3D"presentation" style=
+=3D"border-top:3px solid #FFFFFF; border-collapse: collapse;">
+                            <tbody>
+                              <tr>
+                                <td width=3D"100%"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+           =20
+           =20
+            <div class=3D"definition-parent"><div class=3D"text-element"><p=
+ style=3D"text-align:center;">Ready to elevate your content?</p></div></div>
+           =20
+           =20
+            <div class=3D"definition-parent"><div class=3D"text-element"><p=
+ style=3D"text-align:center;">&nbsp;</p></div></div>
+           =20
+           =20
+            <div class=3D"definition-parent">
+              <table class=3D"aw-button" width=3D"100%" role=3D"presentatio=
+n">
+                <tbody><tr>
+                  <td style=3D"padding:12px 0;">
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" role=3D"presentation">
+                      <tbody><tr>
+                        <td align=3D"center">
+                          <table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" role=3D"presentation">
+                            <tbody><tr>
+                              <td align=3D"center" style=3D"-webkit-border-=
+radius: 4px; -moz-border-radius: 4px; border-radius: 4px;" bgcolor=3D"#3333=
+33">
+                                <!--[if mso]>&nbsp;<![endif]--><a href=3D"h=
+ttps://undetectable.ai?awt_a=3D1ZHN5&amp;awt_l=3D5Hbjz&amp;awt_m=3D95iudcXN=
+nQzbGDN5&amp;utm_source=3Daweber&amp;utm_medium=3Demail&amp;utm_campaign=3D=
+cta&amp;utm_id=3Demail3link4" target=3D"_blank" style=3D"font-size: 16px; f=
+ont-family: Helvetica, Arial, sans-serif; color: rgb(255, 255, 255); text-d=
+ecoration: none; border-radius: 4px; padding: 8px 14px; border: 1px solid r=
+gb(51, 51, 51); display: inline-block;"><span style=3D"font-size: 16px; fon=
+t-family: Helvetica, Arial, sans-serif; color:
+#FFFFFF;">TAKE ME TO THE TOOLS -&gt;</span></a>
+                                <!--[if mso]>&nbsp;<![endif]-->
+                              </td>
+                            </tr>
+                          </tbody></table>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </td>
+                </tr>
+              </tbody></table>
+            </div>
+           =20
+           =20
+            <div class=3D"definition-parent">
+              <div class=3D"divider">
+                <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" r=
+ole=3D"presentation">
+                  <tbody>
+                      <tr>
+                        <td class=3D"divider-container" style=3D"padding:20=
+px 0;">
+                          <table width=3D"100%" role=3D"presentation" style=
+=3D"border-top:3px solid #FFFFFF; border-collapse: collapse;">
+                            <tbody>
+                              <tr>
+                                <td width=3D"100%"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+           =20
+           =20
+            <div class=3D"definition-parent"><span><table align=3D"center" =
+cellspacing=3D"0" width=3D"100%" class=3D"floated-none" style=3D"float: non=
+e; text-align: center;" role=3D"presentation">
+                <tbody><tr>
+                    <td align=3D"center" style=3D"padding: 0px 0px 0px 0px;=
+">
+                        <a class=3D"aw-image-link" href=3D"https://undetect=
+able.ai/blog/avoid-false-flags-ai-detectors/?awt_a=3D1ZHN5&amp;awt_l=3D5Hbj=
+z&amp;awt_m=3D95iudcXNnQzbGDN5&amp;utm_source=3Daweber&amp;utm_medium=3Dema=
+il&amp;utm_campaign=3Darticlefalseflags&amp;utm_id=3Demail3link3" rel=3D"no=
+opener noreferrer" style=3D"text-decoration-color: currentcolor;"><img alt=
+=3D"Article Image" class=3D"model" height=3D"521" src=3D"https://hostedimag=
+es-cdn.aweber-static.com/MjIyMDUzMw=3D=3D/optimized/4a2148f47afc4f8390fc77e=
+0e60a3f61.png" width=3D"560" style=3D"display: block; height: 521px;
+width: 560px; border: 0px; line-height: 100%; max-width: 100%; outline: non=
+e; padding: 0px;"></a>
+                    </td>
+                </tr>
+            </tbody></table></span></div>
+           =20
+           =20
+            <div class=3D"definition-parent"><span><table align=3D"center" =
+cellspacing=3D"0" width=3D"100%" class=3D"floated-none" style=3D"float: non=
+e; text-align: center;" role=3D"presentation">
+                <tbody><tr>
+                    <td align=3D"center" style=3D"padding: 0px 0px 0px 0px;=
+">
+                        <a class=3D"aw-image-link" href=3D"https://undetect=
+able.ai?awt_a=3D1ZHN5&amp;awt_l=3D5Hbjz&amp;awt_m=3D95iudcXNnQzbGDN5&amp;ut=
+m_source=3Daweber&amp;utm_medium=3Demail&amp;utm_campaign=3Dlogobottom&amp;=
+utm_id=3Demail3link4" rel=3D"noopener noreferrer" style=3D"text-decoration-=
+color: currentcolor;"><img alt=3D"" class=3D"model" height=3D"33" src=3D"ht=
+tps://hostedimages-cdn.aweber-static.com/MjIyMDUzMw=3D=3D/original/dfc04f1c=
+ef0d43f583f9d2b6e0a9d86a.png" width=3D"70" style=3D"display: block; height:=
+ 33px; width: 70px; border: 0px; line-height: 100%; max-width: 100%;
+outline: none; padding: 0px;"></a>
+                    </td>
+                </tr>
+            </tbody></table></span></div>
+            </td></tr></tbody></table></div></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <!--End Body-->
+           =20
+                            </tbody></table>
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div></div>
+        </center>
+   =20
+<div>&nbsp;</div><div align=3D"center" id=3D"aweber_container" style=3D"bac=
+kground-color:#ffffff; width:100% !important"><div id=3D"aweber_rem" style=
+=3D"box-sizing:border-box; color:#000000 !important; font-family:Helvetica,=
+Arial,sans-serif !important; font-size:12px !important; line-height:16px; m=
+argin:0px; max-width:600px; padding:0px 8px; width:100%"><!--[if gte mso 9]=
+><table width=3D"600" style=3D"color: #000000;font-family: Helvetica, Arial=
+, sans-serif;font-size: 12px;line-height: 16px;"><tr><td style=3D"padding:8=
+px;"><![endif]--><div class=3D"rem_align" style=3D"text-align:center;"><spa=
+n style=3D"color:#000000 !important"><br><br>1309 Coffeen Ave<br>Sheridan W=
+Y 82801<br>US</span><br><br><a href=3D"https://www.aweber.com/z/r/?bGwc7Exs=
+LLRMLKxMLCxsnLRmtIyMnIxMHGysTA=3D=3D" rel=3D"noopener noreferrer" style=3D"=
+color: #000000;" target=3D"_blank"><span style=3D"color:#000000 !important"=
+>Unsubscribe</span></a> &nbsp; | &nbsp; <a href=3D"https://www.aweber.com/z=
+/r/?bGwc7ExsLLRMLKxMLCxsnLRmtIyMnIxMHGysTA=3D=3D" rel=3D"noopener noreferre=
+r" style=3D"color: #000000;" target=3D"_blank"><span style=3D"color:#000000=
+ !important">Change&nbsp;Subscriber&nbsp;Options</span></a><br><br></div><!=
+--[if gte mso 9]></td></tr></table><![endif]--></div></div><img src=3D"http=
+s://openrate.aweber.com/y/o/?l=3D5Hbjz&m=3D95iudcXNnQzbGDN5" width=3D"1" he=
+ight=3D"1"></body></html>
+--===============4824333309198511880==--

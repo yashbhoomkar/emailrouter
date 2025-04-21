@@ -1,0 +1,625 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:e716:b0:43a:a54e:2943 with SMTP id lx22csp3145304mdb;
+        Tue, 25 Mar 2025 22:30:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFOt0YxOjdX1Fv/nK9A2SdurvTc3FRnwZ2eAnUjo2BVfwywU6Gu3wiSuGYehlRQgcT93hwi
+X-Received: by 2002:a17:903:320d:b0:220:f87d:9d5b with SMTP id d9443c01a7336-22780d8a597mr357315105ad.24.1742967002081;
+        Tue, 25 Mar 2025 22:30:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742967002; cv=none;
+        d=google.com; s=arc-20240605;
+        b=YltbqaToIRw9D1rg61ZWqHSyeisbgHl3hzZC+LWuTUQGW9AsZ9s1NulBKBiBv5w19L
+         uFNxG6PA1DRZpjpec3wUQZuUux5IdY69+mVPtwwsBGxNlgprg7b49lvc//WJvwdGKEI3
+         fSHhZxhvHUDsrItGtijELD0e/hVQS3Afep8QPhCM5RvDrzR5F4J0MvMP4f8lUdPTbvY+
+         GiREE5N8l2aYpIocOsf1OFK4craVJvZBliWIxf5xVfR3574j3Wu873N4/Bxvd6wlF4TO
+         CSa5/7CZy8+2xox4Bq+y4cLctqTctWaETDqPyP022FGVRCb3CS7jkznbdcuf5Sgg7u4a
+         SRuA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=KXDSI5RAg8c5zNWcRSmde7/8QWrWU+Spj8Zjm+zN3rw=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=XDUHNHaMPr6NRg63eYhOEsVENhNSzklf17sniCTeKX2frLDPmzsIrg4/D1o+BiIDbY
+         cjNMFI16dm6biEufLzNicNZehCkDpL65LotwipczFTIGQ1YMJJKJqshzAl8kwaBteAjx
+         OxIuTj0VyDK8KjgRsw27uKQdSED4Bz5Tx+eknk+G4q6bCxFCzdnCynSIEKdT66tRjdxF
+         PCzMvoYn+SLGPlpf8a6LleMdVQcj3X2p2iAEK22KiBENTaB6naaBA3iCHHcqUFnlc5RI
+         CO/wmh0Ne/SWgcxIt3AGyHjBrrZMWfnV6AqCBc9xd58c/nqI+P65T32fkt4Eyvyqte+y
+         hd5Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@tryexponent.com header.s=s1 header.b=fjIt7MLm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=lCOYdUeu;
+       spf=pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 168.245.71.180 as permitted sender) smtp.mailfrom="bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tryexponent.com
+Return-Path: <bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com>
+Received: from o23.sg.m.dripemail2.com (o23.sg.m.dripemail2.com. [168.245.71.180])
+        by mx.google.com with ESMTPS id d9443c01a7336-22780fa7de9si174305785ad.294.2025.03.25.22.30.01
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 25 Mar 2025 22:30:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 168.245.71.180 as permitted sender) client-ip=168.245.71.180;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tryexponent.com header.s=s1 header.b=fjIt7MLm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=lCOYdUeu;
+       spf=pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 168.245.71.180 as permitted sender) smtp.mailfrom="bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tryexponent.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tryexponent.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:from:subject:to;
+	s=s1; bh=KXDSI5RAg8c5zNWcRSmde7/8QWrWU+Spj8Zjm+zN3rw=;
+	b=fjIt7MLmSyMu89c6paxehnZ80QuFBW4FiVHmTPrnWCKAqGKXHqc+bVo7xqr6HA7Qe+pt
+	mmnI3ntBt/I/4oWuVk3XqeyO0X7aJmUXVGFrm8yAHEKnv1g3eLyQQ1vBZODc0hfenEojLF
+	JsQlovhLmgdsIqJWUM8yLngnXUxMu6/yFZRpEKwL0h8vngQFxd1TX3xXFmIBG9ev//DOKU
+	I7jD1czKvr30b6Mdev4SXdxtJ5vjK44o2N8LGlCNazxL1r3l/tO+rwE0SsP/SYuOmO4Vg3
+	HoBIye3dh1lnTabR3ASAVGklOtCjvH9o403lEzbiAWuvlD/iYbEi1E0sL/q1Tb1w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=KXDSI5RAg8c5zNWcRSmde7/8QWrWU+Spj8Zjm+zN3rw=;
+	b=lCOYdUeuu6c+8TYiIbbI4pD3zWttW/eBACQlJOg3tF4S/fGcoX3zpbWsrqoq+0wB6B11
+	6halOrnuAuKthFPscoTVgLIyPnnthsiJFTkYplrZIHNF7Vd6rJrnHsvI4w67lIPKwUIlT6
+	W5OrpYHueROE02ybzQNm27Z7sHv7ay+Qk=
+Received: by recvd-5bbc5967db-g5m5r with SMTP id recvd-5bbc5967db-g5m5r-1-67E36909-6
+	2025-03-26 02:40:09.145680265 +0000 UTC m=+11337422.904173465
+Received: from Mjc0NzUxMjA (unknown)
+	by geopod-ismtpd-3 (SG) with HTTP
+	id FUk-Z8zYRs2m1DuHG8sB5Q
+	Wed, 26 Mar 2025 02:40:09.099 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=f3a790b1e31d411102bc1cd22eb394721e535c68e053a309af515ba41dc6
+Date: Wed, 26 Mar 2025 05:30:00 +0000 (UTC)
+From: "Jacob @ Exponent" <hello@tryexponent.com>
+Mime-Version: 1.0
+Message-ID: <FUk-Z8zYRs2m1DuHG8sB5Q@geopod-ismtpd-3>
+Subject: Can you answer these system design questions?
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40unsubscribe=2Edripemail3=2Ecom=3Fsubject=3DeyJhbGc?=
+ =?us-ascii?Q?iOiJIUzI1NiJ9=2EeyJhdWQiOiJtYWlsdG9fdW5zd?=
+ =?us-ascii?Q?WJzY3JpYmVfbGFtYmRhIiwiaXNzIjoibW9ub2xp?=
+ =?us-ascii?Q?dGgiLCJzdWIiOiJsaXN0X3Vuc3Vic2NyaWJlIiw?=
+ =?us-ascii?Q?iaWF0IjoxNzQyOTY3MDAwLCJuYmYiOjE3NDI5Nj?=
+ =?us-ascii?Q?cwMDAsImFjY291bnRfcHVibGljX2lkIjo0NzA4N?=
+ =?us-ascii?Q?TIwLCJzdWJzY3JpYmVyX3Rva2VuIjoiZHB3enhk?=
+ =?us-ascii?Q?NDVoZHlnOG1sNXp5c2IiLCJkZWxpdmVyeV90b2t?=
+ =?us-ascii?Q?lbiI6IjEyNnFlMnl5cXozdWxqZjJ2ZDZuIn0=2E3T?=
+ =?us-ascii?Q?yV5cjHdf0tzXyuNG4B2NB7iOlBr=5Fz12ECKNU2Z3?=
+ =?us-ascii?Q?NE=3E=2C=3Chttps=3A=2F=2Funsubscribe=2Edripemail3=2Ecom?=
+ =?us-ascii?Q?=3Fsubject=3DeyJhbGciOiJIUzI1NiJ9=2EeyJhdWQiO?=
+ =?us-ascii?Q?iJtYWlsdG9fdW5zdWJzY3JpYmVfbGFtYmRhIiwi?=
+ =?us-ascii?Q?aXNzIjoibW9ub2xpdGgiLCJzdWIiOiJsaXN0X3V?=
+ =?us-ascii?Q?uc3Vic2NyaWJlIiwiaWF0IjoxNzQyOTY3MDAwLC?=
+ =?us-ascii?Q?JuYmYiOjE3NDI5NjcwMDAsImFjY291bnRfcHVib?=
+ =?us-ascii?Q?GljX2lkIjo0NzA4NTIwLCJzdWJzY3JpYmVyX3Rv?=
+ =?us-ascii?Q?a2VuIjoiZHB3enhkNDVoZHlnOG1sNXp5c2IiLCJ?=
+ =?us-ascii?Q?kZWxpdmVyeV90b2tlbiI6IjEyNnFlMnl5cXozdW?=
+ =?us-ascii?Q?xqZjJ2ZDZuIn0=2E3TyV5cjHdf0tzXyuNG4B2NB7i?=
+ =?us-ascii?Q?OlBr=5Fz12ECKNU2Z3NE=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Drip-SendingAccount: 4708520
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EuSDS9eFxEU3M+kbHxIGVRJttqyJ9Y19zuGEZgFpcFXVyOlqsS=2FzpCdgGM?=
+ =?us-ascii?Q?PYg=2F2B6rkHjI2dymhsrMtshLHqvOalGXS8EBv1v?=
+ =?us-ascii?Q?7e6AJTjpL7SJnjGV4BjjIxsjqP=2FKH4ty1tQqMjZ?=
+ =?us-ascii?Q?82EjAE4bZ6VBzeERVE478jxoOpzvXWzwuygvWaR?=
+ =?us-ascii?Q?v8Gn0Qew=2FvNkZZtusLrdDif3l4GPKPW6GC8AApu?=
+ =?us-ascii?Q?DmkM4L8MZSzqcl7wHAioQL0FHZZRbEnJ6HXKe8q?= =?us-ascii?Q?u7Hc?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCAf2TSkkcsbWsXt?=
+ =?us-ascii?Q?+6pnbIhZ+hkW=2FtdnXMYWgwff=2F7EbAyLx=2FyrOj8Z?=
+ =?us-ascii?Q?yuxpqkE=2FVU3KHFD7X2WzELSkTtgiF9eDb5jUH8f?=
+ =?us-ascii?Q?vHwLXZzX8ROUIPpcQAOmyLSw6vvsvuqCuD2T8nN?=
+ =?us-ascii?Q?rtyjmDSHhJOPJxm2wfQhqy2bq9FP99EyaHwm0v1?=
+ =?us-ascii?Q?zg=2FBpPGXwhJ8vQgFrlerkDZalZT88SZKDVcJPfb?=
+ =?us-ascii?Q?dh83H5QyuMFAASXzz75NtJ0ZZCKAxELUQEMPQUi?=
+ =?us-ascii?Q?aRU9oB5TcQ2VkvCWiFyOByhKkmKQqysvSJrtMbx?=
+ =?us-ascii?Q?2uqDS2vCE98GPuTiopMLG151c7jk2Kg1teLIWwT?=
+ =?us-ascii?Q?XzUkJFSTVmBsUFqQ7ixtVeR5sNrFwGWMzvp7stM?=
+ =?us-ascii?Q?UbIfkqxd9w5Obzu8sIQQd1N+dLznK24IXhT4fVy?=
+ =?us-ascii?Q?P+sRtdFQvzyshOaO3ogNIjMhL2ttW2wyvp5g+uL?=
+ =?us-ascii?Q?nA42x7lIBG8t23t9LlBEOUkGEvWucy2R1ZXrKVf?=
+ =?us-ascii?Q?s3EZsa34XL+avkL3ATD5ELzfIakSLfQZ9NGYIY+?=
+ =?us-ascii?Q?WHyb6MkrUN6nBTOqzMg2PiXVKFkiYctXDEsv=2FSr?=
+ =?us-ascii?Q?G+6yH+o003yX+sK+XZH2g0Qo0NurFWkg+2wEtps?=
+ =?us-ascii?Q?LfiueNoCzywIFs80EYUfNEytniC5RYNomXrU9QM?=
+ =?us-ascii?Q?BUjv4OQuqU7ZYKG77DEFUCJ=2FzOhsTzoK=2FNxbrut?=
+ =?us-ascii?Q?ODau6IW7Chem3qGVnetWRgYs=2FAKFIYmrHvDbK7c?=
+ =?us-ascii?Q?ZAwUV4dbm?=
+To: yash31204testing@gmail.com
+X-Entity-ID: u001.Q8GX+GkWXypxhatSvAZ5gQ==
+
+--f3a790b1e31d411102bc1cd22eb394721e535c68e053a309af515ba41dc6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+Hey Yash,
+
+System design is one of the trickiest interview types because it
+requires working knowledge of how real-world systems are
+built and great communication skills. You can't fake it, and
+there's only one way to get better: practice.
+
+Here are some recaps and interactive video walkthroughs from our
+complete system design interview course:
+
+* Design WhatsApp=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYmYi=
+OjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZTJ=
+5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0Ij=
+oxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvZGVzaWduLXdoYXRzYXBwP19fcz1=
+kcHd6eGQ0NWhkeWc4bWw1enlzYiJ9.8FNGVUXz0LD8lnCphv-_HKbpWhP2xisSPalRtcsKZP8 )
+ (Video - with Amazon SWE)
+* Design Tinder=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYmYi=
+OjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZTJ=
+5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0Ij=
+oxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvZGVzaWduLXRpbmRlcj9fX3M9ZHB=
+3enhkNDVoZHlnOG1sNXp5c2IifQ.8a717sPN5qqCf_5tFRiUbA50_y2i24n6kIoraQdiQpg )
+ (Video - with TikTok SWE)
+* Design Instagram=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYmYi=
+OjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZTJ=
+5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0Ij=
+oxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvbW9jay1pbnRlcnZpZXctZGVzaWd=
+uLWluc3RhZ3JhbT9fX3M9ZHB3enhkNDVoZHlnOG1sNXp5c2IifQ.sdQ01XVG9qoUULTkk0qzCsZ=
+tS9M28d3RkskJSqLI_VY )
+ (Video - with Dropbox SWE)
+* Design a Web Crawler=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYmYi=
+OjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZTJ=
+5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0Ij=
+oxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvZGVzaWduLXdlYi1jcmF3bGVyP19=
+fcz1kcHd6eGQ0NWhkeWc4bWw1enlzYiJ9.q7mjzHGsc9vQqQZozG-O-R-eOxgSetoL8tET-jP5h=
+l8 )
+ (Video - FAANG+ SWE)
+* Design a Parking Garage=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYmYi=
+OjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZTJ=
+5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0Ij=
+oxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvZGVzaWduLXBhcmtpbmctZ2FyYWd=
+lP19fcz1kcHd6eGQ0NWhkeWc4bWw1enlzYiJ9.LUA1-xcWPuo84wkRalTTv7r5gBJDNoOX07JkL=
+hOPvn8 )
+ (Video - Airbnb SWE)
+
+Want to get really good at system design interviews? Book a 1:1
+practice session ( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQi=
+OiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQ=
+yOTU2ODA5LCJuYmYiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcn=
+lfaWQiOiIxMjZxZTJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkN=
+m4iLCJzZW5kX2F0IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5=
+cGUiOiJDYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5=
+0cnlleHBvbmVudC5jb20vcHJhY3RpY2U_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiIn0.h-mSUt=
+4-FUEdVEmbwIOpNY1v4rZw86fEXZCwP_ZNDUs ) with
+another SWE candidate. Get better at white-boarding and
+communicating.
+
+Jacob Simon
+
+Co-founder, Exponent
+
+Connect on LinkedIn=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYmYi=
+OjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZTJ=
+5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0Ij=
+oxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5saW5rZWRpbi5jb20v=
+Y29tcGFueS90cnlleHBvbmVudC8_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiIn0.B2LOJ_cAkYc=
+1mtgQ2DGK72dWAacCN8J3a6kYifLn95Q )
+
+---------------------
+To make sure you keep getting these emails, please add
+hello@tryexponent.com to your address book or whitelist us. Want out of
+the loop? <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdW=
+QiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxN=
+zQyOTU2ODA5LCJuYmYiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZl=
+cnlfaWQiOiIxMjZxZTJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZ=
+kNm4iLCJzZW5kX2F0IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3=
+R5cGUiOiJDYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3d=
+y5nZXRkcmlwLmNvbS9zdWJzY3JpYmVycy9kcHd6eGQ0NWhkeWc4bWw1enlzYi90b3BpY3M_ZD0x=
+MjZxZTJ5eXF6M3VsamYydmQ2biZleGNsdWRlX2NsaWNrPTEmX19zPWRwd3p4ZDQ1aGR5ZzhtbDV=
+6eXNiIn0.UD-r_knDsjIY7PUqRJ6qOzg5yO24plax_4xA3kXg-iY">Unsubscribe</a>.
+
+Our postal address: 150 Albion St, San Francisco, CA 94110
+
+
+--f3a790b1e31d411102bc1cd22eb394721e535c68e053a309af515ba41dc6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D'font-family: "Helveti=
+ca Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box=
+; font-size: 14px; line-height: 1.5;'>
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+<style>img {
+max-width: 100%; margin-bottom: 14px;
+}
+body {
+background-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+a:visited {
+color: #5025D8 !important;
+}
+a:hover {
+color: #3917A7 !important;
+}
+a:active {
+color: #3917A7 !important;
+}
+.cta-button:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+.cta-button:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+.cta-button:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+</style></head>
+<body style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.6; ba=
+ckground-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: none; width: 100% !important; height: 100%;' bgcolor=3D"#ffffff"><span =
+style=3D'display: none !important; mso-hide: all; visibility: hidden; opaci=
+ty: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-s=
+erif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>In-depth =
+walkthroughs of common system design questions.</span><span style=3D'displa=
+y: none; max-height: 0px; overflow: hidden; font-family: "Helvetica Neue", =
+"Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-siz=
+e: 14px; line-height: 1.5;'>=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C</span>
+
+<!--[if mso 16]>
+    <style type=3D"text/css">
+        a{
+            text-decoration:none !important;
+        }
+    </style>
+<![endif]-->
+
+<table class=3D"body-wrap" style=3D'font-family: "Helvetica Neue", "Helveti=
+ca", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;=
+ line-height: 1.5; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background=
+-color: #ffffff; width: 100%;' bgcolor=3D"#ffffff">
+  <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+    <td class=3D"container" style=3D'font-family: "Helvetica Neue", "Helvet=
+ica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px=
+; line-height: 1.5; vertical-align: top; display: block !important; max-wid=
+th: 600px !important; overflow: visible; clear: both !important; margin: 0;=
+' valign=3D"top">
+      <div class=3D"content" style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5; max-width: 600px; overflow: visible; display: block; m=
+argin: 0;'>
+        <table class=3D"main" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Aria=
+l, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+          <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>
+            <td class=3D"main-content" style=3D"font-family: 'Helvetica Neu=
+e', 'Helvetica', 'Arial', sans-serif; box-sizing: border-box; font-size: 14=
+px; line-height: 1.5; vertical-align: top; color: #222222; padding: 25px;" =
+valign=3D"top">
+              <!-- cke-content-start --><!-- cke-content-start --><!-- cke-=
+content-start --><!-- cke-content-start --><!-- cke-content-start -->Hey Ya=
+sh,<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Aria=
+l, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+System design is one of the trickiest interview types because it requires w=
+orking knowledge of how real-world systems are built=C2=A0<em style=3D'font=
+-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-s=
+izing: border-box; font-size: 14px; line-height: 1.5;'>and </em>great=C2=A0=
+communication skills. You can't fake it, and there's only one way to get be=
+tter: practice.<br style=3D'font-family: "Helvetica Neue", "Helvetica", Hel=
+vetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-he=
+ight: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Here are some recaps and interactive<strong style=3D'font-family: "Helvetic=
+a Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box;=
+ font-size: 14px; line-height: 1.5; font-weight: bold;'> video walkthroughs=
+</strong> from our complete system design interview course:
+<ul style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; marg=
+in-bottom: 14px; font-weight: normal; margin-left: 20px; margin-right: 0; p=
+adding-left: 0; padding-right: 0;'>
+	<li style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; mar=
+gin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;'><a href=
+=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJ=
+pc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYm=
+YiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZ=
+TJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0=
+IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWl=
+nbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC=
+5jb20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvZGVzaWduLXdoYXRzYXBwP19fc=
+z1kcHd6eGQ0NWhkeWc4bWw1enlzYiZ1dG1fc291cmNlPWRyaXAmdXRtX21lZGl1bT1lbWFpbCZ1=
+dG1fY2FtcGFpZ249U1dFK0ludGVyZXN0K0NhbXBhaWduJnV0bV9jb250ZW50PUNhbit5b3UrYW5=
+zd2VyK3RoZXNlK3N5c3RlbStkZXNpZ24rcXVlc3Rpb25zJTNGIn0.BizfcK3SSWxfQ2Z-ulcQR8=
+7m09vAjT2V8nzhCmW1d74" style=3D'font-family: "Helvetica Neue", "Helvetica",=
+ Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; lin=
+e-height: 1.5; color: #5025D8; text-decoration: underline;'><span style=3D'=
+font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; b=
+ox-sizing: border-box; font-size: 14px; line-height: 1.5;'>Design WhatsApp<=
+/span></a><span style=3D'font-family: "Helvetica Neue", "Helvetica", Helvet=
+ica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-heigh=
+t: 1.5;'> (Video - with Amazon SWE)</span></li>
+	<li style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; mar=
+gin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;'><a href=
+=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJ=
+pc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYm=
+YiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZ=
+TJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0=
+IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWl=
+nbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC=
+5jb20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvZGVzaWduLXRpbmRlcj9fX3M9Z=
+HB3enhkNDVoZHlnOG1sNXp5c2ImdXRtX3NvdXJjZT1kcmlwJnV0bV9tZWRpdW09ZW1haWwmdXRt=
+X2NhbXBhaWduPVNXRStJbnRlcmVzdCtDYW1wYWlnbiZ1dG1fY29udGVudD1DYW4reW91K2Fuc3d=
+lcit0aGVzZStzeXN0ZW0rZGVzaWduK3F1ZXN0aW9ucyUzRiJ9.dvsNhzfCvIaCTaBDY-1XzjhVC=
+IddAFuPz4Wx6ZW7p_0" style=3D'font-family: "Helvetica Neue", "Helvetica", He=
+lvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-h=
+eight: 1.5; color: #5025D8; text-decoration: underline;'><span style=3D'fon=
+t-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-=
+sizing: border-box; font-size: 14px; line-height: 1.5;'>Design Tinder</span=
+></a> (Video - with TikTok SWE)</li>
+	<li style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; mar=
+gin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;'><span sty=
+le=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-se=
+rif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'><a href=3D=
+"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3=
+MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYmYiO=
+jE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZTJ5=
+eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0Ijo=
+xNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnbi=
+IsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5jb=
+20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvbW9jay1pbnRlcnZpZXctZGVzaWdu=
+LWluc3RhZ3JhbT9fX3M9ZHB3enhkNDVoZHlnOG1sNXp5c2ImdXRtX3NvdXJjZT1kcmlwJnV0bV9=
+tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPVNXRStJbnRlcmVzdCtDYW1wYWlnbiZ1dG1fY29udG=
+VudD1DYW4reW91K2Fuc3dlcit0aGVzZStzeXN0ZW0rZGVzaWduK3F1ZXN0aW9ucyUzRiJ9.HQTE=
+QcaxxSx2Vt0QdM32YlAAZ_tpQA_Esd5hnrKLPJg" style=3D'font-family: "Helvetica N=
+eue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; fo=
+nt-size: 14px; line-height: 1.5; color: #5025D8; text-decoration: underline=
+;'><span style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Ar=
+ial, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;=
+'>Design Instagram</span></a> (Video - with Dropbox SWE)</span></li>
+	<li style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; mar=
+gin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;'><a href=
+=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJ=
+pc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYm=
+YiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZ=
+TJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0=
+IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWl=
+nbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC=
+5jb20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvZGVzaWduLXdlYi1jcmF3bGVyP=
+19fcz1kcHd6eGQ0NWhkeWc4bWw1enlzYiZ1dG1fc291cmNlPWRyaXAmdXRtX21lZGl1bT1lbWFp=
+bCZ1dG1fY2FtcGFpZ249U1dFK0ludGVyZXN0K0NhbXBhaWduJnV0bV9jb250ZW50PUNhbit5b3U=
+rYW5zd2VyK3RoZXNlK3N5c3RlbStkZXNpZ24rcXVlc3Rpb25zJTNGIn0.Hygt222mn-iCNfdFpe=
+yHftMjvahkTR255QVPXbsvAgA" style=3D'font-family: "Helvetica Neue", "Helveti=
+ca", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;=
+ line-height: 1.5; color: #5025D8; text-decoration: underline;'><span style=
+=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-seri=
+f; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>Design a Web=
+ Crawler</span></a><span style=3D'font-family: "Helvetica Neue", "Helvetica=
+", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; l=
+ine-height: 1.5;'> (Video - FAANG+ SWE)</span></li>
+	<li style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; mar=
+gin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;'><a href=
+=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJ=
+pc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA5LCJuYm=
+YiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiIxMjZxZ=
+TJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZW5kX2F0=
+IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWl=
+nbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC=
+5jb20vY291cnNlcy9zeXN0ZW0tZGVzaWduLWludGVydmlld3MvZGVzaWduLXBhcmtpbmctZ2FyY=
+WdlP19fcz1kcHd6eGQ0NWhkeWc4bWw1enlzYiZ1dG1fc291cmNlPWRyaXAmdXRtX21lZGl1bT1l=
+bWFpbCZ1dG1fY2FtcGFpZ249U1dFK0ludGVyZXN0K0NhbXBhaWduJnV0bV9jb250ZW50PUNhbit=
+5b3UrYW5zd2VyK3RoZXNlK3N5c3RlbStkZXNpZ24rcXVlc3Rpb25zJTNGIn0.Rk2FkJ6byc0A7K=
+Po_cjOONoKH3RkC7pf6WLnOfqDXeE" style=3D'font-family: "Helvetica Neue", "Hel=
+vetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 1=
+4px; line-height: 1.5; color: #5025D8; text-decoration: underline;'><span s=
+tyle=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-=
+serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>Design a=
+ Parking Garage</span></a> (Video - Airbnb SWE)</li>
+</ul>
+<strong style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Ari=
+al, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; =
+font-weight: bold;'>Want to get really good at system design interviews?</s=
+trong> Book a <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.ey=
+JhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0I=
+joxNzQyOTU2ODA5LCJuYmYiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVs=
+aXZlcnlfaWQiOiIxMjZxZTJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGp=
+mMnZkNm4iLCJzZW5kX2F0IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYm=
+xlX3R5cGUiOiJDYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL=
+3d3dy50cnlleHBvbmVudC5jb20vcHJhY3RpY2U_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiJnV0=
+bV9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW50ZXJlc3Q=
+rQ2FtcGFpZ24mdXRtX2NvbnRlbnQ9Q2FuK3lvdSthbnN3ZXIrdGhlc2Urc3lzdGVtK2Rlc2lnbi=
+txdWVzdGlvbnMlM0YifQ.93RtzICwoAJZOxMhRI9c5ZKWcOzwFj86Nub3_Q3nXOc" style=3D'=
+font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; b=
+ox-sizing: border-box; font-size: 14px; line-height: 1.5; color: #5025D8; t=
+ext-decoration: underline;'><span style=3D'font-family: "Helvetica Neue", "=
+Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size=
+: 14px; line-height: 1.5;'>1:1 practice session</span></a> with another SWE=
+ candidate. Get better at white-boarding and communicating.
+
+<p style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, s=
+ans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; margi=
+n-bottom: 14px; font-weight: normal;'>Jacob Simon<br style=3D'font-family: =
+"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: bo=
+rder-box; font-size: 14px; line-height: 1.5;'>
+Co-founder, Exponent<br style=3D'font-family: "Helvetica Neue", "Helvetica"=
+, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; li=
+ne-height: 1.5;'>
+<a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRv=
+dXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2ODA=
+5LCJuYmYiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOi=
+IxMjZxZTJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJzZ=
+W5kX2F0IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJD=
+YW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5saW5rZWR=
+pbi5jb20vY29tcGFueS90cnlleHBvbmVudC8_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiJnV0bV=
+9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW50ZXJlc3QrQ=
+2FtcGFpZ24mdXRtX2NvbnRlbnQ9Q2FuK3lvdSthbnN3ZXIrdGhlc2Urc3lzdGVtK2Rlc2lnbitx=
+dWVzdGlvbnMlM0YifQ.V03ZGcJRKopmI16d1l1Ke2GgIRLexw6MYILR7TwvN3s" style=3D'fo=
+nt-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box=
+-sizing: border-box; font-size: 14px; line-height: 1.5; color: #5025D8; tex=
+t-decoration: underline;'><span style=3D'font-family: "Helvetica Neue", "He=
+lvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: =
+14px; line-height: 1.5;'><em style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5;'>Connect on LinkedIn</em></span></a></p>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+     =20
+      <div class=3D"content" style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5; max-width: 600px; overflow: visible; display: block; m=
+argin: 0;'>
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D'=
+font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; b=
+ox-sizing: border-box; font-size: 14px; line-height: 1.5; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt;'>
+          <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>
+            <td class=3D"footer-content" style=3D"font-family: 'Helvetica N=
+eue', 'Helvetica', 'Arial', sans-serif; box-sizing: border-box; font-size: =
+14px; line-height: 1.5; vertical-align: top; width: 100%; clear: both; colo=
+r: #777; border-top-width: 1px; border-top-color: #d0d0d0; border-top-style=
+: solid; padding: 25px;" valign=3D"top">
+              To make sure you keep getting these emails, please add hello@=
+tryexponent.com to your address book or whitelist us. Want out of the loop?=
+ <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXR=
+vdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQyOTU2OD=
+A5LCJuYmYiOjE3NDI5NTY4MDksImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiO=
+iIxMjZxZTJ5eXF6M3VsamYydmQ2biIsInRva2VuIjoiMTI2cWUyeXlxejN1bGpmMnZkNm4iLCJz=
+ZW5kX2F0IjoxNzQyOTY3MDAwLCJlbWFpbF9pZCI6NDA3MzkzOSwiZW1haWxhYmxlX3R5cGUiOiJ=
+DYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5nZXRkcm=
+lwLmNvbS9zdWJzY3JpYmVycy9kcHd6eGQ0NWhkeWc4bWw1enlzYi90b3BpY3M_ZD0xMjZxZTJ5e=
+XF6M3VsamYydmQ2biZleGNsdWRlX2NsaWNrPTEmX19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiJnV0=
+bV9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW50ZXJlc3Q=
+rQ2FtcGFpZ24mdXRtX2NvbnRlbnQ9Q2FuK3lvdSthbnN3ZXIrdGhlc2Urc3lzdGVtK2Rlc2lnbi=
+txdWVzdGlvbnMlM0YifQ.LAPA4DSH47ii-rFybgwc28ixb7aiBhGIjxKG3No-HJs" style=3D'=
+font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; b=
+ox-sizing: border-box; font-size: 14px; line-height: 1.5; color: #5025D8; t=
+ext-decoration: underline;'>Unsubscribe</a>.
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'><br=
+ style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, san=
+s-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Our postal address: 150 Albion St, San Francisco, CA 94110
+
+            </td>
+          </tr>
+        </table>
+      </div>
+     =20
+    </td>
+  </tr>
+</table>
+<img src=3D"https://u27475120.ct.sendgrid.net/wf/open?upn=3Du001.aRCGSPwM0C=
+8HED7rMt4XUJenHxM5HFFHeaRgbP8Nq-2Bhdk-2BWD1-2Bsvv5oKaxydZuxYDKz8dkEqs2eJv-2=
+FAUnonkVbEeB3X-2F0vJRc4sHx8truMfzW2aoN-2F8TzPHi80bXzxIvs66-2Bj4QqTF-2FNZMc1=
+OhKIednHvKWr2k1jFAEC9UJWMfozW-2BVuB6LnK4Z6IHRjOxRAHPVmFKn-2FBZ7zH6OJFRBC5-2=
+FXbh2T-2FXhv8EUhDcmZfnmbCl53wIMVFebt-2BeGGDt5yg6HNWmMWfMd317wuBZmjKtKcNfuaB=
+mXfkADfitzIMIaE4MRo3UU40-2BabOM4LDIR5PC16FzdZmzk4QUbZ69ULi-2BaVCOmjzwoLdHF4=
+y1QkNaN5s6X-2B2s8tpW2GyIR4HxZyk-2BYlCUiMBMY3qrZvdZwJhPtJls-2BIxX5JRfadlZ9kL=
+mqJJ6H-2F2GduaRn8VwwmCYNwC7D-2FZiL1OxB13qQEtY0ESeCz81Ev7SsJ78beK0xGp8bsYyvI=
+ZCTRbZH-2B6FL0BOP8V6XcQ4eXUxFvLVvKlwRquFxgDNKaxgZYX4oQRW8-2Bf988NwQAtxzR2ou=
+cQhr2TQPSpJOPmvzCBPm1R7tEKJMSI5TNm3J4Wtlm6srn1SsAtPNg5QpcC2rpZrituxv8hGoqvL=
+-2BjtJjw8Xun7SC7H-2FLvgEPFYDh8JOn3QsY-2F8Tl9Bjd-2FfWRV9ysUJ6siRlc6e1bdzFC-2=
+BxgRZxZyhiRaQdfbEZYFBC9OyIl8bY-2F58rB9dQJ-2FWFPb4KmB0t9dUlKoSTArxJdQTAAMvvz=
+0D3g7uOrnumwVa-2BFrSkGW2RbbaWRvtJwOmOCEkQGK4HgXjmBvLOObek70bg2q6TsMgqBatcdC=
+4pPC38ra6Y2sVR1bgb4K8Wr9KuWHrf1kCa-2FFOmBll4NXhrbXqsYFakvC28cbWnPa9FxbBz9Zf=
+Qy7pFBjEH42L7mtg-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=
+=3D"height:1px !important;width:1px !important;border-width:0 !important;ma=
+rgin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;=
+margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !importa=
+nt;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+--f3a790b1e31d411102bc1cd22eb394721e535c68e053a309af515ba41dc6--

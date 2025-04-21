@@ -1,0 +1,19 @@
+MIME-Version: 1.0
+Date: Sun, 26 Jan 2025 16:12:23 +0530
+Message-ID: <CAEz7=eNbz9Di3bguUi545cVRN-WenpsLRD2aE3eDa4tWfWSo2A@mail.gmail.com>
+Subject: testing 17
+From: Yash <yash31204testing@gmail.com>
+To: Yash <yash31204testing@gmail.com>
+Content-Type: multipart/alternative; boundary="00000000000077efab062c999d67"
+
+--00000000000077efab062c999d67
+Content-Type: text/plain; charset="UTF-8"
+
+hello
+
+--00000000000077efab062c999d67
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">hello</div>
+
+--00000000000077efab062c999d67--

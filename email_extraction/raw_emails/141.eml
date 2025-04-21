@@ -1,0 +1,85 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7011:812:b0:43a:a54e:2943 with SMTP id gx18csp2413721mdb;
+        Mon, 31 Mar 2025 09:14:08 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFyVksoJ8e2NHgRIXUn3tpFELNABI38O67SaJbpAkkupY2QCHKyS0+nYHTeGffVu0OfHbf3
+X-Received: by 2002:aa7:88d2:0:b0:736:4b08:cc0e with SMTP id d2e1a72fcca58-7398042a29emr12233299b3a.17.1743437648665;
+        Mon, 31 Mar 2025 09:14:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1743437648; cv=none;
+        d=google.com; s=arc-20240605;
+        b=BXpbPHmlJWyWMAHmvwnDnwyH6kcZWXMVj0Mc39dBeQuIvgjan2MQCJt7sFGcBE6rCf
+         7dklHEvBnDw201XTqQYVluEP9OORt6hCZvazznIJFIJk7jAgJxlMUtWL+g5BLc6mSzuS
+         HFqK5YxijQTWWZ74yb2SlW/kDmhIXQDZ0sDIJyq6VxQAnjTEHvCT15cH3vM4CX8HKnZT
+         1n/KJfUwnN679rlIuZJdO7Bt2VHIYPXbDxYP1UjmDB8IGcixSzeaoYBwA5tDO9GJtGDV
+         J8Q7Kv9kqfXal42ZFaWtHDf+jjMcZVykWWSVgXl676t3nymbOtLDGgbDepSqNpqCm5gO
+         x8Eg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:mime-version:subject:reply-to:to:from
+         :dkim-signature:dkim-signature;
+        bh=MjCPIxcUQ2xzVzRybewynFs56jy1H4A8nVbB0dzPd1k=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=PM+Nc1Fg9P57J4nbAq5o/dd8T0eMLgAS4BIFaTKelcpwsJpKl75yX2WmL8XPdJX/hF
+         F+uT1VTH/OKb1trS8VffPDSKEkoqPgDZoYUwB8Z83+lFfnby4zQQoT12Odv4cYnM5oWg
+         HRZY274SpNEQ069qHUW0Cr0oWY/21lQh91vm2XCkJ/l+I2SWLkvoKYgAVY2hZuu+H13+
+         zIpgVNukVSEIH2rPKpdHWmZrzN5zELonhQZp2/4yzVT1OURRocAmYWaDoPAzO+HYMI34
+         u4xHL8GrpMIFTRhI1/LM5M4Aw8Q8IKrzYmor2pxmRVRbG9/QxtDUQl0Q4buNp1md51fk
+         zGAQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@hellointerview.com header.s=r7qitnjhxncpiuyitth2kpnwsj777s75 header.b="lx/1ncit";
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=tvme70Tl;
+       spf=pass (google.com: domain of 01010195ecfb511e-a4a3ea0d-3e6e-4b9a-859e-5af240e6481e-000000@mail.hellointerview.com designates 54.240.27.57 as permitted sender) smtp.mailfrom=01010195ecfb511e-a4a3ea0d-3e6e-4b9a-859e-5af240e6481e-000000@mail.hellointerview.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hellointerview.com
+Return-Path: <01010195ecfb511e-a4a3ea0d-3e6e-4b9a-859e-5af240e6481e-000000@mail.hellointerview.com>
+Received: from a27-57.smtp-out.us-west-2.amazonses.com (a27-57.smtp-out.us-west-2.amazonses.com. [54.240.27.57])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-73970e1d5cesi14057585b3a.30.2025.03.31.09.14.08
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 31 Mar 2025 09:14:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01010195ecfb511e-a4a3ea0d-3e6e-4b9a-859e-5af240e6481e-000000@mail.hellointerview.com designates 54.240.27.57 as permitted sender) client-ip=54.240.27.57;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@hellointerview.com header.s=r7qitnjhxncpiuyitth2kpnwsj777s75 header.b="lx/1ncit";
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=tvme70Tl;
+       spf=pass (google.com: domain of 01010195ecfb511e-a4a3ea0d-3e6e-4b9a-859e-5af240e6481e-000000@mail.hellointerview.com designates 54.240.27.57 as permitted sender) smtp.mailfrom=01010195ecfb511e-a4a3ea0d-3e6e-4b9a-859e-5af240e6481e-000000@mail.hellointerview.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hellointerview.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=r7qitnjhxncpiuyitth2kpnwsj777s75; d=hellointerview.com;
+	t=1743437648;
+	h=From:To:Reply-To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=pR/IhxonYPrGIkFyLXC7wZHaQ6WS/1V26eUHSzvlcsk=;
+	b=lx/1ncitzX6lWlyzCeOz1ABU+voYwikDtWUJ+6u1qq5h9tLnyJbc0whjEcPpxNvV
+	LxkO7NoPODNZluQrKRXMGi7vVil/aRZZbnknGBLHTlEa3jk+tJyRmNlLmhAESXOrxoL
+	h1vK6ns6WY5Fb2MtzV9XIhIuooMf7OsXXWAdNWGqf1Q0tDPvit63wo1OZE0GiwwA2kx
+	5Q9dUaPHYuu/rrDmnoNf7wtCSTfpqefuDp9AmZQq4B7W3DWAcxdGkAoSarsm9aY9kdx
+	nR4NgJ6aTyWTNIvu901qQioX/ZSH9BdfAjcbtNox9CC9balLjWH5uWL9wHXJMPiqAWj
+	Dptu+6O9hQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1743437648;
+	h=From:To:Reply-To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=pR/IhxonYPrGIkFyLXC7wZHaQ6WS/1V26eUHSzvlcsk=;
+	b=tvme70TlHO9LryW9ZhrmFi1cX4jCmvjZberBr+srqLuZ2yk2/kd5/czxwL+G0rMv
+	eUX9HwFoDhKDwTctbSqnwnJeVfdxeHcp7e5YnBR5Iq0sGm53Wctt7ouhQYG+5I1QRjV
+	PDBRczRxtyhupoLjOzAyFhW5bHIC3Tdg2iOMuFlM=
+From: Stefan from Hello Interview <stefan@hellointerview.com>
+To: yash31204testing@gmail.com
+Reply-To: Stefan from Hello Interview <support@hellointerview.com>
+Subject: Own Your Next Interview
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Message-ID: <01010195ecfb511e-a4a3ea0d-3e6e-4b9a-859e-5af240e6481e-000000@us-west-2.amazonses.com>
+Date: Mon, 31 Mar 2025 16:14:08 +0000
+Feedback-ID: ::1.us-west-2.AhKPYv57Kkeud+aRCDTBAzM12eMA5cfxAe4EwHNl7+0=:AmazonSES
+X-SES-Outgoing: 2025.03.31-54.240.27.57
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html dir="ltr" lang="en"><head><link rel="preload" as="image" href="https://www.hellointerview.com/assets/brand/logoAndNamePrimary.png"/><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/><meta name="x-apple-disable-message-reformatting"/><!--$--><style>
+    @font-face {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      mso-font-alt: 'sans-serif';
+      src: url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400..700;1,400..700&display=swap) format('woff2');
+    }
+
+    * {
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style></head><body><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-left:auto;margin-right:auto;padding-left:12px;padding-right:12px;font-family:Open Sans, sans-serif;max-width:37.5em"><tbody><tr style="width:100%"><td><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:24px;margin-bottom:24px;margin-left:auto;margin-right:auto"><tbody><tr><td><img alt="Hello Interview Logo" height="60" src="https://www.hellointerview.com/assets/brand/logoAndNamePrimary.png" style="display:block;outline:none;border:none;text-decoration:none" width="230"/></td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:20px;margin-bottom:20px;font-weight:600;font-size:20px;line-height:28px"><tbody><tr><td>Thanks for signing up for Hello Interview! 🎉</td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:20px;margin-bottom:20px"><tbody><tr><td>As former FAANG hiring managers and staff engineers, we were tired of other interview prep programs which are outdated, expensive, slow, and ineffective.</td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:20px;margin-bottom:20px"><tbody><tr><td>That&#x27;s why we built Hello Interview to help you <strong>nail</strong> your next interview. With hundreds of thousands of users already using Hello Interview and seeing results, we&#x27;re confident we can help you too.</td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:20px;margin-bottom:20px;background-color:rgb(248,250,252);padding:20px;border-radius:0.375rem"><tbody><tr><td><i>&quot;Finally found an efficient way to prepare system design interview. I just wish I used this service earlier. will definitely recommend to all my friends!&quot;</i> - Angie H, Staff SWE</td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:20px;margin-bottom:20px"><tbody><tr><td><a href="https://www.hellointerview.com/mock/schedule" style="color:#299A8D;text-decoration-line:none" target="_blank">Book a Mock Interview</a> with one of our Expert Coaches to learn exactly what it takes to get the job. Our coaches are senior+ engineers and managers that have conducted 1,000s of interviews at top FAANG+ companies.</td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:20px;margin-bottom:20px"><tbody><tr><td>You can also get started for free preparing anecdotes with our <a href="https://www.hellointerview.com/learn/behavioral/story-builder" style="color:#299A8D;text-decoration-line:none" target="_blank">Story Builder</a> for your behavioral interview or checkout our free <a href="https://www.hellointerview.com/learn/system-design" style="color:#299A8D;text-decoration-line:none" target="_blank">System Design</a> and <a href="https://www.hellointerview.com/learn/code" style="color:#299A8D;text-decoration-line:none" target="_blank">Coding</a> courses.</td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:20px;margin-bottom:20px"><tbody><tr><td>Every step of the way, <strong>we&#x27;re here to help</strong> you on your journey to land your dream job. Feel free to respond to this email with any questions you might have!</td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation"><tbody><tr><td><a href="https://www.hellointerview.com" variant="lg" style="line-height:100%;text-decoration:none;display:inline-block;max-width:100%;mso-padding-alt:0px;background-color:#299A8D;border-radius:5px;font-size:18px;color:#ffffff;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:20px;padding:10px 20px 10px 20px" target="_blank"><span><!--[if mso]><i style="mso-font-width:500%;mso-text-raise:15" hidden>&#8202;&#8202;</i><![endif]--></span><span style="max-width:100%;display:inline-block;line-height:120%;mso-padding-alt:0px;mso-text-raise:7.5px">Get Started</span><span><!--[if mso]><i style="mso-font-width:500%" hidden>&#8202;&#8202;&#8203;</i><![endif]--></span></a></td></tr></tbody></table><table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin-top:20px;margin-bottom:20px"><tbody><tr><td>All the best,<br/>Stefan and Evan</td></tr></tbody></table><hr style="width:100%;border:none;border-top:1px solid #eaeaea;border-color:#cccccc;margin:20px 0"/><div style="color:#8898aa;font-size:12px;line-height:18px">Optick Labs Inc. dba Hello Interview<br/>7511 Greenwood Ave North Unit #4238, Seattle, WA 98103<br/>To unsubscribe, <a href="https://www.hellointerview.com/unsubscribe?subscriberToken=9b24ae71b8d6a7fdfdd2b70cbcf9573061fa03110b6a9bb1896a3d358008a5a4&amp;subscriberId=cm8x9reiw000mad08hfo5hogw" style="color:#299A8D;text-decoration-line:none" target="_blank">Manage Email Preferences</a></div></td></tr></tbody></table><!--/$--></body></html>

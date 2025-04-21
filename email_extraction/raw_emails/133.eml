@@ -1,0 +1,592 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7011:812:b0:43a:a54e:2943 with SMTP id gx18csp1107643mdb;
+        Fri, 28 Mar 2025 22:30:00 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG4ylf9fvcEPi+ws4VTqu+P7i3330cqcjN6Z32mMjtNGw/dWkK5hqfFPs93pd9CFcxv5XO6
+X-Received: by 2002:a05:6214:224c:b0:6ea:d6e1:f3f8 with SMTP id 6a1803df08f44-6eed62a35b2mr21574256d6.45.1743226200666;
+        Fri, 28 Mar 2025 22:30:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1743226200; cv=none;
+        d=google.com; s=arc-20240605;
+        b=YEaF6rSnqz9/Hi0CMcldOMCITd9Al4KXjU6bDwWJSVCX1G7J7J9XzkMCVxU5JO6lWT
+         f4mdrKbRVwb3TkEZ2COv8KKwxudV6PK1iIB3jZjuJ1ZPSzUvOtPqQQTGvHWiOXojo/j/
+         Z3UnecGJDMFnmChHTYzcUvvBBEV3saTjrnIs1kr/7WDXzv9mfw5t6rG96Wdv7QqRNuoE
+         9khQYuRCr6U1dI4TjeaIytijWATpUjsuZvPJjefccsH2cLKAxsCPoGgRMSUrF/1HsQCZ
+         6ZAf96c8k3onuK8Y7WE/DqDd84Wz1Ct9hvTsdKJqPAMJ8qSgqULAbwcJ+mdA8h/BQdfT
+         TgdA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=ViEBq6cHk3YyNUttuSeUhnV+Ke1AWz/hgkdHbeK5b1g=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=FmvJi5lXqlxt8Xfu3t3XBko+renR4GwjtfYG+/YKt6Diy6DpGQXGrv1EwFuVVVe5k/
+         /DVU6a9p/uucrrNzZOfVDB05vv/Gnj+zpts1x7+UfQLjUep0UkIZzf1rJ0caQ2SkqBYQ
+         F44omsjN815eXKE0dA/IyR7Qccj9D3Yj1wnY63j+hJPp4lynMu88iBWERx9s0E9y/EbH
+         g9wMsU4rxDcnUbQdbS9MSgubT58tm1SZKRQO++aUyRFYm6q/zeUBOgeKpjGSMQXy3+qb
+         /Hy/RdVxjO4A7HeZhmmW+0FVf+PvYAp25Ip0mWQCjgAWHlcZIYOZq3Z5Jpb22RRYAumx
+         LA1Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@tryexponent.com header.s=s1 header.b=Q+bs+Rzp;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=eIrIKEjp;
+       spf=pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 167.89.40.148 as permitted sender) smtp.mailfrom="bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tryexponent.com
+Return-Path: <bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com>
+Received: from o3.m.dripemail2.com (o3.m.dripemail2.com. [167.89.40.148])
+        by mx.google.com with ESMTPS id 6a1803df08f44-6eec978602fsi29899706d6.173.2025.03.28.22.30.00
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 28 Mar 2025 22:30:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 167.89.40.148 as permitted sender) client-ip=167.89.40.148;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tryexponent.com header.s=s1 header.b=Q+bs+Rzp;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=eIrIKEjp;
+       spf=pass (google.com: domain of bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com designates 167.89.40.148 as permitted sender) smtp.mailfrom="bounces+27475120-26e7-yash31204testing=gmail.com@drip.tryexponent.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tryexponent.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tryexponent.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:from:subject:to;
+	s=s1; bh=ViEBq6cHk3YyNUttuSeUhnV+Ke1AWz/hgkdHbeK5b1g=;
+	b=Q+bs+RzpeGICDgx3nRlKMlfliQXKDLuzEjCOzDE7aqRZslJLUEqnuQ9jd3hNnF+AM795
+	OGh3o/omyx+Jb57s5elCYblpPxnt3bpSvxp0DHvpuAYXgF8n2pWoPJz1mmXVDf595yB5C0
+	EKChYtInSGOoKEBKrLIIG9rrdF6kvTe09E/jGbqvHLEVePQI2OR8c+gjykd/qTdDXC45S4
+	RXNU1giLb6ECJS2b/SsWqBrSBlWI/o1xbijyipoLh17kxBkolCk3QGy2hK/+M2251Jzinu
+	DZLFAEWzTHOXM+NeLgmhaJsuQNEKKVxZgxnOaplkVxrzM/rxugKc4tsSLh/2l7pg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=ViEBq6cHk3YyNUttuSeUhnV+Ke1AWz/hgkdHbeK5b1g=;
+	b=eIrIKEjpQUu6fUM14UhwIIPjZ8mjJ7TiXdX6M8/ODWo/TFV6iETXHWMs1Ent8q/XY0gt
+	xt6u9ssFnbx2Yk4qmG9+rgJPZkPRwnuJG6CGeZKDKYJ4s2RnTonGw7vovejrxhP2/mpi5a
+	HNC3FKo91HTKc+hRmzfdrwZfseuTfDSjQ=
+Received: by recvd-647f6845bc-fn6x9 with SMTP id recvd-647f6845bc-fn6x9-1-67E75CE4-3
+	2025-03-29 02:37:24.072174742 +0000 UTC m=+5638477.010439447
+Received: from Mjc0NzUxMjA (unknown)
+	by geopod-ismtpd-21 (SG) with HTTP
+	id 497V1YiUQyirJu437P00Qw
+	Sat, 29 Mar 2025 02:37:24.069 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=7ca1e48cc8d6cc8fd7b6f0653aa396e02f84557f3b6730d4c248f836b1f7
+Date: Sat, 29 Mar 2025 05:30:00 +0000 (UTC)
+From: "Jacob @ Exponent" <hello@tryexponent.com>
+Mime-Version: 1.0
+Message-ID: <497V1YiUQyirJu437P00Qw@geopod-ismtpd-21>
+Subject: Here are the behavioral interview questions you need to know.
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40unsubscribe=2Edripemail3=2Ecom=3Fsubject=3DeyJhbGc?=
+ =?us-ascii?Q?iOiJIUzI1NiJ9=2EeyJhdWQiOiJtYWlsdG9fdW5zd?=
+ =?us-ascii?Q?WJzY3JpYmVfbGFtYmRhIiwiaXNzIjoibW9ub2xp?=
+ =?us-ascii?Q?dGgiLCJzdWIiOiJsaXN0X3Vuc3Vic2NyaWJlIiw?=
+ =?us-ascii?Q?iaWF0IjoxNzQzMjI2MjAwLCJuYmYiOjE3NDMyMj?=
+ =?us-ascii?Q?YyMDAsImFjY291bnRfcHVibGljX2lkIjo0NzA4N?=
+ =?us-ascii?Q?TIwLCJzdWJzY3JpYmVyX3Rva2VuIjoiZHB3enhk?=
+ =?us-ascii?Q?NDVoZHlnOG1sNXp5c2IiLCJkZWxpdmVyeV90b2t?=
+ =?us-ascii?Q?lbiI6InJ2empsZ2JrMWVzZWM2eXpmNmkzIn0=2EW=5F?=
+ =?us-ascii?Q?pD-t-0nD=5F7VK0i0RO7r-ZmCKP7gpjQfgjCGQxGn?=
+ =?us-ascii?Q?zw=3E=2C=3Chttps=3A=2F=2Funsubscribe=2Edripemail3=2Ecom?=
+ =?us-ascii?Q?=3Fsubject=3DeyJhbGciOiJIUzI1NiJ9=2EeyJhdWQiO?=
+ =?us-ascii?Q?iJtYWlsdG9fdW5zdWJzY3JpYmVfbGFtYmRhIiwi?=
+ =?us-ascii?Q?aXNzIjoibW9ub2xpdGgiLCJzdWIiOiJsaXN0X3V?=
+ =?us-ascii?Q?uc3Vic2NyaWJlIiwiaWF0IjoxNzQzMjI2MjAwLC?=
+ =?us-ascii?Q?JuYmYiOjE3NDMyMjYyMDAsImFjY291bnRfcHVib?=
+ =?us-ascii?Q?GljX2lkIjo0NzA4NTIwLCJzdWJzY3JpYmVyX3Rv?=
+ =?us-ascii?Q?a2VuIjoiZHB3enhkNDVoZHlnOG1sNXp5c2IiLCJ?=
+ =?us-ascii?Q?kZWxpdmVyeV90b2tlbiI6InJ2empsZ2JrMWVzZW?=
+ =?us-ascii?Q?M2eXpmNmkzIn0=2EW=5FpD-t-0nD=5F7VK0i0RO7r-ZmC?=
+ =?us-ascii?Q?KP7gpjQfgjCGQxGnzw=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Drip-SendingAccount: 4708520
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EuSDS9eFxEU3M+kbHxIGVRJttqyJ9Y19zuGEZgFpcFXVyOlqsS=2FzpCdgGM?=
+ =?us-ascii?Q?PYg=2F2B6rkHjI2dymhsrMtshLHqvOZvJNrCelTum?=
+ =?us-ascii?Q?+=2FgsIJNgvyUGmVPo8fxjqK5a116UejCY9dxsyrF?=
+ =?us-ascii?Q?cgIVac6r4lN5n0mHmQv1Tii88RCvOXZlPJufSK4?=
+ =?us-ascii?Q?Q5wZxX2SVFrTUoPbz9d5LrgcAOwgoFN=2Fv+xBMHz?=
+ =?us-ascii?Q?M6hRM5lASXqBpU5hiey0gjj+21MAq4W9kl9bUTr?= =?us-ascii?Q?mrGX?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCAf2TSkkcsbWsXt?=
+ =?us-ascii?Q?+6pnbIhZ+hkW=2FtdnXMYWgwff=2F7EbAyLx=2FyrOj8Z?=
+ =?us-ascii?Q?yuxpqkE=2FVU3KHFD7X2WzELSkTtgiF9eDb5jUH8f?=
+ =?us-ascii?Q?vHwLXZzX8ROUIPpcQAOmyLSw6vvsvuqCuD2T8nN?=
+ =?us-ascii?Q?rtyjmDSHhJOPJxm2wfQhqy2bq9FP99EyaHwm0v1?=
+ =?us-ascii?Q?zg=2FBpPGXwhJ8vQgFrlerkC5JCF5K3+SPyu=2FQbxp?=
+ =?us-ascii?Q?cs8=2FNNL1Yg0lCbNxwYAGHwemyGTr8lEiwPlxugC?=
+ =?us-ascii?Q?hfxeoa2bRz=2FlEgnR1pIk5wN=2FwG+XL1Au4fZr5Zv?=
+ =?us-ascii?Q?swP4kNleu4IKAdfBaAGO1aIKfxoS+jt2uH7JLCw?=
+ =?us-ascii?Q?qCfIvRm+vbR7TfF4m0cOlR9IbsVCiHKi=2F0mbY+9?=
+ =?us-ascii?Q?rsAkZiurO8s4Rlvyf7625VKhdQvOEzDnJ1T1QlR?=
+ =?us-ascii?Q?5WUj9GPcZkN7QUPCOPk10C4y2JoHSKoZ37Cx5Jc?=
+ =?us-ascii?Q?w0lI98TjTXvO+d87Y7TsZmlVUnyRhnNXv8O8ymC?=
+ =?us-ascii?Q?Uayka0QhUmcbhxp6ebkAslnXb37BcAm9+5+v4+T?=
+ =?us-ascii?Q?MXXglG7ttoFuQIfBW0NVd44w8oxtbxZKZZoSN4j?=
+ =?us-ascii?Q?cT3WDvQhD5zkvi4+K6emjYVG50LCOEcgNeKWEbo?=
+ =?us-ascii?Q?i8F2+W3ER4o9bnw+G+a4BJNs8VpR9PpqGf5fEse?=
+ =?us-ascii?Q?IyglG+BL7H=2FU8bK2YTvAuj3s+g6R6LIPY6fP8Lm?=
+ =?us-ascii?Q?6HKVk4qCoIbqngzgvlDI7DqqNl8D9wUeHVAmNeR?=
+ =?us-ascii?Q?hrghOkYywxsvHrn8KEudDfI7xPBcvGQ=3D=3D?=
+To: yash31204testing@gmail.com
+X-Entity-ID: u001.Q8GX+GkWXypxhatSvAZ5gQ==
+
+--7ca1e48cc8d6cc8fd7b6f0653aa396e02f84557f3b6730d4c248f836b1f7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Hey Yash,
+
+You'll likely get asked a question like "Why are you looking for
+a new job?" when you start interviewing=E2=80=94and other
+difficult behavioral questions. Don't let these questions catch
+you by surprise. You should be able to explain who you are as a
+person, your level of experience, and why you'd be a great
+addition to the team.
+
+To make your life easier, we've put together a huge list of these
+questions ( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXR=
+vdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1OD=
+QzLCJuYmYiOjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiO=
+iJydnpqbGdiazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJz=
+ZW5kX2F0IjoxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJ=
+DYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleH=
+BvbmVudC5jb20vcXVlc3Rpb25zP3R5cGU9YmVoYXZpb3JhbCZfX3M9ZHB3enhkNDVoZHlnOG1sN=
+Xp5c2IifQ.e70qyVYK6ZE-tu2v7OCslda6vpjPUlPHFBOMumtwDGg )  along with example=
+ answers. Here are a few...
+
+* Tell me about a time you made a mistake=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYmYi=
+OjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqbGd=
+iazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0Ij=
+oxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vcXVlc3Rpb25zLzI0MC9taXN0YWtlP19fcz1kcHd6eGQ0NWhkeWc4bWw1enlzYiJ9.EtG1Iy=
+dNLe0F2GL6J3sFqgxHyFkts7PgVsvX0wkR8jQ ).
+* Explain a time you disagreed with a coworker=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYmYi=
+OjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqbGd=
+iazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0Ij=
+oxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vcXVlc3Rpb25zLzEzNTAvdGVsbC1tZS1hYm91dC1hLXRpbWUteW91LWRpc2FncmVlZC13aXR=
+oLXNvbWVvbmUtYW5kLWhvdy15b3UtcmVzb2x2ZWQtaXQ_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eX=
+NiIn0.XaN2CObp36EH0XzOkCEwHIxViTpsiTDZiv7XiLJZUgY )
+.
+* Tell me about a recent project you're proud of=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYmYi=
+OjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqbGd=
+iazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0Ij=
+oxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vcXVlc3Rpb25zLzEwMzEvd2hhdC1zLXRoZS1wcm9qZWN0LXlvdS1yZS1tb3N0LXByb3VkLW9=
+mLT9fX3M9ZHB3enhkNDVoZHlnOG1sNXp5c2IifQ._wkp2J58AESvUQJLMXRf2Bm9o4LMeBIIQA5=
+tasdKPDs )
+.
+
+Want to practice answering these questions in a real-world
+setting? Join our daily peer-to-peer mock interview sessions=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYmYi=
+OjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqbGd=
+iazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0Ij=
+oxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5j=
+b20vcHJhY3RpY2U_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiIn0.oPqLoPi7lDpCvgcEo0IgpaN=
+_5wmWXR6KV5IdqzLzouk ) and brush up on your
+communication skills with other candidates.
+
+Jacob Simon
+
+Co-founder, Exponent
+
+Connect on LinkedIn=20
+( https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc=
+3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYmYi=
+OjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqbGd=
+iazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0Ij=
+oxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnb=
+iIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5saW5rZWRpbi5jb20v=
+Y29tcGFueS90cnlleHBvbmVudC8_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiIn0.nvyFPoTDvrR=
+Kg4P9vFs-8sCDCQ5Pdf3DT4cnEVa521k )
+
+---------------------
+To make sure you keep getting these emails, please add
+hello@tryexponent.com to your address book or whitelist us. Want out of
+the loop? <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdW=
+QiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxN=
+zQzMjE1ODQzLCJuYmYiOjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZl=
+cnlfaWQiOiJydnpqbGdiazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY=
+2aTMiLCJzZW5kX2F0IjoxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3=
+R5cGUiOiJDYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3d=
+y5nZXRkcmlwLmNvbS9zdWJzY3JpYmVycy9kcHd6eGQ0NWhkeWc4bWw1enlzYi90b3BpY3M_ZD1y=
+dnpqbGdiazFlc2VjNnl6ZjZpMyZleGNsdWRlX2NsaWNrPTEmX19zPWRwd3p4ZDQ1aGR5ZzhtbDV=
+6eXNiIn0.4ww1_NLOqXikh8cbDuUj5T-w7p0ao-rDxqTWT-a9LTc">Unsubscribe</a>.
+
+Our postal address: 150 Albion St, San Francisco, CA 94110
+
+
+--7ca1e48cc8d6cc8fd7b6f0653aa396e02f84557f3b6730d4c248f836b1f7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D'font-family: "Helveti=
+ca Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box=
+; font-size: 14px; line-height: 1.5;'>
+<head>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+
+<style>img {
+max-width: 100%; margin-bottom: 14px;
+}
+body {
+background-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: none; width: 100% !important; height: 100%; line-height: 1.6;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+a:visited {
+color: #5025D8 !important;
+}
+a:hover {
+color: #3917A7 !important;
+}
+a:active {
+color: #3917A7 !important;
+}
+.cta-button:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:hover {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+.cta-button:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:visited {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+.cta-button:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[owa] .cta-button:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+[class=3D"cta-button"]:active {
+color: #ffffff; background-color: #5025D8; text-decoration: none; border-co=
+lor: #B67A0D; border: 12px solid #5025D8;
+}
+</style></head>
+<body style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.6; ba=
+ckground-color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: none; width: 100% !important; height: 100%;' bgcolor=3D"#ffffff"><span =
+style=3D'display: none !important; mso-hide: all; visibility: hidden; opaci=
+ty: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-s=
+erif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>Learn the=
+ strategy for answering tough interview questions</span><span style=3D'disp=
+lay: none; max-height: 0px; overflow: hidden; font-family: "Helvetica Neue"=
+, "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-s=
+ize: 14px; line-height: 1.5;'>=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=
+=C2=A0=E2=80=8C</span>
+
+<!--[if mso 16]>
+    <style type=3D"text/css">
+        a{
+            text-decoration:none !important;
+        }
+    </style>
+<![endif]-->
+
+<table class=3D"body-wrap" style=3D'font-family: "Helvetica Neue", "Helveti=
+ca", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px;=
+ line-height: 1.5; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background=
+-color: #ffffff; width: 100%;' bgcolor=3D"#ffffff">
+  <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+    <td class=3D"container" style=3D'font-family: "Helvetica Neue", "Helvet=
+ica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px=
+; line-height: 1.5; vertical-align: top; display: block !important; max-wid=
+th: 600px !important; overflow: visible; clear: both !important; margin: 0;=
+' valign=3D"top">
+      <div class=3D"content" style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5; max-width: 600px; overflow: visible; display: block; m=
+argin: 0;'>
+        <table class=3D"main" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Aria=
+l, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;'>
+          <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>
+            <td class=3D"main-content" style=3D"font-family: 'Helvetica Neu=
+e', 'Helvetica', 'Arial', sans-serif; box-sizing: border-box; font-size: 14=
+px; line-height: 1.5; vertical-align: top; color: #222222; padding: 25px;" =
+valign=3D"top">
+              <!-- cke-content-start --><!-- cke-content-start -->Hey Yash,=
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+You'll likely get asked a question like "Why are you looking for a new job?=
+" when you start interviewing=E2=80=94and other difficult=C2=A0<strong styl=
+e=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-ser=
+if; box-sizing: border-box; font-size: 14px; line-height: 1.5; font-weight:=
+ bold;'>behavioral questions.</strong>=C2=A0Don't let these questions catch=
+ you by surprise. You should be able to explain who you are as a person, yo=
+ur level of experience, and why you'd be a great addition to the team.<br s=
+tyle=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-=
+serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+To make your life easier, we've put together a <a href=3D"https://t.dripema=
+il2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIs=
+InN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYmYiOjE3NDMyMTU4NDMsImF=
+jY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqbGdiazFlc2VjNnl6ZjZpMy=
+IsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0IjoxNzQzMjI2MjAwLCJlb=
+WFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWlnbiIsImVtYWlsYWJsZV9p=
+ZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC5jb20vcXVlc3Rpb25zP3R=
+5cGU9YmVoYXZpb3JhbCZfX3M9ZHB3enhkNDVoZHlnOG1sNXp5c2ImdXRtX3NvdXJjZT1kcmlwJn=
+V0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPVNXRStJbnRlcmVzdCtDYW1wYWlnbiZ1dG1fY=
+29udGVudD1IZXJlK2FyZSt0aGUrYmVoYXZpb3JhbCtpbnRlcnZpZXcrcXVlc3Rpb25zK3lvdStu=
+ZWVkK3RvK2tub3cuIn0.LkVLkLlbE8KSa51YP-oSsFgA6FP11lUotVCISspX9aA" style=3D'f=
+ont-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; bo=
+x-sizing: border-box; font-size: 14px; line-height: 1.5; color: #5025D8; te=
+xt-decoration: underline;'><span style=3D'font-family: "Helvetica Neue", "H=
+elvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size:=
+ 14px; line-height: 1.5;'>huge list of these questions</span></a> along wit=
+h example answers. Here are a few...
+<ul style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; marg=
+in-bottom: 14px; font-weight: normal; margin-left: 20px; margin-right: 0; p=
+adding-left: 0; padding-right: 0;'>
+	<li style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; mar=
+gin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;'><a href=
+=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJ=
+pc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYm=
+YiOjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqb=
+GdiazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0=
+IjoxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWl=
+nbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC=
+5jb20vcXVlc3Rpb25zLzI0MC9taXN0YWtlP19fcz1kcHd6eGQ0NWhkeWc4bWw1enlzYiZ1dG1fc=
+291cmNlPWRyaXAmdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249U1dFK0ludGVyZXN0K0Nh=
+bXBhaWduJnV0bV9jb250ZW50PUhlcmUrYXJlK3RoZStiZWhhdmlvcmFsK2ludGVydmlldytxdWV=
+zdGlvbnMreW91K25lZWQrdG8ra25vdy4ifQ.2e35IZBZnIdPKy9d8HHWKwVsi_LWNaeHbEd_dpC=
+XKZo" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; co=
+lor: #5025D8; text-decoration: underline;'><span style=3D'font-family: "Hel=
+vetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border=
+-box; font-size: 14px; line-height: 1.5;'>Tell me about a time you made a m=
+istake</span></a><span style=3D'font-family: "Helvetica Neue", "Helvetica",=
+ Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; lin=
+e-height: 1.5;'>.</span></li>
+	<li style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; mar=
+gin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;'><a href=
+=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJ=
+pc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYm=
+YiOjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqb=
+GdiazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0=
+IjoxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWl=
+nbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC=
+5jb20vcXVlc3Rpb25zLzEzNTAvdGVsbC1tZS1hYm91dC1hLXRpbWUteW91LWRpc2FncmVlZC13a=
+XRoLXNvbWVvbmUtYW5kLWhvdy15b3UtcmVzb2x2ZWQtaXQ_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6=
+eXNiJnV0bV9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW5=
+0ZXJlc3QrQ2FtcGFpZ24mdXRtX2NvbnRlbnQ9SGVyZSthcmUrdGhlK2JlaGF2aW9yYWwraW50ZX=
+J2aWV3K3F1ZXN0aW9ucyt5b3UrbmVlZCt0bytrbm93LiJ9.xZscvLkVl_Awk5KL50TUKKrNncUY=
+Lo-1L9iLidyvKtI" style=3D'font-family: "Helvetica Neue", "Helvetica", Helve=
+tica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-heig=
+ht: 1.5; color: #5025D8; text-decoration: underline;'><span style=3D'font-f=
+amily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-siz=
+ing: border-box; font-size: 14px; line-height: 1.5;'>Explain a time you dis=
+agreed with a coworker</span></a><span style=3D'font-family: "Helvetica Neu=
+e", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box; font=
+-size: 14px; line-height: 1.5;'>.</span></li>
+	<li style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; mar=
+gin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;'><a href=
+=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRvdXIiLCJ=
+pc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQzLCJuYm=
+YiOjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOiJydnpqb=
+GdiazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZW5kX2F0=
+IjoxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJDYW1wYWl=
+nbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50cnlleHBvbmVudC=
+5jb20vcXVlc3Rpb25zLzEwMzEvd2hhdC1zLXRoZS1wcm9qZWN0LXlvdS1yZS1tb3N0LXByb3VkL=
+W9mLT9fX3M9ZHB3enhkNDVoZHlnOG1sNXp5c2ImdXRtX3NvdXJjZT1kcmlwJnV0bV9tZWRpdW09=
+ZW1haWwmdXRtX2NhbXBhaWduPVNXRStJbnRlcmVzdCtDYW1wYWlnbiZ1dG1fY29udGVudD1IZXJ=
+lK2FyZSt0aGUrYmVoYXZpb3JhbCtpbnRlcnZpZXcrcXVlc3Rpb25zK3lvdStuZWVkK3RvK2tub3=
+cuIn0.7HN3_5ULeqzCI4A06ddguf0UHMyVwiF0L15-Qg1csQE" style=3D'font-family: "H=
+elvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: bord=
+er-box; font-size: 14px; line-height: 1.5; color: #5025D8; text-decoration:=
+ underline;'><span style=3D'font-family: "Helvetica Neue", "Helvetica", Hel=
+vetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-he=
+ight: 1.5;'>Tell me about a recent project you're proud of</span></a>.</li>
+</ul>
+<span style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial=
+, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>W=
+ant to practice answering these questions in a real-world setting? Join our=
+ daily <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiO=
+iJkZXRvdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQz=
+MjE1ODQzLCJuYmYiOjE3NDMyMTU4NDMsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnl=
+faWQiOiJydnpqbGdiazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aT=
+MiLCJzZW5kX2F0IjoxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5c=
+GUiOiJDYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy50=
+cnlleHBvbmVudC5jb20vcHJhY3RpY2U_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiJnV0bV9zb3V=
+yY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW50ZXJlc3QrQ2FtcG=
+FpZ24mdXRtX2NvbnRlbnQ9SGVyZSthcmUrdGhlK2JlaGF2aW9yYWwraW50ZXJ2aWV3K3F1ZXN0a=
+W9ucyt5b3UrbmVlZCt0bytrbm93LiJ9.A2RTfnflc9znirsYfSvkjSvY5ix6Tcc4OziPe44XDik=
+" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sa=
+ns-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; color:=
+ #5025D8; text-decoration: underline;'><span style=3D'font-family: "Helveti=
+ca Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-box=
+; font-size: 14px; line-height: 1.5;'>peer-to-peer mock interview sessions<=
+/span></a> and brush up on your communication skills with other candidates.=
+</span>
+
+<div style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial,=
+ sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'><b=
+r style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sa=
+ns-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Jacob Simon<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helveti=
+ca, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height=
+: 1.5;'>
+Co-founder, Exponent<br style=3D'font-family: "Helvetica Neue", "Helvetica"=
+, Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14px; li=
+ne-height: 1.5;'>
+<a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXRv=
+dXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1ODQ=
+0LCJuYmYiOjE3NDMyMTU4NDQsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiOi=
+JydnpqbGdiazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJzZ=
+W5kX2F0IjoxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJD=
+YW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5saW5rZWR=
+pbi5jb20vY29tcGFueS90cnlleHBvbmVudC8_X19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiJnV0bV=
+9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW50ZXJlc3QrQ=
+2FtcGFpZ24mdXRtX2NvbnRlbnQ9SGVyZSthcmUrdGhlK2JlaGF2aW9yYWwraW50ZXJ2aWV3K3F1=
+ZXN0aW9ucyt5b3UrbmVlZCt0bytrbm93LiJ9.SCQpljQIMR16RCFKTId8s9LWJWdxVjcjiE9_Cg=
+BRm8Q" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Aria=
+l, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5; c=
+olor: #5025D8; text-decoration: underline;'><span style=3D'font-family: "He=
+lvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: borde=
+r-box; font-size: 14px; line-height: 1.5;'><em style=3D'font-family: "Helve=
+tica Neue", "Helvetica", Helvetica, Arial, sans-serif; box-sizing: border-b=
+ox; font-size: 14px; line-height: 1.5;'>Connect on LinkedIn</em></span></a>=
+</div>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+     =20
+      <div class=3D"content" style=3D'font-family: "Helvetica Neue", "Helve=
+tica", Helvetica, Arial, sans-serif; box-sizing: border-box; font-size: 14p=
+x; line-height: 1.5; max-width: 600px; overflow: visible; display: block; m=
+argin: 0;'>
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D'=
+font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; b=
+ox-sizing: border-box; font-size: 14px; line-height: 1.5; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt;'>
+          <tr style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetic=
+a, Arial, sans-serif; box-sizing: border-box; font-size: 14px; line-height:=
+ 1.5;'>
+            <td class=3D"footer-content" style=3D"font-family: 'Helvetica N=
+eue', 'Helvetica', 'Arial', sans-serif; box-sizing: border-box; font-size: =
+14px; line-height: 1.5; vertical-align: top; width: 100%; clear: both; colo=
+r: #777; border-top-width: 1px; border-top-color: #d0d0d0; border-top-style=
+: solid; padding: 25px;" valign=3D"top">
+              To make sure you keep getting these emails, please add hello@=
+tryexponent.com to your address book or whitelist us. Want out of the loop?=
+ <a href=3D"https://t.dripemail2.com/c/eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZXR=
+vdXIiLCJpc3MiOiJtb25vbGl0aCIsInN1YiI6ImRldG91cl9saW5rIiwiaWF0IjoxNzQzMjE1OD=
+Q0LCJuYmYiOjE3NDMyMTU4NDQsImFjY291bnRfaWQiOiI0NzA4NTIwIiwiZGVsaXZlcnlfaWQiO=
+iJydnpqbGdiazFlc2VjNnl6ZjZpMyIsInRva2VuIjoicnZ6amxnYmsxZXNlYzZ5emY2aTMiLCJz=
+ZW5kX2F0IjoxNzQzMjI2MjAwLCJlbWFpbF9pZCI6NDA3MzkzOCwiZW1haWxhYmxlX3R5cGUiOiJ=
+DYW1wYWlnbiIsImVtYWlsYWJsZV9pZCI6Mzk5MjIyLCJ1cmwiOiJodHRwczovL3d3dy5nZXRkcm=
+lwLmNvbS9zdWJzY3JpYmVycy9kcHd6eGQ0NWhkeWc4bWw1enlzYi90b3BpY3M_ZD1ydnpqbGdia=
+zFlc2VjNnl6ZjZpMyZleGNsdWRlX2NsaWNrPTEmX19zPWRwd3p4ZDQ1aGR5ZzhtbDV6eXNiJnV0=
+bV9zb3VyY2U9ZHJpcCZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1TV0UrSW50ZXJlc3Q=
+rQ2FtcGFpZ24mdXRtX2NvbnRlbnQ9SGVyZSthcmUrdGhlK2JlaGF2aW9yYWwraW50ZXJ2aWV3K3=
+F1ZXN0aW9ucyt5b3UrbmVlZCt0bytrbm93LiJ9.oEA9Vnwiulwe2vKWe2z87lJ_mMZENlb8jQVm=
+rHzrUdU" style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Ar=
+ial, sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;=
+ color: #5025D8; text-decoration: underline;'>Unsubscribe</a>.
+<br style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, =
+sans-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'><br=
+ style=3D'font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, san=
+s-serif; box-sizing: border-box; font-size: 14px; line-height: 1.5;'>
+Our postal address: 150 Albion St, San Francisco, CA 94110
+
+            </td>
+          </tr>
+        </table>
+      </div>
+     =20
+    </td>
+  </tr>
+</table>
+<img src=3D"https://u27475120.ct.sendgrid.net/wf/open?upn=3Du001.aRCGSPwM0C=
+8HED7rMt4XUJenHxM5HFFHeaRgbP8Nq-2Bhdk-2BWD1-2Bsvv5oKaxydZuxYDKz8dkEqs2eJv-2=
+FAUnonkVbEeB3X-2F0vJRc4sHx8truMfzW2aoN-2F8TzPHi80bXzxIvs66-2Bj4QqTF-2FNZMc1=
+OhKIednHvKWr2k1jFAEC9UJWMfozW-2BVuB6LnK4Z6IHRjOxRAHPVmFKn-2FBZ7zH6OJFRBC5-2=
+FXbh2T-2FXhv8EUhDcmZfnmbCl53wIMVFebt-2BeGGDt5ygzagCvfCkzkGnV0hZh4-2FlF-2BXe=
+AkefEr907WWABiOPObTdwlWg7xHy892HHFDaaRva2712bSQsBlPer2gcUWewcNq-2Fqktc1miMH=
+bRNQ0EIN0-2B-2FkgmqtiM0DQxg3ZtKmLctDEqkXvU6TScXsJ9-2BC6pEwp1x8KyeEJ9igJHaLr=
+Qd7UqSxiknV6KJkImm8iL8BU6Zgm27CpNSa9rPlCryVP3Vmaga4-2BrSrZIbQK0UvMenIPb-2B-=
+2FiC-2FTrYfO560exGAKRWZFTJb-2BwtRoUsfpIh8uf-2BeVnxLfXGlF01XuIxlXWDbNux1Wm7N=
+bFKHsWGcQndSpe4aEcuv8XsuFnk3V3EOmprUzb0QBeNgDzGyYw7b3Hwt-2FEw0kvsw6v9AxjaGI=
+KoYc1nu7c54-2B4Bw9ejyfc89shonMK0d6KP3JjbN6rY2lnhqJoadlxauNSCGy4kalUefDFKpGm=
+ls-2BOWDwW1gq7ud-2BwAttKUK0yOgwH-2BWKp3QG1gt1Dp8ioP60tdtxYkKoLdrr2DpAU7kGp6=
+oaX13Yzo9J4PvjFFNN4LxeMF7mCQq1tXtmixM4m6Y-2FeUJJX-2FEbK8YJ76zeq-2Fk2V6kxco9=
+razDXvUaj27T-2FT9AdWmP40HiTAm67-2Bo-2FGN-2BmHOnBH0IHv6Zt704ieXo5lSC45-2Fo8Q=
+Dgq-2BaGvunhbDXVGLgKS4Ea38-2FrUBRI0aU0agsFtJM3IVFStTdFQ" alt=3D"" width=3D"=
+1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !impo=
+rtant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !im=
+portant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !i=
+mportant;padding-bottom:0 !important;padding-right:0 !important;padding-lef=
+t:0 !important;"/></body>
+</html>
+
+--7ca1e48cc8d6cc8fd7b6f0653aa396e02f84557f3b6730d4c248f836b1f7--

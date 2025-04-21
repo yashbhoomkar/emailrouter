@@ -1,0 +1,1021 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:25ce:b0:43a:a54e:2943 with SMTP id d14csp2766757mdo;
+        Tue, 15 Apr 2025 10:22:18 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHi2rRHMdBNaanw//siHLSg7vRh8YVcGwjGTnGVmmjOIil5oq61lZMLzFv6wySiCjwEaeJn
+X-Received: by 2002:a05:6a21:9102:b0:1f5:8b9b:ab54 with SMTP id adf61e73a8af0-201797b0960mr21393676637.23.1744737738188;
+        Tue, 15 Apr 2025 10:22:18 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744737738; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Vcxp6EcC4UY2kA7aCQBBof3O+OpE+nNSJPv9lIPlYDTSlG7eF70Lgy7J2XISvKy8GV
+         2mrz3bx2QGR7I0WNwIPciRWzV3Ws+WjRb/wZt+TWNfmwvFK6XMHn24YF/W7ETs9piiL0
+         Ij3sHn14QMbIWNadnUXswgBUCYkGBGVPeSdTyq+QEXGgAyr5Ect21j/iH5BxDfZDrkhy
+         j6Sof3NWjiWHZ1sF7uz5JJ4SDof5HIodlHkc4FD0HuvNlXt3A9Bo+CseDu6/CsXjN9Rg
+         tAP/tGrWRuN9pyN/d27MlGyTnlojTi6itxQr/46yOFStaxY0RBbCS/x8O6JoH4q3sPU1
+         GwbQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-unsubscribe-post:mime-version:subject
+         :message-id:to:reply-to:from:date:dkim-signature:dkim-signature;
+        bh=kZ0/j0od7TDJ/xvVA+sUVHmEBLhzurU+k6xDu1AuU0M=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=DG1BkNpOyxDLkgbvdvYAj1iyZ12HaMcfxkQtNdLAbBiGNE73IwmYm7A1pqoBFfm11v
+         lm1RUjYTd+MhjR9fSfMqu7gogQ2EFlM8tN1zaL/qjDrmP0kwAJgrorEou65pxcnTt2nZ
+         FARLHJi7KkbEcaBsBVtsagysuUU8U1l0rrz67Xg4doZbTc4BVnqf4IUbtOF4aik+d2wJ
+         6NnaSLmp5fpIO2zOkV/vej+dYdV56c96lyPKkT0beskK6RMUusm4Lc+deHZ2XlcJwsx/
+         pbAnqEaZEd/4A6Yj1C0UXMDsiMV1RSbh6JChLQg+0rp0YheFbug/KUzR1tDlKV9sh84W
+         9udQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@datadoghq.com header.s=m1 header.b="SJOoO/kV";
+       dkim=pass header.i=@mktomail.com header.s=m1 header.b="Aw+A//6w";
+       spf=pass (google.com: domain of 875-uvy-685.0.363401.0.0.91342.9.125417328-1@em-sj-77.mktomail.com designates 199.15.214.46 as permitted sender) smtp.mailfrom=875-UVY-685.0.363401.0.0.91342.9.125417328-1@em-sj-77.mktomail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=datadoghq.com
+Return-Path: <875-UVY-685.0.363401.0.0.91342.9.125417328-1@em-sj-77.mktomail.com>
+Received: from em-sj-46.mktomail.com (em-sj-46.mktomail.com. [199.15.214.46])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-73bd22fa071si13146330b3a.244.2025.04.15.10.22.17
+        for <yash31204testing@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 15 Apr 2025 10:22:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 875-uvy-685.0.363401.0.0.91342.9.125417328-1@em-sj-77.mktomail.com designates 199.15.214.46 as permitted sender) client-ip=199.15.214.46;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@datadoghq.com header.s=m1 header.b="SJOoO/kV";
+       dkim=pass header.i=@mktomail.com header.s=m1 header.b="Aw+A//6w";
+       spf=pass (google.com: domain of 875-uvy-685.0.363401.0.0.91342.9.125417328-1@em-sj-77.mktomail.com designates 199.15.214.46 as permitted sender) smtp.mailfrom=875-UVY-685.0.363401.0.0.91342.9.125417328-1@em-sj-77.mktomail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=datadoghq.com
+X-MSFBL: EL0PtRtgur56ss1JgOaFiWWR7+xfPXv1rq/sLWDH/jw=|eyJiIjoiZHZwLTE5OS0
+	xNS0yMTQtNTAiLCJ1IjoiODc1LVVWWS02ODU6MDo4NjA2ODo0NjYxNjg6MDo5MTM
+	0Mjo5OjM2MzQwMToxMjU0MTczMjgtMSIsImciOiJiZy1zai0wMSIsInIiOiJ5YXN
+	oMzEyMDR0ZXN0aW5nQGdtYWlsLmNvbSJ9
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1744737737;
+	s=m1; d=datadoghq.com; i=@datadoghq.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=kZ0/j0od7TDJ/xvVA+sUVHmEBLhzurU+k6xDu1AuU0M=;
+	b=SJOoO/kV9rCtXI/ple09El9AA0KbFqnr12JOzPxB/cuG9+YhLEKPtcAm2boJqTvF
+	NFNjUrZ71T8bqvcbo4YWDrGDk81rCpAEHgN8PLCv7Q5zcmjTloh1hDP1KwFoLScqB4G
+	b+AW0awNCgNTCuPKe4cYzSeEeHHY4hWSyV4erKxQ=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1744737737;
+	s=m1; d=mktomail.com; i=@mktomail.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=kZ0/j0od7TDJ/xvVA+sUVHmEBLhzurU+k6xDu1AuU0M=;
+	b=Aw+A//6wJGeJAen+z0vS33zg1NpxmkCcd/GCgNUmz6+TUfUx6xZbS9UBCKssmq+T
+	sCzHomwM0FqmJ+ccNMr5S49H7kXxJt9CpHGmHmqqjbI/gWT+PKmO+eNBfJD0TfDaPub
+	im8rkMD4qW7Ep43aWYF5FTYfMyKXm2iSELBckZ6Q=
+Date: Tue, 15 Apr 2025 12:22:17 -0500 (CDT)
+From: =?UTF-8?Q?Alexis_L=C3=AA-Qu=C3=B4c?= <help@datadoghq.com>
+Reply-To: help@datadoghq.com
+To: yash31204testing@gmail.com
+Message-ID: <1022290722.1576579.1744737737693@sjmktmail-trigger1i.marketo.org>
+Subject: =?UTF-8?Q?Don=E2=80=99t_get_stuck_in_the_doghouse?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1576578_1193669386.1744737737686"
+X-Binding: bg-sj-01
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <http://em.datadoghq.com/u/ODc1LVVWWS02ODUAAAGZ2XHL0IYbPsB3rta3063VWPeyumvjGVE83pbKbTkF56fUkM5khd21ntCD0dGFVk4XKQLrZ20=?emailAddress=ODc1LVVWWS02ODUAAAGZ2XHLz7PkfmWuURBue7uJUSb0q7O4x89yUtOWZ3Pa06BcvzByk47laGIxB2nLLmD29RpmXV5q7IP_Bg>, <mailto:IRIE4LLDJVCDK2LNIFIG6WCTHFDGK2KSKNTWYUZNMY4VMZ3KOYYWYUCLK5IFGQKUMVDGGPI=.363401.91342.9@unsub-sj.mktomail.com>
+X-MarketoID: 875-UVY-685:0:86068:466168:0:91342:9:363401:125417328-1
+X-Mailfrom: 875-UVY-685.0.363401.0.0.91342.9.125417328-1@em-sj-77.mktomail.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+
+------=_Part_1576578_1193669386.1744737737686
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi=C2=A0Yash,
+
+
+It looks like you haven=E2=80=99t finished the signup process. By installin=
+g the agent, you'll gain a comprehensive understanding of what's happening =
+across your entire environment with real-time data from over 750+ vendor-ba=
+cked integrations.=C2=A0
+
+Log back into your account to install the agent now > <http://em.datadoghq.=
+com/ODc1LVVWWS02ODUAAAGZ2XHL0AALrA-JY39SQwA4lTjdWQgh1Xuom8hPbTvjDXyUXO10rQd=
+U_1fG_z3sSYaHNeBEbFY=3D>
+If you're stuck, we're here to help:
+
+Email
+Reply directly to this email to get assistance from our team
+
+Slack
+Join our public Slack group <http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2X=
+HL0CJU-SVXhbBw8COcSWTyJBkqWApY892XuuebPnaNYJjihkbYFkqCah7V2QXJl0wPxR0=3D> t=
+o chat with our team and other Datadog users
+
+Webinars
+Check out one of our live Datadog Overview sessions <http://em.datadoghq.co=
+m/ODc1LVVWWS02ODUAAAGZ2XHLz7bGYSoU-7JioLW3YAuH5z9lPENiXiIJIQvmH3-zSBUz9cVPT=
+i86yAVienJvigZYaDE=3D> to learn how to deploy the Datadog agent, set up int=
+egrations, and more.
+
+Happy monitoring,
+Alexis L=C3=AA-Qu=C3=B4c
+CTO, Datadog
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Visit our email preference center to <a href=3D
+"http://em.datadoghq.com/dc/NZ1SFXSiqgATs5RfFqbpS5D6CzHBAw5sr1nfndW0SNo4sIg=
+UAQ_63tctnHB1vnBL6lfV86KNQ89MXTAKyz_4y-embCnu0vm9aOUkNj19-d0xeU1m6Rw9Q0MRrI=
+vppwP1/ODc1LVVWWS02ODUAAAGZ2XHLz_HiwSi8dUBEZXafKbGsmompXS4ZRboIYTKrQxPoXe5V=
+_wMftKLEl625Gh2NIMEYyUc=3D"
+>unsubscribe or change subscription options.</a>
+=C2=A92025 Datadog Inc, 620 8th Ave, 45th Floor, New York, NY 10018
+
+
+
+This email was sent to yash31204testing@gmail.com.
+
+------=_Part_1576578_1193669386.1744737737686
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>=20
+<title></title>=20
+<!--[if !mso]><!-->=20
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">=20
+<!--<![endif]-->=20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">=
+=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1">=
+=20
+<style type=3D"text/css">#outlook a { padding:0; }
+          body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-=
+size-adjust:100%; }
+          table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-tab=
+le-rspace:0pt; }
+          img { border:0;height:auto;line-height:100%; outline:none;text-de=
+coration:none;-ms-interpolation-mode:bicubic; }
+          p { display:block;margin:13px 0; }</style>=20
+<!--[if mso]>
+        <noscript>
+        <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml>
+        </noscript>
+        <![endif]-->
+<!--[if lte mso 11]>
+<style type=3D"text/css">
+          .mj-outlook-group-fix { width:100% !important; }
+        </style>
+        <![endif]-->=20
+<style type=3D"text/css">@media only screen and (min-width:480px) {
+        .mj-column-per-100 { width:100% !important; max-width: 100%; }
+.mj-column-per-60 { width:60% !important; max-width: 60%; }
+.mj-column-per-40 { width:40% !important; max-width: 40%; }
+.mj-column-per-50 { width:50% !important; max-width: 50%; }
+.mj-column-px-400 { width:400px !important; max-width: 400px; }
+.mj-column-per-66 { width:66.66% !important; max-width: 66.66%; }
+.mj-column-per-33 { width:33.33% !important; max-width: 33.33%; }
+.mj-column-per-16 { width:16% !important; max-width: 16%; }
+.mj-column-per-84 { width:84% !important; max-width: 84%; }
+.mj-column-px-180 { width:180px !important; max-width: 180px; }
+.mj-column-per-25 { width:25% !important; max-width: 25%; }
+      }</style>=20
+<style media=3D"screen and (min-width:480px)">.moz-text-html .mj-column-per=
+-100 { width:100% !important; max-width: 100%; }
+.moz-text-html .mj-column-per-60 { width:60% !important; max-width: 60%; }
+.moz-text-html .mj-column-per-40 { width:40% !important; max-width: 40%; }
+.moz-text-html .mj-column-per-50 { width:50% !important; max-width: 50%; }
+.moz-text-html .mj-column-px-400 { width:400px !important; max-width: 400px=
+; }
+.moz-text-html .mj-column-per-66 { width:66.66% !important; max-width: 66.6=
+6%; }
+.moz-text-html .mj-column-per-33 { width:33.33% !important; max-width: 33.3=
+3%; }
+.moz-text-html .mj-column-per-16 { width:16% !important; max-width: 16%; }
+.moz-text-html .mj-column-per-84 { width:84% !important; max-width: 84%; }
+.moz-text-html .mj-column-px-180 { width:180px !important; max-width: 180px=
+; }
+.moz-text-html .mj-column-per-25 { width:25% !important; max-width: 25%; }<=
+/style>=20
+<style type=3D"text/css">@media only screen and (max-width:480px) {
+      table.mj-full-width-mobile { width: 100% !important; }
+      td.mj-full-width-mobile { width: auto !important; }
+    }</style>=20
+<style type=3D"text/css">body {
+        padding-bottom: 32px !important;
+      }
+      .font-link-color a {
+        color: #632CA6 !important;
+      }
+      .speaker-name {
+        padding: 10px 0 0 !important;
+      }
+      .speaker-title {
+        padding: 0px 0px 10px 0px !important;
+      }
+      @media only screen and (max-width: 600px) {
+        .m-font-size-26 div {
+          font-size: 26px !important;
+        }
+        .m-font-size-18 div {
+          font-size: 18px !important;
+        }
+        .m-font-size-16 div {
+          font-size: 16px !important;
+        }
+        .m-font-size-14 div {
+          font-size: 14px !important;
+        }
+        .m-line-heigh-35 div {
+          line-height: 35px !important;
+        }
+        .m-line-heigh-25 div {
+          line-height: 25px !important;
+        }
+        .m-column-padding {
+          padding: 0px 32px !important;
+        }
+        .m-social-column {
+          width: 60% !important;
+        }
+        .m-padding-0 {
+          padding:0 !important;
+        }
+        .m-padding-top-0 {
+          padding-top: 0 !important;
+        }
+        .m-padding-top-10 {
+          padding-top: 10px !important;
+        }
+        .m-padding-top-20 {
+          padding-top: 20px !important;
+        }
+        .m-padding-top-32 {
+          padding-top: 32px !important;
+        }
+        .m-padding-top-40 {
+          padding-top: 40px !important;
+        }
+        .m-padding-bottom-10 {
+          padding-bottom: 10px !important;
+        }
+        .m-padding-bottom-20 {
+          padding-bottom: 20px !important;
+        }
+        .m-padding-bottom-32 {
+          padding-bottom: 32px !important;
+        }
+        .m-padding-bottom-40 {
+          padding-bottom: 40px !important;
+        }
+        .m-padding-left-10 {
+          padding-left: 10px !important;
+        }
+        .m-padding-left-20 {
+          padding-left: 20px !important;
+        }
+        .m-padding-left-32 {
+          padding-left: 32px !important;
+        }
+        .m-padding-left-40 {
+          padding-left: 40px !important;
+        }
+        .m-padding-right-10 {
+          padding-right: 10px !important;
+        }
+        .m-padding-right-20 {
+          padding-right: 20px !important;
+        }
+        .m-padding-right-32 {
+          padding-right: 32px !important;
+        }
+        .m-padding-right-40 {
+          padding-right: 40px !important;
+        }
+        .m-center,
+        .m-center table,
+        .m-center div {
+          text-align: center !important;
+          margin:0 auto !important;
+        }
+        /*Gmail Dark Mode Blending*/
+        .gmail-blend-screen {
+          background: #000000;
+          mix-blend-mode: screen;
+        }
+        .gmail-blend-difference {
+          background: #000000;
+          mix-blend-mode: difference;
+        }
+      }</style>=20
+<!--URLS Variables-->                         =20
+</head>=20
+<body style=3D"word-spacing:normal;background-color:#EEEEEE;">=20
+<div style=3D"background-color:#EEEEEE;">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"" role=3D"presentation" style=3D"width:650px;" width=3D"650" bgcolor=
+=3D"#EEEEEE" >
+<tr>
+<td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><=
+![endif]-->=20
+<div style=3D"background:#EEEEEE;background-color:#EEEEEE;margin:0px auto;m=
+ax-width:650px;">=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background:#EEEEEE;background-color:#EEEEEE;wi=
+dth:100%;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"direction:ltr;font-size:0px;padding:0;text-align:center;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td class=3D"" style=3D"vertical-align:top;width:650px;" ><![endif]-->=20
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"vertical-align:top;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-size:0px;word-break:break-word;">=20
+<div style=3D"height:20px;line-height:20px;">
+=E2=80=8A
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]-->
+<!-- MKTO CONTAINER START -->=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%=
+;padding:0;margin:0;">=20
+<tbody>
+<tr>
+<td class=3D"mktoContainer" id=3D"container" style=3D"padding:0;margin:0;wi=
+dth:100%;">
+<table class=3D"mktoModule" id=3D"heroModuleFiveba18ecc3-644d-49ae-990b-da4=
+648b96eac" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:=
+100%;padding:0;margin:0;">=20
+<tbody>=20
+<tr style=3D"padding:0;margin:0;width:100%;">=20
+<td style=3D"padding:0;margin:0;width:100%;">=20
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:650px;" width=3D"650" >
+<tr>
+<td style=3D"line-height:0;font-size:0;mso-line-height-rule:exactly;"><v:im=
+age style=3D"border:0;mso-position-horizontal:center;position:absolute;top:=
+0;width:650px;z-index:-3;" src=3D"https://lp.datadoghq.com/rs/875-UVY-685/i=
+mages/g_indigo.png" xmlns:v=3D"urn:schemas-microsoft-com:vml" /><![endif]--=
+>=20
+<div style=3D"margin:0 auto;max-width:650px;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"width:100%;">=20
+<tbody>=20
+<tr style=3D"vertical-align:top;">=20
+<td background=3D"https://lp.datadoghq.com/rs/875-UVY-685/images/g_indigo.p=
+ng" style=3D"background:#1473fc url('https://lp.datadoghq.com/rs/875-UVY-68=
+5/images/g_indigo.png') no-repeat top / cover;background-position:top;backg=
+round-repeat:no-repeat;padding:0px;vertical-align:top;" height=3D"0">=20
+<!--[if mso | IE]>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:650p=
+x;" width=3D"650" >
+<tr>
+<td style=3D""><![endif]-->=20
+<div class=3D"mj-hero-content" style=3D"margin:0px auto;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"width:100%;margin:0px;">=20
+<tbody>=20
+<tr>=20
+<td>=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"width:100%;margin:0px;">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" style=3D"font-size:0px;padding:10px 25px;padding-top:3=
+0px;padding-bottom:30px;word-break:break-word;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-collapse:collapse;border-spacing:0px;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"width:55px;"><img alt=3D"Datadog Logo" height=3D"auto" src=3D"=
+https://lp.datadoghq.com/rs/875-UVY-685/images/datadog-logo-white.png" styl=
+e=3D"border:0;display:block;outline:none;text-decoration:none;height:auto;w=
+idth:100%;font-size:13px;" width=3D"55"></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<!-- add 55 in export -->=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"bodyModule51cd9324-68c5-45f9-aa6e-8f27da6=
+9d478" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%=
+;padding:0;margin:0;">=20
+<tbody>=20
+<tr style=3D"padding:0;margin:0;width:100%;">=20
+<td style=3D"padding:0;margin:0;width:100%;">=20
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"" role=3D"presentation" style=3D"width:650px;" width=3D"650" bgcolor=
+=3D"#FFFFFF" >
+<tr>
+<td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><=
+![endif]-->=20
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;m=
+ax-width:650px;">=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background:#FFFFFF;background-color:#FFFFFF;wi=
+dth:100%;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"direction:ltr;font-size:0px;padding:0;text-align:center;">=20
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td class=3D"" style=3D"vertical-align:top;width:650px;" ><![endif]-->=20
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"vertical-align:top;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td align=3D"left" class=3D"bodyModuleText font-link-color m-font-size-16" =
+style=3D"font-size:0px;padding:20px 32px;word-break:break-word;">=20
+<div style=3D"font-family:Helvetica, sans-serif;font-size:18px;font-weight:=
+300;line-height:30px;text-align:left;color:#000000;" class=3D"mktoText" id=
+=3D"bodyModuleText5cbc055b-c954-4421-818f-cb83afce1090">=20
+<div>
+ Hi&nbsp;Yash,=20
+<br>=20
+<br>=20
+</div>=20
+<div>
+ It looks like you haven=E2=80=99t finished the signup process. By installi=
+ng the agent, you'll gain a comprehensive understanding of what's happening=
+ across your entire environment with real-time data from over 750+ vendor-b=
+acked integrations.&nbsp;=20
+</div>=20
+<p><span style=3D"color: #000000;"><strong><a href=3D
+"http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2XHL0AALrA-JY39SQwA4lTjdWQgh1X=
+uom8hPbTvjDXyUXO10rQdU_1fG_z3sSYaHNeBEbFY=3D" style=3D"color: #000000;"
+>Log back into your account to install the agent now &gt;</a></strong><br><=
+br></span></p> If you're stuck, we're here to help:=20
+<br>=20
+<ul>=20
+<li><strong>Email</strong>:&nbsp;Reply directly to this email&nbsp;for tail=
+ored support.&nbsp;</li>=20
+<li><strong>Slack</strong>:&nbsp;Join our&nbsp;<a href=3D
+"http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2XHL0AyAyRJ1U5VDH28mBsr20Zncp-=
+vzPXsrZHTI6DLALKIbJfitwKJXTKz3LIV186xppUg=3D"
+>public Slack group</a>&nbsp;to&nbsp;chat with our team and other Datadog u=
+sers.</li>=20
+<li><strong>Webinars</strong>:&nbsp;Check out one of our live&nbsp;<a href=
+=3D
+"http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2XHL0HfNf1MEW6pehK4ZJdPyU9UN5l=
+4nEizLtGnRMvBfwhzorB_PId-sYbg5OSH_SVV6Vjc=3D" target=3D"_blank"
+>Datadog Overview sessions</a>&nbsp;to learn how to deploy the Datadog agen=
+t, set up integrations, and more.</li>=20
+</ul> Happy monitoring,=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"oneSpeakerLeftPhotoModuleeb8d5175-79eb-4d=
+72-a719-f851a8e5249f" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D"width:100%;padding:0;margin:0;">=20
+<tbody>=20
+<tr style=3D"padding:0;margin:0;width:100%;">=20
+<td style=3D"padding:0;margin:0;width:100%;">=20
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"" role=3D"presentation" style=3D"width:650px;" width=3D"650" bgcolor=
+=3D"#FFFFFF" >
+<tr>
+<td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><=
+![endif]-->=20
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;m=
+ax-width:650px;">=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background:#FFFFFF;background-color:#FFFFFF;wi=
+dth:100%;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"direction:ltr;font-size:0px;padding:0px 32px;text-align:center=
+;">=20
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td class=3D"" style=3D"vertical-align:top;width:293px;" ><![endif]-->=20
+<div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"vertical-align:top;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td align=3D"left" style=3D"font-size:0px;padding:10px 0px;word-break:break=
+-word;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-collapse:collapse;border-spacing:0px;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"width:70px;"><img height=3D"70" src=3D"https://lp.datadoghq.co=
+m/rs/875-UVY-685/images/Headshot-AlexisleQuoc.png?version=3D0" style=3D"bor=
+der:0;border-radius:50%;display:block;outline:none;text-decoration:none;hei=
+ght:70px;width:100%;font-size:13px;" width=3D"70"></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td align=3D"left" class=3D"oneSpeakerLeftPhotoModuleName" style=3D"font-si=
+ze:0px;padding:10px 0px 5px 0px;word-break:break-word;">=20
+<div style=3D"font-family:Helvetica, sans-serif;font-size:14px;font-weight:=
+700;line-height:20px;text-align:left;color:#000000;" class=3D"mktoText" id=
+=3D"oneSpeakerLeftPhotoModuleNamecf14cf17-e467-4745-a171-2dd096bb39da">
+ Alexis L=C3=AA-Qu=C3=B4c=20
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td align=3D"left" class=3D"oneSpeakerLeftPhotoModuleJobTitle" style=3D"fon=
+t-size:0px;padding:0px 0px 10px 0px;word-break:break-word;">=20
+<div style=3D"font-family:Helvetica, sans-serif;font-size:12px;font-weight:=
+300;line-height:20px;text-align:left;color:#000000;" class=3D"mktoText" id=
+=3D"oneSpeakerLeftPhotoModuleJobTitlee83b0d5e-8dfe-41e8-86d6-9b1fd9d5ed48">
+ CTO, Datadog=20
+<br>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+<td class=3D"" style=3D"vertical-align:top;width:293px;" ><![endif]-->=20
+<div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"vertical-align:top;" width=3D"100%">=20
+<tbody>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"dividerModule" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"width:100%;padding:0;margin:0;">=20
+<tbody>=20
+<tr style=3D"padding:0;margin:0;width:100%;">=20
+<td style=3D"padding:0;margin:0;width:100%;">=20
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"" role=3D"presentation" style=3D"width:650px;" width=3D"650" bgcolor=
+=3D"#FFFFFF" >
+<tr>
+<td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><=
+![endif]-->=20
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;m=
+ax-width:650px;">=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background:#FFFFFF;background-color:#FFFFFF;wi=
+dth:100%;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"direction:ltr;font-size:0px;padding:0;text-align:center;">=20
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td class=3D"" style=3D"vertical-align:top;width:650px;" ><![endif]-->=20
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"vertical-align:top;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" style=3D"font-size:0px;padding:20px 32px;word-break:br=
+eak-word;"> <p style=3D"border-top:solid 1px #C7C7C7;font-size:1px;margin:0=
+px auto;width:100%;"></p>=20
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"border-top:solid 1px #C7C7C7;font-size:1px;margin:0px auto;width:586=
+px;" role=3D"presentation" width=3D"586px" >
+<tr>
+<td style=3D"height:0;line-height:0;"> &nbsp;
+</td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"socialModule" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"width:100%;padding:0;margin:0;">=20
+<tbody>=20
+<tr style=3D"padding:0;margin:0;width:100%;">=20
+<td style=3D"padding:0;margin:0;width:100%;">=20
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"" role=3D"presentation" style=3D"width:650px;" width=3D"650" bgcolor=
+=3D"#FFFFFF" >
+<tr>
+<td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><=
+![endif]-->=20
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;margin:0px auto;m=
+ax-width:650px;">=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background:#FFFFFF;background-color:#FFFFFF;wi=
+dth:100%;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"direction:ltr;font-size:0px;padding:0 32px;text-align:center;"=
+>=20
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td class=3D"m-social-column-outlook" style=3D"width:180px;" ><![endif]-->=
+=20
+<div class=3D"mj-column-px-180 mj-outlook-group-fix m-social-column" style=
+=3D"font-size:0;line-height:0;text-align:left;display:inline-block;width:10=
+0%;direction:ltr;">=20
+<!--[if mso | IE]>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" >
+<tr>
+<td style=3D"vertical-align:middle;width:45px;" ><![endif]-->=20
+<div class=3D"mj-column-per-25 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;w=
+idth:25%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td style=3D"vertical-align:middle;padding:0;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" style=3D"font-size:0px;padding:0;word-break:break-word=
+;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-collapse:collapse;border-spacing:0px;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"width:17px;"><a href=3D
+"http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2XHL0HvUfVYcZSwhQV8rwcbB5qY_Ap=
+C99ZGOrCRUSJX1vb3uzBLsigw86ceIuXp6trVRvFQ=3D" target=3D"_blank"
+><img alt=3D"Datadog X" height=3D"auto" src=3D"https://lp.datadoghq.com/rs/=
+875-UVY-685/images/twitter_social_icon_purple.png" style=3D"border:0;displa=
+y:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:=
+13px;" width=3D"17"></a></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+<td style=3D"vertical-align:middle;width:45px;" ><![endif]-->=20
+<div class=3D"mj-column-per-25 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;w=
+idth:25%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td style=3D"vertical-align:middle;padding:0;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" style=3D"font-size:0px;padding:0;word-break:break-word=
+;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-collapse:collapse;border-spacing:0px;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"width:18px;"><a href=3D
+"http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2XHL0GS96Az3zVUSx4WwNTG5jpQ_Cy=
+4fWO9-mSzZ6tbjIJGh-VHNWFK-Lnemq3cjDI7-Kqo=3D" target=3D"_blank"
+><img alt=3D"Datadog Instagram" height=3D"auto" src=3D"https://lp.datadoghq=
+.com/rs/875-UVY-685/images/instagram_social_icon_purple.png" style=3D"borde=
+r:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;=
+font-size:13px;" width=3D"18"></a></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+<td style=3D"vertical-align:middle;width:45px;" ><![endif]-->=20
+<div class=3D"mj-column-per-25 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;w=
+idth:25%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td style=3D"vertical-align:middle;padding:0;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" style=3D"font-size:0px;padding:0;word-break:break-word=
+;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-collapse:collapse;border-spacing:0px;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"width:20px;"><a href=3D
+"http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2XHL0NMhYclJC17w_ZRn3kvDKxLioJ=
+CDtO-5MttwOuXNEpcdeIkC0CUCZUzBnPjqB93Vd9U=3D" target=3D"_blank"
+><img alt=3D"Datadog Youtube" height=3D"auto" src=3D"https://lp.datadoghq.c=
+om/rs/875-UVY-685/images/youtube_social_icon_purple.png" style=3D"border:0;=
+display:block;outline:none;text-decoration:none;height:auto;width:100%;font=
+-size:13px;" width=3D"20"></a></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+<td style=3D"vertical-align:middle;width:45px;" ><![endif]-->=20
+<div class=3D"mj-column-per-25 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;w=
+idth:25%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td style=3D"vertical-align:middle;padding:0;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" style=3D"font-size:0px;padding:0;word-break:break-word=
+;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-collapse:collapse;border-spacing:0px;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"width:17px;"><a href=3D
+"http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2XHL0MJ3aPN67Sp2P2QKKRMsaiq8ss=
+aWOGfp8C7kQw7i_mQjCzzNQTO_FPnu8mCjuml08Ws=3D" target=3D"_blank"
+><img alt=3D"Datadog Linkedin" height=3D"auto" src=3D"https://lp.datadoghq.=
+com/rs/875-UVY-685/images/linkedin_social_icon_purple.png" style=3D"border:=
+0;display:block;outline:none;text-decoration:none;height:auto;width:100%;fo=
+nt-size:13px;" width=3D"17"></a></td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]-->=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule" id=3D"footerModule" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"width:100%;padding:0;margin:0;">=20
+<tbody>=20
+<tr style=3D"padding:0;margin:0;width:100%;">=20
+<td style=3D"padding:0;margin:0;width:100%;">=20
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"footer-outlook" role=3D"presentation" style=3D"width:650px;" width=
+=3D"650" bgcolor=3D"#FFFFFF" >
+<tr>
+<td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><=
+![endif]-->=20
+<div class=3D"footer" style=3D"background:#FFFFFF;background-color:#FFFFFF;=
+margin:0px auto;max-width:650px;">=20
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background:#FFFFFF;background-color:#FFFFFF;wi=
+dth:100%;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"direction:ltr;font-size:0px;padding:20px 32px;text-align:cente=
+r;">=20
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td class=3D"" style=3D"vertical-align:top;width:586px;" ><![endif]-->=20
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">=20
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"vertical-align:top;" width=3D"100%">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" style=3D"font-size:0px;padding:10px 0px 0px 0px;word-b=
+reak:break-word;">=20
+<div style=3D"font-family:Helvetica, sans-serif;font-size:12px;font-weight:=
+300;line-height:18px;text-align:center;color:#000000;">
+=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Visit our email preference center to <a style=3D"color:#555555!important; d=
+isplay: inline-bock;" href=3D
+"http://em.datadoghq.com/dc/NZ1SFXSiqgATs5RfFqbpS5D6CzHBAw5sr1nfndW0SNo4sIg=
+UAQ_63tctnHB1vnBL6lfV86KNQ89MXTAKyz_4y-embCnu0vm9aOUkNj19-d0xeU1m6Rw9Q0MRrI=
+vppwP1/ODc1LVVWWS02ODUAAAGZ2XHLz_HiwSi8dUBEZXafKbGsmompXS4ZRboIYTKrQxPoXe5V=
+_wMftKLEl625Gh2NIMEYyUc=3D"
+>unsubscribe or update subscription options</a>
+
+</div> </td>=20
+</tr>=20
+<tr>=20
+<td align=3D"center" style=3D"font-size:0px;padding:10px 0px 10px 0px;word-=
+break:break-word;">=20
+<div style=3D"font-family:Helvetica, sans-serif;font-size:12px;font-weight:=
+300;line-height:18px;text-align:center;color:#000000;">
+ =C2=A92025 Datadog Inc, 620 8th Ave, 45th Floor, New York, NY 10018=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso | IE]></td>
+</tr>
+</table>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>
+</tbody>
+</table>=20
+<!-- //MKTO CONTAINER END -->
+</div>  =20
+<a href=3D
+"http://em.datadoghq.com/ODc1LVVWWS02ODUAAAGZ2XHLz3yZ_htUYxEe-4sZNYUv7nAc_u=
+WnVglkyGRVOf_Ug83U3mpm0xvo3nDOud81UAonsDQ=3D"
+></a>
+<img src=3D"http://em.datadoghq.com/trk?t=3D1&mid=3DODc1LVVWWS02ODUAAAGZ2XH=
+L0HaR1uPCAr814JgVpm5UFHGhF4ZTK-OkvsiH7ipGijPgfRy6O5sBEo9W1QK9RrnYLFmW2VfcQn=
+zV0XwmdECAA7XOvFWfvz2rkgUGE_gE423lXcKKE_QhJaI" width=3D"1" height=3D"1" sty=
+le=3D"display:none !important;" alt=3D"" />
+
+<p><font face=3D"Verdana" size=3D"1">This email was sent to yash31204testin=
+g@gmail.com. </font> </p>
+</body>
+</html>
+------=_Part_1576578_1193669386.1744737737686--

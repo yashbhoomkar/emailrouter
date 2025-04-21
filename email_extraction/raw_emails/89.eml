@@ -1,0 +1,566 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:750b:b0:43a:a54e:2943 with SMTP id f11csp381714mde;
+        Thu, 27 Feb 2025 09:17:37 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHq8HogmoF24Pta3dZ6lfVrXIzalV+Iq5ovilTUL0iw1w0tBDKJKHy8AjzyGBtIt623ihqX
+X-Received: by 2002:a05:622a:102:b0:471:ba79:cf31 with SMTP id d75a77b69052e-4738137e182mr111898121cf.49.1740676657717;
+        Thu, 27 Feb 2025 09:17:37 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1740676657; cv=none;
+        d=google.com; s=arc-20240605;
+        b=cjxuXXqm4Qo+A4RiTF5GNu+BIv1pic9mZPpyVC5G2wVnHOjI94bAXIylKG/gJgIYQj
+         rbxpigXJIcVJCgcMxbOwUryczqeMnV4B4tFP0hpxe1vF7T7MbV4dbZbVZsnDKPO0hJyH
+         5C3Kx/D3PLegrP4v45dw54lMkoL2QuZ7hinQOQXxS6Qr2x0FTzE29IYwlDDX2xmHf8LR
+         QgAMhRpIcSZJZ2VVxyYyewjUqKOGqogya265hdQcLzevtcrvca66FcSONfxY4oElndrI
+         UZplF3R4NtWvIyJ877wS30cKRhbOY+F3JLt2NFEEINiP6vztHQ3MtKi0HK8yS/rubBcR
+         La1Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:feedback-id:list-unsubscribe:reply-to
+         :list-unsubscribe-post:to:from:subject:mime-version:date:sender
+         :dkim-signature:dkim-signature;
+        bh=JsTe/St1exovBDU/wv/z19U4qVaIrcWVa08WBaYR+ZU=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=FanSEV9f+fn5j6PmNu8ujuaZLDpGOTjx5eGfF0FzfJYEs5Y8VryOJ6yUR8m5JMp6q1
+         FKVd33VCoAXB8N18ghOhLqrZkTBtrnOt0kqtpa4qCPNJ/G1r9aKhaNz0ChFPmMw12OOb
+         VJ7Y4c8hlmrImtWx7M4RLut8JsuCSgwettcu7Ts09Vi82UBg4I8CzHOmhcvxUB94uug1
+         /MjROkcFvA60Endomho1LgVY6WWLTmk/7Qs6G8e8ODcUSHqqAoH1U2TRDP1iuzXAOgUU
+         Fjy+I1B+CvhvjShlWkEPJ09dhOmFRm3ifj4h7RHYWg1wp+WM5+PZCAQxfPg2axFYiLR5
+         a44Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.anthropic.com header.s=mx header.b=cx6mY4hn;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=LMzO1w5N;
+       spf=pass (google.com: domain of bounce+2b9408.63db81-yash31204testing=gmail.com@email.anthropic.com designates 204.220.170.144 as permitted sender) smtp.mailfrom="bounce+2b9408.63db81-yash31204testing=gmail.com@email.anthropic.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=anthropic.com
+Return-Path: <bounce+2b9408.63db81-yash31204testing=gmail.com@email.anthropic.com>
+Received: from h144.h22bf2b1.use4.send.mailgun.net (h144.h22bf2b1.use4.send.mailgun.net. [204.220.170.144])
+        by mx.google.com with UTF8SMTPS id d75a77b69052e-47472439f0asi16364241cf.568.2025.02.27.09.17.37
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 27 Feb 2025 09:17:37 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+2b9408.63db81-yash31204testing=gmail.com@email.anthropic.com designates 204.220.170.144 as permitted sender) client-ip=204.220.170.144;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.anthropic.com header.s=mx header.b=cx6mY4hn;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=LMzO1w5N;
+       spf=pass (google.com: domain of bounce+2b9408.63db81-yash31204testing=gmail.com@email.anthropic.com designates 204.220.170.144 as permitted sender) smtp.mailfrom="bounce+2b9408.63db81-yash31204testing=gmail.com@email.anthropic.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=anthropic.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=email.anthropic.com; q=dns/txt; s=mx; t=1740676657; x=1740683857;
+ h=Message-Id: List-Unsubscribe: X-Feedback-ID: Reply-To: List-Unsubscribe-Post: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=JsTe/St1exovBDU/wv/z19U4qVaIrcWVa08WBaYR+ZU=;
+ b=cx6mY4hn4y7Vzpw3o0pRffHK0zFMgfZnXkCMO3HwOWKV0/R/Q50ZNyXWqNlYiGToTcMH88BRMqbVmtNRVaodQy1415ZeY1KQQ+GtBbb3NA8DRAoGUC1sh/4SvvmJFoyTy47TJpEUnlFnLlSb29edqO1DJ7PKxVKHWVBXiMAlvQM=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1740676657; x=1740683857;
+ h=Message-Id: List-Unsubscribe: X-Feedback-ID: Reply-To: List-Unsubscribe-Post: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=JsTe/St1exovBDU/wv/z19U4qVaIrcWVa08WBaYR+ZU=;
+ b=LMzO1w5NSncomLSXjSrhA5kmEt72VJOjMYj7sqWiHES5WzSG1iLRFGL2965M18bIGg7uE8D14kPBH/31Q1+eRjw6cvwBMKBTOVOXenSlK7Sx7eaZhBVvfVD4/JHGUYj/BQF1hPzV/cK7Vb4Fa/HWEyqwWJp5O//7tIy3MHlwFkI=
+X-Feedback-Id: team@email.anthropic.com::66d0893c92e432495701c7bb:mailgun
+X-Mailgun-Sending-Ip: 204.220.170.144
+X-Mailgun-Sending-Ip-Pool-Name: Anthropic_mktg
+X-Mailgun-Sending-Ip-Pool: 66bf76427430cdc7e911e225
+X-Mailgun-Sid: WyJmNDYxMiIsInlhc2gzMTIwNHRlc3RpbmdAZ21haWwuY29tIiwiNjNkYjgxIl0=
+Received: by 6638dfcc8f08 with HTTP id 67c09e2fb78d3f724903a7f1; Thu, 27 Feb 2025
+ 17:17:35 GMT
+Sender: team@email.anthropic.com
+Date: Thu, 27 Feb 2025 17:17:35 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="a3eedc3a6bb78f0827c35e28fadf9958365918d1ce35b709b7071518c709"
+Subject: Introducing Claude 3.7 Sonnet, now with extended thinking
+From: Anthropic Team <team@email.anthropic.com>
+To: yash31204testing@gmail.com
+X-Campaign-ID: 12712166
+Return-Path: bounces@email.anthropic.com
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Reply-To: team@email.anthropic.com
+X-Feedback-ID: 16650802:12712166:109689:iterable
+List-Unsubscribe: <https://links.iterable.com/e/encryptedUnsubscribe?_r=67101f7d500248b386768eecaae4611b&_s=c2f9b1cdea724d528fd6fd31c1cf0ac0&_t=ieVl6MzRYEPyED_05NLmWz2BS_KBJRhkixg93HwhbReM1HL1QNP8wMrn7KndzsBO9bW8NXc4oQXxGwh71skeMubTPzb67kgeGXcJRDfekGmDI5a2-Gb1_p7NLK4YbVCsFVZ84E9CYI0FR0DAfTtwww%3D%3D>,<mailto:unsubscribe+12712166+16650802@unsubscribe.iterable.com>
+X-Message-ID: c2f9b1cdea724d528fd6fd31c1cf0ac0
+Feedback-ID: 16650802:12712166:109689:iterable
+X-Mailgun-Variables: {"metadata":
+ "{\"messageId\":\"c2f9b1cdea724d528fd6fd31c1cf0ac0\",\"templateId\":16650802,\"projectId\":25150,\"campaignId\":12712166}"}
+Message-Id: <20250227171735.6fcdcb9129d33572@email.anthropic.com>
+
+--a3eedc3a6bb78f0827c35e28fadf9958365918d1ce35b709b7071518c709
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Today, we=E2=80=99re announcing Claude 3.7 Sonnet, Anthropic's most intelli=
+gent model=20
+to date and the first hybrid reasoning model.
+
+
+
+
+
+
+=20
+<https://www.anthropic.com/news/claude-3-7-sonnet?utm_source=3Diterable&utm=
+_medium=3Demail&utm_campaign=3Dsonnet_3-7_launch>
+
+
+
+Hello,=20
+
+
+
+Today, we=E2=80=99re introducing Claude 3.7 Sonnet=20
+<http://www.anthropic.com/news/claude-3-7-sonnet?utm_source=3Dlinkedin&utm_=
+medium=3Dpaid_social&utm_campaign=3Dsonnet_3-7_launch>
+, now available onClaude.ai=20
+<https://claude.ai?utm_source=3Diterable&utm_medium=3Demail&utm_campaign=3D=
+sonnet_3-7_launch>
+=2E
+
+
+
+Claude 3.7 Sonnet is the first hybrid reasoning model and our most intellig=
+ent=20
+model to date. It=E2=80=99s state-of-the art for coding and delivers signif=
+icant=20
+improvements in content generation, data analysis, and planning.
+
+
+
+Upgrade to the Pro plan=20
+<https://claude.ai/upgrade?utm_source=3Diterable&utm_medium=3Demail&utm_cam=
+paign=3Dsonnet_3-7_launch>
+ to use Claude 3.7 Sonnet with extended thinking=E2=80=94letting you see Cl=
+aude's=20
+thought process alongside its response. Extended thinking elevates performa=
+nce=20
+on mathematics, physics, and complex coding challenges.
+
+
+
+We're also launching a GitHub integration across all Claude plans, allowing=
+=20
+developers to connect code repositories directly to Claude. With deeper con=
+text=20
+of your personal and open source projects, Claude becomes an even more powe=
+rful=20
+partner for bug fixes, feature development, and documentation. Visit ourHel=
+p=20
+Center=20
+<https://support.anthropic.com/en/articles/10167454-using-the-github-integr=
+ation?utm_source=3Diterable&utm_medium=3Demail&utm_campaign=3Dsonnet_3-7_la=
+unch>
+ for more information on how to enable the GitHub integration.=20
+
+
+
+We look forward to seeing what you build and discover with Claude.
+
+
+
+=E2=80=94The Anthropic team
+
+
+
+
+ <https://www.anthropic.com/?utm_source=3Demail>
+
+ <https://x.com/anthropicai>=20
+<https://www.linkedin.com/company/anthropicresearch>=20
+<https://www.youtube.com/@anthropic-ai>
+
+
+
+=E2=80=8A=20
+
+
+
+This email was sent to yash31204testing@gmail.com. Unsubscribe=20
+<https://links.iterable.com/e/encryptedUnsubscribe?_r=3D67101f7d500248b3867=
+68eecaae4611b&_s=3Dc2f9b1cdea724d528fd6fd31c1cf0ac0&_t=3DieVl6MzRYEPyED_05N=
+LmWz2BS_KBJRhkixg93HwhbReM1HL1QNP8wMrn7KndzsBO9bW8NXc4oQXxGwh71skeMubTPzb67=
+kgeGXcJRDfekGk1-UGusyRliBArEeg1MrEksMTEGgw3_w5a4kyzZso5BOGND_M4Ai-X5XQ6aU1K=
+kbYK2oE8cFv0GdQhtao8p3CX>
+=2E
+
+
+
+Anthropic PBC, 548 Market St, PMB 90375, San Francisco, CA 94104=20
+
+--a3eedc3a6bb78f0827c35e28fadf9958365918d1ce35b709b7071518c709
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en" style=3D"box-sizing: bo=
+rder-box;"><head><title></title><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3Dutf-8"><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"><!--[if mso]><xml><o:OfficeDocumentSettings=
+><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettin=
+gs></xml><![endif]--><style>*{box-sizing:border-box}body{margin:0;padding:0=
+}a[x-apple-data-detectors]{color:inherit!important;text-decoration:inherit!=
+important}#MessageViewBody a{color:inherit;text-decoration:none}p{line-heig=
+ht:inherit}.desktop_hide,.desktop_hide table{mso-hide:all;display:none;max-=
+height:0;overflow:hidden}.image_block img+div{display:none}sub,sup{font-siz=
+e:75%;line-height:0}@media(max-width:620px){.desktop_hide table.icons-outer=
+{display:inline-table!important}.mobile_hide{display:none}.row-content{widt=
+h:100%!important}.stack .column{width:100%;display:block}.mobile_hide{min-h=
+eight:0;max-height:0;max-width:0;overflow:hidden;font-size:0}.desktop_hide,=
+=2Edesktop_hide table{display:table!imp=
+ortant;max-height:none!important}.row-=
+2 .column-1 .block-1.image_block td.pad{padding:5px 30px!important}.row-1 .=
+column-1 .block-1.image_block td.pad{padding:15px 0 15px 10px!important}.ro=
+w-1 .column-1 .block-1.image_block .alignment div{margin:0 auto 0 0!importa=
+nt}.row-3 .column-1 .block-1.text_block td.pad{padding:5px 15px!important}.=
+row-4 .column-1 .block-1.icons_block td.pad{padding:10px 15px 0!important}.=
+row-4 .column-2 .block-1.icons_block td.pad{text-align:center!important;pad=
+ding:5px 15px 10px!important}.row-5 .column-1 .block-1.divider_block td.pad=
+{padding:0 15px 5px!important}.row-5 .column-1 .block-1.divider_block .alig=
+nment table{display:inline-table}.row-6 .column-1 .block-1.text_block td.pa=
+d{padding:10px 15px 20px!important}.row-1 .column-1{padding:10px 0!importan=
+t}.row-3 .column-1{padding:5px 0!important}.row-4 .column-1{padding:10px 0 =
+0!important}.row-4 .column-2,.row-5 .column-1{padding:0!important}.row-6 .c=
+olumn-1{padding:0 0 5px!important}}</style><!--[if mso ]><style>sup,sub{fon=
+t-size:100%!important}sup{mso-text-raise:10%}sub{mso-text-raise:-10%}</styl=
+e><![endif]--></head><body class=3D"body" style=3D"box-sizing: border-box; =
+background-color: #fff; margin: 0; padding: 0; -webkit-text-size-adjust: no=
+ne; text-size-adjust: none;"><span style=3D"color:transparent;visibility:hi=
+dden;display:none;opacity:0;height:0;width:0;font-size:0;">Today, we=E2=80=
+=99re announcing Claude 3.7 Sonnet, Anthropic's most intelligent model to d=
+ate and the first hybrid reasoning model. </span><img src=3D"https://links.=
+iterable.com/e/eo?_t=3D67101f7d500248b386768eecaae4611b&amp;_m=3Dc2f9b1cdea=
+724d528fd6fd31c1cf0ac0&amp;_e=3DieVl6MzRYEPyED_05NLmWz2BS_KBJRhkixg93HwhbRe=
+M1HL1QNP8wMrn7KndzsBO9bW8NXc4oQXxGwh71skeMubTPzb67kgeGXcJRDfekGk1-UGusyRliB=
+ArEeg1MrEkTVbbOTVLWV0pHbNCD5fJQji5sohtUpSFaGZoSxb6ooQ%3D" style=3D"border:0=
+;width:1px;height:1px;border-width:0px!important;display:none!important;lin=
+e-height:0!important;" width=3D"1" height=3D"1"/><table class=3D"nl-contain=
+er" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-ta=
+ble-rspace: 0; background-color: #fff;" bgcolor=3D"#fff"><tbody style=3D"bo=
+x-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"b=
+ox-sizing: border-box;"><table class=3D"row row-1" align=3D"center" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspac=
+e: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: bo=
+rder-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-conten=
+t stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0;=
+ mso-table-rspace: 0; background-color: #fafaf8; border-radius: 0; color: #=
+000; width: 600px; margin: 0 auto;" width=3D"600" bgcolor=3D"#fafaf8"><tbod=
+y style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><=
+td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-box=
+; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: l=
+eft; padding-bottom: 10px; padding-top: 10px; vertical-align: top; border-t=
+op: 0; border-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" v=
+align=3D"top"><table class=3D"image_block block-1" width=3D"100%" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-=
+sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D=
+"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box=
+; padding-bottom: 30px; padding-left: 25px; padding-top: 30px; width: 100%;=
+ padding-right: 0;" width=3D"100%"><div class=3D"alignment" align=3D"left" =
+style=3D"box-sizing: border-box; line-height: 10px;"><div style=3D"box-sizi=
+ng: border-box; max-width: 120px;"><img src=3D"https://d15k2d11r6t6rl.cloud=
+front.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/6d6=
+95a0eb0b548c5910d64c8e507578a/Logo%20for%20email%20outline.png" style=3D"bo=
+x-sizing: border-box; display: block; height: auto; border: 0; width: 100%;=
+" width=3D"120" alt=3D"Claude logo" title=3D"Claude logo" height=3D"auto"><=
+/div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></=
+table><table class=3D"row row-2" align=3D"center" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-s=
+izing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td styl=
+e=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: =
+0; background-color: #fafaf8; border-radius: 0; color: #000; width: 600px; =
+margin: 0 auto;" width=3D"600" bgcolor=3D"#fafaf8"><tbody style=3D"box-sizi=
+ng: border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column =
+column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace:=
+ 0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-top: 5=
+px; vertical-align: top; border-top: 0; border-right: 0; border-bottom: 0; =
+border-left: 0;" align=3D"left" valign=3D"top"><table class=3D"image_block =
+block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; m=
+so-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad=
+" style=3D"box-sizing: border-box; padding-left: 30px; padding-right: 30px;=
+ width: 100%;" width=3D"100%"><div class=3D"alignment" align=3D"center" sty=
+le=3D"box-sizing: border-box; line-height: 10px;"><div style=3D"box-sizing:=
+ border-box; max-width: 540px;"> <a href=3D"https://links.iterable.com/u/cl=
+ick?_t=3D67101f7d500248b386768eecaae4611b&_m=3Dc2f9b1cdea724d528fd6fd31c1cf=
+0ac0&_e=3Dlmtigu6C9ZzMTgHqE1UYGT_zZvt1dT6sjri4OpaL-Jw_87qFBjvDBKzHJrlwRNoua=
+1hG3UzNDQXN1kChj4l0gLGiQ6Fds76gu4qGBGXbJSEfko5-kM4emM1eP5QYFtLtMjXnTuF6MUJe=
+bOt1TxuWQxj_z_I_-Ykz58Pa1hGqUpT7SNVH0RMKGyyJM0SCiekAMphE9dSyActclslmOuIV9XY=
+x2CDcDzko1HkhvO_TPPQ0HiDUGQTffPInffnkvzh0oBCi-LvXMXSgKFzrrMteZ9_PquHTigy_iK=
+g91u3wzIwLZuvTqCwC7tPU50irwXPJGd5OYlGM58GsbAP7CBz6KP_x5ULIHQVFGrtbdRmTfdGoF=
+xZftpPJY3oaYx8sU5nAyraCdJ8lfCgDqFEqToxADut4RrPoM6ljVRQkvRkSTIbqRojcOVIOLK_R=
+K3Kj23XhnH-zaMI0-xrhurz-dPh6dA%3D%3D" target=3D"_blank" style=3D"box-sizing=
+: border-box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d11r=
+6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542c=
+ff6dd6a/67101f7d500248b386768eecaae4611b/email-hero-hero_1.png" style=3D"bo=
+x-sizing: border-box; display: block; height: auto; border: 0; width: 100%;=
+" width=3D"540" alt=3D"Different use cases for Claude" title=3D"Different u=
+se cases for Claude" height=3D"auto"></a></div></div></td></tr></table></td=
+></tr></tbody></table> </td></tr></tbody></table><table class=3D"row row-3"=
+ align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr =
+style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box;"><ta=
+ble class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #fafaf7; b=
+order-radius: 0; color: #000; width: 600px; margin: 0 auto;" width=3D"600" =
+bgcolor=3D"#fafaf7"><tbody style=3D"box-sizing: border-box;"><tr style=3D"b=
+ox-sizing: border-box;"><td class=3D"column column-1" width=3D"100%" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-=
+weight: 400; text-align: left; padding-bottom: 50px; padding-top: 15px; ver=
+tical-align: top; border-top: 0; border-right: 0; border-bottom: 0; border-=
+left: 0;" align=3D"left" valign=3D"top"><table class=3D"text_block block-1"=
+ width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table=
+-rspace: 0; word-break: break-word;"><tr style=3D"box-sizing: border-box;">=
+<td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 5px; pad=
+ding-left: 30px; padding-right: 30px; padding-top: 5px;"><div style=3D"box-=
+sizing: border-box; font-family: Georgia,'Times New Roman',serif;"><div cla=
+ss style=3D"box-sizing: border-box; font-size: 14px; font-family: Georgia,T=
+imes,'Times New Roman',serif; mso-line-height-alt: 16.8px; color: #141413; =
+line-height: 1.2;"><p style=3D"box-sizing: border-box; line-height: inherit=
+; margin: 0; font-size: 16px; mso-line-height-alt: 19.2px;"><span style=3D"=
+box-sizing: border-box; word-break: break-word; font-size: 16px;">Hello,&nb=
+sp;</span></p><p style=3D"box-sizing: border-box; line-height: inherit; mar=
+gin: 0; font-size: 16px; mso-line-height-alt: 16.8px;">&nbsp;</p><p style=
+=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size: 16p=
+x; mso-line-height-alt: 19.2px;"> <span style=3D"box-sizing: border-box; wo=
+rd-break: break-word; font-size: 16px;">Today, we=E2=80=99re introducing <a=
+ href=3D"https://links.iterable.com/u/click?_t=3D67101f7d500248b386768eecaa=
+e4611b&_m=3Dc2f9b1cdea724d528fd6fd31c1cf0ac0&_e=3Dcn0qAQPWTmuj8D5mX7qMJDbYi=
+8BW_esbHrPuI6nNB1UjroB-gEA869dNx3hFwbUP84B8LF9d_7Ifn9di8ux_xtrQUJIv6kdouy8L=
+UXLx8kTz9LdVlQaTk0wU0UymgBZSxt77fh2k6wfjQx-dQyxmgJZQeJkttCFQVtnoHU0c15qasc1=
+RS6jsIEMP0ExtrnPVhLUr8kQyBY2ZvjJqd9jToqdxUvn-a-1FsgBr2bkdOOpO1Cehxahr13egnT=
+BC010PvlEKLFaWDJQDvu76GtpXQ6hRYvxusbihX_ssK7NZzr2xCqMlCrUJFiab51zKEk_suiUaJ=
+I7zRjGPuX4JIfqnoPbDsJG0KqtitZLlmIUMJuNQpOyolds9Ltc45iQIxC-oLLcL-8ZMFK-Cx4WS=
+ZroAGgv1LJhQw2e-0K4PVAd63EDcrHsLecKhSAjkmMsc_zT3YiDCAAplocSqNMwWZv80TWZz0Gd=
+3DgiDxC7mm3HMYXs%3D" target=3D"_blank" style=3D"box-sizing: border-box; tex=
+t-decoration: none; color: #1188e6;" rel=3D"noopener">Claude 3.7 Sonnet</a>=
+, now available on <a href=3D"https://links.iterable.com/u/click?_t=3D67101=
+f7d500248b386768eecaae4611b&_m=3Dc2f9b1cdea724d528fd6fd31c1cf0ac0&_e=3Dlmti=
+gu6C9ZzMTgHqE1UYGTuhRdRMCNZNN6XrnygcTVPL6mPSitmlX24SLnHxLbZkrGRIIsR04ULKWv9=
+nVq6R2hAnUO3giYVmPyQp1Oczx7YsH6ITr0lxL5Sa2Mezj_dvN5AO8AIeyDIPqk1ofOfttgAjr9=
+gWX1g4nTn79K3VR1tkK97kl5J_2k1_AC7VBj3ll6r0qCxvbqEOTd8cec-tbEcY_V4vMUyy7kYER=
+KQHQB-jMlkc9lf_6NcwwrkuIUt2Tcc43mredJNpoJ-3bnyLBYcPMtTi7MeVMQUjZVavk3AmTbHg=
+xF_I01sPEQrzGQVobxKCxX54kANXdaYBO2yikQR2bCS7TZWIZjg0m1JNRpyMyfruhNkG_O7WjNw=
+FFPDhFIru5Wzmaf_H_0qvf39kSTJlJpifCXNpmY2uTsdA9PasUdQrz5YVp-IxSAIIV5Gx" targ=
+et=3D"_blank" style=3D"box-sizing: border-box; text-decoration: none; color=
+: #1188e6;" rel=3D"noopener">Claude.ai</a>.</span></p><p style=3D"box-sizin=
+g: border-box; line-height: inherit; margin: 0; font-size: 16px; mso-line-h=
+eight-alt: 16.8px;">&nbsp;</p> <p style=3D"box-sizing: border-box; line-hei=
+ght: inherit; margin: 0; font-size: 16px; mso-line-height-alt: 19.2px;"><sp=
+an style=3D"box-sizing: border-box; word-break: break-word; font-size: 16px=
+;">Claude 3.7 Sonnet is the first hybrid reasoning model and our most intel=
+ligent model to date. It=E2=80=99s state-of-the art for coding and delivers=
+ significant improvements in content generation, data analysis, and plannin=
+g.</span></p><p style=3D"box-sizing: border-box; line-height: inherit; marg=
+in: 0; font-size: 16px; mso-line-height-alt: 16.8px;">&nbsp;</p><p style=3D=
+"box-sizing: border-box; line-height: inherit; margin: 0; font-size: 16px; =
+mso-line-height-alt: 19.2px;"> <span style=3D"box-sizing: border-box; word-=
+break: break-word; font-size: 16px;">Upgrade to the <a href=3D"https://link=
+s.iterable.com/u/click?_t=3D67101f7d500248b386768eecaae4611b&_m=3Dc2f9b1cde=
+a724d528fd6fd31c1cf0ac0&_e=3Dlmtigu6C9ZzMTgHqE1UYGdQuqk55yIzAkrfk2GRln4CjRA=
+-yaOdT1vv7pF2WAT8x5UBQvwxB8LzcFv7bPR-czRljoFWHez2nqf31YmW58K9Uau4MOwH_-Xwgl=
+Lq8rgMzg9veFzKVDIzkEjSaxg4Uab9YFr-YuC4VxcinHk0PH8JuUX9pIJYaJ9aE7cHMKrxnKnM5=
+sk8VtHU18kLI6XEzcaEQOeVvZG_lwPRjAsF9gyLTRsYBizO_kkzNNdvQ0nYZtrkZP1D7ta9oSgi=
+OoAddO8fZV1VD43_Jih2zMBFqcx0Ou-hwoGUZc-sIO7pQvGCpNhhZ38Nx9bT-4WUymh6qBd7966=
+xS8IVlqlDlxHj5mRY1yDGQZMUU5YY-D31OgTWeksV4APTNs3nzvXpoIZ5vEoZUkjKIrNIzmGdC-=
+ik-KD422-mihZYoTYOk2KwOT4r5" target=3D"_blank" style=3D"box-sizing: border-=
+box; text-decoration: none; color: #1188e6;" rel=3D"noopener">Pro plan</a> =
+to use Claude 3.7 Sonnet with extended thinking=E2=80=94letting you see Cla=
+ude's thought process alongside its response. Extended thinking elevates pe=
+rformance on mathematics, physics, and complex coding challenges.</span></p=
+><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-=
+size: 16px; mso-line-height-alt: 16.8px;">&nbsp;</p><p style=3D"box-sizing:=
+ border-box; line-height: inherit; margin: 0; font-size: 16px; mso-line-hei=
+ght-alt: 19.2px;"> <span style=3D"box-sizing: border-box; word-break: break=
+-word; font-size: 16px;">We're also launching a GitHub integration across a=
+ll Claude plans, allowing developers to connect code repositories directly =
+to Claude. With deeper context of your personal and open source projects, C=
+laude becomes an even more powerful partner for bug fixes, feature developm=
+ent, and documentation. Visit our <a href=3D"https://links.iterable.com/u/c=
+lick?_t=3D67101f7d500248b386768eecaae4611b&_m=3Dc2f9b1cdea724d528fd6fd31c1c=
+f0ac0&_e=3Dlmtigu6C9ZzMTgHqE1UYGT0xGKERxaJXt4qZfbZovF0fdr0b3FOAnHIfZD4QXyPa=
+oXcICIZI5Ay3Pa7Sj1Q8E26dZygETYW9nmJ2kuOxmNBr-ZDTrqVUR--PuF2LNxXBsClBlnzH171=
+J4pzRDqM-kobNFXUnP4q79hJGLaU883O8kLCbDbM5MCcyOPKGzgGH6X0-7LQWppi_-qYWzHkHgn=
+lPEvEpsIlYH9lK9XCOH-FnQQWrpVVHMt1l1MSYPJJ3y4Xp1vQPblvpVTcMj4xEQ4_8z9jVj2Fda=
+UqMr-xDos8eNxRin9c-V5z1FYDE-AAVeaupDsRvSKpg9HXbMMPhlR0xRqK3NX0D_6g1RbC3Cocf=
+KkJOeQnEsUGO7KIacUQPBNG_YFT87qKXQjtgecmD0OlqpvHu6phKdmVR4FsnVxtcTLphnmhwtFb=
+TgQpeBPdJ-ID2YqTvdsRAkN2cviUSJQZoLzi-ORw4YQEsqZX5qiGmvuoYuPZX4Z-x25tmfaYI" =
+target=3D"_blank" style=3D"box-sizing: border-box; text-decoration: none; c=
+olor: #1188e6;" rel=3D"noopener">Help Center</a> for more information on ho=
+w to enable the GitHub integration.</span> </p><p style=3D"box-sizing: bord=
+er-box; line-height: inherit; margin: 0; font-size: 16px; mso-line-height-a=
+lt: 16.8px;">&nbsp;</p><p style=3D"box-sizing: border-box; line-height: inh=
+erit; margin: 0; font-size: 16px; mso-line-height-alt: 19.2px;"><span style=
+=3D"box-sizing: border-box; word-break: break-word; font-size: 16px;">We lo=
+ok forward to seeing what you build and discover with Claude.</span><br sty=
+le=3D"box-sizing: border-box;"><br style=3D"box-sizing: border-box;"></p><p=
+ style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-siz=
+e: 16px; mso-line-height-alt: 19.2px;"><span style=3D"box-sizing: border-bo=
+x; word-break: break-word; font-size: 16px;">=E2=80=94The Anthropic team</s=
+pan></p></div></div></td></tr></table></td></tr></tbody></table></td></tr><=
+/tbody> </table><table class=3D"row row-4" align=3D"center" width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; back=
+ground-size: auto;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"b=
+ox-sizing: border-box;"><td style=3D"box-sizing: border-box;"><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; background-size: auto; background-color=
+: #141413; border-radius: 0; color: #000; width: 600px; margin: 0 auto;" wi=
+dth=3D"600" bgcolor=3D"#141413"><tbody style=3D"box-sizing: border-box;"><t=
+r style=3D"box-sizing: border-box;"><td class=3D"column column-1" width=3D"=
+25%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace=
+: 0; font-weight: 400; text-align: left; padding-bottom: 10px; vertical-ali=
+gn: bottom; border-top: 0; border-right: 0; border-bottom: 0; border-left: =
+0;" align=3D"left" valign=3D"bottom"><table class=3D"icons_block block-1" w=
+idth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-r=
+space: 0; text-align: center; line-height: 0;" align=3D"center"><tr style=
+=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-=
+box; vertical-align: middle; color: #000; font-family: inherit; font-size: =
+14px; font-weight: 400; padding-left: 20px; text-align: center;" valign=3D"=
+middle" align=3D"center"><table class=3D"icons-outer" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-t=
+able-lspace: 0; mso-table-rspace: 0; display: inline-table;"><tr style=3D"b=
+ox-sizing: border-box;"><td style=3D"box-sizing: border-box; vertical-align=
+: middle; text-align: center; padding-top: 5px; padding-bottom: 5px; paddin=
+g-left: 5px; padding-right: 5px;" valign=3D"middle" align=3D"center"> <a hr=
+ef=3D"https://links.iterable.com/u/click?_t=3D67101f7d500248b386768eecaae46=
+11b&_m=3Dc2f9b1cdea724d528fd6fd31c1cf0ac0&_e=3Dlmtigu6C9ZzMTgHqE1UYGT_zZvt1=
+dT6sjri4OpaL-JxL7q_w_eOT8iHek-Zy1HpVQf-rdkz_BElyc8bE9coSvCUgbHRIzJqT50keh81=
+wGpQUPl77XHgE51zNfmL50RO8h_ZBE4JiLO4SUuJ-boEbTdaIB8ngl_upxdK2-N2CaGQ1uh1rA4=
+BaIIVpWlYu5MaU5T4ucTPR71jWcSec9ie7imK5CJyEkSnP1U1CKUPt1JCFRWq55Eigdv9_K1UU0=
+jXkGmWIQQXyEXhVTG8bHf4pFgYkf7GIssmrterBDg3fNcodmEckE-7-3IKBthJb_8TdHWEYVrvQ=
+umHTiAx3AMQ76D8DP5ITsjTDOBYGgyC_2uOwChxgFljN1Vu2bNeCKly2" target=3D"_self" =
+style=3D"box-sizing: border-box; text-decoration: none;"><img class=3D"icon=
+" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669=
+d5713-9b6a-46bb-bd7e-c542cff6dd6a/6d695a0eb0b548c5910d64c8e507578a/Anthropi=
+c%20wordmark%20-%20Ivory.png" alt=3D"Anthropic logo" height=3D"auto" width=
+=3D"143" align=3D"center" style=3D"box-sizing: border-box; display: block; =
+height: auto; margin: 0 auto; border: 0;"></a></td></tr></table></td></tr><=
+/table></td><td class=3D"column column-2" width=3D"75%" style=3D"box-sizing=
+: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; t=
+ext-align: left; padding-bottom: 5px; padding-top: 20px; vertical-align: bo=
+ttom; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;" al=
+ign=3D"left" valign=3D"bottom"><table class=3D"icons_block block-1" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspac=
+e: 0; text-align: right; line-height: 0;" align=3D"right"><tr style=3D"box-=
+sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; ver=
+tical-align: middle; color: #000; font-family: inherit; font-size: 14px; fo=
+nt-weight: 400; padding-bottom: 5px; padding-right: 25px; text-align: right=
+;" valign=3D"middle" align=3D"right"><table class=3D"icons-outer" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: borde=
+r-box; mso-table-lspace: 0; mso-table-rspace: 0; display: inline-table;"><t=
+r style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box; ve=
+rtical-align: middle; text-align: center; padding-top: 5px; padding-bottom:=
+ 5px; padding-left: 5px; padding-right: 5px;" valign=3D"middle" align=3D"ce=
+nter"> <a href=3D"https://links.iterable.com/u/click?_t=3D67101f7d500248b38=
+6768eecaae4611b&_m=3Dc2f9b1cdea724d528fd6fd31c1cf0ac0&_e=3Dlmtigu6C9ZzMTgHq=
+E1UYGYygEo3yCL2ULR4faOajICIlgZxsD82HXm7gypbBaGH1H5f8FFtzkMo6zaPJIO3DpBdSzzM=
+2u26CIY0anhGYbYCboU4SB8Yfd-on9XRgvZZSmu94ARqHRnVxFKGSj2_jdijzKTTxTOsP6eA3S0=
+mgaq1dXB3bjG2TEUmtorrbtIe91g8a1Xl9-tBDqYJrQwRfxd4HJTPOJogIKfDtw3tBTOj4C3V9j=
+R17hcXWUGbWQxKh6R2l5LGg0qv-TaIuBz16AH7Ic_kDb8Eu5CkfDWg9bmEU8N-gK1yXtyWlGLlt=
+jVkI4xVvYhTwh-McOf48S0lLpCsT8dit-ByXN9VMDmfATfQ%3D" target=3D"_self" style=
+=3D"box-sizing: border-box; text-decoration: none;"><img class=3D"icon" src=
+=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713=
+-9b6a-46bb-bd7e-c542cff6dd6a/6d695a0eb0b548c5910d64c8e507578a/social%20X.pn=
+g" alt=3D"X icon" height=3D"auto" width=3D"16" align=3D"center" style=3D"bo=
+x-sizing: border-box; display: block; height: auto; margin: 0 auto; border:=
+ 0;"></a></td><td style=3D"box-sizing: border-box; vertical-align: middle; =
+text-align: center; padding-top: 5px; padding-bottom: 5px; padding-left: 5p=
+x; padding-right: 5px;" valign=3D"middle" align=3D"center"><a href=3D"https=
+://links.iterable.com/u/click?_t=3D67101f7d500248b386768eecaae4611b&_m=3Dc2=
+f9b1cdea724d528fd6fd31c1cf0ac0&_e=3Dlmtigu6C9ZzMTgHqE1UYGZ-OgFAeS62akT2GI29=
+crzF6LdwhV5d16zh9_Zk9EjEBHha3QH3gYq_WbYckfO-O2x6BJzGjGvYU4f6tJoGHojNCm-ZCxh=
+jz02HCnVZ8KMCUQP4vQlzp5-mbETw9YOlK4I2I34CgOU8QjCYOyCkzLf-3cwsiWo61vJXAW0d92=
+aBk7F0_uS__B-9VjkOFAQEdVDMH_rJtAzY9Y5o27pwQm3iJRUX-tCh3LeX6XDE1XFI3gBTojnX6=
+a1e4l-IUbG7wKf1u43dQOxCYHlOXGH3JKcnb8h1cItmO47FugyScUEeoBUlIrJslY3yf4-xTqbe=
+u8i0VraDvod8zHcxYo7pV-TAdA06CSkxcVcsBmDkB17Au" target=3D"_self" style=3D"bo=
+x-sizing: border-box; text-decoration: none;"><img class=3D"icon" src=3D"ht=
+tps://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-=
+46bb-bd7e-c542cff6dd6a/6d695a0eb0b548c5910d64c8e507578a/social%20linkedin.p=
+ng" alt=3D"LinkedIn icon" height=3D"auto" width=3D"16" align=3D"center" sty=
+le=3D"box-sizing: border-box; display: block; height: auto; margin: 0 auto;=
+ border: 0;"></a></td><td style=3D"box-sizing: border-box; vertical-align: =
+middle; text-align: center; padding-top: 5px; padding-bottom: 5px; padding-=
+left: 5px; padding-right: 5px;" valign=3D"middle" align=3D"center"><a href=
+=3D"https://links.iterable.com/u/click?_t=3D67101f7d500248b386768eecaae4611=
+b&_m=3Dc2f9b1cdea724d528fd6fd31c1cf0ac0&_e=3Dlmtigu6C9ZzMTgHqE1UYGcCPuxdBNP=
+T3gSb7HuxqK68rrHT-JdA8jITzXfn38a5x9f1waQrjunJzvCHZoCmysIrZen2hb07dx5rUfbK97=
+0-cwaHDR5bAB3uFkysA1l8dC9hukw0jy9v5UZdBaTim0AAQIwOOQNb7ZgfF3vQwP67-w092apJC=
+um7K8LC4PBtKOeZtWYv3Do2Vj18E0oCCj-rDpJzGoKg5wD1j-A-aVH-JPbj_L9MzoRq6A93pEPK=
+QFaGhgVwpVjWyWRNkrO65YLvjqPAPUWbvfTh4CBPYKVi9Uk3oqkBIwG22w6zaO9GI-ClyWKA1cZ=
+yGki4-IxL9iv2mxkZ3wJ8SFhApZjjm-xIbJ0RUD29DRw0WlU5Z5PYI" target=3D"_self" st=
+yle=3D"box-sizing: border-box; text-decoration: none;"><img class=3D"icon" =
+src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5=
+713-9b6a-46bb-bd7e-c542cff6dd6a/6d695a0eb0b548c5910d64c8e507578a/social%20y=
+outube.png" alt=3D"YouTube icon" height=3D"auto" width=3D"16" align=3D"cent=
+er" style=3D"box-sizing: border-box; display: block; height: auto; margin: =
+0 auto; border: 0;"></a></td></tr></table></td></tr></table></td></tr></tbo=
+dy></table></td></tr></tbody></table><table class=3D"row row-5" align=3D"ce=
+nter" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"bo=
+x-sizing: border-box;"><td style=3D"box-sizing: border-box;"><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; background-color: #141413; border-radiu=
+s: 0; color: #000; width: 600px; margin: 0 auto;" width=3D"600" bgcolor=3D"=
+#141413"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: =
+border-box;"><td class=3D"column column-1" width=3D"100%" style=3D"box-sizi=
+ng: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400;=
+ text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: t=
+op; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;" alig=
+n=3D"left" valign=3D"top"><table class=3D"divider_block block-1" width=3D"1=
+00%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"=
+ style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;=
+"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizi=
+ng: border-box; padding-bottom: 5px; padding-left: 25px; padding-right: 25p=
+x; padding-top: 5px;"><div class=3D"alignment" align=3D"center" style=3D"bo=
+x-sizing: border-box;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" width=3D"100%" style=3D"box-sizing: border-box; m=
+so-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-b=
+ox;"><td class=3D"divider_inner" style=3D"box-sizing: border-box; font-size=
+: 1px; line-height: 1px; border-top: 1px solid #a3a299;"><span style=3D"box=
+-sizing: border-box; word-break: break-word;">&#8202;</span></td></tr></tab=
+le></div></td></tr> </table></td></tr></tbody></table></td></tr></tbody></t=
+able><table class=3D"row row-6" align=3D"center" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-si=
+zing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td styl=
+e=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=3D"c=
+enter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: =
+0; background-color: #141413; border-radius: 0; color: #333; width: 600px; =
+margin: 0 auto;" width=3D"600" bgcolor=3D"#141413"><tbody style=3D"box-sizi=
+ng: border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column =
+column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace:=
+ 0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom=
+: 10px; vertical-align: top; border-top: 0; border-right: 0; border-bottom:=
+ 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=3D"text_blo=
+ck block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0=
+; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"box-sizing: bo=
+rder-box;"><td class=3D"pad" style=3D"box-sizing: border-box; padding-botto=
+m: 15px; padding-left: 25px; padding-right: 25px; padding-top: 10px;"><div =
+style=3D"box-sizing: border-box; font-family: Georgia,'Times New Roman',ser=
+if;"><div class style=3D"box-sizing: border-box; font-size: 14px; font-fami=
+ly: Georgia,Times,'Times New Roman',serif; mso-line-height-alt: 16.8px; col=
+or: #a3a299; line-height: 1.2;"><p style=3D"box-sizing: border-box; line-he=
+ight: inherit; margin: 0; font-size: 12px; mso-line-height-alt: 14.39999999=
+9999999px;"> <span style=3D"box-sizing: border-box; word-break: break-word;=
+ font-size: 12px;">This email was sent to yash31204testing@gmail.com. <a hr=
+ef=3D"https://links.iterable.com/e/encryptedUnsubscribe?_r=3D67101f7d500248=
+b386768eecaae4611b&_s=3Dc2f9b1cdea724d528fd6fd31c1cf0ac0&_t=3DieVl6MzRYEPyE=
+D_05NLmWz2BS_KBJRhkixg93HwhbReM1HL1QNP8wMrn7KndzsBO9bW8NXc4oQXxGwh71skeMubT=
+Pzb67kgeGXcJRDfekGk1-UGusyRliBArEeg1MrEksMTEGgw3_w5a4kyzZso5BOGND_M4Ai-X5XQ=
+6aU1KkbYK2oE8cFv0GdQhtao8p3CX" target=3D"_blank" style=3D"box-sizing: borde=
+r-box; text-decoration: none; color: #1188e6;" rel=3D"noopener">Unsubscribe=
+</a>.</span></p><p style=3D"box-sizing: border-box; line-height: inherit; m=
+argin: 0; font-size: 12px; mso-line-height-alt: 16.8px;">&nbsp;</p><p style=
+=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size: 12p=
+x; mso-line-height-alt: 14.399999999999999px;"> <span style=3D"box-sizing: =
+border-box; word-break: break-word; font-size: 12px;">Anthropic PBC, 548 Ma=
+rket St, PMB 90375, San Francisco, CA 94104&nbsp;</span></p></div></div></t=
+d></tr></table></td></tr></tbody></table></td></tr></tbody></table></td></t=
+r></tbody></table><!-- End --></body></html>
+--a3eedc3a6bb78f0827c35e28fadf9958365918d1ce35b709b7071518c709--

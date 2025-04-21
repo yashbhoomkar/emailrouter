@@ -1,0 +1,328 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:25ce:b0:43a:a54e:2943 with SMTP id d14csp258418mdo;
+        Fri, 11 Apr 2025 04:11:09 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFZKYHhmj6jaMhdTgFbag5PrFb+91kvxRN+lQCE284lvh9FM/c86STlINq3Z+DEkkijJs0h
+X-Received: by 2002:a17:90b:2246:b0:2fa:228d:5af2 with SMTP id 98e67ed59e1d1-3082367cc9amr4167755a91.15.1744369869469;
+        Fri, 11 Apr 2025 04:11:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744369869; cv=none;
+        d=google.com; s=arc-20240605;
+        b=BNqrTkhn6f2b4xalmEP1N11xtI+oyajojTbrdnqPhkSI1Jdmxkxa5qlODla7ZXYrMw
+         yQzKu9G+fAR8h9qqvuBbWqK2azXxdrT65ASRKrBTf8sD0T0bmh/47N/uOClT1hJDSdZW
+         JQ3XoGzMBS6dX/qHkAsHYKZQVHAjEUZKtd+G41HgLFHR7tmjwLndDU25m1nWwwm8a4kw
+         wqWG2gJSIN2JT10WKzWuexnVwrEifjo5L8ToaAVCIrkIUfJuDA/hOTRewz6YEC0Umj7t
+         hXkffxjYkEXwIa+4aNPfq64uXxje+0WRVy+GtoOxsxoYF6FuNAEhZ1SzXcBT6OwS0HX4
+         RXRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:mime-version:subject:to:reply-to:from
+         :dkim-signature:dkim-signature;
+        bh=lx+n+Ki+0XpJUMUpTM0dslRW8yzWnrH/fd87fJx+IB4=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=kPDbbr2qnYTG1KRTNLEgAzNxTyIxQrWJUfSKZ7tzeCqERjIZqsQ4fRX3WbN4vxvGNa
+         dbziKR0h3h1SCy1KzZhF5fy692Tng/EVxeajkJxLq3MTIZV6EIP2VfbcHDrhHSHMvvJZ
+         En0jHGSaX6cuJcyc1XfrBtre69WiC6xiEMoCoEk+y/4PZDt/imohJrasGmr8HT17+a2H
+         RxxRhm1X+MOn5zQY96yPjpcuTnp3A+mwbMPyJV1LyLkr+3ZFaL6s1KhBmo7WDL4L8crt
+         20CC4IfyCFLPwWJ+sqsubA6heTgT6P4wiZH+nVlw2rLN2yQTcH8QlnBmNjkbwoRcb4gE
+         w5WQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@propeers.in header.s=cjodlusggfvg6gcc5b43qvonkgkluttl header.b=Wcr4WpUJ;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=U9rJpNnv;
+       spf=pass (google.com: domain of 01090196248bddb7-96dcadcb-f081-4a45-b6cd-1719231fa0f3-000000@ap-south-1.amazonses.com designates 76.223.180.5 as permitted sender) smtp.mailfrom=01090196248bddb7-96dcadcb-f081-4a45-b6cd-1719231fa0f3-000000@ap-south-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=propeers.in
+Return-Path: <01090196248bddb7-96dcadcb-f081-4a45-b6cd-1719231fa0f3-000000@ap-south-1.amazonses.com>
+Received: from c180-5.smtp-out.ap-south-1.amazonses.com (c180-5.smtp-out.ap-south-1.amazonses.com. [76.223.180.5])
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-306df404394si7448616a91.141.2025.04.11.04.11.08
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 11 Apr 2025 04:11:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01090196248bddb7-96dcadcb-f081-4a45-b6cd-1719231fa0f3-000000@ap-south-1.amazonses.com designates 76.223.180.5 as permitted sender) client-ip=76.223.180.5;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@propeers.in header.s=cjodlusggfvg6gcc5b43qvonkgkluttl header.b=Wcr4WpUJ;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=U9rJpNnv;
+       spf=pass (google.com: domain of 01090196248bddb7-96dcadcb-f081-4a45-b6cd-1719231fa0f3-000000@ap-south-1.amazonses.com designates 76.223.180.5 as permitted sender) smtp.mailfrom=01090196248bddb7-96dcadcb-f081-4a45-b6cd-1719231fa0f3-000000@ap-south-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=propeers.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=cjodlusggfvg6gcc5b43qvonkgkluttl; d=propeers.in; t=1744369868;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=8JkROax2N/tdrw2W1td4EVlNoJtaJjUhGC9xgZIqD6I=;
+	b=Wcr4WpUJLvEPNN9DImXcTngfBNCkosi6sgL1Mq0ZRd/YBZ8ZgJ2e+8fiqoUvXwOT
+	x9zwFLW6NSqf+qbHI8X8crpH0QL75MA3Iy+7pUhgGtgE+wKuBpmszwVhl71YiMovlz6
+	zg49UwxDfhAxoLKHRvswOkeKK23qpBVeISQtUQ20=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zpkik46mrueu52d3326ufxxchortqmoc; d=amazonses.com; t=1744369868;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=8JkROax2N/tdrw2W1td4EVlNoJtaJjUhGC9xgZIqD6I=;
+	b=U9rJpNnvTFfDgwqWzIhP23U26jkYEg+SOF/p/2CrJc+yAT8AfMyNQdcymMWF1ccL
+	ja6mkhNoxkDLKHbjSwJ1xhg4NVCL8M2kA8rBjLi8mkfKwOJ4rZMd6jGSMPRG0GUD33r
+	3stTlOsLFVrkoACzEMnvZ6YaR0SGFQcJB4f+k0/Y=
+From: ProPeers <no-reply@propeers.in>
+Reply-To: propeers.parikh@gmail.com
+To: yash31204testing@gmail.com
+Subject:  Earning Opportunity from Us
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1419641_418762016.1744369868215"
+Message-ID: <01090196248bddb7-96dcadcb-f081-4a45-b6cd-1719231fa0f3-000000@ap-south-1.amazonses.com>
+Date: Fri, 11 Apr 2025 11:11:08 +0000
+Feedback-ID: ::1.ap-south-1.ke8Mai8DaCyhFQoC/cwaG4enVBuObF8VeBYaiFffQjQ=:AmazonSES
+X-SES-Outgoing: 2025.04.11-76.223.180.5
+
+------=_Part_1419641_418762016.1744369868215
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+This is the body
+------=_Part_1419641_418762016.1744369868215
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+    <html>
+   =20
+    <head>
+        <meta charset=3D"UTF-8">
+        <style>
+            .body {
+                background-color: #ffffff;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.4;
+                color: #333333;
+                margin: 0;
+                padding: 0;
+            }
+            .hide {
+              font-family: 'Libre Franklin', Arial, sans-serif;=20
+              background-color: #F4F7FE;
+              margin: 0;=20
+              padding: 0;=20
+              background: #E5EDFF;=20
+              display: flex;=20
+              flex-direction: column;=20
+              justify-content: center;
+              align-items: center;
+            }
+   =20
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+   =20
+            .logo {
+                max-width: 140px;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+   =20
+            .message {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+   =20
+            .follow-text {
+                font-weight: 600;
+                font-size: 14px;
+            }
+   =20
+            .footer-text {
+                text-align: left;
+                font-size: 12px;
+                font-weight: 500;
+                float: left;
+            }
+   =20
+            .icon {
+                max-width: 20px;
+                margin-left: 12px;
+                margin-right: 12px;
+                text-decoration: none;
+            }
+   =20
+            .footer {}
+   =20
+            .unsubscribe-text {
+                font-size: 12px;
+                font-weight: 400;
+                color: #e0e0e0;
+                float: right;
+            }
+
+            .textCenter{
+                text-align: center;
+            }
+
+            .alignContent{
+                display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+
+           =20
+            .img-container {
+                margin: 0 auto;
+            }
+        </style>
+   =20
+    </head>
+   =20
+
+     <body style=3D"font-family: Arial, sans-serif; background-color: #f7f7=
+f7; padding: 20px; margin: 0;">
+  <div style=3D"max-width: 600px; margin: 0 auto; background-color: #ffffff=
+; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.0=
+5); margin-bottom: 10px;">
+
+    <p>Hey <strong>Yash</strong>,</p>
+
+    <p>What if we told you that this weekend, you could <strong>earn money<=
+/strong> AND help your friends get ahead in their dev journey?</p>
+
+    <p><em>Sounds wild? It=E2=80=99s true.</em></p>
+
+    <p>We=E2=80=99ve launched a <strong>limited-time referral offer</strong=
+> that ends <strong>Sunday, April 13th at 11:59 PM</strong>:</p>
+
+    <h3>=F0=9F=8E=AF Here=E2=80=99s the deal:</h3>
+    <ul>
+      <li>=E2=9C=85 You earn <strong>10% commission</strong> on every digit=
+al product purchased using your referral code</li>
+      <li>=E2=9C=85 Your friends get <strong>10% OFF</strong> instantly</li=
+>
+      <li>=E2=9C=85 Valid on <strong>ALL digital products</strong>=E2=80=94=
+DSA Patterns, Java Dev Kit, MERN Dev Kit, Frontend Kit</li>
+    </ul>
+
+    <div style=3D"margin: 30px 0; background-color: #f1f9ff; padding: 20px;=
+ border-radius: 8px;">
+      <p style=3D"font-size: 18px;">=F0=9F=AA=84 <strong>Your Referral Code=
+:</strong> <span style=3D"color: #2c3e50;">tvpaDk</span></p>
+      <p style=3D"font-size: 18px;">=F0=9F=94=97 <strong>Your Link to Share=
+:</strong> <a href=3D"https://bit.ly/3Ehf1L2" style=3D"color: #1d72b8;">htt=
+ps://bit.ly/3Ehf1L2</a></p>
+    </div>
+
+    <p>Just send it to your juniors, friends, or anyone preparing for dev r=
+oles=E2=80=94and let the magic happen =E2=9C=A8</p>
+
+    <p style=3D"color: #e74c3c;"><strong>=E2=8F=B3 This is a weekend-only o=
+ffer=E2=80=94once it=E2=80=99s gone, it=E2=80=99s gone.</strong></p>
+
+    <div style=3D"text-align: center; margin: 30px 0;">
+      <a href=3D"https://bit.ly/3Ehf1L2" target=3D"_blank" style=3D"display=
+: inline-block; background-color: #3498db; color: #fff; padding: 14px 28px;=
+ text-decoration: none; font-size: 16px; border-radius: 6px;">Start Sharing=
+ & Earn Now</a>
+    </div>
+
+    <p><em>Let your code work while you chill =F0=9F=98=8E</em></p>
+
+    <p>Cheers,<br/>
+    <strong>Team ProPeers</strong></p>
+   =20
+  </div>
+
+
+  <table align=3D"center" role=3D"presentation" valign=3D"top" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+                <tbody>
+                <tr>
+                <td style=3D"padding-bottom:16px;text-align:center">
+                    <h2 style=3D"margin:0;font-weight:500;font-size:20px">S=
+tay informed with the Propeer app</h2>
+                </td>
+            </tr>
+            <tr>
+                <td style=3D"text-align:center">
+                    <a href=3D"https://apps.apple.com/in/app/propeers/id644=
+6427356" style=3D"text-decoration: none;">
+                        <img alt=3D"Download on the App Store" src=3D"https=
+://ci3.googleusercontent.com/meips/ADKq_Nb3K_tyUQe5MJXq5TBbkdaPEqtXrdx4s9uo=
+rYLmo9huzT4rm90pNvfQ1b9xHBvrhCLEUUUTw3M9s4lohvyz5NVd9E8DT7ISkQbQc4Di_FDKjwe=
+Yu5I=3Ds0-d-e1-ft#https://static.licdn.com/aero-v1/sc/h/76yzkd0h5kiv27lrd4y=
+aenylk" style=3D"outline:none;text-decoration:none;height:40px;width:120px;=
+padding-right:8px" width=3D"120" height=3D"40">
+                    </a>
+                    <a href=3D"https://play.google.com/store/apps/details?i=
+d=3Dcom.wireless.propeers" style=3D"text-decoration: none;">
+                        <img alt=3D"Get it on Google Play" src=3D"https://c=
+i3.googleusercontent.com/meips/ADKq_Na4vGlgWbb5d_c0BKM_aoF8r7kcJPwyVTRxmwOv=
+FvH-2PTgZmoPgRHgNxJfriUyoB3gL3BwEmtJqwvRPcuhYUFAgQ8U-unbpAYBdxVRmPzDb1gnZmE=
+=3Ds0-d-e1-ft#https://static.licdn.com/aero-v1/sc/h/142qudwblp58zwmc9vkqfpl=
+ug" style=3D"outline:none;text-decoration:none;height:40px;width:134px" wid=
+th=3D"134" height=3D"40">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style=3D"padding-top:16px;padding-bottom:16px">
+                    <hr style=3D"height:1px;border-style:none;background-co=
+lor:#e0dfdd">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table  cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"cente=
+r">
+  <tbody>
+      <tr>
+      <th colspan=3D"3" style=3D"padding-Bottom: 10px;" align=3D"center">
+          Follow us on
+      </th>
+      </tr>
+      <tr>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.instagram.com/pro.peers/" style=3D"tex=
+t-decoration:none" target=3D"_blank">
+                  <img src=3D"https://upload.wikimedia.org/wikipedia/common=
+s/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" border=3D"0" widt=
+h=3D"30" height=3D"30" style=3D"border:none;outline:none;text-decoration:no=
+ne;font-size:19px;font-family:Helvetica Neue,Arial,sans-serif;color:#00aced=
+;font-weight:bold" alt=3D"instagram-icon" />
+              </a>
+          </td>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.youtube.com/@parikh-jain" style=3D"tex=
+t-decoration:none" target=3D"_blank">
+                  <img src=3D"https://www.iconpacks.net/icons/2/free-youtub=
+e-logo-icon-2431-thumb.png" border=3D"0" width=3D"40" height=3D"40" style=
+=3D"border:none;outline:none;text-decoration:none;font-size:19px;font-famil=
+y:Helvetica Neue,Arial,sans-serif;color:#00aced;font-weight:bold" alt=3D"yo=
+utube-icon" />
+              </a>
+          </td>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.linkedin.com/company/propeers/" style=
+=3D"text-decoration:none" target=3D"_blank">
+                  <img src=3D"https://static-00.iconduck.com/assets.00/link=
+edin-icon-512x512-dhkaf9ri.png" border=3D"0" width=3D"30" height=3D"30" sty=
+le=3D"border:none;outline:none;text-decoration:none;font-size:19px;font-fam=
+ily:Helvetica Neue,Arial,sans-serif;color:#00aced;font-weight:bold" alt=3D"=
+linkedin-icon" />
+              </a>
+          </td>
+      </tr>
+       <tr>
+        <td colspan=3D"3" style=3D"padding-top: 20px;" align=3D"center" wid=
+th=3D"400">
+            This is an auto-generated email, please do not reply.
+        </td>
+    </tr>
+    <tr>
+        <td colspan=3D"3" style=3D"padding-top: 20px;" align=3D"center" wid=
+th=3D"400">
+            <a href=3D"https://propeers.in/unsubscribe/67e249d16592165f8a2c=
+18f4/9PyKYsoCkNgfdRwU">Unsubscribe here</a>
+        </td>
+        </tr>
+  </tbody>
+    =20
+</table>
+</body>
+
+    </html>
+   =20
+   =20
+------=_Part_1419641_418762016.1744369868215--

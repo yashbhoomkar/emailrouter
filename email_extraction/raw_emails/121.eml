@@ -1,0 +1,1374 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:e716:b0:43a:a54e:2943 with SMTP id lx22csp2467246mdb;
+        Mon, 24 Mar 2025 23:33:45 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGvvu70CYO/FqAHouwmwr6+jdLYcVYePNsXfnnm/VCCgKaAXAbEK730q2DZHw86xmt2U3Jv
+X-Received: by 2002:a17:902:f705:b0:224:1c95:451e with SMTP id d9443c01a7336-22780e41efamr228602415ad.33.1742884425700;
+        Mon, 24 Mar 2025 23:33:45 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742884425; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Sd9zyVkiiyLlb5d41i6f9SoYyPd5GCUryNHcKFiAffalCNnarrpYOB/zsnTTdbZtLo
+         RX38/GOxiugKc0CQ9SjoubTmzJKGuWvOfv9oR8gvvuWNT2OPYMtpmReOWAjOr4jq8pkc
+         pKKcXWjKFBFVy0doGfIXHCs1LGK8PIPEBobr7UgWSoMZYt5MvEpfx4qEfUKATVELDY1x
+         4DGOUJJbGZfeCmorFyzbmuhRmnSZFWnf7oshkVSQ/mpU/74oEBh+sMyDpu5I7qXQgHxy
+         OUKcuqaXp1VA3pj6eZSw6PbYdvzIQwSEzbszBvI3UWc49kMFlJw0e/b/cazVV1R+2zix
+         ldJQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:mime-version:to:from:subject:date:message-id
+         :dkim-signature:dkim-signature;
+        bh=u7JPQVX5NjFde/9MGTMLlTyO8qKTzRPtvg3DJR42Xgc=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=Yt1HuENDZ/QTrI6eAyLOXzZsL7rlmjDn/7Yc2mcC/5mBrXHI4QPTyWMvz7Hslq+3w+
+         14afz6r2hwx3CitMsb7eGNQ3yP+rKeZYNck0KinF50puB6hOmtpGuOncPM3PXZ+aXBVC
+         DgFLmsIbcaA3pr3ER/0KDSOU2bNFBwDU4E0bqzCzZX2OuXR7f2gr5nxifSxn8mmuNwvY
+         tGNVcj5c57txVlyTYe6xGmaybmTlIhxPAsracjkprosdllZ8vbadOTvfPwCRwBSyGJ0/
+         yMRzY6FQN45Wx7thdvXalX7QagpPzUBa+DEyzXaWUKu907nCw5VH7hJ+RR6doWawfnfx
+         N1jw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@unstop.com header.s=4blexnw4c7vlfu2yvfksrgnoe7jreyig header.b=d+MqgCmp;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=P0rLT1gO;
+       spf=pass (google.com: domain of 01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000@emails.unstop.com designates 76.223.176.214 as permitted sender) smtp.mailfrom=01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000@emails.unstop.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=unstop.com
+Return-Path: <01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000@emails.unstop.com>
+Received: from c176-214.smtp-out.ap-south-1.amazonses.com (c176-214.smtp-out.ap-south-1.amazonses.com. [76.223.176.214])
+        by mx.google.com with ESMTPS id 98e67ed59e1d1-3030f5b3bddsi16156270a91.53.2025.03.24.23.33.44
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 24 Mar 2025 23:33:45 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000@emails.unstop.com designates 76.223.176.214 as permitted sender) client-ip=76.223.176.214;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@unstop.com header.s=4blexnw4c7vlfu2yvfksrgnoe7jreyig header.b=d+MqgCmp;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=P0rLT1gO;
+       spf=pass (google.com: domain of 01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000@emails.unstop.com designates 76.223.176.214 as permitted sender) smtp.mailfrom=01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000@emails.unstop.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=unstop.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=4blexnw4c7vlfu2yvfksrgnoe7jreyig; d=unstop.com; t=1742884424;
+	i=@emails.unstop.com;
+	h=Message-ID:Date:Subject:From:To:MIME-Version:Content-Type;
+	bh=IbepNBcZ6VH8JUcnobhhhtydDLpHAT3AKma4GtYPd7w=;
+	b=d+MqgCmp2+m/n6udjSc+ylHIW3VPRrN2UEFDNViJR0fe+r9hU4Bs7qrVaOP+JzIt
+	/lAdUVP/AdEytc53LOsjEQMlZYnXCcNBTT4egCXjZiWVj1UxqofdUQWSjfTwn+eXRno
+	sVWUdz1RXEdS3wpL/6ER6pqXBAq25BS+/7B+sCZmd/LlBHSyvn+R46mnxWG9PgrKBir
+	NnhIp3caVW0eeZorz43vvm7TXXI/KfyBRM3PDvvGXz9lekutwTe/EaKPV1lUKFTEm9Y
+	8VUcmpQ4k0aEafWBxO7OrdifpVYFzC/9lIZFWj62AaUgncxv/fDpTeX8Q117V0/NTJG
+	X5x0ENl4og==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zpkik46mrueu52d3326ufxxchortqmoc; d=amazonses.com; t=1742884424;
+	h=Message-ID:Date:Subject:From:To:MIME-Version:Content-Type:Feedback-ID;
+	bh=IbepNBcZ6VH8JUcnobhhhtydDLpHAT3AKma4GtYPd7w=;
+	b=P0rLT1gOA2pj/obXCTql0Lu+E8G+MkQYGfexQyxZ8yb89Qv7WW9IjkUZ/lQDyrt2
+	bPftkmUjCaUNMWvehNCpIW6cRHhWKf9auvW/syblyNlC5k0dlivFs2WxOhO4HpCPsh4
+	O1qiQpzsnfDsvmWFIGvMwIfN11G+rvz/RfPkmTCk=
+Message-ID: <01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000@ap-south-1.amazonses.com>
+Date: Tue, 25 Mar 2025 06:33:44 +0000
+Subject: =?utf-8?Q?Don=E2=80=99t?= snooze this reminder | Quizzes and/or
+ hackathons lined up today!
+From: Unstop <noreply@emails.unstop.com>
+To: yash31204testing@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_1742884424_ce992d3636513edc3dac6b58d3efd25e_=_"
+Feedback-ID: ::1.ap-south-1.vLaUspdbZtz+0zahNQSbWc0bbDg5bpfORXW9fnjVqUQ=:AmazonSES
+X-SES-Outgoing: 2025.03.25-76.223.176.214
+
+--_=_swift_1742884424_ce992d3636513edc3dac6b58d3efd25e_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+
+<head>
+    <meta http-equiv=3D"=
+Content-Type" content=3D"text/html; charset=3Dutf-8" />
+    <meta http-eq=
+uiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+    <title>Reminder for =
+competitions</title>
+    <meta name=3D"author" content=3D"" content=3D"" =
+/>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-s=
+cale=3D1.0" />
+=09=09<meta name=3D"x-apple-disable-message-reformatting">=
+
+    <style type=3D"text/css">
+        @import  url("https://fonts.goog=
+leapis.com/css?family=3DRoboto:400,500,700&display=3Dswap");
+
+        b=
+ody {
+            width: auto;
+            background-color: #F6F8FA;=
+
+            margin: 0 auto;
+            padding: 0;
+            font=
+-size: 14px;
+            -webkit-text-size-adjust: 100% !important;
+   =
+         -ms-text-size-adjust: 100% !important;
+            -webkit-font-=
+smoothing: antialiased;
+            font-family: "Roboto", sans-serif;
+=
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+       =
+ h5,
+        h6,
+        p,
+        span,
+        a,
+        stro=
+ng,
+        div,
+        td {
+            font-family: "Roboto", sans=
+-serif;
+        }
+
+        img {
+            border: 0 !important;=
+
+            outline: none !important;
+            display: block;
+  =
+      }
+
+        a {
+            text-decoration: none;
+           =
+ color: #0073e6;
+        }
+
+        .h_text_color:hover {
+         =
+   color: #0073e6 !important;
+            text-decoration: underline !imp=
+ortant;
+        }
+        .footer_sect a:hover {
+            opacity:=
+ .8;
+        }
+
+        table {
+            border-collapse: collap=
+se;
+            mso-table-lspace: 0px;
+            mso-table-rspace: 0p=
+x;
+        }
+
+        @media (max-width: 600px) {
+            .full=
+ {
+                width: 100% !important;
+            }
+
+         =
+   .pdng {
+                padding: 20px 15px !important;
+            }=
+
+
+            .footer_sect {
+                display: block;
+      =
+      }
+
+            .footer_sect .follow {
+                border-ri=
+ght: 0 !important;
+                padding-right: 0 !important;
+       =
+         text-align: center;
+                width: 100%;
+             =
+   display: block;
+                margin-bottom: 15px;
+            }=
+
+
+            .footer_store {
+                width: 100%;
+        =
+        text-align: center;
+                display: block;
+           =
+ }
+
+            .footer_store .coin {
+                padding-left: 0=
+ !important;
+            }
+
+            .footer_sect p {
+          =
+      font-size: 13px !important;
+                margin-bottom: 10px !im=
+portant;
+            }
+
+            .footer_sect img {
+            =
+    width: 35px !important;
+            }
+
+            .queries p {=
+
+                font-size: 13px !important;
+            }
+
+       =
+     .queries .copyright {
+                margin-top: 5px !important;
+=
+            }
+
+            .title {
+                font-size: 16px !=
+important;
+                line-height: 22px !important;
+              =
+  margin-bottom: 20px !important;
+            }
+
+            .list .i=
+con {
+                width: 90px !important;
+            }
+         =
+   .list .icon div {
+                width: 90px !important;
+          =
+      height: 90px !important;
+            }
+            .list .cptn {=
+
+                padding: 0 12px !important;
+            }
+          =
+  .list h2 {
+                font-size: 14px !important;
+              =
+  line-height: 19px !important;
+            }
+            .list p {
+ =
+               font-size: 12px !important;
+                line-height: 1=
+6px !important;
+            }
+        }
+    </style>
+</head>
+
+<=
+body>
+    <div style=3D"background-color: #F6F8FA; width: 100%; margin: 0=
+; padding: 0;">
+        <table
+            cellpadding=3D"0"
+        =
+    cellspacing=3D"0"
+            align=3D"center"
+            bgcolor=
+=3D"#ffffff"
+            border=3D"0"
+            width=3D"700"
+     =
+       class=3D"full"
+            style=3D"background-color: #1C4980;"
+=
+        >
+            <tbody>
+                <tr class=3D"hedr">
+   =
+                 <td>
+                        <a href=3D"https://unstop.c=
+om/" target=3D"_blank" style=3D"display: block; padding: 15px 15px 0;">
+ =
+                           <img
+                                src=3D"ht=
+tps://d8it4huxumps7.cloudfront.net/uploads/images/un-emails/unstop-icon.png=
+?d=3D201x80"
+                                style=3D"display:block; marg=
+in:0; width: 80px;"
+                            />
+                    =
+    </a>
+                        <a href=3D"https://unstop.com/" target=
+=3D"_blank" style=3D"display: block;">
+                            <img=
+
+                                src=3D"https://d8it4huxumps7.cloudfront.=
+net/uploads/images/unstop/emails/reminder-for-competitions.gif"
+         =
+                       alt=3D"Reminder for competitions"
+                =
+                style=3D"max-width: 100%;"
+                            >=
+
+                        </a>
+                    </td>
+             =
+   </tr>
+            </tbody>
+        </table>
+
+        <table
+  =
+          cellpadding=3D"0"
+            cellspacing=3D"0"
+            a=
+lign=3D"center"
+            bgcolor=3D"#ffffff"
+            border=3D"0=
+"
+            width=3D"700"
+            class=3D"full"
+        >
+  =
+          <tbody>
+                <tr>
+                    <td class=3D=
+"pdng" style=3D"padding: 30px 50px;">
+                        <p class=3D=
+"title" style=3D"font-family: 'Roboto', sans-serif; text-align: center; fon=
+t-size: 22px; line-height: 100%; color: #1C4980; font-weight: 500; margin: =
+0 0 20px;">
+                            Today's line-up for you:
+      =
+                  </p>
+
+                       =20
+
+                 =
+                                                                   <table=
+
+                                    cellpadding=3D"0"
+                =
+                    cellspacing=3D"0"
+                                   =
+ align=3D"center"
+                                    bgcolor=3D"#ffffff"=
+
+                                    border=3D"0"
+                     =
+               style=3D"width: 100%; background: #dfefff; border-radius: 8p=
+x;"
+                                >
+                                 =
+   <tbody>
+                                        <tr class=3D"list">
+=
+                                            <td class=3D"icon" width=3D"100=
+">
+                                                <div style=3D"
+     =
+                                               font-family: Avenir,Helvetic=
+a,sans-serif;
+                                                    width: =
+100px;
+                                                    height: 100px;=
+
+                                                    margin: auto;
+    =
+                                                display: flex;
+          =
+                                          border-radius: 10px;
+          =
+                                          border: 1px solid #1c4980;
+    =
+                                                background-color: #fff;
+ =
+                                                   background-size: contain=
+;
+                                                    box-sizing: border-=
+box;
+                                                    background-image=
+: url(https://d8it4huxumps7.cloudfront.net/uploads/images/62f1fbf22e093_10x=
+10_white.png);
+                                                ">
+     =
+                                               <img
+                     =
+                                   src=3D"https://d8it4huxumps7.cloudfront.=
+net/uploads/images/75x75/62ab0b8047b75_unstop-logo-1000x399.png"
+        =
+                                                alt=3D""
+                =
+                                        style=3D"
+                       =
+                                     box-sizing: border-box;
+            =
+                                                border: 0!important;
+    =
+                                                        outline: none!impor=
+tant;
+                                                            display=
+: block;
+                                                            max-=
+height: 90%;
+                                                            =
+max-width: 90%;
+                                                         =
+   margin: auto;
+                                                        =
+"
+                                                    >
+               =
+                                 </div>
+                                 =
+           </td>
+                                            <td class=3D=
+"cptn" style=3D"padding: 0 20px;">
+                                      =
+          <h2 style=3D"color: #434343; margin: 0 0 2px; font-size: 15px; fo=
+nt-weight: 500; line-height: 20px; max-height: 40px; overflow: hidden;">
+=
+                                                    <a href=3D"https://unst=
+op.com/hackathons/software-hackathon-mkssss-cummins-college-of-engineering-=
+for-women-ccoew-pune-1409208" style=3D"font-family: 'Roboto', sans-serif; c=
+olor: inherit; display: block; max-height: 40px; overflow: hidden;" class=
+=3D"h_text_color">
+                                                      =
+  Software Hackathon - Round 1: Part 2: Coding Test
+                     =
+                               </a>
+                                     =
+           </h2>
+                                                <p style=
+=3D"margin: 0;  font-size: 14px; color: #434343; line-height: 19px; height:=
+ 19px; overflow: hidden;">
+                                              =
+      <a href=3D"https://unstop.com/hackathons/software-hackathon-mkssss-cu=
+mmins-college-of-engineering-for-women-ccoew-pune-1409208" style=3D"font-fa=
+mily: 'Roboto', sans-serif; color: inherit; display: block; height: 19px; o=
+verflow: hidden;" class=3D"h_text_color">
+                               =
+                         MKSSS's Cummins College of Engineering for Women (=
+CCOEW), Pune
+                                                    </a>
+ =
+                                               </p>
+                     =
+                           <p style=3D"margin: 0; font-size: 14px; color: #=
+434343; line-height: 19px;">
+                                            =
+        <a href=3D"https://unstop.com/hackathons/software-hackathon-mkssss-=
+cummins-college-of-engineering-for-women-ccoew-pune-1409208" style=3D"font-=
+family: 'Roboto', sans-serif; color: inherit;" class=3D"h_text_color">
+  =
+                                                      25 Mar'25, 04:00 PM I=
+ST                                                    </a>
+              =
+                                  </p>
+                                  =
+          </td>
+                                        </tr>
+         =
+                           </tbody>
+                                </tab=
+le>
+
+                                <table  style=3D"width: 100%;">
+=
+                                    <tbody>
+                             =
+           <tr>
+                                            <td style=3D"=
+height: 15px;"></td>
+                                        </tr>
+    =
+                                </tbody>
+                                =
+</table>
+                                                   =20
+         =
+              =20
+
+                        <div style=3D"text-align: cent=
+er;">
+                            <a=20
+                                h=
+ref=3D"https://unstop.com/all-opportunities"=20
+                           =
+     style=3D"
+                                    display: inline-block;=
+
+                                    padding: 12px 32px;
+              =
+                      height: 40px;
+                                    b=
+ackground: #0073E6;
+                                    border-radius: 50=
+px;
+                                    font-weight: 500;
+             =
+                       font-size: 16px;
+                                 =
+   line-height: 16px;
+                                    color: #FFFFFF;=
+
+                                    cursor: pointer;
+                 =
+                   box-sizing: border-box;
+                              =
+  "
+                            >
+                                Explo=
+re Opportunities
+                            </a>
+                     =
+   </div>
+                    </td>
+                </tr>
+
+        =
+    </tbody>
+        </table>
+
+       =20
+        <table
+          =
+  cellpadding=3D"0"
+            cellspacing=3D"0"
+            align=3D"=
+center"
+            bgcolor=3D"#dfefff"
+            border=3D"0"
+    =
+        width=3D"700"
+            class=3D"full"
+        >
+          =
+  <tbody>
+                <tr>
+                    <td style=3D"padding=
+: 20px 15px;">
+                        <table
+                         =
+   cellpadding=3D"0"
+                            cellspacing=3D"0"
+    =
+                        align=3D"center"
+                            bgco=
+lor=3D"#dfefff"
+                            border=3D"0"
+              =
+              style=3D"width: 100%;"
+                        >
+        =
+                    <tbody>
+                                <tr class=3D"=
+footer_sect">
+                                    <td class=3D"follow" st=
+yle=3D"border-right: 2px solid #434343; padding-right: 15px; text-align: ce=
+nter;">
+                                        <p style=3D"font-family: =
+'Roboto', sans-serif; text-align: center; color: #434343; font-size: 14px; =
+font-weight: 500; margin: 0 0 15px;">
+                                   =
+         Follow us for informative & cute content:
+                      =
+                  </p>
+                                        <div style=
+=3D"text-align: center;">
+                                            <a=
+
+                                                href=3D"https://www.inst=
+agram.com/unstop.world/"
+                                                =
+style=3D"display: inline-block; text-decoration: none; margin-right: 12px;"=
+
+                                                target=3D"_blank"
+    =
+                                        >
+                               =
+                 <img
+                                                   =
+ src=3D"https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/emails/i=
+nstagram-icon.png"
+                                                    al=
+t=3D"Instagram Icon"
+                                                    =
+style=3D"width: 40px;"
+                                                >=
+
+                                            </a>
+
+                  =
+                          <a
+                                            =
+    href=3D"https://www.linkedin.com/company/unstop/"
+                   =
+                             style=3D"display: inline-block; text-decoratio=
+n: none; margin-right: 12px;"
+                                           =
+     target=3D"_blank"
+                                            >
+  =
+                                              <img
+                      =
+                              src=3D"https://d8it4huxumps7.cloudfront.net/u=
+ploads/images/unstop/emails/linkedin-icon.png"
+                          =
+                          alt=3D"Linkedin Icon"
+                         =
+                           style=3D"width: 40px;"
+                       =
+                         >
+                                            </=
+a>
+
+                                            <a
+                  =
+                              href=3D"https://t.me/+ON15qceSy-IyZjY9"
+   =
+                                             style=3D"display: inline-block=
+; text-decoration: none; margin-right: 12px;"
+                           =
+                     target=3D"_blank"
+                                  =
+          >
+                                                <img
+      =
+                                              src=3D"https://d8it4huxumps7.=
+cloudfront.net/uploads/images/unstop/emails/telegram-icon.png"
+          =
+                                          alt=3D"Telegram Icon"
+         =
+                                           style=3D"width: 40px;"
+       =
+                                         >
+                              =
+              </a>
+
+                                            <a
+  =
+                                              href=3D"https://discord.com/i=
+nvite/DvYWXNr4yR"
+                                                style=
+=3D"display: inline-block; text-decoration: none;"
+                      =
+                          target=3D"_blank"
+                             =
+               >
+                                                <img
+ =
+                                                   src=3D"https://d8it4huxu=
+mps7.cloudfront.net/uploads/images/unstop/emails/discord-icon.png"
+      =
+                                              alt=3D"discord Icon"
+      =
+                                              style=3D"width: 40px;"
+    =
+                                            >
+                           =
+                 </a>
+                                        </div>
+  =
+                                  </td>
+
+                              =
+      <td class=3D"footer_store">
+                                       =
+ <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" bgcolor=3D"#df=
+efff" border=3D"0" style=3D"width: 100%;">
+                              =
+              <tbody>
+                                                <tr=
+>
+                                                    <td class=3D"coin" =
+style=3D"border-right: 2px solid #434343; padding-right: 15px; padding-left=
+: 15px; text-align: center;">
+                                           =
+             <p style=3D"font-family: 'Roboto', sans-serif; text-align: cen=
+ter; color: #434343; font-size: 14px; font-weight: 500; margin: 0 0 15px;">=
+
+                                                            Unstop Coin =
+Store
+                                                        </p>
+    =
+                                                    <div style=3D"text-alig=
+n: center;">
+                                                            =
+<a
+                                                                href=
+=3D"https://unstop.com/coupons"
+                                         =
+                       style=3D"display: inline-block; text-decoration: non=
+e;"
+                                                                targe=
+t=3D"_blank"
+                                                            =
+>
+                                                                <img
+=
+                                                                    src=3D"=
+https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/emails/unstop-co=
+in.png"
+                                                                 =
+   alt=3D"Unstop Coin"
+                                                  =
+                  style=3D"width: 40px;"
+                                =
+                                >
+                                       =
+                     </a>
+                                               =
+         </div>
+                                                    </td>=
+
+
+                                                    <td style=3D"padd=
+ing-left: 15px; text-align: center;">
+                                   =
+                     <p style=3D"font-family: 'Roboto', sans-serif; text-al=
+ign: center; color: #434343; font-size: 14px; font-weight: 500; margin: 0 0=
+ 15px;">
+                                                            Prou=
+d parent of our app:
+                                                    =
+    </p>
+                                                        <div sty=
+le=3D"text-align: center;">
+                                             =
+               <a
+                                                       =
+         href=3D"https://play.google.com/store/apps/details?id=3Dcom.dare2c=
+ompete.app"
+                                                             =
+   style=3D"display: inline-block; text-decoration: none; margin-right: 12p=
+x;"
+                                                                targe=
+t=3D"_blank"
+                                                            =
+>
+                                                                <img
+=
+                                                                    src=3D"=
+https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/emails/play-stor=
+e-icon.png"
+                                                             =
+       alt=3D"Play Store Icon"
+                                          =
+                          style=3D"width: 40px;"
+                        =
+                                        >
+                               =
+                             </a>
+
+                                    =
+                        <a
+                                              =
+                  href=3D"https://apps.apple.com/in/app/unstop-formerly-dar=
+e2compete/id1601170365"
+                                                 =
+               style=3D"display: inline-block; text-decoration: none;"
+  =
+                                                              target=3D"_bl=
+ank"
+                                                            >
+    =
+                                                            <img
+        =
+                                                            src=3D"https://=
+d8it4huxumps7.cloudfront.net/uploads/images/unstop/emails/app-store-iocn.pn=
+g"
+                                                                    al=
+t=3D"App Store Icon"
+                                                    =
+                style=3D"width: 40px;"
+                                  =
+                              >
+                                         =
+                   </a>
+                                                 =
+       </div>
+                                                    </td>=
+
+                                                </tr>
+                =
+                            </tbody>
+                                    =
+    </table>
+                                    </td>
+                =
+                </tr>
+                            </tbody>
+            =
+            </table>
+                    </td>
+                </tr>
+=
+
+                <tr>
+                    <td class=3D"queries" style=
+=3D"text-align: center; padding: 0 15px 20px;">
+                        <=
+p style=3D"font-family: 'Roboto', sans-serif; text-align: center; color: #4=
+34343; font-size: 14px; font-weight: 500; margin: 0;">
+                  =
+          Queries? We're just one email away: <a href=3D"mailto:support@uns=
+top.com" class=3D"h_text_color" style=3D"font-family: 'Roboto', sans-serif;=
+ color: #434343; text-decoration: none;">support@unstop.com</a>
+         =
+               </p>
+                        <p class=3D"copyright" style=
+=3D"font-family: 'Roboto', sans-serif; text-align: center; color: #434343; =
+font-size: 14px; font-weight: 500; margin: 0;">
+                         =
+   =C2=A9 2025 <a class=3D"h_text_color" href=3D"https://unstop.com/" style=
+=3D"font-family: 'Roboto', sans-serif; color: #434343; text-decoration: non=
+e;">Unstop</a>. All rights reserved
+                        </p>
+      =
+              </td>
+                </tr>
+            </tbody>
+      =
+  </table>
+    </div>
+</body>
+
+</html>
+
+
+--_=_swift_1742884424_ce992d3636513edc3dac6b58d3efd25e_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html lang=3D"en">
+
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <title>Reminder for competitions</title>
+    <meta name=3D"author" content=3D"">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+=09=09<meta name=3D"x-apple-disable-message-reformatting">
+    <style type=3D"text/css">
+        @import  url("https://fonts.googleapis.com/css?family=3DRoboto:400,=
+500,700&display=3Dswap");
+
+        body {
+            width: auto;
+            background-color: #F6F8FA;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 14px;
+            -webkit-text-size-adjust: 100% !important;
+            -ms-text-size-adjust: 100% !important;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Roboto", sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        span,
+        a,
+        strong,
+        div,
+        td {
+            font-family: "Roboto", sans-serif;
+        }
+
+        img {
+            border: 0 !important;
+            outline: none !important;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+
+        .h_text_color:hover {
+            color: #0073e6 !important;
+            text-decoration: underline !important;
+        }
+        .footer_sect a:hover {
+            opacity: .8;
+        }
+
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0px;
+            mso-table-rspace: 0px;
+        }
+
+        @media (max-width: 600px) {
+            .full {
+                width: 100% !important;
+            }
+
+            .pdng {
+                padding: 20px 15px !important;
+            }
+
+            .footer_sect {
+                display: block;
+            }
+
+            .footer_sect .follow {
+                border-right: 0 !important;
+                padding-right: 0 !important;
+                text-align: center;
+                width: 100%;
+                display: block;
+                margin-bottom: 15px;
+            }
+
+            .footer_store {
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
+
+            .footer_store .coin {
+                padding-left: 0 !important;
+            }
+
+            .footer_sect p {
+                font-size: 13px !important;
+                margin-bottom: 10px !important;
+            }
+
+            .footer_sect img {
+                width: 35px !important;
+            }
+
+            .queries p {
+                font-size: 13px !important;
+            }
+
+            .queries .copyright {
+                margin-top: 5px !important;
+            }
+
+            .title {
+                font-size: 16px !important;
+                line-height: 22px !important;
+                margin-bottom: 20px !important;
+            }
+
+            .list .icon {
+                width: 90px !important;
+            }
+            .list .icon div {
+                width: 90px !important;
+                height: 90px !important;
+            }
+            .list .cptn {
+                padding: 0 12px !important;
+            }
+            .list h2 {
+                font-size: 14px !important;
+                line-height: 19px !important;
+            }
+            .list p {
+                font-size: 12px !important;
+                line-height: 16px !important;
+            }
+        }
+    </style>
+</head>
+
+<body style=3D"font-family: Avenir, Helvetica, sans-serif; box-sizing: bord=
+er-box; color: #74787E; height: 100%; line-height: 1.4; margin: 0; width: 1=
+00% !important; -webkit-text-size-adjust: none;">
+    <div style=3D"box-sizing: border-box; font-family: 'Roboto', sans-serif=
+; background-color: #F6F8FA; width: 100%; margin: 0; padding: 0;">
+        <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" bgcolor=
+=3D"#ffffff" border=3D"0" width=3D"700" class=3D"full" style=3D"font-family=
+: Avenir, Helvetica, sans-serif; box-sizing: border-box; border-collapse: c=
+ollapse; mso-table-lspace: 0px; mso-table-rspace: 0px; background-color: #1=
+C4980;">
+            <tbody style=3D"font-family: Avenir, Helvetica, sans-serif; box=
+-sizing: border-box;">
+                <tr class=3D"hedr">
+                    <td style=3D"box-sizing: border-box; font-family: 'Robo=
+to', sans-serif;">
+                        <a href=3D"https://mstats.dare2compete.com/CL0/http=
+s:%2F%2Funstop.com%2F/1/01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8=
+a1-000000/G8xnvrca3yY6gI3E_XSDSPq4c44-6gjzdCY7ph8Vetc=3D199" target=3D"_bla=
+nk" style=3D"box-sizing: border-box; font-family: 'Roboto', sans-serif; tex=
+t-decoration: none; color: #3869D4; display: block; padding: 15px 15px 0;">
+                            <img src=3D"https://d8it4huxumps7.cloudfront.ne=
+t/uploads/images/un-emails/unstop-icon.png?d=3D201x80" style=3D"font-family=
+: Avenir, Helvetica, sans-serif; box-sizing: border-box; border: 0 !importa=
+nt; outline: none !important; max-width: 100%; display: block; margin: 0; w=
+idth: 80px;">
+                        </a>
+                        <a href=3D"https://mstats.dare2compete.com/CL0/http=
+s:%2F%2Funstop.com%2F/2/01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8=
+a1-000000/hV1fDx6up2RANtW7gfRQy1lmZjcQ-L1mlbLZMcc38hw=3D199" target=3D"_bla=
+nk" style=3D"box-sizing: border-box; font-family: 'Roboto', sans-serif; tex=
+t-decoration: none; color: #3869D4; display: block;">
+                            <img src=3D"https://d8it4huxumps7.cloudfront.ne=
+t/uploads/images/unstop/emails/reminder-for-competitions.gif" alt=3D"Remind=
+er for competitions" style=3D"font-family: Avenir, Helvetica, sans-serif; b=
+ox-sizing: border-box; border: 0 !important; outline: none !important; disp=
+lay: block; max-width: 100%;">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" bgcolor=
+=3D"#ffffff" border=3D"0" width=3D"700" class=3D"full" style=3D"font-family=
+: Avenir, Helvetica, sans-serif; box-sizing: border-box; border-collapse: c=
+ollapse; mso-table-lspace: 0px; mso-table-rspace: 0px;">
+            <tbody style=3D"font-family: Avenir, Helvetica, sans-serif; box=
+-sizing: border-box;">
+                <tr>
+                    <td class=3D"pdng" style=3D"box-sizing: border-box; fon=
+t-family: 'Roboto', sans-serif; padding: 30px 50px;">
+                        <p class=3D"title" style=3D"box-sizing: border-box;=
+ margin-top: 0; font-family: 'Roboto', sans-serif; text-align: center; font=
+-size: 22px; line-height: 100%; color: #1C4980; font-weight: 500; margin: 0=
+ 0 20px;">
+                            Today's line-up for you:
+                        </p>
+
+                       =20
+
+
+                                                                           =
+         <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" bgcolo=
+r=3D"#ffffff" border=3D"0" style=3D"font-family: Avenir, Helvetica, sans-se=
+rif; box-sizing: border-box; border-collapse: collapse; mso-table-lspace: 0=
+px; mso-table-rspace: 0px; width: 100%; background: #dfefff; border-radius:=
+ 8px;">
+                                    <tbody style=3D"font-family: Avenir, He=
+lvetica, sans-serif; box-sizing: border-box;">
+                                        <tr class=3D"list">
+                                            <td class=3D"icon" width=3D"100=
+" style=3D"box-sizing: border-box; font-family: 'Roboto', sans-serif;">
+                                                <div style=3D"font-family: =
+Avenir,Helvetica,sans-serif; width: 100px; height: 100px; margin: auto; dis=
+play: flex; border-radius: 10px; border: 1px solid #1c4980; background-colo=
+r: #fff; background-size: contain; box-sizing: border-box; background-image=
+: url(https://d8it4huxumps7.cloudfront.net/uploads/images/62f1fbf22e093_10x=
+10_white.png);">
+                                                    <img src=3D"https://d8i=
+t4huxumps7.cloudfront.net/uploads/images/75x75/62ab0b8047b75_unstop-logo-10=
+00x399.png" alt=3D"" style=3D"font-family: Avenir, Helvetica, sans-serif; b=
+ox-sizing: border-box; border: 0!important; outline: none!important; displa=
+y: block; max-height: 90%; max-width: 90%; margin: auto;">
+                                                </div>
+                                            </td>
+                                            <td class=3D"cptn" style=3D"box=
+-sizing: border-box; font-family: 'Roboto', sans-serif; padding: 0 20px;">
+                                                <h2 style=3D"box-sizing: bo=
+rder-box; font-family: 'Roboto', sans-serif; margin-top: 0; text-align: lef=
+t; color: #434343; margin: 0 0 2px; font-size: 15px; font-weight: 500; line=
+-height: 20px; max-height: 40px; overflow: hidden;">
+                                                    <a href=3D"https://msta=
+ts.dare2compete.com/CL0/https:%2F%2Funstop.com%2Fhackathons%2Fsoftware-hack=
+athon-mkssss-cummins-college-of-engineering-for-women-ccoew-pune-1409208%3F=
+utm_campaign=3Dsite-emails%26utm_medium=3Dd2c-automated%26utm_source=3Dremi=
+nder-competition-lined-up/1/01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf4=
+16c8a1-000000/IW0_TYG1MpoiRkavf8VrztdpLMlsFm4f7d1BrjYcxxE=3D199" style=3D"b=
+ox-sizing: border-box; text-decoration: none; font-family: 'Roboto', sans-s=
+erif; color: inherit; display: block; max-height: 40px; overflow: hidden;" =
+class=3D"h_text_color">
+                                                        Software Hackathon =
+- Round 1: Part 2: Coding Test
+                                                    </a>
+                                                </h2>
+                                                <p style=3D"box-sizing: bor=
+der-box; font-family: 'Roboto', sans-serif; margin-top: 0; text-align: left=
+; margin: 0; font-size: 14px; color: #434343; line-height: 19px; height: 19=
+px; overflow: hidden;">
+                                                    <a href=3D"https://msta=
+ts.dare2compete.com/CL0/https:%2F%2Funstop.com%2Fhackathons%2Fsoftware-hack=
+athon-mkssss-cummins-college-of-engineering-for-women-ccoew-pune-1409208%3F=
+utm_campaign=3Dsite-emails%26utm_medium=3Dd2c-automated%26utm_source=3Dremi=
+nder-competition-lined-up/2/01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf4=
+16c8a1-000000/ilQaOyMTcOGQ56C1xoUcM4Kbt3yNZlBf4n-arRboW1U=3D199" style=3D"b=
+ox-sizing: border-box; text-decoration: none; font-family: 'Roboto', sans-s=
+erif; color: inherit; display: block; height: 19px; overflow: hidden;" clas=
+s=3D"h_text_color">
+                                                        MKSSS's Cummins Col=
+lege of Engineering for Women (CCOEW), Pune
+                                                    </a>
+                                                </p>
+                                                <p style=3D"box-sizing: bor=
+der-box; font-family: 'Roboto', sans-serif; margin-top: 0; text-align: left=
+; margin: 0; font-size: 14px; color: #434343; line-height: 19px;">
+                                                    <a href=3D"https://msta=
+ts.dare2compete.com/CL0/https:%2F%2Funstop.com%2Fhackathons%2Fsoftware-hack=
+athon-mkssss-cummins-college-of-engineering-for-women-ccoew-pune-1409208%3F=
+utm_campaign=3Dsite-emails%26utm_medium=3Dd2c-automated%26utm_source=3Dremi=
+nder-competition-lined-up/3/01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf4=
+16c8a1-000000/teWiU04bm1E7HkEYjKTHsFEIAj3qK3D8v451uhDerTI=3D199" style=3D"b=
+ox-sizing: border-box; text-decoration: none; font-family: 'Roboto', sans-s=
+erif; color: inherit;" class=3D"h_text_color">
+                                                        25 Mar'25, 04:00 PM=
+ IST                                                    </a>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table style=3D"font-family: Avenir, Helvet=
+ica, sans-serif; box-sizing: border-box; border-collapse: collapse; mso-tab=
+le-lspace: 0px; mso-table-rspace: 0px; width: 100%;">
+                                    <tbody style=3D"font-family: Avenir, He=
+lvetica, sans-serif; box-sizing: border-box;">
+                                        <tr>
+                                            <td style=3D"box-sizing: border=
+-box; font-family: 'Roboto', sans-serif; height: 15px;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                                   =20
+                       =20
+
+                        <div style=3D"box-sizing: border-box; font-family: =
+'Roboto', sans-serif; text-align: center;">
+                            <a href=3D"https://mstats.dare2compete.com/CL0/=
+https:%2F%2Funstop.com%2Fall-opportunities%3Futm_campaign=3Dsite-emails%26u=
+tm_medium=3Dd2c-automated%26utm_source=3Dreminder-competition-lined-up/1/01=
+090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000/1mj2nSuMpeF76JPg=
+OCwkaT0qBs0O3qxsbSSKu8pFlx8=3D199" style=3D"font-family: 'Roboto', sans-ser=
+if; text-decoration: none; display: inline-block; padding: 12px 32px; heigh=
+t: 40px; background: #0073E6; border-radius: 50px; font-weight: 500; font-s=
+ize: 16px; line-height: 16px; color: #FFFFFF; cursor: pointer; box-sizing: =
+border-box;">
+                                Explore Opportunities
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+       =20
+        <table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" bgcolor=
+=3D"#dfefff" border=3D"0" width=3D"700" class=3D"full" style=3D"font-family=
+: Avenir, Helvetica, sans-serif; box-sizing: border-box; border-collapse: c=
+ollapse; mso-table-lspace: 0px; mso-table-rspace: 0px;">
+            <tbody style=3D"font-family: Avenir, Helvetica, sans-serif; box=
+-sizing: border-box;">
+                <tr>
+                    <td style=3D"box-sizing: border-box; font-family: 'Robo=
+to', sans-serif; padding: 20px 15px;">
+                        <table cellpadding=3D"0" cellspacing=3D"0" align=3D=
+"center" bgcolor=3D"#dfefff" border=3D"0" style=3D"font-family: Avenir, Hel=
+vetica, sans-serif; box-sizing: border-box; border-collapse: collapse; mso-=
+table-lspace: 0px; mso-table-rspace: 0px; width: 100%;">
+                            <tbody style=3D"font-family: Avenir, Helvetica,=
+ sans-serif; box-sizing: border-box;">
+                                <tr class=3D"footer_sect">
+                                    <td class=3D"follow" style=3D"box-sizin=
+g: border-box; font-family: 'Roboto', sans-serif; border-right: 2px solid #=
+434343; padding-right: 15px; text-align: center;">
+                                        <p style=3D"box-sizing: border-box;=
+ line-height: 1.5em; margin-top: 0; font-family: 'Roboto', sans-serif; text=
+-align: center; color: #434343; font-size: 14px; font-weight: 500; margin: =
+0 0 15px;">
+                                            Follow us for informative &amp;=
+ cute content:
+                                        </p>
+                                        <div style=3D"box-sizing: border-bo=
+x; font-family: 'Roboto', sans-serif; text-align: center;">
+                                            <a href=3D"https://mstats.dare2=
+compete.com/CL0/https:%2F%2Fwww.instagram.com%2Funstop.world%2F/1/01090195c=
+c01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000/eqHlFR1xjR_vFQeU9GzXQrA=
+sEXLTsD-lUmOXloXgpxw=3D199" style=3D"box-sizing: border-box; font-family: '=
+Roboto', sans-serif; color: #3869D4; display: inline-block; text-decoration=
+: none; margin-right: 12px;" target=3D"_blank">
+                                                <img src=3D"https://d8it4hu=
+xumps7.cloudfront.net/uploads/images/unstop/emails/instagram-icon.png" alt=
+=3D"Instagram Icon" style=3D"font-family: Avenir, Helvetica, sans-serif; bo=
+x-sizing: border-box; border: 0 !important; outline: none !important; displ=
+ay: block; max-width: 100%; width: 40px;">
+                                            </a>
+
+                                            <a href=3D"https://mstats.dare2=
+compete.com/CL0/https:%2F%2Fwww.linkedin.com%2Fcompany%2Funstop%2F/1/010901=
+95cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000/xfMlsSRGRLLZfmUm8dLY=
+GYA1Rmb5NjCSZ5n51si-FlE=3D199" style=3D"box-sizing: border-box; font-family=
+: 'Roboto', sans-serif; color: #3869D4; display: inline-block; text-decorat=
+ion: none; margin-right: 12px;" target=3D"_blank">
+                                                <img src=3D"https://d8it4hu=
+xumps7.cloudfront.net/uploads/images/unstop/emails/linkedin-icon.png" alt=
+=3D"Linkedin Icon" style=3D"font-family: Avenir, Helvetica, sans-serif; box=
+-sizing: border-box; border: 0 !important; outline: none !important; displa=
+y: block; max-width: 100%; width: 40px;">
+                                            </a>
+
+                                            <a href=3D"https://mstats.dare2=
+compete.com/CL0/https:%2F%2Ft.me%2F%2BON15qceSy-IyZjY9/1/01090195cc01ca67-7=
+0a2289e-f930-4547-a6e8-812cf416c8a1-000000/wOfPoeUYcv2ZW8knkkyPMFsT-vxmNLZO=
+7DXVwOaOW5c=3D199" style=3D"box-sizing: border-box; font-family: 'Roboto', =
+sans-serif; color: #3869D4; display: inline-block; text-decoration: none; m=
+argin-right: 12px;" target=3D"_blank">
+                                                <img src=3D"https://d8it4hu=
+xumps7.cloudfront.net/uploads/images/unstop/emails/telegram-icon.png" alt=
+=3D"Telegram Icon" style=3D"font-family: Avenir, Helvetica, sans-serif; box=
+-sizing: border-box; border: 0 !important; outline: none !important; displa=
+y: block; max-width: 100%; width: 40px;">
+                                            </a>
+
+                                            <a href=3D"https://mstats.dare2=
+compete.com/CL0/https:%2F%2Fdiscord.com%2Finvite%2FDvYWXNr4yR/1/01090195cc0=
+1ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000/yUL4jVFFwTO568tUp_zufBwBw=
+nJJptqkBxmVeXK5bgc=3D199" style=3D"box-sizing: border-box; font-family: 'Ro=
+boto', sans-serif; color: #3869D4; display: inline-block; text-decoration: =
+none;" target=3D"_blank">
+                                                <img src=3D"https://d8it4hu=
+xumps7.cloudfront.net/uploads/images/unstop/emails/discord-icon.png" alt=3D=
+"discord Icon" style=3D"font-family: Avenir, Helvetica, sans-serif; box-siz=
+ing: border-box; border: 0 !important; outline: none !important; display: b=
+lock; max-width: 100%; width: 40px;">
+                                            </a>
+                                        </div>
+                                    </td>
+
+                                    <td class=3D"footer_store" style=3D"box=
+-sizing: border-box; font-family: 'Roboto', sans-serif;">
+                                        <table cellpadding=3D"0" cellspacin=
+g=3D"0" align=3D"center" bgcolor=3D"#dfefff" border=3D"0" style=3D"font-fam=
+ily: Avenir, Helvetica, sans-serif; box-sizing: border-box; border-collapse=
+: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px; width: 100%;">
+                                            <tbody style=3D"font-family: Av=
+enir, Helvetica, sans-serif; box-sizing: border-box;">
+                                                <tr>
+                                                    <td class=3D"coin" styl=
+e=3D"box-sizing: border-box; font-family: 'Roboto', sans-serif; border-righ=
+t: 2px solid #434343; padding-right: 15px; padding-left: 15px; text-align: =
+center;">
+                                                        <p style=3D"box-siz=
+ing: border-box; line-height: 1.5em; margin-top: 0; font-family: 'Roboto', =
+sans-serif; text-align: center; color: #434343; font-size: 14px; font-weigh=
+t: 500; margin: 0 0 15px;">
+                                                            Unstop Coin Sto=
+re
+                                                        </p>
+                                                        <div style=3D"box-s=
+izing: border-box; font-family: 'Roboto', sans-serif; text-align: center;">
+                                                            <a href=3D"http=
+s://mstats.dare2compete.com/CL0/https:%2F%2Funstop.com%2Fcoupons%3Futm_camp=
+aign=3Dsite-emails%26utm_medium=3Dd2c-automated%26utm_source=3Dreminder-com=
+petition-lined-up/1/01090195cc01ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-0=
+00000/pe2HWMbxrxZLxN2lm3rPanzmA3v-4tK_rkkVurLXpSA=3D199" style=3D"box-sizin=
+g: border-box; font-family: 'Roboto', sans-serif; color: #3869D4; display: =
+inline-block; text-decoration: none;" target=3D"_blank">
+                                                                <img src=3D=
+"https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/emails/unstop-c=
+oin.png" alt=3D"Unstop Coin" style=3D"font-family: Avenir, Helvetica, sans-=
+serif; box-sizing: border-box; border: 0 !important; outline: none !importa=
+nt; display: block; max-width: 100%; width: 40px;">
+                                                            </a>
+                                                        </div>
+                                                    </td>
+
+                                                    <td style=3D"box-sizing=
+: border-box; font-family: 'Roboto', sans-serif; padding-left: 15px; text-a=
+lign: center;">
+                                                        <p style=3D"box-siz=
+ing: border-box; line-height: 1.5em; margin-top: 0; font-family: 'Roboto', =
+sans-serif; text-align: center; color: #434343; font-size: 14px; font-weigh=
+t: 500; margin: 0 0 15px;">
+                                                            Proud parent of=
+ our app:
+                                                        </p>
+                                                        <div style=3D"box-s=
+izing: border-box; font-family: 'Roboto', sans-serif; text-align: center;">
+                                                            <a href=3D"http=
+s://mstats.dare2compete.com/CL0/https:%2F%2Fplay.google.com%2Fstore%2Fapps%=
+2Fdetails%3Fid=3Dcom.dare2compete.app/1/01090195cc01ca67-70a2289e-f930-4547=
+-a6e8-812cf416c8a1-000000/wooBvH9QDLe-W-sIo24zdb_50dq3oHZaTXxT1AGvcEs=3D199=
+" style=3D"box-sizing: border-box; font-family: 'Roboto', sans-serif; color=
+: #3869D4; display: inline-block; text-decoration: none; margin-right: 12px=
+;" target=3D"_blank">
+                                                                <img src=3D=
+"https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/emails/play-sto=
+re-icon.png" alt=3D"Play Store Icon" style=3D"font-family: Avenir, Helvetic=
+a, sans-serif; box-sizing: border-box; border: 0 !important; outline: none =
+!important; display: block; max-width: 100%; width: 40px;">
+                                                            </a>
+
+                                                            <a href=3D"http=
+s://mstats.dare2compete.com/CL0/https:%2F%2Fapps.apple.com%2Fin%2Fapp%2Funs=
+top-formerly-dare2compete%2Fid1601170365/1/01090195cc01ca67-70a2289e-f930-4=
+547-a6e8-812cf416c8a1-000000/Y4MDTnfAvSTC041wJ-abusscMg57B-icAQ5iaLSsIKI=3D=
+199" style=3D"box-sizing: border-box; font-family: 'Roboto', sans-serif; co=
+lor: #3869D4; display: inline-block; text-decoration: none;" target=3D"_bla=
+nk">
+                                                                <img src=3D=
+"https://d8it4huxumps7.cloudfront.net/uploads/images/unstop/emails/app-stor=
+e-iocn.png" alt=3D"App Store Icon" style=3D"font-family: Avenir, Helvetica,=
+ sans-serif; box-sizing: border-box; border: 0 !important; outline: none !i=
+mportant; display: block; max-width: 100%; width: 40px;">
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class=3D"queries" style=3D"box-sizing: border-box; =
+font-family: 'Roboto', sans-serif; text-align: center; padding: 0 15px 20px=
+;">
+                        <p style=3D"box-sizing: border-box; line-height: 1.=
+5em; margin-top: 0; font-family: 'Roboto', sans-serif; text-align: center; =
+color: #434343; font-size: 14px; font-weight: 500; margin: 0;">
+                            Queries? We're just one email away: <a href=3D"=
+mailto:support@unstop.com" class=3D"h_text_color" style=3D"box-sizing: bord=
+er-box; font-family: 'Roboto', sans-serif; color: #434343; text-decoration:=
+ none;">support@unstop.com</a>
+                        </p>
+                        <p class=3D"copyright" style=3D"box-sizing: border-=
+box; line-height: 1.5em; margin-top: 0; font-family: 'Roboto', sans-serif; =
+text-align: center; color: #434343; font-size: 14px; font-weight: 500; marg=
+in: 0;">
+                            =C2=A9 2025 <a class=3D"h_text_color" href=3D"h=
+ttps://mstats.dare2compete.com/CL0/https:%2F%2Funstop.com%2F/3/01090195cc01=
+ca67-70a2289e-f930-4547-a6e8-812cf416c8a1-000000/3dTJwUvBI5SAJ9FVjDNuPFHJyD=
+zu9WoHEPWkVWvaYu0=3D199" style=3D"box-sizing: border-box; font-family: 'Rob=
+oto', sans-serif; color: #434343; text-decoration: none;">Unstop</a>. All r=
+ights reserved
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<img alt=3D"" src=3D"http://mstats.dare2compete.com/CI0/01090195cc01ca67-70=
+a2289e-f930-4547-a6e8-812cf416c8a1-000000/BHrfRvE70LErtAWD-k6hl9hRhDEMMjbAu=
+qrWt8uj-7k=3D199" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+
+</html>
+
+--_=_swift_1742884424_ce992d3636513edc3dac6b58d3efd25e_=_--

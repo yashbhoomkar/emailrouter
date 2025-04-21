@@ -1,0 +1,311 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7011:812:b0:43a:a54e:2943 with SMTP id gx18csp5841811mdb;
+        Sat, 5 Apr 2025 18:27:59 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG6vc4EhljwTRbTD67mM3f7T7e/WkE70L+I827Qzg3Qu00weEb2rnBRnffRW7cMollwupUq
+X-Received: by 2002:a05:6a20:d489:b0:1f5:8a1d:38f3 with SMTP id adf61e73a8af0-20113c09569mr7211994637.2.1743902879267;
+        Sat, 05 Apr 2025 18:27:59 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1743902879; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Qm3KZB7thrlq+cid5/oDA5FuZOW8kahB1ETHbVUBtQBYqvadJkZLQGj+NWvYUr7VgK
+         aI+P6/RliFloQNAjtOqSvhbgcRGnRuULGAUGUNCR/z+wGZCXxBitNBEzRyfpBCHOyZiZ
+         wIhiiOKQ0yD1zv1ZZHyHyrVuIFfN3bdaetSR8unDkE/DeqhKlC6JMjIXpMmPNtyUUAiN
+         U5evRsHSZk8FiyG11k8shYgnr0Ro1kAcPhONkBIpIYkQqersYO6RX+xwnxiHuah3cTLF
+         AdMBzkHXr9uAmPgrioTh2Gd2eAPC0B7zBfR4tw4Mj2zOVuvjbVLSicv95wbdIKPsCmkN
+         r6Hw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:date:message-id:mime-version:subject:to:reply-to:from
+         :dkim-signature:dkim-signature;
+        bh=Xqc2fj6rD6t0YdG0NfRrQsuaVlQHNhcQHMsAv8X7diI=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=RV+nPJzomHy5XSMTPedlRnaZFFYh1oEPe2I2P3w3kHM8E2+p9XXIlg+bTgsO1h48sf
+         oUIuPfJcPFA5Sf/K9O0OHQeriwDbpPHCnGl9wH6AsSFWyytB9WEiKkxeI9QSbUCEs4p8
+         9wP2py6LtWf4PaTxc1usVF7i1BbX88i70AyXVkdT7oMXbXiWyd6Fkgjr9voWZuHqJNMS
+         ZLI5sJ28A9vrEwz7XNosQgUW+y+4IdOzwx2kE2W/rRVoCUt5Er6GPPp21WSwlQMoFWsr
+         tqpLnjqZ/p6poCcGPeRnWTiDTKmF3ve5kDDWLpvxeXs6v4Pv6t3zRa6tVwWdXvKBYhTy
+         qC0Q==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@propeers.in header.s=cjodlusggfvg6gcc5b43qvonkgkluttl header.b=emkj5TpN;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=kdJhegGM;
+       spf=pass (google.com: domain of 0109019608b629a5-24a9f21f-489c-406f-b53c-bbe6315c46de-000000@ap-south-1.amazonses.com designates 76.223.180.21 as permitted sender) smtp.mailfrom=0109019608b629a5-24a9f21f-489c-406f-b53c-bbe6315c46de-000000@ap-south-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=propeers.in
+Return-Path: <0109019608b629a5-24a9f21f-489c-406f-b53c-bbe6315c46de-000000@ap-south-1.amazonses.com>
+Received: from c180-21.smtp-out.ap-south-1.amazonses.com (c180-21.smtp-out.ap-south-1.amazonses.com. [76.223.180.21])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-af9bc471370si7899365a12.589.2025.04.05.18.27.58
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 05 Apr 2025 18:27:59 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0109019608b629a5-24a9f21f-489c-406f-b53c-bbe6315c46de-000000@ap-south-1.amazonses.com designates 76.223.180.21 as permitted sender) client-ip=76.223.180.21;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@propeers.in header.s=cjodlusggfvg6gcc5b43qvonkgkluttl header.b=emkj5TpN;
+       dkim=pass header.i=@amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc header.b=kdJhegGM;
+       spf=pass (google.com: domain of 0109019608b629a5-24a9f21f-489c-406f-b53c-bbe6315c46de-000000@ap-south-1.amazonses.com designates 76.223.180.21 as permitted sender) smtp.mailfrom=0109019608b629a5-24a9f21f-489c-406f-b53c-bbe6315c46de-000000@ap-south-1.amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=propeers.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=cjodlusggfvg6gcc5b43qvonkgkluttl; d=propeers.in; t=1743902878;
+	i=@roadmaps.propeers.in;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=iSNjxZ6MBX7WuUw+rEJ88fu+uVO03iqxCwHMmL5so50=;
+	b=emkj5TpNORttuAazMfSP+0WVzrUNF3aM16kfDjjy7EvYThtSqo7zz5b/BnCHmtCs
+	vKqbs6h3UgeqEJySv9BODMJQsR2jmdYjrt9s86fPNWaPSJopR28vftDrZu8DEDnC6vf
+	JvLrMf3/f/skkNy8ZJ5UeA67WD+/MwFgzGDeqPdU=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zpkik46mrueu52d3326ufxxchortqmoc; d=amazonses.com; t=1743902878;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=iSNjxZ6MBX7WuUw+rEJ88fu+uVO03iqxCwHMmL5so50=;
+	b=kdJhegGMaMsTPOxmo4heGQaMtuKaIb1SbENZsiVaeUww0sYBIVTzZs/3hj4lzWvQ
+	OgvHTpn//c8ds3591UQo92LDI27vyQDtaoTYwkeMIewg2t86nzAz47CvaEUQGmkA1mo
+	/nER3P9kgdwzRGtVFQg3XhSGgxPAlYBS5RgYxOao=
+From: ProPeers Roadmaps <no-reply@roadmaps.propeers.in>
+Reply-To: propeers.parikh@gmail.com
+To: yash31204testing@gmail.com
+Subject: =?UTF-8?Q?You're_Making_Great_Progress!_=F0=9F=99=8C?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1030383_536179543.1743902878117"
+Message-ID: <0109019608b629a5-24a9f21f-489c-406f-b53c-bbe6315c46de-000000@ap-south-1.amazonses.com>
+Date: Sun, 6 Apr 2025 01:27:58 +0000
+Feedback-ID: ::1.ap-south-1.ke8Mai8DaCyhFQoC/cwaG4enVBuObF8VeBYaiFffQjQ=:AmazonSES
+X-SES-Outgoing: 2025.04.06-76.223.180.21
+
+------=_Part_1030383_536179543.1743902878117
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+This is the body
+------=_Part_1030383_536179543.1743902878117
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+    <html>
+   =20
+    <head>
+        <meta charset=3D"UTF-8">
+        <style>
+            body {
+                background-color: #ffffff;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.4;
+                color: #333333;
+                margin: 0;
+                padding: 0;
+            }
+   =20
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+   =20
+            .logo {
+                max-width: 140px;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+   =20
+            .body {
+                font-size: 16px;
+                margin-bottom: 20px;
+                text-align: left; /* Left-align the content within the body=
+ */
+            }
+   =20
+            .message {
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+   =20
+            .follow-text {
+                font-weight: 600;
+                font-size: 14px;
+            }
+   =20
+            .footer-text {
+                text-align: left;
+                font-size: 12px;
+                font-weight: 500;
+                float: left;
+            }
+   =20
+            .icon {
+                max-width: 20px;
+                margin-left: 12px;
+                margin-right: 12px;
+                text-decoration: none;
+            }
+   =20
+            .footer {}
+   =20
+            .unsubscribe-text {
+                font-size: 12px;
+                font-weight: 400;
+                color: #e0e0e0;
+                float: right;
+            }
+
+            .textCenter{
+                text-align: center;
+            }
+
+            .alignContent{
+                display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+
+           =20
+            .img-container {
+                margin: 0 auto;
+            }
+        </style>
+   =20
+    </head>
+   =20
+    <body>
+        <div class=3D"container">
+           <div class=3D"textCenter">
+            <a href=3D"https://www.propeers.in"><img class=3D"logo"
+                    src=3D"https://cdn.propeers.in/propeers-logo.png" alt=
+=3D""></a>
+            </div>
+            <div class=3D'message textCenter'>Look at What You=E2=80=99ve A=
+chieved! =F0=9F=8E=AF</div>
+            <div class=3D"body">
+               =20
+          <p>Hi Yash,</p>
+ =20
+          <p>The progress you're making across multiple roadmaps is impress=
+ive. It shows commitment, curiosity, and drive.</p>
+ =20
+          <p>Here=E2=80=99s where you left off:</p>
+          <p>=F0=9F=93=98 High-Level System Design Roadmap</p>
+ =20
+          <p>Small steps now lead to big wins later. Ready to pick up where=
+ you left off?</p>
+ =20
+          <p>
+            <a href=3D"https://itest.propeers.in/roadmaps/progress" style=
+=3D"font-weight: bold; text-decoration: none;">=F0=9F=91=89 Get Back to It<=
+/a>
+          </p>
+ =20
+          <p>P.S. Got any thoughts or suggestions about your experience so =
+far? We=E2=80=99d love to hear from you:</p>
+ =20
+          <p>
+            <a href=3D"https://itest.propeers.in/roadmaps/feedback" style=
+=3D"font-weight: bold; text-decoration: none;">=F0=9F=91=89 Share Your Feed=
+back</a>
+          </p>
+ =20
+          <p>Your insights help us improve ProPeers for you and others.</p>
+ =20
+          <p style=3D"font-weight: bold;">Keep Pushing Forward,<br>The ProP=
+eers Team</p>
+       =20
+            </div>
+
+    <table role=3D"presentation" valign=3D"top" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" width=3D"100%">
+                <tbody>
+                <tr>
+                <td style=3D"padding-bottom:16px;text-align:center">
+                    <h2 style=3D"margin:0;font-weight:500;font-size:20px">S=
+tay informed with the Propeer app</h2>
+                </td>
+            </tr>
+            <tr>
+                <td style=3D"text-align:center">
+                    <a href=3D"https://apps.apple.com/in/app/propeers/id644=
+6427356" style=3D"text-decoration: none;">
+                        <img alt=3D"Download on the App Store" src=3D"https=
+://ci3.googleusercontent.com/meips/ADKq_Nb3K_tyUQe5MJXq5TBbkdaPEqtXrdx4s9uo=
+rYLmo9huzT4rm90pNvfQ1b9xHBvrhCLEUUUTw3M9s4lohvyz5NVd9E8DT7ISkQbQc4Di_FDKjwe=
+Yu5I=3Ds0-d-e1-ft#https://static.licdn.com/aero-v1/sc/h/76yzkd0h5kiv27lrd4y=
+aenylk" style=3D"outline:none;text-decoration:none;height:40px;width:120px;=
+padding-right:8px" width=3D"120" height=3D"40">
+                    </a>
+                    <a href=3D"https://play.google.com/store/apps/details?i=
+d=3Dcom.wireless.propeers" style=3D"text-decoration: none;">
+                        <img alt=3D"Get it on Google Play" src=3D"https://c=
+i3.googleusercontent.com/meips/ADKq_Na4vGlgWbb5d_c0BKM_aoF8r7kcJPwyVTRxmwOv=
+FvH-2PTgZmoPgRHgNxJfriUyoB3gL3BwEmtJqwvRPcuhYUFAgQ8U-unbpAYBdxVRmPzDb1gnZmE=
+=3Ds0-d-e1-ft#https://static.licdn.com/aero-v1/sc/h/142qudwblp58zwmc9vkqfpl=
+ug" style=3D"outline:none;text-decoration:none;height:40px;width:134px" wid=
+th=3D"134" height=3D"40">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style=3D"padding-top:16px;padding-bottom:16px">
+                    <hr style=3D"height:1px;border-style:none;background-co=
+lor:#e0dfdd">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+             =20
+  <table  cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"center"=
+>
+  <tbody>
+      <tr>
+      <th colspan=3D"3" style=3D"padding-Bottom: 20px;" align=3D"center">
+          Follow us on
+      </th>
+      </tr>
+      <tr>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.instagram.com/pro.peers/" style=3D"tex=
+t-decoration:none" target=3D"_blank">
+                  <img src=3D"https://upload.wikimedia.org/wikipedia/common=
+s/thumb/a/a5/Instagram_icon.png/600px-Instagram_icon.png" border=3D"0" widt=
+h=3D"30" height=3D"30" style=3D"border:none;outline:none;text-decoration:no=
+ne;font-size:19px;font-family:Helvetica Neue,Arial,sans-serif;color:#00aced=
+;font-weight:bold" alt=3D"instagram-icon" />
+              </a>
+          </td>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.youtube.com/@parikh-jain" style=3D"tex=
+t-decoration:none" target=3D"_blank">
+                  <img src=3D"https://www.iconpacks.net/icons/2/free-youtub=
+e-logo-icon-2431-thumb.png" border=3D"0" width=3D"40" height=3D"40" style=
+=3D"border:none;outline:none;text-decoration:none;font-size:19px;font-famil=
+y:Helvetica Neue,Arial,sans-serif;color:#00aced;font-weight:bold" alt=3D"yo=
+utube-icon" />
+              </a>
+          </td>
+          <td align=3D"center" width=3D"80">
+              <a href=3D"https://www.linkedin.com/company/propeers/" style=
+=3D"text-decoration:none" target=3D"_blank">
+                  <img src=3D"https://static-00.iconduck.com/assets.00/link=
+edin-icon-512x512-dhkaf9ri.png" border=3D"0" width=3D"30" height=3D"30" sty=
+le=3D"border:none;outline:none;text-decoration:none;font-size:19px;font-fam=
+ily:Helvetica Neue,Arial,sans-serif;color:#00aced;font-weight:bold" alt=3D"=
+linkedin-icon" />
+              </a>
+          </td>
+      </tr>
+       <tr>
+        <td colspan=3D"3" style=3D"padding-top: 40px;" align=3D"center" wid=
+th=3D"400">
+            This is an auto-generated email, please do not reply.
+        </td>
+    </tr>
+   =20
+  </tbody>
+    =20
+</table>
+
+ </div>
+           =20
+           =20
+    </body>
+   =20
+    </html>
+   =20
+   =20
+------=_Part_1030383_536179543.1743902878117--

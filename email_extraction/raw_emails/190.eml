@@ -1,0 +1,177 @@
+Delivered-To: yash31204testing@gmail.com
+Received: by 2002:a05:7010:6a97:b0:43a:a54e:2943 with SMTP id co23csp60174mdb;
+        Thu, 17 Apr 2025 21:29:27 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEHu6vPa/6BvncVRjwh5ZwTRwvcqJjpXytWigg4USvA8r+UslBC5i1ZrTHhFgHsjyxcCKf2
+X-Received: by 2002:a05:6a20:6a1f:b0:1fd:f4df:ab67 with SMTP id adf61e73a8af0-203cc716ed2mr1668608637.21.1744950567432;
+        Thu, 17 Apr 2025 21:29:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744950567; cv=none;
+        d=google.com; s=arc-20240605;
+        b=dGCTHQsMBXJUW3eHgNOXsZO9SJtQ8m5BVNaxHyCs+PX+RX59DE/ooYrMDuUs6aeDm3
+         iSZRg3zzfd3LPwhOzEbPDEOh8KYRubJvbguKAUVTL5ZHNmTyzgiRrGz/i9V8umWoLOq5
+         5p4K/Acby7yZ0OYgx3ZY3rVVdXBU6geZ+Ahyi92+m7TixUC88WtsKHHGYZvFNq4073g8
+         XSwp3MLIDQtkCLriD5KFmpZ4auuisul/XYMeFm8GAK6GGyrRDp4iMXtEgMctPUm/p8/e
+         EhKTmB0I+9pdoC+teGzE/vdOk+TtWP7ICC5O1KtskYSRfvXnCIN3Tr46um7saqLihj/+
+         vXUQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:mime-version:subject:to:from:date
+         :dkim-signature:dkim-signature;
+        bh=ak4FUFrKyznpOJSmaqivHqW7U9MHQfBSkq39o+ZH9cg=;
+        fh=c8zZPGfHUGlI0iuPo3ldKpOKG0Ix1jibEphIXhLOW3Y=;
+        b=aqmPnUaDEjIeWepl1uxUkggV+EHDKqGlYeQBJi68suOb6QIduzGZ0WUM+msQfJtk+a
+         2BawCWOhHxwqlrGA6MFy2u3Pw0bIXpCOU/G/pIYfljH2XIaSt8sYkjgfeTQUI+aA77kq
+         tLwR1jA4TkwFzMEFuMWFNUjNkW01XLvxn5MeOC+oQv8VOIakN1cQb0gXCRtl+mMvx3fF
+         e5WCsXrAtsYMsbcXL7vq9l8q5vDEelrKP15WMFW3Ca4xXccCDBiTyOaRxc/2KkItnPjM
+         GEPVrZ5DQYswrUB5DBytE85QUuoJSNbQRyoCHBh7lwFM0x/bqTmwXvGGqkyLwMj69VoQ
+         8Rrw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@joinsuperset.com header.s=wl2ienq3sv7o3372l4cpv6xxhlfoa23l header.b=AdbQPGO3;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b="WwVeN1/W";
+       spf=pass (google.com: domain of 010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000@us-west-2.amazonses.com designates 23.251.236.124 as permitted sender) smtp.mailfrom=010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000@us-west-2.amazonses.com
+Return-Path: <010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000@us-west-2.amazonses.com>
+Received: from e236-124.smtp-out.us-west-2.amazonses.com (e236-124.smtp-out.us-west-2.amazonses.com. [23.251.236.124])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-b0db1481373si1541034a12.708.2025.04.17.21.29.27
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 17 Apr 2025 21:29:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000@us-west-2.amazonses.com designates 23.251.236.124 as permitted sender) client-ip=23.251.236.124;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@joinsuperset.com header.s=wl2ienq3sv7o3372l4cpv6xxhlfoa23l header.b=AdbQPGO3;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b="WwVeN1/W";
+       spf=pass (google.com: domain of 010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000@us-west-2.amazonses.com designates 23.251.236.124 as permitted sender) smtp.mailfrom=010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000@us-west-2.amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=wl2ienq3sv7o3372l4cpv6xxhlfoa23l; d=joinsuperset.com;
+	t=1744950567;
+	h=Date:From:To:Subject:MIME-Version:Content-Type:Message-ID;
+	bh=fJ8SFZWAqpnV95aehz1+r9qXK7VoJaz5yfZkB29U+6s=;
+	b=AdbQPGO35xHxqdEeTWai3FtC9MO9L7BOsOBt05nGHZZ1/vvdIRt5IMvGlczJeUKf
+	8vw5lLd1bDMgb2j+ayL0KFtjvapVy0DFUo71DEYlkpf5ci2y34zWHIaLXNnWhXLijt8
+	bjdh/C0dC7dh4ZVc9cMEUYXDUWZ5DLLI4JmtowN0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1744950567;
+	h=Date:From:To:Subject:MIME-Version:Content-Type:Message-ID:Feedback-ID;
+	bh=fJ8SFZWAqpnV95aehz1+r9qXK7VoJaz5yfZkB29U+6s=;
+	b=WwVeN1/WdW9zV3xLlE/KKD3Q0OV7/VLh5OsNI1wMHSi2c9232XheCxqEznOrOBWu
+	zUG3QFysXSa/eAIQ6FfyYSlE4rX7LsyctpuGTy8n1/wOYI9Uai8IeDyD45Wj+b0fJ1/
+	+/lfiZSNVmkWayoHVmD7ffKLwvxxd3QT2UZMaxUs=
+Date: Fri, 18 Apr 2025 04:29:26 +0000
+From: Superset <notifications@joinsuperset.com>
+To: yash31204testing@gmail.com
+Subject: Verify your email on Superset
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_417350_744966786.1744950567012"
+Message-ID: <010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000@us-west-2.amazonses.com>
+Feedback-ID: ::1.us-west-2.kgZW07Pu6Ards/LML5zsShGA0E9pUZUOyymClmTeXXY=:AmazonSES
+X-SES-Outgoing: 2025.04.18-23.251.236.124
+
+------=_Part_417350_744966786.1744950567012
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>tps-notification</title></head>
+<body style="background: #f0f0f0; font-family: 'Helvetica', sans-serif; font-size: 14px; padding-top: 50px; padding-bottom:50px;" bgcolor="#f0f0f0">
+<table cellpadding="0" cellspacing="0" style="align-content: center; border: 1px solid #ddd; margin: auto; width: 650px">
+<tr style="background: #fff" bgcolor="#fff">
+<td style="font-family: 'Muli', 'Helvetica', sans-serif; font-weight: 200; padding: 10px; text-align: center" align="center">
+<img src="https://joinsuperset.com/img/superset-logo-small.png" style="width: 230px; padding:15px" />
+<hr style="border-bottom-color: #ccc; border-bottom-style: solid; border-width: 0 0 1px; width: 58%" />
+</td>
+</tr>
+<tr style="background: #fff" bgcolor="#fff">
+<td style="padding: 30px;text-align: left" align="justify">
+<br />
+<p style="text-align:center">You have succesfully registered on Superset!</p>
+
+
+<p style="text-align:center">Use the OTP given below to verify your email ID.</p>
+<br/>
+<p style="text-align: center">
+<a href="" target="_blank" style="background:#0096c5; color:#fff; text-decoration: none; padding:20px 35px; border-radius: 2px; font-size:14px; font-weight:300">2177</a>
+  </p>
+
+    
+
+   <br />
+  <br />
+</td>
+</tr>
+
+
+     <tr style="background: #fff" bgcolor="#fff">
+          <td style="padding: 30px;text-align: left" align="justify">
+          </td>
+     </tr>
+
+
+<tr style="text-align:center; background:#f5f5f5">
+<td style="padding:10px; font-size:10px; color:#666;"><p>*** This is a system generated email. Please do not reply to this email. ***</p>
+<p>You are receiving this email because you have subscribed to our list. <br>To <a href="https://app.joinsuperset.com/#/profile">unsubscribe</a> or to change email preference please visit your profile</p>
+<br/>
+<p>
+Superset</br>
+#2724, Level 3, 31st Main, 16th Cross<br>
+HSR Layout, Bangalore, 560102
+</p>
+&copy; 2019 GreekTurtle</td></tr></table></body></html>.
+------=_Part_417350_744966786.1744950567012
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>tps-notification</title></head>
+<body style="background: #f0f0f0; font-family: 'Helvetica', sans-serif; font-size: 14px; padding-top: 50px; padding-bottom:50px;" bgcolor="#f0f0f0">
+<table cellpadding="0" cellspacing="0" style="align-content: center; border: 1px solid #ddd; margin: auto; width: 650px">
+<tr style="background: #fff" bgcolor="#fff">
+<td style="font-family: 'Muli', 'Helvetica', sans-serif; font-weight: 200; padding: 10px; text-align: center" align="center">
+<img src="https://joinsuperset.com/img/superset-logo-small.png" style="width: 230px; padding:15px" />
+<hr style="border-bottom-color: #ccc; border-bottom-style: solid; border-width: 0 0 1px; width: 58%" />
+</td>
+</tr>
+<tr style="background: #fff" bgcolor="#fff">
+<td style="padding: 30px;text-align: left" align="justify">
+<br />
+<p style="text-align:center">You have succesfully registered on Superset!</p>
+
+
+<p style="text-align:center">Use the OTP given below to verify your email ID.</p>
+<br/>
+<p style="text-align: center">
+<a href="" target="_blank" style="background:#0096c5; color:#fff; text-decoration: none; padding:20px 35px; border-radius: 2px; font-size:14px; font-weight:300">2177</a>
+  </p>
+
+    
+
+   <br />
+  <br />
+</td>
+</tr>
+
+
+     <tr style="background: #fff" bgcolor="#fff">
+          <td style="padding: 30px;text-align: left" align="justify">
+          </td>
+     </tr>
+
+
+<tr style="text-align:center; background:#f5f5f5">
+<td style="padding:10px; font-size:10px; color:#666;"><p>*** This is a system generated email. Please do not reply to this email. ***</p>
+<p>You are receiving this email because you have subscribed to our list. <br>To <a href="https://nq5tpn49.r.us-west-2.awstrack.me/L0/https:%2F%2Fapp.joinsuperset.com%2F%23%2Fprofile/1/010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000/ZWU-3ywqk4La3tgRiCCKc_cPue0=423">unsubscribe</a> or to change email preference please visit your profile</p>
+<br/>
+<p>
+Superset</br>
+#2724, Level 3, 31st Main, 16th Cross<br>
+HSR Layout, Bangalore, 560102
+</p>
+&copy; 2019 GreekTurtle</td></tr></table><img alt="" src="https://nq5tpn49.r.us-west-2.awstrack.me/I0/010101964728a03b-3c2658b8-1585-4224-9f99-4c85e2c9f272-000000/4epgVPr-OdnPe8usX8W-sSGRa4E=423" style="display: none; width: 1px; height: 1px;">
+</body></html>
+------=_Part_417350_744966786.1744950567012--
