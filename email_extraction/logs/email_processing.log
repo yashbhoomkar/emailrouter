@@ -1,0 +1,26 @@
+2025-04-21 23:08:22,308 - INFO - Connected to IMAP server.
+2025-04-21 23:08:22,717 - INFO - Selected mailbox: inbox
+2025-04-21 23:08:23,000 - INFO - Found 211 emails matching criteria: ALL
+2025-04-21 23:08:23,000 - INFO - Processing email ID: 207
+2025-04-21 23:08:23,516 - INFO - Raw email saved: email_extraction/raw_emails/207.eml
+2025-04-21 23:08:23,517 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-21 23:08:23,517 - INFO - Processed email ID: 207 from: Google <no-reply@accounts.google.com>
+2025-04-21 23:08:23,517 - INFO - Processing email ID: 208
+2025-04-21 23:08:23,902 - INFO - Raw email saved: email_extraction/raw_emails/208.eml
+2025-04-21 23:08:23,903 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-21 23:08:23,903 - INFO - Processed email ID: 208 from: Google <no-reply@accounts.google.com>
+2025-04-21 23:08:23,903 - INFO - Processing email ID: 209
+2025-04-21 23:08:24,259 - INFO - Raw email saved: email_extraction/raw_emails/209.eml
+2025-04-21 23:08:24,260 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-21 23:08:24,260 - INFO - Processed email ID: 209 from: Google <no-reply@accounts.google.com>
+2025-04-21 23:08:24,260 - INFO - Processing email ID: 210
+2025-04-21 23:08:24,820 - INFO - Raw email saved: email_extraction/raw_emails/210.eml
+2025-04-21 23:08:24,821 - INFO - Attachment saved: email_extraction/attachments/210/CapgeminiOfferLetter.pdf
+2025-04-21 23:08:24,821 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-21 23:08:24,821 - INFO - Processed email ID: 210 from: Yash <yash31204testing@gmail.com>
+2025-04-21 23:08:24,821 - INFO - Processing email ID: 211
+2025-04-21 23:08:26,324 - INFO - Raw email saved: email_extraction/raw_emails/211.eml
+2025-04-21 23:08:26,334 - INFO - Attachment saved: email_extraction/attachments/211/EduBuddySysDesign.png
+2025-04-21 23:08:26,334 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-21 23:08:26,334 - INFO - Processed email ID: 211 from: Yash <yash31204testing@gmail.com>
+2025-04-21 23:08:26,712 - INFO - Logged out from IMAP server.
