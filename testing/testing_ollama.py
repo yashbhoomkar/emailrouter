@@ -218,6 +218,7 @@ def main_export_ollama(email_content):
         print(f"\nStep 3: Finalizing routing for email ID '{email_id}' in department '{department}' with urgency '{urgency}'...")
         routing_response = finalize_routing(email_id, people_list, feedback_data, department, urgency)
         print("Routing Response:", json.dumps(routing_response, indent=4))
+        return routing_response
 
 #if __name__ == "__main__":
     # Example email content to test

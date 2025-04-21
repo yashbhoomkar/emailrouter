@@ -61,7 +61,7 @@ def get_emails_with_status(redis_client, status="NOT_ROUTED"):
         print(f"Error retrieving emails from Redis: {str(e)}")
         return []
 
-def main():
+def main_export_rfr():
     """
     Main function to retrieve and print processed emails with "NOT_ROUTED" status.
     """
@@ -87,9 +87,9 @@ def main():
                 f"{email['BODY']}"
             )
             print(f"Passing email_content to main_export_ollama:\n{email_content}")  # Debug log
-            main_export_ollama(email_content)
+            routing_response = main_export_ollama(email_content)
+            print("Routing Response:", json.dumps(routing_response, indent=4))
+            return routing_response
     else:
         print("No emails with status 'NOT_ROUTED' found.")
-
-if __name__ == "__main__":
-    main()
+        return []
