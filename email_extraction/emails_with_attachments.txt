@@ -1,10 +1,5 @@
 
 📨 Email From: Google <no-reply@accounts.google.com>
-📝 Subject: Security alert
-📄 Body:
-<!DOCTYPE html><html lang="en"><head><meta name="format-detection" content="email=no"/><meta name="format-detection" content="date=no"/><style nonce="1PPs9CGqV6S4voS8eiD3cQ">.awl a {color: #FFFFFF; text-decoration: none;} .abml a {color: #000000; font-family: Roboto-Medium,Helvetica,Arial,sans-serif; font-weight: bold; text-decoration: none;} .adgl a {color: rgba(0, 0, 0, 0.87); text-decoration: none;} .afal a {color: #b0b0b0; text-decoration: none;} @media screen and (min-width: 600px) {.v2sp {
-
-📨 Email From: Google <no-reply@accounts.google.com>
 📝 Subject: 2-Step Verification turned on
 📄 Body:
 <!DOCTYPE html><html lang="en"><head><meta name="format-detection" content="email=no"/><meta name="format-detection" content="date=no"/><style nonce="7xnbb39r3Gh6G0Oc6mn78A">.awl a {color: #FFFFFF; text-decoration: none;} .abml a {color: #000000; font-family: Roboto-Medium,Helvetica,Arial,sans-serif; font-weight: bold; text-decoration: none;} .adgl a {color: rgba(0, 0, 0, 0.87); text-decoration: none;} .afal a {color: #b0b0b0; text-decoration: none;} @media screen and (min-width: 600px) {.v2sp {
@@ -27,3 +22,8 @@
 <div dir="ltr">PNG FILE attached</div>
 
 📎 Attachment saved: email_extraction/attachments/211/EduBuddySysDesign.png
+
+📨 Email From: "Grammarly Insights" <hello@mail.grammarly.com>
+📝 Subject: Well done on a week full of wins 🎉
+📄 Body:
+<!-- Changes for SL, PH, NarrCopy, and Images --> <!-- Numbers are 1 through 8 --> <!-- Number are 1 through 24 --> <!-- Grammarly Business Content --> <!-- Grammarly Business Content --> <!-- Module Toggles these accept y or n as values. Snippets require y value to display --> <!-- if premiumPromo is y, always set upsellBanner to n --> <!-- URL DEFINITIONS Unsubscribe/Preferences FOOTER DISCLOSURES RENEWAL DEFINITIONS FIRST NAME SNIPPETS Default USER NAME --> <!-- Footer disclosure language -->

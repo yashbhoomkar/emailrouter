@@ -1,26 +1,53 @@
-2025-04-21 23:08:22,308 - INFO - Connected to IMAP server.
-2025-04-21 23:08:22,717 - INFO - Selected mailbox: inbox
-2025-04-21 23:08:23,000 - INFO - Found 211 emails matching criteria: ALL
-2025-04-21 23:08:23,000 - INFO - Processing email ID: 207
-2025-04-21 23:08:23,516 - INFO - Raw email saved: email_extraction/raw_emails/207.eml
-2025-04-21 23:08:23,517 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
-2025-04-21 23:08:23,517 - INFO - Processed email ID: 207 from: Google <no-reply@accounts.google.com>
-2025-04-21 23:08:23,517 - INFO - Processing email ID: 208
-2025-04-21 23:08:23,902 - INFO - Raw email saved: email_extraction/raw_emails/208.eml
-2025-04-21 23:08:23,903 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
-2025-04-21 23:08:23,903 - INFO - Processed email ID: 208 from: Google <no-reply@accounts.google.com>
-2025-04-21 23:08:23,903 - INFO - Processing email ID: 209
-2025-04-21 23:08:24,259 - INFO - Raw email saved: email_extraction/raw_emails/209.eml
-2025-04-21 23:08:24,260 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
-2025-04-21 23:08:24,260 - INFO - Processed email ID: 209 from: Google <no-reply@accounts.google.com>
-2025-04-21 23:08:24,260 - INFO - Processing email ID: 210
-2025-04-21 23:08:24,820 - INFO - Raw email saved: email_extraction/raw_emails/210.eml
-2025-04-21 23:08:24,821 - INFO - Attachment saved: email_extraction/attachments/210/CapgeminiOfferLetter.pdf
-2025-04-21 23:08:24,821 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
-2025-04-21 23:08:24,821 - INFO - Processed email ID: 210 from: Yash <yash31204testing@gmail.com>
-2025-04-21 23:08:24,821 - INFO - Processing email ID: 211
-2025-04-21 23:08:26,324 - INFO - Raw email saved: email_extraction/raw_emails/211.eml
-2025-04-21 23:08:26,334 - INFO - Attachment saved: email_extraction/attachments/211/EduBuddySysDesign.png
-2025-04-21 23:08:26,334 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
-2025-04-21 23:08:26,334 - INFO - Processed email ID: 211 from: Yash <yash31204testing@gmail.com>
-2025-04-21 23:08:26,712 - INFO - Logged out from IMAP server.
+2025-04-22 00:21:04,618 - INFO - Connected to IMAP server.
+2025-04-22 00:21:05,028 - INFO - Selected mailbox: inbox
+2025-04-22 00:21:05,322 - INFO - Found 212 emails matching criteria: ALL
+2025-04-22 00:21:05,322 - INFO - Processing email ID: 208
+2025-04-22 00:21:05,859 - INFO - Raw email saved: email_extraction/raw_emails/208.eml
+2025-04-22 00:21:05,860 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-22 00:21:05,860 - INFO - Processed email ID: 208 from: Google <no-reply@accounts.google.com>
+2025-04-22 00:21:05,860 - INFO - Processing email ID: 209
+2025-04-22 00:21:06,179 - INFO - Raw email saved: email_extraction/raw_emails/209.eml
+2025-04-22 00:21:06,179 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-22 00:21:06,179 - INFO - Processed email ID: 209 from: Google <no-reply@accounts.google.com>
+2025-04-22 00:21:06,179 - INFO - Processing email ID: 210
+2025-04-22 00:21:06,805 - INFO - Raw email saved: email_extraction/raw_emails/210.eml
+2025-04-22 00:21:06,806 - INFO - Attachment saved: email_extraction/attachments/210/CapgeminiOfferLetter.pdf
+2025-04-22 00:21:06,806 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-22 00:21:06,806 - INFO - Processed email ID: 210 from: Yash <yash31204testing@gmail.com>
+2025-04-22 00:21:06,806 - INFO - Processing email ID: 211
+2025-04-22 00:21:08,437 - INFO - Raw email saved: email_extraction/raw_emails/211.eml
+2025-04-22 00:21:08,446 - INFO - Attachment saved: email_extraction/attachments/211/EduBuddySysDesign.png
+2025-04-22 00:21:08,446 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-22 00:21:08,446 - INFO - Processed email ID: 211 from: Yash <yash31204testing@gmail.com>
+2025-04-22 00:21:08,447 - INFO - Processing email ID: 212
+2025-04-22 00:21:08,930 - INFO - Raw email saved: email_extraction/raw_emails/212.eml
+2025-04-22 00:21:08,932 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-22 00:21:08,932 - INFO - Processed email ID: 212 from: "Grammarly Insights" <hello@mail.grammarly.com>
+2025-04-22 00:21:09,432 - INFO - Logged out from IMAP server.
+2025-04-22 00:21:09,433 - INFO - Logging setup complete. Log file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/email_redis_store.log
+2025-04-22 00:21:09,434 - INFO - Connected to Redis server at localhost:6379
+2025-04-22 00:21:09,436 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/209.eml
+2025-04-22 00:21:09,436 - INFO - No attachments found for email ID '209'
+2025-04-22 00:21:09,436 - INFO - Prepared email data for email ID '209'
+2025-04-22 00:21:09,439 - INFO - Email data stored in Redis with key 'email:209'
+2025-04-22 00:21:09,439 - INFO - Successfully inserted email ID '209' into Redis.
+2025-04-22 00:21:09,440 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/208.eml
+2025-04-22 00:21:09,440 - INFO - No attachments found for email ID '208'
+2025-04-22 00:21:09,440 - INFO - Prepared email data for email ID '208'
+2025-04-22 00:21:09,440 - INFO - Email data stored in Redis with key 'email:208'
+2025-04-22 00:21:09,440 - INFO - Successfully inserted email ID '208' into Redis.
+2025-04-22 00:21:09,482 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/211.eml
+2025-04-22 00:21:09,482 - INFO - Found attachments for email ID '211': ['/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/attachments/211/EduBuddySysDesign.png']
+2025-04-22 00:21:09,482 - INFO - Prepared email data for email ID '211'
+2025-04-22 00:21:09,482 - INFO - Email data stored in Redis with key 'email:211'
+2025-04-22 00:21:09,482 - INFO - Successfully inserted email ID '211' into Redis.
+2025-04-22 00:21:09,483 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/210.eml
+2025-04-22 00:21:09,483 - INFO - Found attachments for email ID '210': ['/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/attachments/210/CapgeminiOfferLetter.pdf']
+2025-04-22 00:21:09,483 - INFO - Prepared email data for email ID '210'
+2025-04-22 00:21:09,484 - INFO - Email data stored in Redis with key 'email:210'
+2025-04-22 00:21:09,484 - INFO - Successfully inserted email ID '210' into Redis.
+2025-04-22 00:21:09,485 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/212.eml
+2025-04-22 00:21:09,485 - INFO - No attachments found for email ID '212'
+2025-04-22 00:21:09,485 - INFO - Prepared email data for email ID '212'
+2025-04-22 00:21:09,485 - INFO - Email data stored in Redis with key 'email:212'
+2025-04-22 00:21:09,485 - INFO - Successfully inserted email ID '212' into Redis.
