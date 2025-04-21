@@ -30,6 +30,18 @@ def clear_redis_database():
     except Exception as e:
         logging.error(f"Failed to clear Redis database: {str(e)}")
 
+def delete_database(db_path):
+    """Delete the email_router.db database file if it exists."""
+    if os.path.exists(db_path):
+        try:
+            os.remove(db_path)
+            logging.info(f"Deleted database file: {db_path}")
+        except Exception as e:
+            logging.error(f"Failed to delete database file '{db_path}': {str(e)}")
+    else:
+        logging.warning(f"Database file '{db_path}' does not exist.")
+
+
 def reset_environment():
     """Reset the environment by deleting folders, files, and Redis data."""
     # Configure logging
@@ -42,6 +54,8 @@ def reset_environment():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     email_extraction_folder = os.path.join(base_dir, "email_extraction")
     email_redis_store_folder = os.path.join(base_dir, "email_redis_store")
+    database_file = os.path.join(base_dir, "/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/testing/email_router.db")  # Path to the database file
+
 
     # Folders to delete
     attachments_folder = os.path.join(email_extraction_folder, "attachments")
@@ -60,6 +74,9 @@ def reset_environment():
     # Delete files
     delete_file(emails_with_attachments_file)
     delete_file(email_redis_store_log_file)
+
+    # Delete the database file
+    delete_database(database_file)
 
     # Clear Redis database
     clear_redis_database()
