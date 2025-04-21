@@ -79,7 +79,8 @@ def process_and_store_emails(redis_client, raw_emails_folder, attachments_folder
             "from": email_from,
             "subject": email_subject,
             "body": email_body,
-            "attachments": attachment_paths
+            "attachments": attachment_paths,  # Store file paths for attachments
+            "STATUS": "NOT_ROUTED"  # Add STATUS field with initial value
         }
 
         # Store email data in Redis
@@ -99,7 +100,7 @@ if __name__ == "__main__":
     process_and_store_emails(redis_client, raw_emails_folder, attachments_folder)
 
     # Example: Retrieve an email from Redis
-    email_id_to_retrieve = "207"  # Replace with the email ID you want to retrieve
+    email_id_to_retrieve = "210"  # Replace with the email ID you want to retrieve
     redis_key = f"email:{email_id_to_retrieve}"
     email_data = retrieve_email_from_redis(redis_client, redis_key)
     if email_data:
