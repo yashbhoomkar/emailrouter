@@ -134,6 +134,27 @@ def save_raw_email(raw_email, email_id, base_folder="email_extraction/raw_emails
     logging.info(f"Raw email saved: {email_file}")
     return email_file
 
+def get_last_processed_email_id(redis_client):
+    """Retrieve the last processed email ID from Redis."""
+    try:
+        last_email_id = redis_client.get("last_processed_email_id")
+        if last_email_id:
+            logging.info(f"Last processed email ID retrieved: {last_email_id}")
+            return int(last_email_id)
+        logging.info("No last processed email ID found. Starting fresh.")
+        return 0  # Default to 0 if no email has been processed
+    except Exception as e:
+        logging.error(f"Failed to retrieve last processed email ID: {str(e)}")
+       
+def update_last_processed_email_id(redis_client, email_id):
+    """Update the last processed email ID in Redis."""
+    try:
+        redis_client.set("last_processed_email_id", email_id)
+        logging.info(f"Updated last processed email ID to: {email_id}")
+    except Exception as e:
+        logging.error(f"Failed to update last processed email ID: {str(e)}")
+
+
 def main_export():
     """Main function to fetch and process emails."""
     # Configure logging
