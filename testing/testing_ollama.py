@@ -49,6 +49,7 @@ def analyze_email(email_content, feedback_data, model="llama3.2", base_url="http
         f"Analyze the following email and decide the urgency and department it belongs to.\n\n"
         f"Email:\n{email_content}\n\n"
         f"Here is the feedback database to help you improve your response:\n{feedback_data}\n\n"
+        "Strictly select only one department"
         "Respond strictly in the following JSON format:\n"
         "{\n"
         "    \"EMAIL_ID\": \"email_id\",\n"
@@ -139,10 +140,13 @@ def finalize_routing(email_id, people_list, feedback_data, department, urgency, 
         f"Here is the list of people in the department:\n{json.dumps(people_list, indent=4)}\n\n"
         f"Here is the feedback database to help you improve your response:\n{feedback_data}\n\n"
         "Decide who the email should be forwarded to, and who should be in CC and BCC. ADD PEOPLE'S email id in cc and bcc if and only if required\n"
+        "\n IF NO CC OR BCC REQUIRED, THEN ADD 'EMPTY' AS THE VALUE OF CC OR BCC \n"
+        "\n STRICTLY SELECT ONLY ONE DEPARTMENT AND FORWARD_TO SHALL NEVER BE EMPTY / NULL \n\n"
+
         "Respond strictly in the following JSON format:\n"
         "{\n"
         "    \"EMAIL_ID\": \"email_id\",\n"
-        "    \"DEPARTMENT\": \"HR | FINANCE | SOFTWARE | CYBERSECURITY\",\n"
+        "    \"DEPARTMENT\": \"HR or FINANCE or SOFTWARE or CYBERSECURITY\",\n"
         "    \"URGENCY\": \"HIGH | MEDIUM | LOW\",\n"
         "    \"FORWARD_TO\": \"email_id\",\n"
         "    \"CC\": [\"email_id1\", \"email_id2\"],\n"
@@ -190,19 +194,11 @@ def correct_json(raw_response):
     except json.JSONDecodeError:
         return {"error": "Invalid JSON response.", "raw_response": raw_response}
 
-if __name__ == "__main__":
-    # Example email content to test
-    email_content = (
-        "EMAIL_ID: 210\n"
-        "Subject: General Feedback \n\n"
-        "Dear HR Team,\n\n"
-        "I would like to provide some feedback regarding the recent changes in our HR policies. "
-        "I believe there are areas that need improvement, especially in the onboarding process.\n\n"
-        "I have attached a document with my detailed feedback.\n\n"
-        "Please let me know if you need any further information.\n\n"
-        "Best regards,\nJohn Doe"
-    )
-
+def main_export_ollama(email_content):
+    """
+    Main function to execute the email analysis and routing process.
+    """
+    
     # Fetch feedback data from the database
     feedback_data = fetch_feedback_data()
 
@@ -222,3 +218,17 @@ if __name__ == "__main__":
         print(f"\nStep 3: Finalizing routing for email ID '{email_id}' in department '{department}' with urgency '{urgency}'...")
         routing_response = finalize_routing(email_id, people_list, feedback_data, department, urgency)
         print("Routing Response:", json.dumps(routing_response, indent=4))
+
+#if __name__ == "__main__":
+    # Example email content to test
+#    email_content = (
+#       "EMAIL_ID: 210\n"
+#      "Subject: General Feedback \n\n"
+#        "Dear HR Team,\n\n"
+#        "I would like to provide some feedback regarding the recent changes in our HR policies. "
+#        "I believe there are areas that need improvement, especially in the onboarding process.\n\n"
+#        "I have attached a document with my detailed feedback.\n\n"
+#        "Please let me know if you need any further information.\n\n"
+#        "Best regards,\nJohn Doe"
+#    )
+#    main_export(email_content)
