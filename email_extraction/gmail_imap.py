@@ -4,6 +4,7 @@ from email.header import decode_header
 from dotenv import load_dotenv
 import os
 import logging
+import redis
 
 def ensure_log_file_exists(log_dir, log_file):
     """Ensure the log file exists in the specified directory."""
@@ -30,7 +31,7 @@ def load_env_variables():
     """Load environment variables from the .env file."""
     dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
     load_dotenv(dotenv_path)
-    email_address = os.getenv('EMAIL')  # Renamed from 'email' to 'email_address'
+    email_address = os.getenv('EMAIL')
     app_password = os.getenv('APP_PASSWORD')
     if not email_address or not app_password:
         raise ValueError("EMAIL or APP_PASSWORD is not set in the .env file.")
@@ -42,6 +43,16 @@ def connect_to_imap(email_address, app_password):
     imap.login(email_address, app_password)
     logging.info("Connected to IMAP server.")
     return imap
+
+def connect_to_redis(host="localhost", port=6379, decode_responses=True):
+    """Connect to the Redis server."""
+    try:
+        redis_client = redis.StrictRedis(host=host, port=port, decode_responses=decode_responses)
+        logging.info("Connected to Redis server.")
+        return redis_client
+    except Exception as e:
+        logging.error(f"Failed to connect to Redis: {str(e)}")
+        raise
 
 def select_mailbox(imap, mailbox="inbox"):
     """Select the mailbox to use."""
@@ -57,15 +68,26 @@ def search_emails(imap, criteria="ALL"):
     logging.info(f"Found {len(email_ids)} emails matching criteria: {criteria}")
     return email_ids
 
-def fetch_email(imap, email_id):
-    """Fetch a single email by its ID."""
-    res, msg_data = imap.fetch(email_id, "(RFC822)")
-    if res != "OK":
-        raise Exception(f"Failed to fetch email with ID {email_id}.")
-    for response_part in msg_data:
-        if isinstance(response_part, tuple):
-            return email.message_from_bytes(response_part[1])
-    return None
+def get_last_processed_email_id(redis_client):
+    """Retrieve the last processed email ID from Redis."""
+    try:
+        last_email_id = redis_client.get("last_processed_email_id")
+        if last_email_id:
+            logging.info(f"Last processed email ID retrieved: {last_email_id}")
+            return int(last_email_id)
+        logging.info("No last processed email ID found. Starting fresh.")
+        return 0  # Default to 0 if no email has been processed
+    except Exception as e:
+        logging.error(f"Failed to retrieve last processed email ID: {str(e)}")
+        return 0  # Default to 0 in case of an error
+
+def update_last_processed_email_id(redis_client, email_id):
+    """Update the last processed email ID in Redis."""
+    try:
+        redis_client.set("last_processed_email_id", email_id)
+        logging.info(f"Updated last processed email ID to: {email_id}")
+    except Exception as e:
+        logging.error(f"Failed to update last processed email ID: {str(e)}")
 
 def decode_subject(msg):
     """Decode the subject of an email."""
@@ -92,10 +114,7 @@ def process_email_body(msg):
 
 def save_attachments(msg, email_id, base_folder="email_extraction/attachments"):
     """Save attachments from an email to a subfolder named after the email ID."""
-    # Create a base folder for attachments
     os.makedirs(base_folder, exist_ok=True)
-
-    # Create a subfolder for the specific email ID
     email_folder = os.path.join(base_folder, email_id)
     os.makedirs(email_folder, exist_ok=True)
 
@@ -124,36 +143,12 @@ def save_email_to_file(email_data, filename="email_extraction/emails_with_attach
 
 def save_raw_email(raw_email, email_id, base_folder="email_extraction/raw_emails"):
     """Save the raw email content to a file."""
-    # Create a base folder for raw emails
     os.makedirs(base_folder, exist_ok=True)
-
-    # Create a file for the specific email ID
     email_file = os.path.join(base_folder, f"{email_id}.eml")
     with open(email_file, "wb") as f:
         f.write(raw_email)
     logging.info(f"Raw email saved: {email_file}")
     return email_file
-
-def get_last_processed_email_id(redis_client):
-    """Retrieve the last processed email ID from Redis."""
-    try:
-        last_email_id = redis_client.get("last_processed_email_id")
-        if last_email_id:
-            logging.info(f"Last processed email ID retrieved: {last_email_id}")
-            return int(last_email_id)
-        logging.info("No last processed email ID found. Starting fresh.")
-        return 0  # Default to 0 if no email has been processed
-    except Exception as e:
-        logging.error(f"Failed to retrieve last processed email ID: {str(e)}")
-       
-def update_last_processed_email_id(redis_client, email_id):
-    """Update the last processed email ID in Redis."""
-    try:
-        redis_client.set("last_processed_email_id", email_id)
-        logging.info(f"Updated last processed email ID to: {email_id}")
-    except Exception as e:
-        logging.error(f"Failed to update last processed email ID: {str(e)}")
-
 
 def main_export():
     """Main function to fetch and process emails."""
@@ -161,10 +156,13 @@ def main_export():
     configure_logging()
 
     # Load environment variables
-    email_address, app_password = load_env_variables()  # Updated variable name
+    email_address, app_password = load_env_variables()
 
     # Connect to IMAP server
-    imap = connect_to_imap(email_address, app_password)  # Updated variable name
+    imap = connect_to_imap(email_address, app_password)
+
+    # Connect to Redis
+    redis_client = connect_to_redis()
 
     try:
         # Select mailbox
@@ -172,33 +170,54 @@ def main_export():
 
         # Search for emails
         email_ids = search_emails(imap, "ALL")
+        if not email_ids:
+            logging.info("No emails found in the mailbox.")
+            return
 
-        # Process the latest 5 emails
-        for eid in email_ids[-5:]:
-            email_id = eid.decode()  # Decode email ID for folder naming
-            logging.info(f"Processing email ID: {email_id}")
-            res, msg_data = imap.fetch(eid, "(RFC822)")
-            if res != "OK":
-                logging.error(f"Failed to fetch email with ID {email_id}.")
-                continue
+        # Get the last processed email ID from Redis
+        last_processed_email_id = get_last_processed_email_id(redis_client)
 
-            for response_part in msg_data:
-                if isinstance(response_part, tuple):
-                    raw_email = response_part[1]
-                    msg = email.message_from_bytes(raw_email)
+        # Check if there are any new emails
+        if all(int(eid.decode()) <= last_processed_email_id for eid in email_ids):
+            logging.info("No new emails found. Exiting.")
+            return
 
-                    # Save the raw email
-                    save_raw_email(raw_email, email_id)
+        # Process only new emails
+        for eid in email_ids:
+            try:
+                email_id = int(eid.decode())  # Decode email ID for comparison
+                if email_id <= last_processed_email_id:
+                    logging.info(f"Skipping already processed email ID: {email_id}")
+                    continue
 
-                    # Process and save the email data
-                    email_data = {
-                        "from": msg.get("From"),
-                        "subject": decode_subject(msg),
-                        "body": process_email_body(msg),
-                        "attachments": save_attachments(msg, email_id)  # Pass email ID to save_attachments
-                    }
-                    save_email_to_file(email_data)
-                    logging.info(f"Processed email ID: {email_id} from: {email_data['from']}")
+                logging.info(f"Processing email ID: {email_id}")
+                res, msg_data = imap.fetch(eid, "(RFC822)")
+                if res != "OK":
+                    logging.error(f"Failed to fetch email with ID {email_id}.")
+                    continue
+
+                for response_part in msg_data:
+                    if isinstance(response_part, tuple):
+                        raw_email = response_part[1]
+                        msg = email.message_from_bytes(raw_email)
+
+                        # Save the raw email
+                        save_raw_email(raw_email, str(email_id))
+
+                        # Process and save the email data
+                        email_data = {
+                            "from": msg.get("From"),
+                            "subject": decode_subject(msg),
+                            "body": process_email_body(msg),
+                            "attachments": save_attachments(msg, str(email_id))
+                        }
+                        save_email_to_file(email_data)
+                        logging.info(f"Processed email ID: {email_id} from: {email_data['from']}")
+
+                        # Update the last processed email ID in Redis
+                        update_last_processed_email_id(redis_client, email_id)
+            except Exception as e:
+                logging.error(f"Error processing email ID {eid}: {str(e)}")
     finally:
         # Close the connection
         imap.logout()
