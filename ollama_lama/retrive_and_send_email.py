@@ -1,7 +1,11 @@
 import smtplib
 import os
+import redis
+import json
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 from dotenv import load_dotenv
 
 def load_env_variables():
@@ -10,7 +14,6 @@ def load_env_variables():
     Returns:
         dict: A dictionary containing email credentials.
     """
-    # Specify the path to the .env file
     env_path = "/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_extraction/.env"
     load_dotenv(dotenv_path=env_path)
     
@@ -20,9 +23,59 @@ def load_env_variables():
         raise ValueError("EMAIL or APP_PASSWORD is missing in the .env file.")
     return {"email": email, "app_password": app_password}
 
-def create_email(sender_email, recipient_email, subject, body, cc=None, bcc=None):
+def connect_to_redis(host="localhost", port=6379, decode_responses=True):
     """
-    Create an email message.
+    Connect to the Redis server.
+    Returns:
+        redis.StrictRedis: Redis client connection.
+    """
+    try:
+        redis_client = redis.StrictRedis(host=host, port=port, decode_responses=decode_responses)
+        return redis_client
+    except Exception as e:
+        raise ConnectionError(f"Failed to connect to Redis: {str(e)}")
+
+def retrieve_email_from_redis(redis_client, email_id):
+    """
+    Retrieve email data from Redis.
+    Args:
+        redis_client (redis.StrictRedis): Redis client connection.
+        email_id (str): The email ID to retrieve.
+    Returns:
+        dict: The email data or None if not found.
+    """
+    try:
+        redis_key = f"email:{email_id}"
+        email_data = redis_client.get(redis_key)
+        if email_data:
+            return json.loads(email_data)
+        else:
+            print(f"No email found in Redis for email ID '{email_id}'.")
+            return None
+    except Exception as e:
+        raise ValueError(f"Failed to retrieve email data from Redis for email ID '{email_id}': {str(e)}")
+
+def check_attachments(attachments_folder, attachment_paths):
+    """
+    Check and retrieve attachment files.
+    Args:
+        attachments_folder (str): The base folder for attachments.
+        attachment_paths (list): List of attachment file paths.
+    Returns:
+        list: List of valid attachment file paths.
+    """
+    valid_attachments = []
+    for attachment in attachment_paths:
+        attachment_path = os.path.join(attachments_folder, attachment)
+        if os.path.exists(attachment_path):
+            valid_attachments.append(attachment_path)
+        else:
+            print(f"Attachment not found: {attachment_path}")
+    return valid_attachments
+
+def create_email(sender_email, recipient_email, subject, body, cc=None, bcc=None, attachments=None):
+    """
+    Create an email message with optional attachments.
     Args:
         sender_email (str): The sender's email address.
         recipient_email (str): The recipient's email address.
@@ -30,6 +83,7 @@ def create_email(sender_email, recipient_email, subject, body, cc=None, bcc=None
         body (str): The body of the email.
         cc (list): List of CC recipients.
         bcc (list): List of BCC recipients.
+        attachments (list): List of file paths for attachments.
     Returns:
         MIMEMultipart: The email message object.
     """
@@ -41,6 +95,20 @@ def create_email(sender_email, recipient_email, subject, body, cc=None, bcc=None
         if cc:
             message["Cc"] = ", ".join(cc)
         message.attach(MIMEText(body, "plain"))
+
+        # Attach files
+        if attachments:
+            for file_path in attachments:
+                with open(file_path, "rb") as attachment:
+                    part = MIMEBase("application", "octet-stream")
+                    part.set_payload(attachment.read())
+                encoders.encode_base64(part)
+                part.add_header(
+                    "Content-Disposition",
+                    f"attachment; filename={os.path.basename(file_path)}",
+                )
+                message.attach(part)
+
         return message
     except Exception as e:
         raise ValueError(f"Error creating email: {str(e)}")
@@ -60,46 +128,61 @@ def send_email(smtp_server, smtp_port, sender_email, app_password, recipient_ema
     """
     try:
         with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()  # Upgrade the connection to secure
+            server.starttls()
             server.login(sender_email, app_password)
             recipients = [recipient_email] + (cc or []) + (bcc or [])
             server.sendmail(sender_email, recipients, message.as_string())
             print(f"Email sent successfully to {recipient_email} (CC: {cc}, BCC: {bcc}).")
-    except smtplib.SMTPAuthenticationError:
-        raise ValueError("Authentication failed. Check your email and app password.")
     except Exception as e:
         raise ValueError(f"Error sending email: {str(e)}")
 
-def process_and_send_email(email_data):
+def process_and_send_email(email_json, redis_client, attachments_folder):
     """
-    Process the input JSON and send emails to the appropriate recipients.
+    Process the input JSON, fetch email content from Redis, and send the email with attachments.
     Args:
-        email_data (dict): The email data in JSON format.
+        email_json (dict): The email data in JSON format.
+        redis_client (redis.StrictRedis): Redis client connection.
+        attachments_folder (str): The base folder for attachments.
     """
     try:
+        # Extract EMAIL_ID from the JSON
+        email_id = email_json.get("EMAIL_ID")
+        if not email_id:
+            print("EMAIL_ID is missing in the input JSON.")
+            return
+
+        # Retrieve email content from Redis
+        email_data = retrieve_email_from_redis(redis_client, email_id)
+        if not email_data:
+            print(f"Skipping email ID '{email_id}' as it is not found in Redis.")
+            return
+
+        # Extract email details
+        forward_to = email_json.get("FORWARD_TO")
+        cc = clean_email_list(email_json.get("CC", []))
+        bcc = clean_email_list(email_json.get("BCC", []))
+        subject = email_data.get("subject", "No Subject")
+        body = email_data.get("body", "No Body")
+        attachment_paths = email_data.get("attachments", [])
+
+        # Check and retrieve valid attachments
+        attachments = check_attachments(attachments_folder, attachment_paths)
+
         # Load environment variables
         credentials = load_env_variables()
         sender_email = credentials["email"]
         app_password = credentials["app_password"]
 
-        # Extract email details from JSON
-        email_id = email_data.get("EMAIL_ID", "Unknown")
-        forward_to = email_data.get("FORWARD_TO", None)
-        cc = clean_email_list(email_data.get("CC", []))
-        bcc = clean_email_list(email_data.get("BCC", []))
-        subject = f"Email ID {email_id} - Routed Email"
-        body = f"Dear {forward_to},\n\nThis email has been routed to you based on the department and urgency.\n\nBest regards,\nAliceInTensorLand Team"
-
         # Create and send the email
         if forward_to:
-            message = create_email(sender_email, forward_to, subject, body, cc, bcc)
+            message = create_email(sender_email, forward_to, subject, body, cc, bcc, attachments)
             smtp_server = "smtp.gmail.com"
             smtp_port = 587
             send_email(smtp_server, smtp_port, sender_email, app_password, forward_to, message, cc, bcc)
         else:
-            print(f"Skipping email ID {email_id} as no 'FORWARD_TO' address is provided.")
+            print(f"Skipping email ID '{email_id}' as no 'FORWARD_TO' address is provided.")
     except Exception as e:
-        print(f"An error occurred while processing email ID {email_data.get('EMAIL_ID', 'Unknown')}: {str(e)}")
+        print(f"An error occurred while processing email ID '{email_json.get('EMAIL_ID', 'Unknown')}': {str(e)}")
 
 def clean_email_list(email_list):
     """
@@ -115,31 +198,19 @@ def clean_email_list(email_list):
 
 def main():
     """
-    Main function to process and send emails from JSON input.
+    Main function to process and send emails.
     """
+    # Connect to Redis
+    redis_client = connect_to_redis()
+
+    # Define attachments folder
+    attachments_folder = "/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_extraction/attachments"
+
     # Example JSON input
-    email_json_1 = {
-        "EMAIL_ID": "1",
-        "DEPARTMENT": "FINANCE",
-        "URGENCY": "HIGHEST",
-        "FORWARD_TO": "bob.smith@aliceintensorland.com",
-        "CC": ["empty"],
-        "BCC": ["empty"]
-    }
+    email_json = {'EMAIL_ID': 6, 'DEPARTMENT': 'SOFTWARE', 'URGENCY': 'LOW', 'FORWARD_TO': 'ivy.lee@aliceintensorland.com', 'CC': ['hank.green@aliceintensorland.com'], 'BCC': []}
 
-    email_json_2 = {
-        "EMAIL_ID": 1,
-        "DEPARTMENT": "FINANCE",
-        "URGENCY": "MEDIUM",
-        "FORWARD_TO": "alice.smith@aliceintensorland.com",
-        "CC": ["bob.smith@aliceintensorland.com"],
-        "BCC": []
-    }
-
-    # Process and send emails
-    for email_json in [email_json_1, email_json_2]:
-        print("\nProcessing new email...")
-        process_and_send_email(email_json)
+    # Process and send the email
+    process_and_send_email(email_json, redis_client, attachments_folder)
 
 if __name__ == "__main__":
     main()

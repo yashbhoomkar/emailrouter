@@ -301,3 +301,130 @@
 2025-04-22 13:55:30,178 - INFO - Prepared email data for email ID '5'
 2025-04-22 13:55:30,178 - INFO - Email data stored in Redis with key 'email:5'
 2025-04-22 13:55:30,178 - INFO - Successfully inserted email ID '5' into Redis.
+2025-04-22 14:16:12,842 - INFO - Connected to IMAP server.
+2025-04-22 14:16:12,845 - INFO - Connected to Redis server.
+2025-04-22 14:16:13,222 - INFO - Selected mailbox: inbox
+2025-04-22 14:16:13,535 - INFO - Found 6 emails matching criteria: ALL
+2025-04-22 14:16:13,537 - INFO - Last processed email ID retrieved: 5
+2025-04-22 14:16:13,538 - INFO - Skipping already processed email ID: 1
+2025-04-22 14:16:13,538 - INFO - Skipping already processed email ID: 2
+2025-04-22 14:16:13,538 - INFO - Skipping already processed email ID: 3
+2025-04-22 14:16:13,538 - INFO - Skipping already processed email ID: 4
+2025-04-22 14:16:13,538 - INFO - Skipping already processed email ID: 5
+2025-04-22 14:16:13,538 - INFO - Processing email ID: 6
+2025-04-22 14:16:15,063 - INFO - Raw email saved: email_extraction/raw_emails/6.eml
+2025-04-22 14:16:15,069 - INFO - Attachment saved: email_extraction/attachments/6/=?UTF-8?B?U2NyZWVuc2hvdCAyMDI1LTA0LTIyIGF0IDEuMDEuMzTigK9QTS5wbmc=?=
+2025-04-22 14:16:15,070 - INFO - Email data saved to file: email_extraction/emails_with_attachments.txt
+2025-04-22 14:16:15,070 - INFO - Processed email ID: 6 from: Yash <yash31204testing@gmail.com>
+2025-04-22 14:16:15,070 - INFO - Updated last processed email ID to: 6
+2025-04-22 14:16:15,416 - INFO - Logged out from IMAP server.
+2025-04-22 14:16:15,417 - INFO - Logging setup complete. Log file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/email_redis_store.log
+2025-04-22 14:16:15,418 - INFO - Connected to Redis server at localhost:6379
+2025-04-22 14:16:15,420 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/1.eml
+2025-04-22 14:16:15,421 - INFO - No attachments found for email ID '1'
+2025-04-22 14:16:15,421 - INFO - Prepared email data for email ID '1'
+2025-04-22 14:16:15,422 - INFO - Email data stored in Redis with key 'email:1'
+2025-04-22 14:16:15,422 - INFO - Successfully inserted email ID '1' into Redis.
+2025-04-22 14:16:15,423 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/2.eml
+2025-04-22 14:16:15,423 - INFO - No attachments found for email ID '2'
+2025-04-22 14:16:15,423 - INFO - Prepared email data for email ID '2'
+2025-04-22 14:16:15,424 - INFO - Email data stored in Redis with key 'email:2'
+2025-04-22 14:16:15,424 - INFO - Successfully inserted email ID '2' into Redis.
+2025-04-22 14:16:15,425 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/3.eml
+2025-04-22 14:16:15,425 - INFO - No attachments found for email ID '3'
+2025-04-22 14:16:15,425 - INFO - Prepared email data for email ID '3'
+2025-04-22 14:16:15,426 - INFO - Email data stored in Redis with key 'email:3'
+2025-04-22 14:16:15,426 - INFO - Successfully inserted email ID '3' into Redis.
+2025-04-22 14:16:15,455 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/6.eml
+2025-04-22 14:16:15,455 - INFO - Found attachments for email ID '6': ['/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/attachments/6/=?UTF-8?B?U2NyZWVuc2hvdCAyMDI1LTA0LTIyIGF0IDEuMDEuMzTigK9QTS5wbmc=?=']
+2025-04-22 14:16:15,455 - INFO - Prepared email data for email ID '6'
+2025-04-22 14:16:15,455 - INFO - Email data stored in Redis with key 'email:6'
+2025-04-22 14:16:15,455 - INFO - Successfully inserted email ID '6' into Redis.
+2025-04-22 14:16:15,456 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/4.eml
+2025-04-22 14:16:15,456 - INFO - No attachments found for email ID '4'
+2025-04-22 14:16:15,456 - INFO - Prepared email data for email ID '4'
+2025-04-22 14:16:15,456 - INFO - Email data stored in Redis with key 'email:4'
+2025-04-22 14:16:15,456 - INFO - Successfully inserted email ID '4' into Redis.
+2025-04-22 14:16:15,457 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/5.eml
+2025-04-22 14:16:15,457 - INFO - No attachments found for email ID '5'
+2025-04-22 14:16:15,457 - INFO - Prepared email data for email ID '5'
+2025-04-22 14:16:15,457 - INFO - Email data stored in Redis with key 'email:5'
+2025-04-22 14:16:15,457 - INFO - Successfully inserted email ID '5' into Redis.
+2025-04-22 14:16:48,130 - INFO - Connected to IMAP server.
+2025-04-22 14:16:48,132 - INFO - Connected to Redis server.
+2025-04-22 14:16:48,492 - INFO - Selected mailbox: inbox
+2025-04-22 14:16:48,766 - INFO - Found 6 emails matching criteria: ALL
+2025-04-22 14:16:48,769 - INFO - Last processed email ID retrieved: 6
+2025-04-22 14:16:48,770 - INFO - No new emails found. Exiting.
+2025-04-22 14:16:49,040 - INFO - Logged out from IMAP server.
+2025-04-22 14:16:49,041 - INFO - Logging setup complete. Log file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/email_redis_store.log
+2025-04-22 14:16:49,042 - INFO - Connected to Redis server at localhost:6379
+2025-04-22 14:16:49,045 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/1.eml
+2025-04-22 14:16:49,045 - INFO - No attachments found for email ID '1'
+2025-04-22 14:16:49,045 - INFO - Prepared email data for email ID '1'
+2025-04-22 14:16:49,046 - INFO - Email data stored in Redis with key 'email:1'
+2025-04-22 14:16:49,047 - INFO - Successfully inserted email ID '1' into Redis.
+2025-04-22 14:16:49,047 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/2.eml
+2025-04-22 14:16:49,047 - INFO - No attachments found for email ID '2'
+2025-04-22 14:16:49,047 - INFO - Prepared email data for email ID '2'
+2025-04-22 14:16:49,048 - INFO - Email data stored in Redis with key 'email:2'
+2025-04-22 14:16:49,048 - INFO - Successfully inserted email ID '2' into Redis.
+2025-04-22 14:16:49,048 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/3.eml
+2025-04-22 14:16:49,048 - INFO - No attachments found for email ID '3'
+2025-04-22 14:16:49,048 - INFO - Prepared email data for email ID '3'
+2025-04-22 14:16:49,049 - INFO - Email data stored in Redis with key 'email:3'
+2025-04-22 14:16:49,049 - INFO - Successfully inserted email ID '3' into Redis.
+2025-04-22 14:16:49,080 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/6.eml
+2025-04-22 14:16:49,080 - INFO - Found attachments for email ID '6': ['/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/attachments/6/=?UTF-8?B?U2NyZWVuc2hvdCAyMDI1LTA0LTIyIGF0IDEuMDEuMzTigK9QTS5wbmc=?=']
+2025-04-22 14:16:49,080 - INFO - Prepared email data for email ID '6'
+2025-04-22 14:16:49,081 - INFO - Email data stored in Redis with key 'email:6'
+2025-04-22 14:16:49,081 - INFO - Successfully inserted email ID '6' into Redis.
+2025-04-22 14:16:49,081 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/4.eml
+2025-04-22 14:16:49,081 - INFO - No attachments found for email ID '4'
+2025-04-22 14:16:49,081 - INFO - Prepared email data for email ID '4'
+2025-04-22 14:16:49,081 - INFO - Email data stored in Redis with key 'email:4'
+2025-04-22 14:16:49,081 - INFO - Successfully inserted email ID '4' into Redis.
+2025-04-22 14:16:49,082 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/5.eml
+2025-04-22 14:16:49,082 - INFO - No attachments found for email ID '5'
+2025-04-22 14:16:49,082 - INFO - Prepared email data for email ID '5'
+2025-04-22 14:16:49,082 - INFO - Email data stored in Redis with key 'email:5'
+2025-04-22 14:16:49,082 - INFO - Successfully inserted email ID '5' into Redis.
+2025-04-22 14:17:20,542 - INFO - Connected to IMAP server.
+2025-04-22 14:17:20,544 - INFO - Connected to Redis server.
+2025-04-22 14:17:20,953 - INFO - Selected mailbox: inbox
+2025-04-22 14:17:21,361 - INFO - Found 6 emails matching criteria: ALL
+2025-04-22 14:17:21,363 - INFO - Last processed email ID retrieved: 6
+2025-04-22 14:17:21,363 - INFO - No new emails found. Exiting.
+2025-04-22 14:17:21,906 - INFO - Logged out from IMAP server.
+2025-04-22 14:17:21,906 - INFO - Logging setup complete. Log file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/email_redis_store.log
+2025-04-22 14:17:21,906 - INFO - Connected to Redis server at localhost:6379
+2025-04-22 14:17:21,907 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/1.eml
+2025-04-22 14:17:21,907 - INFO - No attachments found for email ID '1'
+2025-04-22 14:17:21,907 - INFO - Prepared email data for email ID '1'
+2025-04-22 14:17:21,909 - INFO - Email data stored in Redis with key 'email:1'
+2025-04-22 14:17:21,909 - INFO - Successfully inserted email ID '1' into Redis.
+2025-04-22 14:17:21,909 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/2.eml
+2025-04-22 14:17:21,909 - INFO - No attachments found for email ID '2'
+2025-04-22 14:17:21,909 - INFO - Prepared email data for email ID '2'
+2025-04-22 14:17:21,909 - INFO - Email data stored in Redis with key 'email:2'
+2025-04-22 14:17:21,909 - INFO - Successfully inserted email ID '2' into Redis.
+2025-04-22 14:17:21,910 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/3.eml
+2025-04-22 14:17:21,910 - INFO - No attachments found for email ID '3'
+2025-04-22 14:17:21,910 - INFO - Prepared email data for email ID '3'
+2025-04-22 14:17:21,910 - INFO - Email data stored in Redis with key 'email:3'
+2025-04-22 14:17:21,910 - INFO - Successfully inserted email ID '3' into Redis.
+2025-04-22 14:17:21,932 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/6.eml
+2025-04-22 14:17:21,932 - INFO - Found attachments for email ID '6': ['/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/attachments/6/=?UTF-8?B?U2NyZWVuc2hvdCAyMDI1LTA0LTIyIGF0IDEuMDEuMzTigK9QTS5wbmc=?=']
+2025-04-22 14:17:21,932 - INFO - Prepared email data for email ID '6'
+2025-04-22 14:17:21,932 - INFO - Email data stored in Redis with key 'email:6'
+2025-04-22 14:17:21,932 - INFO - Successfully inserted email ID '6' into Redis.
+2025-04-22 14:17:21,932 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/4.eml
+2025-04-22 14:17:21,932 - INFO - No attachments found for email ID '4'
+2025-04-22 14:17:21,932 - INFO - Prepared email data for email ID '4'
+2025-04-22 14:17:21,933 - INFO - Email data stored in Redis with key 'email:4'
+2025-04-22 14:17:21,933 - INFO - Successfully inserted email ID '4' into Redis.
+2025-04-22 14:17:21,933 - INFO - Parsed email file: /Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_redis_store/../email_extraction/raw_emails/5.eml
+2025-04-22 14:17:21,933 - INFO - No attachments found for email ID '5'
+2025-04-22 14:17:21,933 - INFO - Prepared email data for email ID '5'
+2025-04-22 14:17:21,933 - INFO - Email data stored in Redis with key 'email:5'
+2025-04-22 14:17:21,933 - INFO - Successfully inserted email ID '5' into Redis.

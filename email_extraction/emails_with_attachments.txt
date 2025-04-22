@@ -32,3 +32,10 @@ This is a test email sent from the AliceInTensorLand email system.
 
 Best regards,
 AliceInTensorLand Team
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: TEST 5 with attaches
+📄 Body:
+<div dir="ltr">TEST 1 2 3 4 5</div>
+
+📎 Attachment saved: email_extraction/attachments/6/=?UTF-8?B?U2NyZWVuc2hvdCAyMDI1LTA0LTIyIGF0IDEuMDEuMzTigK9QTS5wbmc=?=
