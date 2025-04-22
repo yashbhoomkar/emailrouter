@@ -1,7 +1,6 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from testing.testing_ollama import main_export_ollama
 import redis
 import json
 
@@ -25,6 +24,7 @@ def connect_to_redis(host="localhost", port=6379, db=0):
         print(f"Error connecting to Redis: {str(e)}")
         return None
 
+
 def get_emails_with_status(redis_client, status="NOT_ROUTED"):
     """
     Retrieve all emails from Redis with the specified status.
@@ -34,7 +34,7 @@ def get_emails_with_status(redis_client, status="NOT_ROUTED"):
         status (str): The status to filter emails by (default is "NOT_ROUTED").
 
     Returns:
-        list: A list of processed emails with the specified status.
+        list: A list of email objects with the specified status.
     """
     try:
         emails = []
@@ -46,14 +46,7 @@ def get_emails_with_status(redis_client, status="NOT_ROUTED"):
                     # Debug: Log the raw email data
                     print(f"Processing key: {key}, Raw data: {email_json}")
                     if email_json.get("STATUS") == status:  # Match the correct "STATUS" key
-                        # Extract relevant fields for the processed email
-                        processed_email = {
-                            "EMAIL_ID": email_json.get("email_id", "MISSING"),
-                            "SUBJECT": email_json.get("subject", "MISSING"),
-                            "BODY": email_json.get("body", "MISSING"),
-                            "STATUS": email_json.get("STATUS", "MISSING")
-                        }
-                        emails.append(processed_email)
+                        emails.append(email_json)  # Add the raw Redis object to the list
                 except json.JSONDecodeError as e:
                     print(f"Error decoding JSON for key {key}: {str(e)}")
         return emails
@@ -61,37 +54,30 @@ def get_emails_with_status(redis_client, status="NOT_ROUTED"):
         print(f"Error retrieving emails from Redis: {str(e)}")
         return []
 
+
 def main_export_rfr():
     """
-    Main function to retrieve and print processed emails with "NOT_ROUTED" status.
+    Main function to retrieve and return emails with "NOT_ROUTED" status.
     """
     print("Connecting to Redis...")
     redis_client = connect_to_redis()
 
     if not redis_client:
         print("Failed to connect to Redis. Exiting...")
-        return
+        return []
 
     print("Retrieving emails with status 'NOT_ROUTED'...")
     not_routed_emails = get_emails_with_status(redis_client, status="NOT_ROUTED")
 
     if not_routed_emails:
-        print(f"Found {len(not_routed_emails)} email(s) with status 'NOT_ROUTED':")
-        for email in not_routed_emails:
-            print(json.dumps(email, indent=4))  # Print the processed email
-
-            # Construct the email content to pass to main_export_ollama
-            email_content = (
-                f"EMAIL_ID: {email['EMAIL_ID']}\n"
-                f"Subject: {email['SUBJECT']}\n\n"
-                f"{email['BODY']}"
-            )
-            print(f"Passing email_content to main_export_ollama:\n{email_content}")  # Debug log
-            routing_response = main_export_ollama(email_content)
-            print("Routing Response:", json.dumps(routing_response, indent=4))
-            return routing_response
+        print(f"Found {len(not_routed_emails)} email(s) with status 'NOT_ROUTED'.")
+        return not_routed_emails
     else:
         print("No emails with status 'NOT_ROUTED' found.")
         return []
 
 
+# if __name__ == "__main__":
+#     emails = main_export_rfr()
+#     print("Emails with 'NOT_ROUTED' status:")
+#     print(json.dumps(emails, indent=4))

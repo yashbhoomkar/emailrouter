@@ -210,9 +210,9 @@ def main_export_ollama(email_content):
     # Fetch feedback data from the database
     feedback_data = fetch_feedback_data()
 
-    print("Step 1: Analyzing email...")
+    #print("Step 1: Analyzing email...")
     analysis_response = analyze_email(email_content, feedback_data)
-    print("Analysis Response:", json.dumps(analysis_response, indent=4))
+    #print("Analysis Response:", json.dumps(analysis_response, indent=4))
 
     # Validate the response
     if "EMAIL_ID" not in analysis_response or "DEPARTMENT" not in analysis_response or "URGENCY" not in analysis_response:
@@ -227,13 +227,13 @@ def main_export_ollama(email_content):
         department = analysis_response["DEPARTMENT"]
         urgency = analysis_response["URGENCY"]
 
-        print(f"\nStep 2: Retrieving people for department '{department}'...")
+        #print(f"\nStep 2: Retrieving people for department '{department}'...")
         people_list = retrieve_people_by_department(department)
-        print("People List:", json.dumps(people_list, indent=4))
+        #print("People List:", json.dumps(people_list, indent=4))
 
-        print(f"\nStep 3: Finalizing routing for email ID '{email_id}' in department '{department}' with urgency '{urgency}'...")
+        #print(f"\nStep 3: Finalizing routing for email ID '{email_id}' in department '{department}' with urgency '{urgency}'...")
         routing_response = finalize_routing(email_id, people_list, feedback_data, department, urgency)
-        print("Routing Response:", json.dumps(routing_response, indent=4))
+        #print("Routing Response:", json.dumps(routing_response, indent=4))
         return routing_response
 
 # if __name__ == "__main__":

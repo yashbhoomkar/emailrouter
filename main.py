@@ -15,7 +15,11 @@ def main():
         processing_time = end_time - start_time
         sleep_time = max(5, processing_time)  # Ensure at least 5 seconds between runs
 
-        responses = main_export_rfr()
+        emails_list  = main_export_rfr()
+        for  email_object in emails_list:
+            print(f"Processing email: {email_object}")
+            response = main_export_ollama(email_object)
+            print(f"Response: {response}")
 
         
         print(f"Waiting for {sleep_time} seconds before the next run...")
