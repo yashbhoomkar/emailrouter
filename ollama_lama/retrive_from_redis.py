@@ -44,7 +44,7 @@ def get_emails_with_status(redis_client, status="NOT_ROUTED"):
                 try:
                     email_json = json.loads(email_data)
                     # Debug: Log the raw email data
-                    print(f"Processing key: {key}, Raw data: {email_json}")
+                    # print(f"Processing key: {key}, Raw data: {email_json}")
                     if email_json.get("STATUS") == status:  # Match the correct "STATUS" key
                         emails.append(email_json)  # Add the raw Redis object to the list
                 except json.JSONDecodeError as e:
@@ -59,14 +59,14 @@ def main_export_rfr():
     """
     Main function to retrieve and return emails with "NOT_ROUTED" status.
     """
-    print("Connecting to Redis...")
+    # print("Connecting to Redis...")
     redis_client = connect_to_redis()
 
     if not redis_client:
         print("Failed to connect to Redis. Exiting...")
         return []
 
-    print("Retrieving emails with status 'NOT_ROUTED'...")
+    # print("Retrieving emails with status 'NOT_ROUTED'...")
     not_routed_emails = get_emails_with_status(redis_client, status="NOT_ROUTED")
 
     if not_routed_emails:

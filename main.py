@@ -6,7 +6,7 @@ from ollama_lama.retrive_from_redis import main_export_rfr
 from ollama_lama.retrive_and_send_email import main_export_send_email
 def main():
     while True:
-        print("Starting email extraction...")
+        # print("Starting email extraction...")
         start_time = time.time()
         main_export()
         main_export_redis_store()
@@ -18,14 +18,14 @@ def main():
 
         emails_list  = main_export_rfr()
         for  email_object in emails_list:
-            print(f"Processing email: {email_object}")
+            # print(f"Processing email: {email_object}")
             response = main_export_ollama(email_object)
             print(f"Response: {response}")
-            print("Sending email...")
+            # print("Sending email...")
             main_export_send_email(response)
-            print("Email sent successfully.")
+            # print("Email sent successfully.")
         
-        print(f"Waiting for {sleep_time} seconds before the next run...")
+        # print(f"Waiting for {sleep_time} seconds before the next run...")
         time.sleep(sleep_time)
 
 def main_testing():

@@ -72,3 +72,39 @@ AliceInTensorLand Team
 <div dir="ltr">1<div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div></div>
 
 📎 Attachment saved: email_extraction/attachments/11/Qshift Offer Letter - Yash .pdf
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: TEST 12 process eml body check 
+📄 Body:
+<div dir="ltr">hello my name is yash bhoomkar<br><br><br>hello world<br><br><br></div>
+
+📎 Attachment saved: email_extraction/attachments/12/Capgemini Completion Certificate.pdf
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: Reg :: Onboarding process of employees
+📄 Body:
+<div dir="ltr">Respected sir,<br><br>We really need to upgrade the process of onboarding of the new employees. <br>We have to do it as soon as possible.<br><br>Regards,<br>Yash Bhoomkar</div>
+
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: TEST 13 
+📄 Body:
+<div dir="ltr">CHECK PRINT STATEMENTS</div>
+
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: Request for Leave Approval
+📄 Body:
+<div dir="ltr">EMAIL_ID: 101<br>Subject: Request for Leave Approval<br><br>Dear HR Team,<br><br>I hope this email finds you well. I am writing to formally request leave for personal reasons from May 15, 2025, to May 20, 2025. During this time, I will ensure that all my responsibilities are delegated appropriately, and I am happy to assist in any transition required before my leave.<br><br>Please let me know if you need any additional information or documentation to process my request. I would gr
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: Request for Budget Approval
+📄 Body:
+<div dir="ltr">Dear Finance Team,<br><br>I hope this email finds you well. I am writing to request approval for the budget allocation for the upcoming Q3 marketing campaign. The proposed budget is $50,000, which includes expenses for digital advertising, content creation, and event sponsorships.<br><br>The detailed breakdown of the budget is attached for your review. Please let me know if you require any additional information or adjustments to the proposal.<br><br>Your prompt approval will help
+📎 Attachment saved: email_extraction/attachments/16/CapgeminiOfferLetter.pdf
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: Invoice Discrepancy Inquiry
+📄 Body:
+<div dir="ltr">Dear Finance Team,<br><br>I am writing to bring to your attention a discrepancy in the invoice we received for the services provided by ABC Solutions for the month of April 2025. The invoice amount is $12,500, whereas the agreed-upon amount in the contract is $10,000.<br><br>I have attached a copy of the invoice and the relevant contract for your reference. Please review the documents and let me know how we can resolve this issue at the earliest.<br><br>Feel free to reach out if y
+📎 Attachment saved: email_extraction/attachments/17/CapgeminiOfferLetter-1.pdf
