@@ -53,8 +53,16 @@ def analyze_email(email_content, feedback_data, model="llama3.2", base_url="http
         "Respond strictly in the following JSON format:\n"
         "{\n"
         "    \"EMAIL_ID\": \"email_id\",\n"
-        "    \"DEPARTMENT\": \"HR | FINANCE | SOFTWARE | CYBERSECURITY\",\n"
-        "    \"URGENCY\": \"HIGH | MEDIUM | LOW\"\n"
+        "    \"DEPARTMENT\": \"HR or FINANCE or SOFTWARE or CYBERSECURITY\",\n"
+        "    \"URGENCY\": \"HIGH or MEDIUM or LOW\"\n"
+        "}\n"
+        "Ensure the response is valid JSON and adheres to the specified format. Do not include any additional text or explanations."
+    "\n FOLLOW THE RESPONSE FORMAT STRICTLY AND DONOT ADD ANYTHING ELSE . IF YOU DONOT ADHERE TO THE GIVEN FORMAT YOU WILL BE FINED\n"
+    "Example:\n"
+        "{\n"
+        "    \"EMAIL_ID\": \"123\",\n"
+        "    \"DEPARTMENT\": \"HR\",\n"
+        "    \"URGENCY\": \"HIGH\"\n"
         "}\n"
         "Ensure the response is valid JSON and adheres to the specified format. Do not include any additional text or explanations."
     )
@@ -206,6 +214,14 @@ def main_export_ollama(email_content):
     analysis_response = analyze_email(email_content, feedback_data)
     print("Analysis Response:", json.dumps(analysis_response, indent=4))
 
+    # Validate the response
+    if "EMAIL_ID" not in analysis_response or "DEPARTMENT" not in analysis_response or "URGENCY" not in analysis_response:
+        raise KeyError("The analysis response is missing required keys: 'EMAIL_ID', 'DEPARTMENT', or 'URGENCY'.")
+
+    email_id = analysis_response["EMAIL_ID"]
+    department = analysis_response["DEPARTMENT"]
+    urgency = analysis_response["URGENCY"]
+
     if "error" not in analysis_response:
         email_id = analysis_response["EMAIL_ID"]
         department = analysis_response["DEPARTMENT"]
@@ -220,8 +236,8 @@ def main_export_ollama(email_content):
         print("Routing Response:", json.dumps(routing_response, indent=4))
         return routing_response
 
-#if __name__ == "__main__":
-    # Example email content to test
+# if __name__ == "__main__":
+#     #Example email content to test
 #    email_content = (
 #       "EMAIL_ID: 210\n"
 #      "Subject: General Feedback \n\n"
@@ -232,4 +248,4 @@ def main_export_ollama(email_content):
 #        "Please let me know if you need any further information.\n\n"
 #        "Best regards,\nJohn Doe"
 #    )
-#    main_export(email_content)
+#    main_export_ollama(email_content)
