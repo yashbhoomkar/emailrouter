@@ -43,8 +43,20 @@ def connect_to_redis(host="localhost", port=6379, decode_responses=True):
         raise
 
 def store_email_in_redis(redis_client, key, email_data):
-    """Store email data in Redis."""
+    """
+    Store email data in Redis. If the key already exists, do not update the value.
+    Args:
+        redis_client (redis.StrictRedis): Redis client connection.
+        key (str): The Redis key to store the email data.
+        email_data (dict): The email data to store.
+    """
     try:
+        # Check if the key already exists in Redis
+        if redis_client.exists(key):
+            logging.info("Key '%s' already exists in Redis. Skipping update.", key)
+            return
+
+        # Store the email data in Redis
         redis_client.set(key, json.dumps(email_data))
         logging.info("Email data stored in Redis with key '%s'", key)
     except Exception as e:
@@ -194,5 +206,5 @@ def main_export_redis_store():
         logging.critical("Critical error in main function: %s", str(e))
         raise
 
-if __name__ == "__main__":
-    main_export_redis_store()
+# if __name__ == "__main__":
+#     main_export_redis_store()

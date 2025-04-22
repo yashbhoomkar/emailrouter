@@ -2,6 +2,7 @@ import smtplib
 import os
 import redis
 import json
+import sqlite3
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
@@ -54,6 +55,52 @@ def retrieve_email_from_redis(redis_client, email_id):
             return None
     except Exception as e:
         raise ValueError(f"Failed to retrieve email data from Redis for email ID '{email_id}': {str(e)}")
+
+def update_email_status_in_redis(redis_client, email_id, new_status):
+    """
+    Update the status of an email in Redis.
+    Args:
+        redis_client (redis.StrictRedis): Redis client connection.
+        email_id (str): The email ID to update.
+        new_status (str): The new status to set.
+    """
+    try:
+        redis_key = f"email:{email_id}"
+        email_data = retrieve_email_from_redis(redis_client, email_id)
+        if email_data:
+            email_data["STATUS"] = new_status
+            redis_client.set(redis_key, json.dumps(email_data))
+            print(f"Updated status for email ID '{email_id}' to '{new_status}'.")
+        else:
+            print(f"Cannot update status. Email ID '{email_id}' not found in Redis.")
+    except Exception as e:
+        print(f"Failed to update status for email ID '{email_id}': {str(e)}")
+
+def increment_email_forward_count(db_path, email_list):
+    """
+    Increment the 'EMAILS_FORWARDED_IN_LAST_24_DAYS' for the given email addresses in the database.
+    Args:
+        db_path (str): Path to the SQLite database.
+        email_list (list): List of email addresses to update.
+    """
+    try:
+        conn = sqlite3.connect(db_path)
+        cursor = conn.cursor()
+
+        for email in email_list:
+            cursor.execute("SELECT EMAILS_FORWARDED_IN_LAST_24_DAYS FROM table_data WHERE EMAIL = ?", (email,))
+            result = cursor.fetchone()
+            if result:
+                new_count = result[0] + 1
+                cursor.execute("UPDATE table_data SET EMAILS_FORWARDED_IN_LAST_24_DAYS = ? WHERE EMAIL = ?", (new_count, email))
+                print(f"Incremented forward count for {email} to {new_count}.")
+            else:
+                print(f"Email '{email}' not found in the database. Skipping increment.")
+
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f"Failed to update forward count in the database: {str(e)}")
 
 def check_attachments(attachments_folder, attachment_paths):
     """
@@ -136,13 +183,14 @@ def send_email(smtp_server, smtp_port, sender_email, app_password, recipient_ema
     except Exception as e:
         raise ValueError(f"Error sending email: {str(e)}")
 
-def process_and_send_email(email_json, redis_client, attachments_folder):
+def process_and_send_email(email_json, redis_client, attachments_folder, db_path):
     """
     Process the input JSON, fetch email content from Redis, and send the email with attachments.
     Args:
         email_json (dict): The email data in JSON format.
         redis_client (redis.StrictRedis): Redis client connection.
         attachments_folder (str): The base folder for attachments.
+        db_path (str): Path to the SQLite database.
     """
     try:
         # Extract EMAIL_ID from the JSON
@@ -179,6 +227,13 @@ def process_and_send_email(email_json, redis_client, attachments_folder):
             smtp_server = "smtp.gmail.com"
             smtp_port = 587
             send_email(smtp_server, smtp_port, sender_email, app_password, forward_to, message, cc, bcc)
+
+            # Increment forward count for all recipients
+            all_recipients = [forward_to] + cc + bcc
+            increment_email_forward_count(db_path, all_recipients)
+
+            # Update email status in Redis
+            update_email_status_in_redis(redis_client, email_id, "ROUTED")
         else:
             print(f"Skipping email ID '{email_id}' as no 'FORWARD_TO' address is provided.")
     except Exception as e:
@@ -196,7 +251,7 @@ def clean_email_list(email_list):
         return []
     return email_list
 
-def main():
+def main_export_send_email(email_json):
     """
     Main function to process and send emails.
     """
@@ -206,11 +261,13 @@ def main():
     # Define attachments folder
     attachments_folder = "/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/email_extraction/attachments"
 
-    # Example JSON input
-    email_json = {'EMAIL_ID': 6, 'DEPARTMENT': 'SOFTWARE', 'URGENCY': 'LOW', 'FORWARD_TO': 'ivy.lee@aliceintensorland.com', 'CC': ['hank.green@aliceintensorland.com'], 'BCC': []}
+    # Define database path
+    db_path = "/Users/yashbhoomkar/Desktop/pythonCodes/emailRouter/vone/testing/people_emails_metadata.db"
 
     # Process and send the email
-    process_and_send_email(email_json, redis_client, attachments_folder)
+    process_and_send_email(email_json, redis_client, attachments_folder, db_path)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     # Example JSON input
+#     email_json = {'EMAIL_ID': 6, 'DEPARTMENT': 'SOFTWARE', 'URGENCY': 'LOW', 'FORWARD_TO': 'ivy.lee@aliceintensorland.com', 'CC': ['hank.green@aliceintensorland.com'], 'BCC': []}
+#     main_export_send_email(email_json)

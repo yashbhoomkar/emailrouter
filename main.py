@@ -3,6 +3,7 @@ from email_extraction.gmail_imap import main_export
 from email_redis_store.redis_store import main_export_redis_store
 from testing.testing_ollama import main_export_ollama
 from ollama_lama.retrive_from_redis import main_export_rfr
+from ollama_lama.retrive_and_send_email import main_export_send_email
 def main():
     while True:
         print("Starting email extraction...")
@@ -20,7 +21,9 @@ def main():
             print(f"Processing email: {email_object}")
             response = main_export_ollama(email_object)
             print(f"Response: {response}")
-
+            print("Sending email...")
+            main_export_send_email(response)
+            print("Email sent successfully.")
         
         print(f"Waiting for {sleep_time} seconds before the next run...")
         time.sleep(sleep_time)

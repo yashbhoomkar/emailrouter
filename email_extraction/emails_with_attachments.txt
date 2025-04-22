@@ -39,3 +39,36 @@ AliceInTensorLand Team
 <div dir="ltr">TEST 1 2 3 4 5</div>
 
 📎 Attachment saved: email_extraction/attachments/6/=?UTF-8?B?U2NyZWVuc2hvdCAyMDI1LTA0LTIyIGF0IDEuMDEuMzTigK9QTS5wbmc=?=
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: ROUTED STATUS CHECK TEST
+📄 Body:
+<div dir="ltr">TEST 1 2 3 </div>
+
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: TEST ATTACHE ROUETD STATUS 
+📄 Body:
+<div dir="ltr"><br></div>
+
+📎 Attachment saved: email_extraction/attachments/8/=?UTF-8?B?U2NyZWVuc2hvdCAyMDI1LTA0LTIyIGF0IDEuMDEuMzTigK9QTS5wbmc=?=
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: TEST 7 
+📄 Body:
+<div dir="ltr">1 2 3 </div>
+
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: TEST 10 
+📄 Body:
+<div dir="ltr">123455</div>
+
+📎 Attachment saved: email_extraction/attachments/10/EduBuddySysDesign.png
+
+📨 Email From: Yash <yash31204testing@gmail.com>
+📝 Subject: TEST 11
+📄 Body:
+<div dir="ltr">1<div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div></div>
+
+📎 Attachment saved: email_extraction/attachments/11/Qshift Offer Letter - Yash .pdf
