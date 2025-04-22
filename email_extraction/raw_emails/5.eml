@@ -1,0 +1,26 @@
+Return-Path: <yash31204testing@gmail.com>
+Received: from 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa ([183.87.230.39])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-73dbfae9b91sm8262063b3a.170.2025.04.22.01.23.34
+        for <yash31204testing@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 22 Apr 2025 01:23:34 -0700 (PDT)
+Message-ID: <68075206.050a0220.285749.3e90@mx.google.com>
+Date: Tue, 22 Apr 2025 01:23:34 -0700 (PDT)
+Content-Type: multipart/mixed; boundary="===============3903565860369688187=="
+MIME-Version: 1.0
+From: yash31204testing@gmail.com
+To: yash31204testing@gmail.com
+Subject: Test Email from AliceInTensorLand
+
+--===============3903565860369688187==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+Hello,
+
+This is a test email sent from the AliceInTensorLand email system.
+
+Best regards,
+AliceInTensorLand Team
+--===============3903565860369688187==--

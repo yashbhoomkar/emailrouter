@@ -22,3 +22,13 @@
 📄 Body:
 <div dir="ltr">EMAIL_ID: 101<br>Subject: Urgent - Payroll Discrepancy<br><br>Dear Finance Team,<br><br>I have noticed a discrepancy in my salary for this month. The amount credited to my account is lower than expected. <br>Could you please look into this matter urgently and let me know if additional details are required?<br><br>Best regards,  <br>John Doe</div>
 
+
+📨 Email From: yash31204testing@gmail.com
+📝 Subject: Test Email from AliceInTensorLand
+📄 Body:
+Hello,
+
+This is a test email sent from the AliceInTensorLand email system.
+
+Best regards,
+AliceInTensorLand Team
